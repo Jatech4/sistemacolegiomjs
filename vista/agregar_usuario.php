@@ -2,12 +2,13 @@
 <?php
 include_once "../controlador/validasesion.php";
 include_once "../modelo/conexion.php";
-$result = mysql_query("SELECT * FROM usuarios");
+$result = mysql_query("SELECT * FROM usuarios, perfil_usuario where perfil_usuario=id_perfil");
+mysql_set_charset('utf8');
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 		<title>Admin - Martin J. Sanabria</title>
 		<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -149,19 +150,19 @@ $result = mysql_query("SELECT * FROM usuarios");
 									<th>Contraseña</th>
 									<th>Nombre y Apellido</th>
 									<th>Perfil</th>
-									<th>Acciones</th>
+									<th colspan="2">Acciones</th>
 									</tr>
 									</thead>
 									<tbody>
 									<?php while ($row = mysql_fetch_array($result)){?>
 									<tr>
-									<th scope="row">ID AA</th>
 									<td><?php echo $row['id_usuario'] ?></td>
 									<td><?php echo $row['cedula_usuario'] ?></td>
 									<td><?php echo $row['login_usuario'] ?></td>
 									<td><?php echo $row['pass_usuario'] ?></td>
 									<td><?php echo $row['nombre_usuario'] ?></td>
-									<td><a class="btn btn-warning" href="editar_usuario.php" role="button" style="border-radius: 0;"><span class="icon-wrench"></span> Editar</a></td>
+									<td><?php echo $row['descripcion_perfil'] ?></td>
+									<td><a class="btn btn-warning" href="editar_usuario.php?usuario=<?php echo $row['id_usuario']?>" role="button" style="border-radius: 0;"><span class="icon-wrench"></span> Editar</a></td>
 									<td><a class="btn btn-danger" href="#" role="button" style="border-radius: 0;"><span class="icon-cross"></span> Eliminar</a></td>
 									</tr>
 									<?php } ?>
@@ -188,3 +189,7 @@ $result = mysql_query("SELECT * FROM usuarios");
 		<script src="js/demo.js" type="text/javascript"></script>
 	</body>
 </html>
+<?php
+mysql_free_result($result);
+mysql_close();
+?>
