@@ -2,7 +2,7 @@
 <?php
 include_once "../controlador/validasesion.php";
 include_once "../modelo/conexion.php";
-$result = mysql_query("SELECT * FROM usuarios, perfil_usuario where perfil_usuario=id_perfil");
+$result = mysql_query("SELECT * FROM usuarios, perfil_usuario, status_usuario WHERE perfil_usuario=id_perfil AND status_usuario=id_status");
 mysql_set_charset('utf8');
 ?>
 <!DOCTYPE html>

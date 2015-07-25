@@ -1,6 +1,14 @@
 <!-- index.html -->
 <?php
 include_once "../controlador/validasesion.php";
+include_once "../modelo/conexion.php";
+$result = mysql_query("SELECT * FROM usuarios, perfil_usuario, status_usuario WHERE perfil_usuario=id_perfil AND status_usuario=id_status AND id_usuario=".$_GET['usuario']."");
+mysql_set_charset('utf8');
+$row = mysql_fetch_array($result);
+
+$result_perfil = mysql_query("SELECT * FROM perfil_usuario");
+
+$result_status = mysql_query("SELECT * FROM status_usuario");
 ?>
 <!DOCTYPE html>
 <html>
@@ -135,26 +143,27 @@ include_once "../controlador/validasesion.php";
 							<form>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Nombre y Apellido</label>
-							<input type="nombre" class="form-control" id="exampleInputPassword1" placeholder="Nombre y Apellido">
+							<input type="nombre" class="form-control" id="exampleInputPassword1" placeholder="Nombre y Apellido" value="<?php echo $row['nombre_usuario'] ?>">
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Cedula</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Cedula">
+							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Cedula" value="<?php echo $row['cedula_usuario'] ?>">
 							</div>
 							<div class="form-group">
 							<label for="usuario">Usuario</label>
-							<input type="usuario" class="form-control" id="exampleInputEmail1" placeholder="Usuario">
+							<input type="usuario" class="form-control" id="exampleInputEmail1" placeholder="Usuario" value="<?php echo $row['login_usuario'] ?>">
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Contraseña</label>
-							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" value="<?php echo $row['pass_usuario'] ?>">
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Perfil</label>
 							<br>
 							<select class="form-control" name="#" id="#">
-								<option value="1">Administrador</option>
-								<option value="2">Profesor</option>
+								<?php while ($row_perfil = mysql_fetch_array($result_perfil)){?>
+								<option value="<?php echo $row_perfil['id_perfil']?>" <?php if($row_perfil['id_perfil']==$row['id_perfil']) {echo "selected='selected'";}?>><?php echo $row_perfil['descripcion_perfil'] ?></option>
+								<?php } ?>
 							</select>
 							</div>
 							<button type="submit" class="btn btn-warning"><span class="icon-scissors"></span> Editar</button>
@@ -179,3 +188,7 @@ include_once "../controlador/validasesion.php";
 		<script src="js/demo.js" type="text/javascript"></script>
 	</body>
 </html>
+<?php
+mysql_free_result($result);
+mysql_close();
+?>
