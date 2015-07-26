@@ -8,7 +8,7 @@ include_once "menu.php"
 			<div class="content-wrapper">
 				<section class="content-header">
 					<h1>
-					Registrar Alumno
+					Editar Alumno
 					</h1>
 					<small><i>Registrar Alumnos en el sistema, para luego inscribir y generar boletín.</i></small>
 				</section>

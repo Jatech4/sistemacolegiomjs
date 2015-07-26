@@ -38,6 +38,14 @@ include_once "menu.php"
 								<option value="2">Profesor</option>
 							</select>
 							</div>
+							<div class="form-group">
+							<label for="exampleInputPassword1">Status</label>
+							<br>
+							<select class="form-control" name="#" id="#">
+								<option value="1">Activo</option>
+								<option value="2">Inactivo</option>
+							</select>
+							</div>
 							<button type="submit" class="btn btn-success"><span class="icon-user-plus"></span> Registrar</button>
 							<a class="btn btn-info pull-right" href="agregar_usuario.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
 							</form>

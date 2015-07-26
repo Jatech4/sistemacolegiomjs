@@ -81,23 +81,11 @@
 								<i class="icon-circle-down pull-right"></i>
 							</a>
 							<ul class="treeview-menu">
-								<li><a href="registrar_alumno.php"><i class="icon-radio-unchecked"></i> Registrar Alumno </i></a></li>
+								<li><a href="agregar_alumno.php"><i class="icon-radio-unchecked"></i> Registrar Alumno </i></a></li>
 								<li><a href="#"><i class="icon-radio-unchecked"></i> Registrar Representante</a></li>
 								<li><a href="#"><i class="icon-radio-unchecked"></i> Registrar Docente</a></li>
 								<li><a href="#"><i class="icon-radio-unchecked"></i> Inscribir Alumno</a></li>
 								<li><a href="#"><i class="icon-radio-unchecked"></i> Registrar Boletin</a></li>
-							</ul>
-						</li>
-						<li class="treeview">
-							<a href="#">
-								<span class="icon-scissors"></span> <span>Modificar Registros</span>
-								<i class="icon-circle-down pull-right"></i>
-							</a>
-							<ul class="treeview-menu">
-								<li><a href="#"><i class="icon-radio-unchecked"></i> Datos Alumnos</a></li>
-								<li><a href="#"><i class="icon-radio-unchecked"></i> Datos Docentes</a></li>
-								<li><a href="#"><i class="icon-radio-unchecked"></i> Datos Boletin</a></li>
-								<li><a href="#"><i class="icon-radio-unchecked"></i> Inscripción de Alumnos</a></li>
 							</ul>
 						</li>
 						<li>

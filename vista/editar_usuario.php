@@ -48,6 +48,14 @@ include_once "menu.php"
 								<?php } ?>
 							</select>
 							</div>
+							<div class="form-group">
+							<label for="exampleInputPassword1">Status</label>
+							<br>
+							<select class="form-control" name="#" id="#">
+								<option value="1">Activo</option>
+								<option value="2">Inactivo</option>
+							</select>
+							</div>
 							<button type="button" class="btn btn-warning" onClick="enviar()"><span class="icon-scissors"></span> Editar</button>
 							<a class="btn btn-info pull-right" href="agregar_usuario.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
 							</form>
