@@ -20,6 +20,12 @@ $result_status = mysql_query("SELECT * FROM status_usuario");
 		<link rel="stylesheet" href="font.css">
 		<link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
 		<link href="css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+		<script language="JavaScript"> 
+		function enviar(){ 
+    	if (confirm('¿Modificar Datos?')){ 
+       		document.form.submit() 
+    	} 
+		} </script>
 	</head>
 	<body class="skin-blue sidebar-mini">
 		<!-- Site wrapper -->
@@ -131,7 +137,7 @@ $result_status = mysql_query("SELECT * FROM status_usuario");
 				</section>
 			</aside>
 			<!--  Contenido -->
-			<div class="content-wrapper">
+			<div class="content-wrapper">					
 				<section class="content-header">
 					<h1>
 					Editar Usuario
@@ -140,33 +146,34 @@ $result_status = mysql_query("SELECT * FROM status_usuario");
 				<section class="content">
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3">
-							<form>
+							<form name="form" id="form" method="POST" action="../controlador/editar_usuario.php">
+							<input type="hidden" class="form-control" id="exampleInputPassword1" name="id" id="id" value="<?php echo $_GET['usuario'] ?>">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Nombre y Apellido</label>
-							<input type="nombre" class="form-control" id="exampleInputPassword1" placeholder="Nombre y Apellido" value="<?php echo $row['nombre_usuario'] ?>">
+							<input type="nombre" class="form-control" id="exampleInputPassword1" placeholder="Nombre y Apellido" name="nombre" id="nombre" value="<?php echo $row['nombre_usuario'] ?>">
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Cedula</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Cedula" value="<?php echo $row['cedula_usuario'] ?>">
+							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Cedula" name="cedula" id="cedula" value="<?php echo $row['cedula_usuario'] ?>">
 							</div>
 							<div class="form-group">
 							<label for="usuario">Usuario</label>
-							<input type="usuario" class="form-control" id="exampleInputEmail1" placeholder="Usuario" value="<?php echo $row['login_usuario'] ?>">
+							<input type="usuario" class="form-control" id="exampleInputEmail1" placeholder="Usuario" name="login" id="login" value="<?php echo $row['login_usuario'] ?>">
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Contraseña</label>
-							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" value="<?php echo $row['pass_usuario'] ?>">
+							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" name="password" id="password" value="<?php echo $row['pass_usuario'] ?>">
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Perfil</label>
 							<br>
-							<select class="form-control" name="#" id="#">
+							<select class="form-control" name="perfil" id="perfil">
 								<?php while ($row_perfil = mysql_fetch_array($result_perfil)){?>
 								<option value="<?php echo $row_perfil['id_perfil']?>" <?php if($row_perfil['id_perfil']==$row['id_perfil']) {echo "selected='selected'";}?>><?php echo $row_perfil['descripcion_perfil'] ?></option>
 								<?php } ?>
 							</select>
 							</div>
-							<button type="submit" class="btn btn-warning"><span class="icon-scissors"></span> Editar</button>
+							<button type="button" class="btn btn-warning" onClick="enviar()"><span class="icon-scissors"></span> Editar</button>
 							<a class="btn btn-info pull-right" href="agregar_usuario.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
 							</form>
 						</div>
