@@ -12,6 +12,13 @@ $result_status = mysql_query("SELECT * FROM status_usuario");
 include_once "menu.php"
 ?>
 			<!--  Contenido -->
+			<script language="JavaScript"> 
+				function enviar(){ 
+    			if (confirm('¿Modificar Datos?')){ 
+       			document.form.submit() 
+    			} 
+			} 	
+			</script>
 			<div class="content-wrapper">					
 				<section class="content-header">
 					<h1>
@@ -51,9 +58,10 @@ include_once "menu.php"
 							<div class="form-group">
 							<label for="exampleInputPassword1">Status</label>
 							<br>
-							<select class="form-control" name="#" id="#">
-								<option value="1">Activo</option>
-								<option value="2">Inactivo</option>
+							<select class="form-control" name="status" id="status">
+								<?php while ($row_status = mysql_fetch_array($result_status)){?>
+								<option value="<?php echo $row_status['id_status']?>" <?php if($row_status['id_status']==$row['id_status']) {echo "selected='selected'";}?>><?php echo $row_status['descripcion_status'] ?></option>
+								<?php } ?>
 							</select>
 							</div>
 							<button type="button" class="btn btn-warning" onClick="enviar()"><span class="icon-scissors"></span> Editar</button>

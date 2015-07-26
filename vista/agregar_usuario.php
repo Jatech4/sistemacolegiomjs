@@ -7,6 +7,13 @@ mysql_set_charset('utf8');
 include_once "menu.php"
 ?>
 			<!--  Contenido -->
+			<script language="JavaScript"> 
+				function enviar(){ 
+    			if (confirm('¿Eliminar Usuario?')){ 
+       			document.form.submit() 
+    			} 
+			} 	
+			</script>
 			<div class="content-wrapper">
 				<section class="content-header">
 					<h1>
@@ -44,9 +51,11 @@ include_once "menu.php"
 									<td><?php echo $row['pass_usuario'] ?></td>
 									<td><?php echo $row['nombre_usuario'] ?></td>
 									<td><?php echo $row['descripcion_perfil'] ?></td>
-									<td>AQUI VA PHP DE STATUS</td>
+									<td><?php echo $row['descripcion_status'] ?></td>
 									<td><a class="btn btn-warning" href="editar_usuario.php?usuario=<?php echo $row['id_usuario']?>" role="button" style="border-radius: 0;"><span class="icon-wrench"></span> Editar</a></td>
-									<td><a class="btn btn-danger" href="#" role="button" style="border-radius: 0;"><span class="icon-cross"></span> Eliminar</a></td>
+									<form name="form" id="form" method="POST" action="#">
+									<td><a class="btn btn-danger" href="../controlador/eliminar_usuario.php?usuario=<?php echo $row['id_usuario']?>" role="button" style="border-radius: 0;" onClick="enviar()"><span class="icon-cross"></span> Eliminar</a></td>
+									</form>
 									</tr>
 									<?php } ?>
 									</tbody>
