@@ -177,7 +177,6 @@ include_once "menu.php"
 									<th>Tipo</th>
 									<th>Nombres</th>
 									<th>Cedula</th>
-									<th colspan="2">Acciones</th>
 									</tr>
 									</thead>
 									<tbody>
@@ -187,7 +186,6 @@ include_once "menu.php"
 									<td></td>
 									<td></td>
 									<td></td>
-									<td><a class="btn btn-warning" href="editar_representante.php" role="button" style="border-radius: 0;"><span class="icon-wrench"></span> Editar</a></td>
 									</tr>
 									</tbody>
 									</table>

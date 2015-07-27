@@ -26,12 +26,7 @@ include_once "menu.php"
 									<th>Nombres</th>
 									<th>Apellidos</th>
 									<th>Cedula</th>
-									<th>Edad</th>
-									<th>Sexo</th>
-									<th>Lugar de Nacimiento</th>
-									<th>Fecha de Nacimiento</th>
-									<th>Dirección</th>
-									<th>Telefonos</th>
+									<th>Cantidad de Representantes</th>
 									<th colspan="2">Acciones</th>
 									</tr>
 									</thead>
@@ -42,11 +37,8 @@ include_once "menu.php"
 									<td></td>
 									<td></td>
 									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
+									<td><a class="btn btn-info" href="agregar_representante.php" role="button" style="border-radius: 0;"><span class="icon-plus"></span> Agregar Representante</a></td>
+									<td><a class="btn btn-primary" href="ver_alumno.php" role="button" style="border-radius: 0;"><span class="icon-eye"></span> Ver Registro</a></td>
 									<td><a class="btn btn-warning" href="editar_alumno.php" role="button" style="border-radius: 0;"><span class="icon-wrench"></span> Editar</a></td>
 									<td><a class="btn btn-danger" href="#" role="button" style="border-radius: 0;"><span class="icon-cross"></span> Eliminar</a></td>
 									</tr>
