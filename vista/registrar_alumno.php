@@ -5,6 +5,13 @@ include_once "menu.php"
 ?>
 
 			<!--  Contenido -->
+			<script language="JavaScript"> 
+				function enviar(){ 
+    			if (confirm('¿Registrar Alumno?')){ 
+       			document.form.submit() 
+    			} 
+			} 	
+			</script>
 			<div class="content-wrapper">
 				<section class="content-header">
 					<h1>
@@ -16,7 +23,7 @@ include_once "menu.php"
 					<div class="row">
 						<div class="col-md-12">
 							<h5>NUMERO DE SOCIO: {PHP ID_ALUMNO}</h5>
-							<form class="formulario">
+							<form class="formulario" name="form" id="form" method="POST" action="../controlador/registrar_alumno.php">
 								<h4>A.-DATOS PERSONALES DEL ALUMNO</h4>
 								<div class="row">
 									<div class="col-md-3">
@@ -89,7 +96,7 @@ include_once "menu.php"
 									<div class="col-md-4">
 										<div class="form-group">
 							<label for="exampleInputPassword1">Telefono 3</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" name="tlf2_alumno" placeholder="Telefono">
+							<input type="text" class="form-control" id="exampleInputPassword1" name="tlf3_alumno" placeholder="Telefono">
 							</div>
 									</div>
 								</div>
@@ -106,16 +113,16 @@ include_once "menu.php"
 										<div class="col-md-4">
 											<div class="form-group">
 												<label>Ultimo grado cursado</label>
-												<input type="text" class="form-control" name="plantel_procedencia">
+												<input type="text" class="form-control" name="ultimo_grado">
 											</div>
 										</div>
 										<div class="col-md-4">
 											<div class="form-group">
 												<label>Estatus</label>
 												<br>
-												<input type="radio" name="operacion" id="optionsRadios1" value="Si">Aprobado
+												<input type="radio" name="status_ult_plantel" id="optionsRadios1" value="Si">Aprobado
 												<br>
-												<input type="radio" name="operacion" id="optionsRadios1" value="No">Aplazado
+												<input type="radio" name="status_ult_plantel" id="optionsRadios1" value="No">Aplazado
 												<br>
 											</div>
 										</div>
@@ -192,7 +199,7 @@ include_once "menu.php"
 									<div class="col-md-3">
 										<div class="form-group">
 											<label for="">Personas que viven con el alumno</label>
-											<input type="number" class="form-control">
+											<input type="number" class="form-control" name="personas_vivienda">
 										</div>
 									</div>
 									<div class="col-md-3">
@@ -304,6 +311,7 @@ include_once "menu.php"
 									<div class="col-md-3">
 										<label for="">Posee alguna dificultad</label>
 										<select name="tipo_dificultad" id="" class="form-control">
+											<option value="0">...</option>
 											<option value="Auditiva">Auditiva</option>
 											<option value="Lenguaje">Lenguaje</option>
 											<option value="Motora">Motora</option>
@@ -351,7 +359,7 @@ include_once "menu.php"
 								</div>
 							</div>
 							<hr class="divisor">
-							<button type="submit" class="btn btn-success"><span class="icon-user-plus"></span> Registrar</button>
+							<button type="button" class="btn btn-success" onClick="enviar()"><span class="icon-user-plus"></span> Registrar</button>
 							<a class="btn btn-info pull-right" href="agregar_alumno.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
 							</form>
 						</div>

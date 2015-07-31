@@ -7,13 +7,17 @@ mysql_set_charset('utf8');
 include_once "menu.php"
 ?>
 			<!--  Contenido -->
-			<script language="JavaScript"> 
-				function enviar(){ 
-    			if (confirm('¿Eliminar Usuario?')){ 
-       			document.form.submit() 
-    			} 
-			} 	
+			<script type="text/javascript" src="js/confirm-link.js"></script>
+			<script type="text/javascript">
+    			$(document).ready(function () {
+    			$('a[data-confirm-link]').click(function () {
+    			if (confirm($(this).data('confirm-link')))
+    			window.location = $(this).attr('href');
+    			return false;
+    			});
+    		});
 			</script>
+
 			<div class="content-wrapper">
 				<section class="content-header">
 					<h1>
@@ -53,9 +57,7 @@ include_once "menu.php"
 									<td><?php echo $row['descripcion_perfil'] ?></td>
 									<td><?php echo $row['descripcion_status'] ?></td>
 									<td><a class="btn btn-warning" href="editar_usuario.php?usuario=<?php echo $row['id_usuario']?>" role="button" style="border-radius: 0;"><span class="icon-wrench"></span> Editar</a></td>
-									<form name="form" id="form" method="POST" action="#">
-									<td><a class="btn btn-danger" href="../controlador/eliminar_usuario.php?usuario=<?php echo $row['id_usuario']?>" role="button" style="border-radius: 0;" onClick="enviar()"><span class="icon-cross"></span> Eliminar</a></td>
-									</form>
+									<td><a data-confirm-link="¿Eliminar Usuario?" class="btn btn-danger" href="../controlador/eliminar_usuario.php?usuario=<?php echo $row['id_usuario']?>" role="button" style="border-radius: 0;"><span class="icon-cross"></span> Eliminar</a></td>
 									</tr>
 									<?php } ?>
 									</tbody>
