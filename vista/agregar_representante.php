@@ -1,6 +1,10 @@
 <!-- index.html -->
 <?php
 include_once "../controlador/validasesion.php";
+include_once "../modelo/conexion.php";
+$result = mysql_query("SELECT * FROM alumnos WHERE id_alumno=".$_GET['alumno']."");
+mysql_set_charset('utf8');
+$row = mysql_fetch_array($result);
 include_once "menu.php"
 ?>
 
@@ -8,14 +12,15 @@ include_once "menu.php"
 			<div class="content-wrapper">
 				<section class="content-header">
 					<h1>
-					Editar representante al alumno: <"PHP DEL NOMBRE DEL ALUMNO">
+					Editar representante al Alumno: <?php echo $row['nombres_alumno']." ".$row['apellidos_alumno'];?>
 					</h1>
 				</section>
 				<section class="content">
 					<div class="row">
 						<div class="col-md-12">
-							<h5>NUMERO DE SOCIO: {PHP ID_ALUMNO}</h5>
+							<h5>NUMERO DE SOCIO: <?php echo $row['id_alumno'];?></h5>
 							<form class="formulario" name="form" id="form" method="POST" action="../controlador/registrar_representante.php">
+							<input type="hidden" class="form-control" id="exampleInputPassword1" name="id" id="id" value="<?php echo $_GET['alumno'] ?>">
 								<h4>A.-AGREGAR REPRESENTANTE</h4>
 								<div class="row">
 									<div class="col-md-3">
@@ -92,7 +97,7 @@ include_once "menu.php"
 									<div class="col-md-3">
 										<div class="form-group">
 										<label for="exampleInputPassword1">Telefono del lugar</label>
-										<input type="text" class="form-control" id="exampleInputPassword1" name="tlf2_alumno" placeholder="Telefono">
+										<input type="text" class="form-control" id="exampleInputPassword1" name="tlfn_lugar_trabajo_representante" placeholder="Telefono">
 										</div>
 									</div>
 									<div class="col-md-3">
@@ -110,7 +115,7 @@ include_once "menu.php"
 									<div class="col-md-3">
 										<div class="form-group">
 											<label for="exampleInputPassword1">Sueldo mensual</label>
-										<input type="text" class="form-control" id="exampleInputPassword1" name="ocupacion_representante">
+										<input type="text" class="form-control" id="exampleInputPassword1" name="sueldo_representante">
 										</div>
 									</div>
 								</div>

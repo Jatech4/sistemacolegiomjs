@@ -4,6 +4,7 @@ include_once "../modelo/conexion.php";
 $id=$_GET['usuario'];
 
 $result = mysql_query("DELETE FROM usuarios WHERE id_usuario=$id");
+echo mysql_error();
 mysql_close();
 ?>
  <script languaje="javascript">

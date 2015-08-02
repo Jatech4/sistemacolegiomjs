@@ -177,11 +177,14 @@ include_once "menu.php"
 								</div>
 								<hr class="divisor">
 								<div class="section">
-									<h4>C.-REPRESENTANTES</h4>
+									<h4>D.-REPRESENTANTES</h4>
 									<div class="row">
 										<div class="col-md-12">
 											<table class="table">
-									<caption>Lista de Representantes del alumno {PHP NOMBRE ALUMNO}.</caption>
+									<caption>Lista de Representantes del alumno <?php echo $row['nombres_alumno']." ".$row['apellidos_alumno'];?></caption>
+									<?php
+									$result2 = mysql_query("SELECT id_representante, tipo_representante, nombre_representante, ci_representante FROM representantes WHERE id_alumno=".$row['id_alumno']."");
+									?>
 									<thead>
 									<tr>
 									<th>ID</th>
@@ -192,14 +195,15 @@ include_once "menu.php"
 									</tr>
 									</thead>
 									<tbody>
+									<?php while ($row2 = mysql_fetch_array($result2)){?>
 									<tr>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td><a class="btn btn-warning" href="editar_representante.php" role="button" style="border-radius: 0;"><span class="icon-wrench"></span> Editar</a></td>
+									<td><?php echo $row2['id_representante'] ?></td>
+									<td><?php echo $row2['tipo_representante'] ?></td>
+									<td><?php echo $row2['nombre_representante'] ?></td>
+									<td><?php echo $row2['ci_representante'] ?></td>
+									<td><a class="btn btn-warning" href="editar_representante.php?alumno=<?php echo $row['id_alumno']?>&representante=<?php echo $row2['id_representante']?>" role="button" style="border-radius: 0;"><span class="icon-wrench"></span> Editar</a></td>
 									</tr>
+									<?php }?>
 									</tbody>
 									</table>
 										</div>
@@ -207,7 +211,7 @@ include_once "menu.php"
 								</div>
 							<hr class="divisor">
 							<div class="section">
-								<h4>D.-SITUACIÓN ECONOMICA DEL NÚCLEO FAMILIAR DEL ALUMNO</h4>
+								<h4>E.-SITUACIÓN ECONOMICA DEL NÚCLEO FAMILIAR DEL ALUMNO</h4>
 								<div class="row">
 									<div class="col-md-3">
 										<div class="form-group">
@@ -285,7 +289,7 @@ include_once "menu.php"
 							</div>
 							<hr class="divisor">
 							<div class="section">
-								<h4>E.-ASPECTOS DE SALUD DEL ALUMNO</h4>
+								<h4>F.-ASPECTOS DE SALUD DEL ALUMNO</h4>
 								<div class="row">
 									<div class="col-md-3">
 										<label for="">Vacunas que posee</label>
