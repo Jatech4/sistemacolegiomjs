@@ -15,7 +15,7 @@ include_once "menu.php"
 					<div class="row">
 						<div class="col-md-12">
 							<h5>NUMERO DE SOCIO: {PHP ID_ALUMNO}</h5>
-							<form class="formulario">
+							<form class="formulario" name="form" id="form" method="POST" action="../controlador/registrar_representante.php">
 								<h4>A.-AGREGAR REPRESENTANTE</h4>
 								<div class="row">
 									<div class="col-md-3">

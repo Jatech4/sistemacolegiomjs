@@ -99,7 +99,7 @@ include_once "menu.php"
 									<div class="col-md-4">
 										<div class="form-group">
 							<label for="exampleInputPassword1">Telefono 3</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" name="tlf2_alumno" placeholder="Telefono" value="<?php echo $row['tlf3_alumno'] ?>">
+							<input type="text" class="form-control" id="exampleInputPassword1" name="tlf3_alumno" placeholder="Telefono" value="<?php echo $row['tlf3_alumno'] ?>">
 							</div>
 									</div>
 								</div>
@@ -232,7 +232,7 @@ include_once "menu.php"
 									<div class="col-md-3">
 										<div class="form-group">
 											<label for="">Personas que viven con el alumno</label>
-											<input type="number" class="form-control" value="<?php echo $row['personas_vivienda'] ?>">
+											<input type="number" class="form-control" name="personas_vivienda" value="<?php echo $row['personas_vivienda'] ?>">
 										</div>
 									</div>
 									<div class="col-md-3">

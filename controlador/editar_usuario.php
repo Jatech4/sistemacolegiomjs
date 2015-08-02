@@ -10,6 +10,7 @@ $perfil=$_POST['perfil'];
 $status=$_POST['status'];
 
 $result = mysql_query("UPDATE usuarios SET cedula_usuario='$cedula', nombre_usuario='$nombre', login_usuario='$login', pass_usuario='$password', status_usuario=$status, perfil_usuario=$perfil WHERE id_usuario=$id");
+echo mysql_error();
 mysql_close();
 ?>
  <script languaje="javascript">

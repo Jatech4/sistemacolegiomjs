@@ -7,12 +7,15 @@ mysql_set_charset('utf8');
 include_once "menu.php"
 ?>
 			<!--  Contenido -->
-			<script language="JavaScript"> 
-				function enviar(){ 
-    			if (confirm('¿Eliminar Alumno?')){ 
-       			document.form.submit() 
-    			} 
-			} 	
+			<script type="text/javascript" src="js/confirm-link.js"></script>
+			<script type="text/javascript">
+    			$(document).ready(function () {
+    			$('a[data-confirm-link]').click(function () {
+    			if (confirm($(this).data('confirm-link')))
+    			window.location = $(this).attr('href');
+    			return false;
+    			});
+    		});
 			</script>
 			<div class="content-wrapper">
 				<section class="content-header">
@@ -48,10 +51,10 @@ include_once "menu.php"
 									<td><?php echo $row['apellidos_alumno'] ?></td>
 									<td><?php echo $row['cedula_alumno'] ?></td>
 									<td></td>
-									<td><a class="btn btn-info" href="agregar_representante.php" role="button" style="border-radius: 0;"><span class="icon-plus"></span> Agregar Representante</a></td>
+									<td><a class="btn btn-info" href="agregar_representante.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;"><span class="icon-plus"></span> Agregar Representante</a></td>
 									<td><a class="btn btn-primary" href="ver_alumno.php" role="button" style="border-radius: 0;"><span class="icon-eye"></span> Ver Registro</a></td>
 									<td><a class="btn btn-warning" href="editar_alumno.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;"><span class="icon-wrench"></span> Editar</a></td>
-									<td><a class="btn btn-danger" href="#" role="button" style="border-radius: 0;"><span class="icon-cross"></span> Eliminar</a></td>
+									<td><a data-confirm-link="¿Eliminar Alumno?" class="btn btn-danger" href="../controlador/eliminar_alumno.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;"><span class="icon-cross"></span> Eliminar</a></td>
 									</tr>
 									<?php } ?>
 									</tbody>
