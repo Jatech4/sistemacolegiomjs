@@ -15,7 +15,7 @@ include_once "menu.php";
 			<div class="content-wrapper">
 				<section class="content-header">
 					<h1>
-					Registrar Docente
+					Editar Docente {NOMBRE DEL DOCENTE}
 					</h1>
 				</section>
 				<section class="content">
@@ -30,7 +30,7 @@ include_once "menu.php";
 							<label for="exampleInputPassword1">Cedula</label>
 							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Cedula" name="ci_docente" id="cedula">
 							</div>
-							<button type="button" class="btn btn-success" onClick="enviar()"><span class="icon-user-plus"></span> Registrar</button>
+							<button type="button" class="btn btn-warning" onClick="enviar()"><span class="icon-user-plus"></span> Editar</button>
 							<a class="btn btn-info pull-right" href="agregar_docente.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
 							</form>
 						</div>

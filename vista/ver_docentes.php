@@ -20,16 +20,13 @@ include_once "menu.php"
 			<div class="content-wrapper">
 				<section class="content-header">
 					<h1>
-					Registrar Docente
+					Ver Registro de Docente {NOMBRE DEL DOCENTE}
 					</h1>
 				</section>
 				<section class="content">
 					<div class="row">
 						<div class="col-md-12">
 							<div class="box box-danger">
-								<div class="box-header">
-									<a class="btn btn-success" href="registrar_docente.php" role="button"><span class="icon-plus"></span>  Agregar</a>
-								</div>
 								<div class="box-body">
 									<table class="table">
 									<caption>Lista de Docentes Registrados en el sistema.</caption>
@@ -38,7 +35,6 @@ include_once "menu.php"
 									<th>ID</th>
 									<th>Nombre</th>
 									<th>Cedula</th>
-									<th colspan="2">Acciones</th>
 									</tr>
 									</thead>
 									<tbody>
@@ -46,12 +42,10 @@ include_once "menu.php"
 									<td></td>
 									<td></td>
 									<td></td>
-									<td class="pad2"><a class="btn btn-primary" href="ver_docentes.php" role="button" style="border-radius: 0;"><span class="icon-eye"></span> Ver Registro</a></td>
-									<td class="pad2"><a class="btn btn-warning" href="editar_docente.php" role="button" style="border-radius: 0;"><span class="icon-wrench"></span> Editar</a></td>
-									<td class="pad2"><a data-confirm-link="¿Eliminar Docente?" class="btn btn-danger" href="#" role="button" style="border-radius: 0;"><span class="icon-cross"></span> Eliminar</a></td>
 									</tr>
 									</tbody>
 									</table>
+									<a class="btn btn-info pull-right" href="agregar_docente.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
 								</div>
 							</div>
 						</div>
