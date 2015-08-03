@@ -51,7 +51,7 @@ include_once "menu.php"
 									<td><?php echo $row['apellidos_alumno'] ?></td>
 									<td><?php echo $row['cedula_alumno'] ?></td>
 									<td><?php echo mysql_num_rows(mysql_query("SELECT id_representante FROM representantes WHERE id_alumno=".$row['id_alumno'].""));?></td>
-									<td class="pad"><a class="btn btn-primary" href="ver_representante.php" role="button" style="border-radius: 0;"><span class="icon-eye"></span> Ver Representante</a></td>
+									<td class="pad"><a class="btn btn-primary" href="ver_representante.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;"><span class="icon-eye"></span> Ver Representante</a></td>
 									<td class="pad"><a class="btn btn-info" href="agregar_representante.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;"><span class="icon-plus"></span> Agregar Representante</a></td>
 									<td class="pad"><a class="btn btn-primary" href="ver_alumno.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;"><span class="icon-eye"></span> Ver Registro</a></td>
 									<td class="pad"><a class="btn btn-warning" href="editar_alumno.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;"><span class="icon-wrench"></span> Editar</a></td>

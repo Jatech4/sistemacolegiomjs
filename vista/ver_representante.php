@@ -2,9 +2,8 @@
 <?php
 include_once "../controlador/validasesion.php";
 include_once "../modelo/conexion.php";
-$result = mysql_query("SELECT * FROM representantes a, alumnos b WHERE a.id_alumno=b.id_alumno AND b.id_alumno=".$_GET['alumno']." AND a.id_representante=".$_GET['representante']."");
+$result = mysql_query("SELECT * FROM representantes a, alumnos b WHERE a.id_alumno=b.id_alumno AND b.id_alumno=".$_GET['alumno']."");
 mysql_set_charset('utf8');
-$row = mysql_fetch_array($result);
 include_once "menu.php";
 ?>
 
@@ -23,13 +22,15 @@ include_once "menu.php";
 					</h1>
 				</section>
 				<section class="content">
+				
 					<div class="row">
 						<div class="col-md-12">
 							<h5>NUMERO DE SOCIO: <?php echo $row['id_alumno'];?></h5>
+							<?php while ($row = mysql_fetch_array($result)){?>
 							<form class="formulario" name="form" id="form" method="POST" action="../controlador/editar_representante.php">
 							<input type="hidden" class="form-control" id="exampleInputPassword1" name="id_representante" id="id_representante" value="<?php echo $_GET['representante'] ?>">
 							<input type="hidden" class="form-control" id="exampleInputPassword1" name="id_alumno" id="id_alumno" value="<?php echo $_GET['alumno'] ?>">
-								<h4>A.-AGREGAR REPRESENTANTE</h4>
+								<h4>A.-REPRESENTANTE</h4>
 								<div class="row">
 									<div class="col-md-3">
 										<label for="exampleInputPassword1">Tipo de Representante</label>
@@ -128,10 +129,12 @@ include_once "menu.php";
 									</div>
 								</div>
 								<hr class="divisor">
+								<?php } ?>
 							<a class="btn btn-info" href="agregar_alumno.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
 							</form>
 						</div>
 					</div>
+					
 				</section>
 			</div>
 			<!-- Fin de Contenido -->

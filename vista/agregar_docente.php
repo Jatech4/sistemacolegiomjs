@@ -2,7 +2,7 @@
 <?php
 include_once "../controlador/validasesion.php";
 include_once "../modelo/conexion.php";
-$result = mysql_query("SELECT * FROM alumnos a, procedencia_alumno b, documentos_presentados c, situacion_economica d, salud_alumno e WHERE a.id_alumno=b.id_alumno AND a.id_alumno=c.id_alumno AND a.id_alumno=d.id_alumno AND a.id_alumno=e.id_alumno");
+$result = mysql_query("SELECT * FROM docentes");
 mysql_set_charset('utf8');
 include_once "menu.php"
 ?>
@@ -42,14 +42,25 @@ include_once "menu.php"
 									</tr>
 									</thead>
 									<tbody>
+									<?php while ($row = mysql_fetch_array($result)){?>
 									<tr>
+<<<<<<< HEAD
 									<td></td>
 									<td></td>
 									<td></td>
 									<td class="pad2"><a class="btn btn-primary" href="ver_docentes.php" role="button" style="border-radius: 0;"><span class="icon-eye"></span> Ver Registro</a></td>
 									<td class="pad2"><a class="btn btn-warning" href="editar_docente.php" role="button" style="border-radius: 0;"><span class="icon-wrench"></span> Editar</a></td>
 									<td class="pad2"><a data-confirm-link="¿Eliminar Docente?" class="btn btn-danger" href="#" role="button" style="border-radius: 0;"><span class="icon-cross"></span> Eliminar</a></td>
+=======
+									<td><?php echo $row['id_docente'] ?></td>
+									<td><?php echo $row['nombre_docente'] ?></td>
+									<td><?php echo $row['ci_docente'] ?></td>
+									<td class="pad2"><a class="btn btn-primary" href="ver_docente.php?docente=<?php echo $row['id_docente']?>" role="button" style="border-radius: 0;"><span class="icon-eye"></span> Ver Registro</a></td>
+									<td class="pad2"><a class="btn btn-warning" href="editar_docente.php?docente=<?php echo $row['id_docente']?>" role="button" style="border-radius: 0;"><span class="icon-wrench"></span> Editar</a></td>
+									<td class="pad2"><a data-confirm-link="¿Eliminar Docente?" class="btn btn-danger" href="../controlador/eliminar_docente.php?docente=<?php echo $row['id_docente']?>" role="button" style="border-radius: 0;"><span class="icon-cross"></span> Eliminar</a></td>
+>>>>>>> origin/master
 									</tr>
+									<?php } ?>
 									</tbody>
 									</table>
 								</div>
