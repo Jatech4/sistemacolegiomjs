@@ -2,6 +2,9 @@
 <?php
 include_once "../controlador/validasesion.php";
 include_once "../modelo/conexion.php";
+$result = mysql_query("SELECT * FROM docentes WHERE id_docente=".$_GET['docente']."");
+mysql_set_charset('utf8');
+$row = mysql_fetch_array($result);
 include_once "menu.php";
 ?>
 			<!--  Contenido -->
@@ -15,20 +18,21 @@ include_once "menu.php";
 			<div class="content-wrapper">
 				<section class="content-header">
 					<h1>
-					Editar Docente {NOMBRE DEL DOCENTE}
+					Editar Docente: <?php echo $row['nombre_docente'] ?>
 					</h1>
 				</section>
 				<section class="content">
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3">
-							<form name="form" id="form" method="POST" action="../controlador/registrar_usuario.php">
+							<form name="form" id="form" method="POST" action="../controlador/editar_docente.php">
+							<input type="hidden" class="form-control" id="exampleInputPassword1" name="id" id="id" value="<?php echo $_GET['docente'] ?>">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Nombre y Apellido</label>
-							<input type="nombre" class="form-control" id="exampleInputPassword1" placeholder="Nombre y Apellido" name="nombre_docente" id="nombre">
+							<input type="nombre" class="form-control" id="exampleInputPassword1" placeholder="Nombre y Apellido" name="nombre_docente" id="nombre" value="<?php echo $row['nombre_docente'] ?>">
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Cedula</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Cedula" name="ci_docente" id="cedula">
+							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Cedula" name="ci_docente" id="cedula" value="<?php echo $row['ci_docente'] ?>">
 							</div>
 							<button type="button" class="btn btn-warning" onClick="enviar()"><span class="icon-user-plus"></span> Editar</button>
 							<a class="btn btn-info pull-right" href="agregar_docente.php" role="button"><span class="icon-undo2"></span>  Regresar</a>

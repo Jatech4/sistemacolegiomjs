@@ -2,8 +2,9 @@
 <?php
 include_once "../controlador/validasesion.php";
 include_once "../modelo/conexion.php";
-$result = mysql_query("SELECT * FROM alumnos a, procedencia_alumno b, documentos_presentados c, situacion_economica d, salud_alumno e WHERE a.id_alumno=b.id_alumno AND a.id_alumno=c.id_alumno AND a.id_alumno=d.id_alumno AND a.id_alumno=e.id_alumno");
+$result = mysql_query("SELECT * FROM docentes WHERE id_docente=".$_GET['docente']."");
 mysql_set_charset('utf8');
+$row = mysql_fetch_array($result);
 include_once "menu.php"
 ?>
 			<!--  Contenido -->
@@ -39,9 +40,9 @@ include_once "menu.php"
 									</thead>
 									<tbody>
 									<tr>
-									<td></td>
-									<td></td>
-									<td></td>
+									<td><?php echo $row['id_docente'] ?></td>
+									<td><?php echo $row['nombre_docente'] ?></td>
+									<td><?php echo $row['ci_docente'] ?></td>
 									</tr>
 									</tbody>
 									</table>
