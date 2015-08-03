@@ -21,7 +21,7 @@ include_once "menu.php";
 				<section class="content">
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3">
-							<form name="form" id="form" method="POST" action="../controlador/registrar_usuario.php">
+							<form name="form" id="form" method="POST" action="../controlador/registrar_docente.php">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Nombre y Apellido</label>
 							<input type="nombre" class="form-control" id="exampleInputPassword1" placeholder="Nombre y Apellido" name="nombre_docente" id="nombre">
@@ -31,7 +31,7 @@ include_once "menu.php";
 							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Cedula" name="ci_docente" id="cedula">
 							</div>
 							<button type="button" class="btn btn-success" onClick="enviar()"><span class="icon-user-plus"></span> Registrar</button>
-							<a class="btn btn-info pull-right" href="index.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
+							<a class="btn btn-info pull-right" href="agregar_docente.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
 							</form>
 						</div>
 					</div>
