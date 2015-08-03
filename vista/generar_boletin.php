@@ -107,17 +107,69 @@ include_once "menu.php"
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-3">
-							<div class="form-group">
-							<label for="exampleInputPassword1">Desde - Hasta:</label>
-							<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="Ejem: 2016-2017">
+						<div class="col-md-6">
+							<div class="form-group pull-right">
+							<label for="exampleInputPassword1">Desde:</label>
+							<input type="date" class="form-control" name="###" id="exampleInputPassword1">
+							</div>
 						</div>
+						<div class="col-md-6">
+							<div class="form-group pull-left">
+								<label for="#">Hasta:</label>
+								<input type="date" class="form-control" name="###" id="exampleInputPassword1">
+							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Observaciones Generales de la Actuación del Estudiante:</label>
 							<textarea class="form-control" rows="3" name="##"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<label for="exampleInputPassword1">Recomendaciones del Docente:</label>
+							<textarea class="form-control" rows="3" name="##"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<label for="exampleInputPassword1">Observaciones del estudiante:</label>
+							<textarea class="form-control" rows="3" name="##"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<label for="exampleInputPassword1">Observaciones del Representante:</label>
+							<textarea class="form-control" rows="3" name="##"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+							<label for="exampleInputPassword1">Dias hábiles:</label>
+							<input type="text" class="form-control" name="###" id="exampleInputPassword1">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+							<label for="exampleInputPassword1">Asistencias:</label>
+							<input type="text" class="form-control" name="###" id="exampleInputPassword1">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+							<label for="exampleInputPassword1">Inasistencias:</label>
+							<input type="text" class="form-control" name="###" id="exampleInputPassword1">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="form-group">
+							<label for="exampleInputPassword1">Fecha:</label>
+							<input type="date" class="form-control" name="###" id="exampleInputPassword1">
+							</div>
 						</div>
 					</div>
 					<hr class="divisoor">
@@ -127,11 +179,17 @@ include_once "menu.php"
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-3">
-							<div class="form-group">
-							<label for="exampleInputPassword1">Desde - Hasta:</label>
-							<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="Ejem: 2016-2017">
+						<div class="col-md-6">
+							<div class="form-group pull-right">
+							<label for="exampleInputPassword1">Desde:</label>
+							<input type="date" class="form-control" name="###" id="exampleInputPassword1">
+							</div>
 						</div>
+						<div class="col-md-6">
+							<div class="form-group pull-left">
+								<label for="#">Hasta:</label>
+								<input type="date" class="form-control" name="###" id="exampleInputPassword1">
+							</div>
 						</div>
 					</div>
 					<div class="row">
@@ -146,6 +204,52 @@ include_once "menu.php"
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Informe Descriptivo Globalizado:</label>
 							<textarea class="form-control" rows="3" name="##"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<label for="exampleInputPassword1">Recomendaciones del Docente:</label>
+							<textarea class="form-control" rows="3" name="##"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<label for="exampleInputPassword1">Observaciones del estudiante:</label>
+							<textarea class="form-control" rows="3" name="##"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<label for="exampleInputPassword1">Observaciones del Representante:</label>
+							<textarea class="form-control" rows="3" name="##"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+							<label for="exampleInputPassword1">Dias hábiles:</label>
+							<input type="text" class="form-control" name="###" id="exampleInputPassword1">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+							<label for="exampleInputPassword1">Asistencias:</label>
+							<input type="text" class="form-control" name="###" id="exampleInputPassword1">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+							<label for="exampleInputPassword1">Inasistencias:</label>
+							<input type="text" class="form-control" name="###" id="exampleInputPassword1">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="form-group">
+							<label for="exampleInputPassword1">Fecha:</label>
+							<input type="date" class="form-control" name="###" id="exampleInputPassword1">
+							</div>
 						</div>
 					</div>
 					<hr class="divisoor">
@@ -155,11 +259,17 @@ include_once "menu.php"
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-3">
-							<div class="form-group">
-							<label for="exampleInputPassword1">Desde - Hasta:</label>
-							<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="Ejem: 2016-2017">
+						<div class="col-md-6">
+							<div class="form-group pull-right">
+							<label for="exampleInputPassword1">Desde:</label>
+							<input type="date" class="form-control" name="###" id="exampleInputPassword1">
+							</div>
 						</div>
+						<div class="col-md-6">
+							<div class="form-group pull-left">
+								<label for="#">Hasta:</label>
+								<input type="date" class="form-control" name="###" id="exampleInputPassword1">
+							</div>
 						</div>
 					</div>
 					<div class="row">
@@ -174,6 +284,52 @@ include_once "menu.php"
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Informe Descriptivo Globalizado:</label>
 							<textarea class="form-control" rows="3" name="##"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<label for="exampleInputPassword1">Recomendaciones del Docente:</label>
+							<textarea class="form-control" rows="3" name="##"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<label for="exampleInputPassword1">Observaciones del estudiante:</label>
+							<textarea class="form-control" rows="3" name="##"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<label for="exampleInputPassword1">Observaciones del Representante:</label>
+							<textarea class="form-control" rows="3" name="##"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+							<label for="exampleInputPassword1">Dias hábiles:</label>
+							<input type="text" class="form-control" name="###" id="exampleInputPassword1">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+							<label for="exampleInputPassword1">Asistencias:</label>
+							<input type="text" class="form-control" name="###" id="exampleInputPassword1">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+							<label for="exampleInputPassword1">Inasistencias:</label>
+							<input type="text" class="form-control" name="###" id="exampleInputPassword1">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="form-group">
+							<label for="exampleInputPassword1">Fecha:</label>
+							<input type="date" class="form-control" name="###" id="exampleInputPassword1">
+							</div>
 						</div>
 					</div>
 					<hr class="divisoor">
@@ -183,11 +339,17 @@ include_once "menu.php"
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-3">
-							<div class="form-group">
-							<label for="exampleInputPassword1">Desde - Hasta:</label>
-							<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="Ejem: 2016-2017">
+						<div class="col-md-6">
+							<div class="form-group pull-right">
+							<label for="exampleInputPassword1">Desde:</label>
+							<input type="date" class="form-control" name="###" id="exampleInputPassword1">
+							</div>
 						</div>
+						<div class="col-md-6">
+							<div class="form-group pull-left">
+								<label for="#">Hasta:</label>
+								<input type="date" class="form-control" name="###" id="exampleInputPassword1">
+							</div>
 						</div>
 					</div>
 					<div class="row">
@@ -202,6 +364,52 @@ include_once "menu.php"
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Informe Descriptivo Globalizado:</label>
 							<textarea class="form-control" rows="3" name="##"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<label for="exampleInputPassword1">Recomendaciones del Docente:</label>
+							<textarea class="form-control" rows="3" name="##"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<label for="exampleInputPassword1">Observaciones del estudiante:</label>
+							<textarea class="form-control" rows="3" name="##"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<label for="exampleInputPassword1">Observaciones del Representante:</label>
+							<textarea class="form-control" rows="3" name="##"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+							<label for="exampleInputPassword1">Dias hábiles:</label>
+							<input type="text" class="form-control" name="###" id="exampleInputPassword1">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+							<label for="exampleInputPassword1">Asistencias:</label>
+							<input type="text" class="form-control" name="###" id="exampleInputPassword1">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+							<label for="exampleInputPassword1">Inasistencias:</label>
+							<input type="text" class="form-control" name="###" id="exampleInputPassword1">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="form-group">
+							<label for="exampleInputPassword1">Fecha:</label>
+							<input type="date" class="form-control" name="###" id="exampleInputPassword1">
+							</div>
 						</div>
 					</div>
 				
