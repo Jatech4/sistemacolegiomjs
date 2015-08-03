@@ -12,7 +12,7 @@ include_once "menu.php"
 			<div class="content-wrapper">
 				<section class="content-header">
 					<h1>
-					Editar representante al Alumno: <?php echo $row['nombres_alumno']." ".$row['apellidos_alumno'];?>
+					Agregar representante al Alumno: <?php echo $row['nombres_alumno']." ".$row['apellidos_alumno'];?>
 					</h1>
 				</section>
 				<section class="content">

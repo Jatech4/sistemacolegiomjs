@@ -4359,3 +4359,16 @@ fieldset[disabled] .btn-vk.active {
 .divisor{
   border-top: 1px solid gray;
 }
+
+.pad{
+  padding: 8 0 8 0 !important;
+}
+
+.pad2{
+  width: 1px;
+  padding: 8 0 8 0 !important;
+}
+
+.divisoor{
+  border-top: 1px solid gray;
+}

@@ -20,7 +20,7 @@ include_once "menu.php"
 			<div class="content-wrapper">
 				<section class="content-header">
 					<h1>
-					Registrar Alumno
+					Registrar Docente
 					</h1>
 				</section>
 				<section class="content">
@@ -28,36 +28,28 @@ include_once "menu.php"
 						<div class="col-md-12">
 							<div class="box box-danger">
 								<div class="box-header">
-									<a class="btn btn-success" href="registrar_alumno.php" role="button"><span class="icon-plus"></span>  Agregar</a>
+									<a class="btn btn-success" href="registrar_docente.php" role="button"><span class="icon-plus"></span>  Agregar</a>
 								</div>
 								<div class="box-body">
 									<table class="table">
-									<caption>Lista de Alumnos Registrados en el sistema.</caption>
+									<caption>Lista de Docentes Registrados en el sistema.</caption>
 									<thead>
 									<tr>
 									<th>ID</th>
-									<th>Nombres</th>
-									<th>Apellidos</th>
+									<th>Nombre</th>
 									<th>Cedula</th>
-									<th>N° de Representantes</th>
 									<th colspan="2">Acciones</th>
 									</tr>
 									</thead>
 									<tbody>
-									<?php while ($row = mysql_fetch_array($result)){?>
 									<tr>
-									<td><?php echo $row['id_alumno'] ?></td>
-									<td><?php echo $row['nombres_alumno'] ?></td>
-									<td><?php echo $row['apellidos_alumno'] ?></td>
-									<td><?php echo $row['cedula_alumno'] ?></td>
-									<td><?php echo mysql_num_rows(mysql_query("SELECT id_representante FROM representantes WHERE id_alumno=".$row['id_alumno'].""));?></td>
-									<td class="pad"><a class="btn btn-primary" href="ver_representante.php" role="button" style="border-radius: 0;"><span class="icon-eye"></span> Ver Representante</a></td>
-									<td class="pad"><a class="btn btn-info" href="agregar_representante.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;"><span class="icon-plus"></span> Agregar Representante</a></td>
-									<td class="pad"><a class="btn btn-primary" href="ver_alumno.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;"><span class="icon-eye"></span> Ver Registro</a></td>
-									<td class="pad"><a class="btn btn-warning" href="editar_alumno.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;"><span class="icon-wrench"></span> Editar</a></td>
-									<td class="pad"><a data-confirm-link="¿Eliminar Alumno?" class="btn btn-danger" href="../controlador/eliminar_alumno.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;"><span class="icon-cross"></span> Eliminar</a></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td class="pad2"><a class="btn btn-primary" href="#" role="button" style="border-radius: 0;"><span class="icon-eye"></span> Ver Registro</a></td>
+									<td class="pad2"><a class="btn btn-warning" href="#" role="button" style="border-radius: 0;"><span class="icon-wrench"></span> Editar</a></td>
+									<td class="pad2"><a data-confirm-link="¿Eliminar Docente?" class="btn btn-danger" href="#" role="button" style="border-radius: 0;"><span class="icon-cross"></span> Eliminar</a></td>
 									</tr>
-									<?php } ?>
 									</tbody>
 									</table>
 								</div>

@@ -386,7 +386,7 @@ include_once "menu.php"
 								</div>
 							</div>
 							<hr class="divisor">
-							<a class="btn btn-info pull-right" href="agregar_alumno.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
+							<a class="btn btn-info" href="agregar_alumno.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
 							</form>
 						</div>
 					</div>
