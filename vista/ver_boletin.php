@@ -9,10 +9,10 @@ include_once "menu.php"
 	<section class="content">
 		<div class="row">
 			<div class="col-md-12">
-				<h5>Generar Boletin N°: {NUMERO ID_ROW DEL BOLETIN}</h5>
+				<h5>Ver Boletin N°: {NUMERO ID_ROW DEL BOLETIN}</h5>
 				<form class="formulario" name="form" id="form" method="POST" action="#">
 					<input type="hidden" class="form-control" id="exampleInputPassword1" name="id" id="id" value="#">
-					<h4>Generar Boletín Informativo</h4>
+					<h4>Información del Boletín Informativo del Alumno: {NOMBRE DEL ALUMNO}</h4>
 					<div class="row">
 						<div class="col-md-3 pull-left">
 							<div class="form-group">

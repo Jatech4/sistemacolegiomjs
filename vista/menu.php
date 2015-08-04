@@ -83,7 +83,7 @@
 							<ul class="treeview-menu">
 								<li><a href="agregar_alumno.php"><i class="icon-radio-unchecked"></i> Registrar Alumno </i></a></li>
 								<li><a href="agregar_docente.php"><i class="icon-radio-unchecked"></i> Registrar Docente</a></li>
-								<li><a href="generar_boletin.php"><i class="icon-radio-unchecked"></i> Generar Boletin</a></li>
+								<li><a href="crear_boletin.php"><i class="icon-radio-unchecked"></i> Generar Boletin</a></li>
 							</ul>
 						</li>
 						<li>
