@@ -91,10 +91,15 @@
 								<span class="icon-drawer"></span> <span>Reportes</span>
 							</a>
 						</li>
-						<li>
-							<a href="agregar_usuario.php">
+						<li class="treeview">
+							<a href="">
 								<span class="icon-key2"></span> <span>Administrador</span>
+								<i class="icon-circle-down pull-right"></i>
 							</a>
+							<ul class="treeview-menu">
+								<li><a href="agregar_usuario.php"><i class="icon-radio-unchecked"></i> Agregar Usuario</a></li>
+								<li><a href="registrar_ano_escolar.php"><i class="icon-radio-unchecked"></i> Registrar Año Escolar</a></li>
+							</ul>
 						</li>
 						<li>
 							<a href="#">
