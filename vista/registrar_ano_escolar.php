@@ -2,6 +2,8 @@
 <?php
 include_once "../controlador/validasesion.php";
 include_once "../modelo/conexion.php";
+$result = mysql_query("SELECT * FROM ano_escolar");
+mysql_set_charset('utf8');
 include_once "menu.php"
 ?>
 			<!--  Contenido -->
@@ -39,11 +41,13 @@ include_once "menu.php"
 									</tr>
 									</thead>
 									<tbody>
+									<?php while ($row = mysql_fetch_array($result)){?>
 									<tr>
-									<td></td>
-									<td></td>
-									<td class="pad"><a data-confirm-link="¿Eliminar Año escolar?" class="btn btn-danger" href="" role="button" style="border-radius: 0;"><span class="icon-cross"></span> Eliminar</a></td>
+									<td><?php echo $row['id_ano_escolar'] ?></td>
+									<td><?php echo $row['ano_escolar'] ?></td>
+									<td><a data-confirm-link="¿Eliminar Año?" class="btn btn-danger" href="../controlador/eliminar_ano_escolar.php?ano=<?php echo $row['id_ano_escolar']?>" role="button" style="border-radius: 0;"><span class="icon-cross"></span> Eliminar</a></td>
 									</tr>
+									<?php } ?>
 									</tbody>
 									</table>
 								</div>

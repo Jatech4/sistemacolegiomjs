@@ -5,6 +5,7 @@ include_once "../modelo/conexion.php";
 include_once "menu.php";
 $result_alumnos = mysql_query("SELECT * FROM alumnos");
 $result_docentes = mysql_query("SELECT * FROM docentes");
+$result_ano_escolar = mysql_query("SELECT * FROM ano_escolar");
 if(isset($_GET['alumno'])) 
 {
 $result_alumno_select = mysql_query("SELECT * FROM alumnos a, representantes b where a.id_alumno=".$_GET['alumno']." and b.id_alumno=".$_GET['alumno']."");
@@ -16,7 +17,7 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 			<!--  Contenido -->
 			<script language="JavaScript"> 
 				function enviar(){ 
-    			if (confirm('¿Registrar Docente?')){ 
+    			if (confirm('¿Registrar Boletin?')){ 
        			document.form.submit() 
     			} 
 			} 	
@@ -26,14 +27,16 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 		<div class="row">
 			<div class="col-md-12">
 				<!--<h5>Generar Boletin N°: {NUMERO ID_ROW DEL BOLETIN}</h5>-->
-				<form class="formulario" name="form" id="form" method="POST" action="#">
+				<form class="formulario" name="form" id="form" method="POST" action="../controlador/registrar_boletin.php">
 					<input type="hidden" class="form-control" id="exampleInputPassword1" name="id" id="id" value="#">
 					<h4>Generar Boletín Informativo</h4>
 					<div class="row">
 						<div class="col-md-3 pull-left">
-							<select class="form-control">
+							<select class="form-control" name="ano_escolar">
 							<option value="000">...</option>
-							<option>MaricoElQueLoLea</option>
+							<?php while ($row_ano_escolar = mysql_fetch_array($result_ano_escolar)){?>
+							<option value="<?php echo $row_ano_escolar['id_ano_escolar']?>"><?php echo $row_ano_escolar['ano_escolar']?></option>
+							<?php } ?>
 							</select>
 						</div>
 					</div>
@@ -451,7 +454,7 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 					</div>
 				
 				<hr class="divisoor">
-				<button type="submit" class="btn btn-success"><span class="icon-user-plus"></span> Agregar</button>
+				<button type="button" class="btn btn-success" onClick="enviar()"><span class="icon-user-plus"></span> Agregar</button>
 				<a class="btn btn-info pull-right" href="crear_boletin.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
 			</form>
 			</div>

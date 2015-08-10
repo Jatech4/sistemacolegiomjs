@@ -7,7 +7,7 @@ include_once "menu.php";
 			<!--  Contenido -->
 			<script language="JavaScript"> 
 				function enviar(){ 
-    			if (confirm('¿Registrar Docente?')){ 
+    			if (confirm('¿Registrar Año Escolar?')){ 
        			document.form.submit() 
     			} 
 			} 	
@@ -30,10 +30,9 @@ include_once "menu.php";
 	<section class="content">
 		<div class="row">
 			<div class="col-md-12">
-				<!--<h5>Generar Boletin N°: {NUMERO ID_ROW DEL BOLETIN}</h5>-->
-				<form class="formulario" name="form" id="form" method="POST" action="#">
+				<form class="formulario" name="form" id="form" method="POST" action="../controlador/registrar_ano_escolar.php">
 					<input type="hidden" class="form-control" id="exampleInputPassword1" name="id" id="id" value="#">
-					<h4>Generar Boletín Informativo</h4>
+					<h4>Registrar Año Escolar</h4>
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
@@ -47,7 +46,7 @@ include_once "menu.php";
 						</div>
 					</div>
 				<hr class="divisoor">
-				<button type="submit" class="btn btn-success"><span class="icon-user-plus"></span> Agregar</button>
+				<button type="button" class="btn btn-success" onClick="enviar()"><span class="icon-user-plus"></span> Registrar</button>
 				<a class="btn btn-info pull-right" href="registrar_ano_escolar.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
 			</form>
 			</div>
