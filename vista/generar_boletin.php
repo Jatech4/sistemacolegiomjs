@@ -31,13 +31,10 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 					<h4>Generar Boletín Informativo</h4>
 					<div class="row">
 						<div class="col-md-3 pull-left">
-							<div class="form-group">
-								<label for="exampleInputPassword1">Desde: 
-								<input type="date" class="form-control" name="ano_escolar" id="exampleInputPassword1" placeholder="Ejem: 2016">
-								Hasta:
-								<input type="date" class="form-control" name="ano_escolar" id="exampleInputPassword1" placeholder="Ejem: 2017">
-								</label>
-							</div>
+							<select class="form-control">
+							<option value="000">...</option>
+							<option>MaricoElQueLoLea</option>
+							</select>
 						</div>
 					</div>
 					<div class="row">
