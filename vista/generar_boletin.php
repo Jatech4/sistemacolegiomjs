@@ -31,20 +31,30 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 					<input type="hidden" class="form-control" id="exampleInputPassword1" name="id" id="id" value="#">
 					<h4>Generar Boletín Informativo</h4>
 					<div class="row">
-						<div class="col-md-3">
-							<label for="exampleInputPassword1">Estudiante:</label>
-							<input type="text" class="form-control">
+						<div class="col-md-3 pull-left">
+							<select class="form-control" name="ano_escolar">
+							<option value="000">...</option>
+							<?php while ($row_ano_escolar = mysql_fetch_array($result_ano_escolar)){?>
+							<option value="<?php echo $row_ano_escolar['id_ano_escolar']?>"><?php echo $row_ano_escolar['ano_escolar']?></option>
+							<?php } ?>
+							</select>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-3 pull-left">
-							<div class="form-group">
-								<label for="exampleInputPassword1">Desde: 
-								<select name="#" id="#" class="form-control">
-									<option value="#"></option>
-								</select>
-								</label>
-							</div>
+						<div class="col-md-3">
+							<label for="exampleInputPassword1">Estudiante:</label>
+							<select class="form-control" name="id_alumno" id="#" onchange="location.href='generar_boletin.php?alumno=' + this.value" >
+								<?php while ($row_alumno = mysql_fetch_array($result_alumnos)){?>
+								<option value="000">...</option>
+								<option value="<?php echo $row_alumno['id_alumno']?>"
+								<?php
+								if(isset($_GET['alumno'])) {
+    								if($row_alumno['id_alumno']==$row_alumno_select['id_alumno']) {echo "selected='selected'";}
+								}
+								?>
+								><?php echo $row_alumno['nombres_alumno']." ".$row_alumno['apellidos_alumno'] ?></option>
+								<?php } ?>
+							</select>
 						</div>
 					</div>
 					<hr class="divisoor">

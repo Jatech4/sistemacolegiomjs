@@ -28,20 +28,22 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					<input type="hidden" class="form-control" id="exampleInputPassword1" name="id" id="id" value="<?php echo $_GET['boletin'] ?>">
 					<h4>Generar Boletín Informativo</h4>
 					<div class="row">
-						<div class="col-md-3">
-							<label for="exampleInputPassword1">Estudiante:</label>
-							<input type="text" class="form-control">
-						</div>
-					</div>
-					<div class="row">
 						<div class="col-md-3 pull-left">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Desde: 
-								<select name="#" id="#" class="form-control">
-									<option value="#"></option>
-								</select>
+								<input type="date" class="form-control" name="ano_escolar" id="exampleInputPassword1" placeholder="Ejem: 2016">
+								Hasta:
+								<input type="date" class="form-control" name="ano_escolar" id="exampleInputPassword1" placeholder="Ejem: 2017">
 								</label>
 							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<label for="exampleInputPassword1">Estudiante:</label>
+							<select class="form-control" name="id_alumno" id="#" onchange="location.href='generar_boletin.php?alumno=' + this.value" >
+								<option value="000">...</option>
+							</select>
 						</div>
 					</div>
 					<hr class="divisoor">
