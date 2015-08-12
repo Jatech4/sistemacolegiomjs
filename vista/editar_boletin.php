@@ -38,9 +38,9 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					<div class="row">
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Desde - Hasta:</label>
-									<select name="#" id="#" class="form-control">
-									<option value="#"></option>
-									</select>
+							<select name="#" id="#" class="form-control">
+								<option value="#"></option>
+							</select>
 						</div>
 					</div>
 					<hr class="divisoor">
