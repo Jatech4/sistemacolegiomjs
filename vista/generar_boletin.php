@@ -31,18 +31,8 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 					<input type="hidden" class="form-control" id="exampleInputPassword1" name="id" id="id" value="#">
 					<h4>Generar Boletín Informativo</h4>
 					<div class="row">
-						<div class="col-md-3 pull-left">
-							<select class="form-control" name="ano_escolar">
-							<option value="000">...</option>
-							<?php while ($row_ano_escolar = mysql_fetch_array($result_ano_escolar)){?>
-							<option value="<?php echo $row_ano_escolar['id_ano_escolar']?>"><?php echo $row_ano_escolar['ano_escolar']?></option>
-							<?php } ?>
-							</select>
-						</div>
-					</div>
-					<div class="row">
 						<div class="col-md-3">
-							<label for="exampleInputPassword1">Estudiante:</label>
+							<label for="#">Estudiante:</label>
 							<select class="form-control" name="id_alumno" id="#" onchange="location.href='generar_boletin.php?alumno=' + this.value" >
 								<?php while ($row_alumno = mysql_fetch_array($result_alumnos)){?>
 								<option value="000">...</option>
@@ -54,6 +44,17 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 								?>
 								><?php echo $row_alumno['nombres_alumno']." ".$row_alumno['apellidos_alumno'] ?></option>
 								<?php } ?>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<label for="#">Año Escolar:</label>
+							<select class="form-control" name="ano_escolar">
+							<option value="000">...</option>
+							<?php while ($row_ano_escolar = mysql_fetch_array($result_ano_escolar)){?>
+							<option value="<?php echo $row_ano_escolar['id_ano_escolar']?>"><?php echo $row_ano_escolar['ano_escolar']?></option>
+							<?php } ?>
 							</select>
 						</div>
 					</div>

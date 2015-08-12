@@ -30,20 +30,17 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					<div class="row">
 						<div class="col-md-3 pull-left">
 							<div class="form-group">
-								<label for="exampleInputPassword1">Desde: 
-								<input type="date" class="form-control" name="ano_escolar" id="exampleInputPassword1" placeholder="Ejem: 2016">
-								Hasta:
-								<input type="date" class="form-control" name="ano_escolar" id="exampleInputPassword1" placeholder="Ejem: 2017">
-								</label>
+								<label for="exampleInputPassword1">Estudiante:</label>
+							<input type="text" class="form-control">
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-3">
-							<label for="exampleInputPassword1">Estudiante:</label>
-							<select class="form-control" name="id_alumno" id="#" onchange="location.href='generar_boletin.php?alumno=' + this.value" >
-								<option value="000">...</option>
-							</select>
+							<label for="exampleInputPassword1">Desde - Hasta:</label>
+									<select name="#" id="#" class="form-control">
+									<option value="#"></option>
+									</select>
 						</div>
 					</div>
 					<hr class="divisoor">
