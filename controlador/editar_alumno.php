@@ -80,7 +80,7 @@ $sql="UPDATE salud_alumno SET vacuna_triple='$vacuna_triple',vacuna_bcg='$vacuna
 $result = mysql_query($sql);
 echo mysql_error();
 mysql_close();
-exit();
+
 ?>
  <script languaje="javascript">
   alert("\u00A1Alumno Modificado\u0021");
