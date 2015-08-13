@@ -53,6 +53,7 @@ include_once "menu.php"
 									<td class="pad"><a class="btn btn-primary" href="ver_boletin.php?boletin=<?php echo $row['id_boletin']?>" role="button" style="border-radius: 0;"><span class="icon-eye"></span> Ver Registro</a></td>
 									<td><a class="btn btn-warning" href="editar_boletin.php?boletin=<?php echo $row['id_boletin']?>" role="button" style="border-radius: 0;"><span class="icon-wrench"></span> Editar</a></td>
 									<td class="pad"><a data-confirm-link="¿Eliminar Boletín?" class="btn btn-danger" href="../controlador/eliminar_boletin.php?boletin=<?php echo $row['id_boletin']?>" role="button" style="border-radius: 0;"><span class="icon-cross"></span> Eliminar</a></td>
+									<td class="pad"><input type="button" class="btn btn-default" onclick="#" value="Imprimir" /></td>
 									</tr>
 									<?php } ?>
 									</tbody>
