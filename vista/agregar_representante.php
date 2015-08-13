@@ -9,6 +9,13 @@ include_once "menu.php"
 ?>
 
 			<!--  Contenido -->
+			<script language="JavaScript"> 
+				function enviar(){ 
+    			if (confirm('¿Registrar Representnate?')){ 
+       			document.form.submit() 
+    			} 
+			} 	
+			</script>
 			<div class="content-wrapper">
 				<section class="content-header">
 					<h1>
@@ -120,7 +127,7 @@ include_once "menu.php"
 									</div>
 								</div>
 								<hr class="divisor">
-							<button type="submit" class="btn btn-success"><span class="icon-user-plus"></span> Agregar</button>
+							<button type="button" class="btn btn-success" onClick="enviar()"><span class="icon-user-plus"></span> Registrar</button>
 							<a class="btn btn-info pull-right" href="agregar_alumno.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
 							</form>
 						</div>

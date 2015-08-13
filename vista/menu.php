@@ -91,6 +91,7 @@
 								<span class="icon-drawer"></span> <span>Reportes</span>
 							</a>
 						</li>
+						<?php if($_SESSION['perfilusuario']==1){ ?>
 						<li class="treeview">
 							<a href="">
 								<span class="icon-key2"></span> <span>Administrador</span>
@@ -101,6 +102,7 @@
 								<li><a href="registrar_ano_escolar.php"><i class="icon-radio-unchecked"></i> Registrar Año Escolar</a></li>
 							</ul>
 						</li>
+						<?php }?>
 						<li>
 							<a href="#">
 								<span class="icon-question"></span> <span>Ayuda</span>

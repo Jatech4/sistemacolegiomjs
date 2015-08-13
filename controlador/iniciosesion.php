@@ -8,8 +8,17 @@ $result = mysql_query("SELECT * FROM usuarios WHERE login_usuario = '$usuario'")
 
 //Validamos si el nombre del usuario existe en la base de datos o es correcto
 if($row = mysql_fetch_array($result))
-{     
- if($row["pass_usuario"] == $password)
+{
+ if($row["status_usuario"]==2)
+ {
+  ?>
+  <script languaje="javascript">
+   location.href = "../vista/login.php";
+   alert("\u00A1Su Usuario se encuentra Inactivo, comuniquese con el Administrador\u0021");
+  </script>
+  <?php
+ }
+ elseif($row["pass_usuario"] == $password)
  {
   session_start();  
   $_SESSION['login'] = $usuario;

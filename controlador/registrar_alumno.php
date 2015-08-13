@@ -2,6 +2,8 @@
 include_once "../controlador/validasesion.php";
 include_once "../modelo/conexion.php";
 
+$sql="SELECT id_alumno FROM alumnos WHERE cedula_alumno='$cedula_alumno'";
+
 //Datos¨Personales del Alumno
 $nombres_alumno=$_POST['nombres_alumno'];
 $apellidos_alumno=$_POST['apellidos_alumno'];
@@ -15,12 +17,24 @@ $tlf1_alumno=$_POST['tlf1_alumno'];
 $tlf2_alumno=$_POST['tlf2_alumno'];
 $tlf3_alumno=$_POST['tlf3_alumno'];
 
+$sql="SELECT id_alumno FROM alumnos WHERE cedula_alumno='$cedula_alumno'";
+$result = mysql_query($sql);
+$num= mysql_num_rows($result);
+
+if($num>0){
+?>
+ <script languaje="javascript">
+  alert("\u00A1Alumno ya se encuentra registrado\u0021");
+  location.href = "../vista/agregar_alumno.php";
+ </script>
+ <?php
+}else{
 $sql="INSERT INTO alumnos(cedula_alumno, nombres_alumno, apellidos_alumno, edad_alumno, sexo_alumno, lugar_nac_alumno, fecha_nac_alumno, direccion_alumno, tlf1_alumno, tlf2_alumno, tlf3_alumno) VALUES ('$cedula_alumno','$nombres_alumno','$apellidos_alumno','$edad_alumno','$sexo_alumno','$lugar_nac_alumno','$fecha_nac_alumno','$direccion_alumno','$tlf1_alumno','$tlf2_alumno','$tlf3_alumno')";
 $result = mysql_query($sql);
 echo mysql_error();
 
 //Ubicamos el ID del alumno
-$sql="SELECT id_alumno from alumnos WHERE cedula_alumno='$cedula_alumno'";
+$sql="SELECT id_alumno FROM alumnos WHERE cedula_alumno='$cedula_alumno'";
 $result = mysql_query($sql);
 echo mysql_error();
 $row = mysql_fetch_array($result);
@@ -91,3 +105,6 @@ mysql_close();
   alert("\u00A1Alumno Registrado\u0021");
   location.href = "../vista/agregar_alumno.php";
  </script>
+ <?php
+ }
+ ?>
