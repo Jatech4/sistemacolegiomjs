@@ -4,6 +4,7 @@ include_once "../controlador/validasesion.php";
 include_once "../modelo/conexion.php";
 include_once "menu.php";
 $result_docentes = mysql_query("SELECT * FROM docentes");
+$result_ano_escolar = mysql_query("SELECT * FROM ano_escolar");
 if(isset($_GET['boletin'])) 
 {
 $result_repre_select = mysql_query("SELECT * FROM representantes a, boletines b where a.id_alumno=b.id_alumno and b.id_boletin=".$_GET['boletin']."");
@@ -31,16 +32,18 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 						<div class="col-md-3 pull-left">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Estudiante:</label>
-							<input type="text" class="form-control">
+							<input type="text" class="form-control" value="<?php echo $row_boletin['nombres_alumno']." ".$row_boletin['apellidos_alumno'] ?>">
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Desde - Hasta:</label>
-							<select name="#" id="#" class="form-control">
-								<option value="#"></option>
-							</select>
+									<select name="ano_escolar" id="ano_escolar" class="form-control">
+									<?php while ($row_ano_escolar = mysql_fetch_array($result_ano_escolar)){?>
+									<option value="<?php echo $row_ano_escolar['id_ano_escolar']?>" <?php if($row_boletin['ano_escolar']==$row_ano_escolar['id_ano_escolar']) {echo "selected='selected'";}?>><?php echo $row_ano_escolar['ano_escolar']?></option>
+									<?php } ?>
+									</select>
 						</div>
 					</div>
 					<hr class="divisoor">
@@ -440,7 +443,7 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					</div>
 				
 				<hr class="divisoor">
-				<button type="submit" class="btn btn-success"><span class="icon-user-plus"></span> Agregar</button>
+				<button type="button" class="btn btn-warning" onClick="enviar()"><span class="icon-scissors"></span> Editar</button>
 				<a class="btn btn-info pull-right" href="crear_boletin.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
 			</form>
 			</div>

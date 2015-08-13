@@ -50,9 +50,9 @@ include_once "menu.php"
 									<td><?php echo $row['nombre_representante'] ?></td>
 									<td><?php echo $row['nombre_docente'] ?></td>
 									<td></td>
-									<td class="pad"><a class="btn btn-primary" href="ver_boletin.php" role="button" style="border-radius: 0;"><span class="icon-eye"></span> Ver Registro</a></td>
+									<td class="pad"><a class="btn btn-primary" href="ver_boletin.php?boletin=<?php echo $row['id_boletin']?>" role="button" style="border-radius: 0;"><span class="icon-eye"></span> Ver Registro</a></td>
 									<td><a class="btn btn-warning" href="editar_boletin.php?boletin=<?php echo $row['id_boletin']?>" role="button" style="border-radius: 0;"><span class="icon-wrench"></span> Editar</a></td>
-									<td class="pad"><a data-confirm-link="¿Eliminar Boletín?" class="btn btn-danger" href="" role="button" style="border-radius: 0;"><span class="icon-cross"></span> Eliminar</a></td>
+									<td class="pad"><a data-confirm-link="¿Eliminar Boletín?" class="btn btn-danger" href="../controlador/eliminar_boletin.php?boletin=<?php echo $row['id_boletin']?>" role="button" style="border-radius: 0;"><span class="icon-cross"></span> Eliminar</a></td>
 									</tr>
 									<?php } ?>
 									</tbody>
