@@ -11,7 +11,7 @@ include_once "menu.php"
 			<!--  Contenido -->
 			<script language="JavaScript"> 
 				function enviar(){ 
-    			if (confirm('¿Registrar Representnate?')){ 
+    			if (confirm('¿Registrar Representante?')){ 
        			document.form.submit() 
     			} 
 			} 	

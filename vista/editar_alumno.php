@@ -15,6 +15,16 @@ include_once "menu.php"
     			}
 			}
 			</script>
+			<script type="text/javascript" src="js/confirm-link.js"></script>
+			<script type="text/javascript">
+    			$(document).ready(function () {
+    			$('a[data-confirm-link]').click(function () {
+    			if (confirm($(this).data('confirm-link')))
+    			window.location = $(this).attr('href');
+    			return false;
+    			});
+    		});
+			</script>
 			<div class="content-wrapper">
 				<section class="content-header">
 					<h1>
@@ -202,7 +212,7 @@ include_once "menu.php"
 									<td><?php echo $row2['nombre_representante'] ?></td>
 									<td><?php echo $row2['ci_representante'] ?></td>
 									<td style="width: 16px;"><a class="btn btn-warning" href="editar_representante.php?alumno=<?php echo $row['id_alumno']?>&representante=<?php echo $row2['id_representante']?>" role="button" style="border-radius: 0;"><span class="icon-wrench"></span> Editar</a></td>
-									<td><a class="btn btn-danger" href="#" role="button" style="border-radius: 0;"><span class="icon-wrench"></span> Eliminar</a></td>
+									<td><a data-confirm-link="¿Eliminar Representante?" class="btn btn-danger" href="../controlador/eliminar_representante.php?alumno=<?php echo $row['id_alumno']?>&representante=<?php echo $row2['id_representante']?>" role="button" style="border-radius: 0;"><span class="icon-cross"></span> Eliminar</a></td>
 									</tr>
 									<?php }?>
 									</tbody>
