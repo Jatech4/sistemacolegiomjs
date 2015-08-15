@@ -14,9 +14,15 @@ $html='
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+.page { page-break-before:always; }
+</style>
 <title>Ejemplo de Documento en PDF.</title>
 </head>
 <body>
+
+<!-- Pagina 1 del PDF-->
+<div class="page-first">
 
 <table width=100%>
 <tr>
@@ -48,15 +54,12 @@ A&ntilde;o Escolar '.$row_boletin['ano_escolar'].'
 </th>
 </tr>
 </table>
-
 <table border="1" width="20%" align="center">
 <tr>
 <td><br style="line-height:120px" />&nbsp;</td>
 </tr>
 </table>
-
 <p align="center">Foto</p>
-
 <table width=100%>
 <tr>
 <td><br style="line-height:20px" />&nbsp;</td>
@@ -87,8 +90,332 @@ A&ntilde;o Escolar '.$row_boletin['ano_escolar'].'
 <td align="left"><b>Representante: </b>'.$row_boletin['nombre_representante'].'</td>
 <td align="left"><b>C.I: </b>'.$row_boletin['ci_representante'].'</td>
 </tr>
-</table
+</table>
 
+</div>
+<!-- Fin Pagina 1 del PDF-->
+
+<!-- Pagina 2 del PDF-->
+<div class="page">
+
+<table width=100%>
+<tr>
+<td align="center">Rese&ntilde;a Historica</td>
+</tr>
+<tr>
+<td align="center">Misi&oacute;n</td>
+</tr>
+<tr>
+<td align="center">Visi&oacute;n</td>
+</tr>
+</table>
+
+</div>
+<!-- Fin Pagina 2 del PDF-->
+
+<!-- Pagina 3 del PDF-->
+<div class="page">
+
+<table width=100%>
+<tr>
+<td align="center"><b>I Momento Evaluativo</b><td>
+</tr>
+<tr>
+<td align="center"><b>Diagn&oacute;stico</b><td>
+</tr>
+<tr>
+<td align="center"><b>Desde: </b>'.$row_boletin['fecha_desde_momento1'].'<b> Hasta: </b>'.$row_boletin['fecha_hasta_momento1'].'<td>
+</tr>
+<tr>
+<td align="center"><td>
+</tr>
+<tr>
+<td align="left"><b>Observaciones Generales de la Actuaci&oacute;n del Estudiante: </b><td>
+</tr>
+<tr>
+<td><p align="justify"><u>'.$row_boletin['observaciones_gen_momento1'].'</u></p><td>
+</tr>
+</table>
+
+</div>
+<!-- Fin Pagina 3 del PDF-->
+
+<!-- Pagina 4 del PDF-->
+<div class="page">
+
+<table width=100%>
+<tr>
+<td align="left" colspan="3"><b>Recomendaciones del Docente: </b><td>
+</tr>
+<tr>
+<td colspan="3" height=25%><p align="justify"><u>'.$row_boletin['recomendaciones_doc_momento1'].'</u></p><td>
+</tr>
+<tr>
+<td align="left" colspan="3"><b>Observaciones del Estudiante: </b><td>
+</tr>
+<tr>
+<td colspan="3" height=25%><p align="justify"><u>'.$row_boletin['observaciones_alumno_momento1'].'</u></p><td>
+</tr>
+<tr>
+<td align="left" colspan="3"><b>Observaciones del Representante: </b><td>
+</tr>
+<tr>
+<td colspan="3" height=25%><p align="justify"><u>'.$row_boletin['observaciones_rep_momento1'].'</u></p><td>
+</tr>
+</table>
+<table width=100%>
+<tr>
+<td><b>D&iacute;as H&aacute;biles: </b>'.$row_boletin['dias_hab_momento1'].'</td>
+<td><b>Asistencias: </b>'.$row_boletin['asistencias_momento1'].'</td>
+<td><b>Inasistencias: </b>'.$row_boletin['inasistencias_momento1'].'</td>
+</tr>
+</table>
+<table width=100%>
+<tr>
+<td colspan="3"><b>Fecha: </b>'.$row_boletin['fecha_momento1'].'</td
+</tr>
+<tr>
+<td width=30% align="center">____________________________________</td>
+<td></td>
+<td width=30% align="center">____________________________________</td>
+</tr>
+<tr>
+<td width=30% align="center"><b>Docente: </b>'.$row_boletin['nombre_docente'].'</td>
+<td></td>
+<td width=30% align="center"><b>Representante: </b>'.$row_boletin['nombre_representante'].'</td>
+</tr>
+</table>
+
+</div>
+<!-- Fin Pagina 4 del PDF-->
+
+<!-- Pagina 5 del PDF-->
+<div class="page">
+
+<table width=100%>
+<tr>
+<td align="center"><b>II Momento Evaluativo</b><td>
+</tr>
+<tr>
+<td align="center"><b>Diagn&oacute;stico</b><td>
+</tr>
+<tr>
+<td align="center"><b>Desde: </b>'.$row_boletin['fecha_desde_momento2'].'<b> Hasta: </b>'.$row_boletin['fecha_hasta_momento2'].'<td>
+</tr>
+<tr>
+<td align="center"><td>
+</tr>
+<tr>
+<td align="left"><b>Observaciones Generales de la Actuaci&oacute;n del Estudiante: </b><td>
+</tr>
+<tr>
+<td><p align="justify"><u>'.$row_boletin['observaciones_gen_momento2'].'</u></p><td>
+</tr>
+</table>
+
+</div>
+<!-- Fin Pagina 5 del PDF-->
+
+<!-- Pagina 6 del PDF-->
+<div class="page">
+
+<table width=100%>
+<tr>
+<td align="left" colspan="3"><b>Recomendaciones del Docente: </b><td>
+</tr>
+<tr>
+<td colspan="3" height=25%><p align="justify"><u>'.$row_boletin['recomendaciones_doc_momento2'].'</u></p><td>
+</tr>
+<tr>
+<td align="left" colspan="3"><b>Observaciones del Estudiante: </b><td>
+</tr>
+<tr>
+<td colspan="3" height=25%><p align="justify"><u>'.$row_boletin['observaciones_alumno_momento2'].'</u></p><td>
+</tr>
+<tr>
+<td align="left" colspan="3"><b>Observaciones del Representante: </b><td>
+</tr>
+<tr>
+<td colspan="3" height=25%><p align="justify"><u>'.$row_boletin['observaciones_rep_momento2'].'</u></p><td>
+</tr>
+</table>
+<table width=100%>
+<tr>
+<td><b>D&iacute;as H&aacute;biles: </b>'.$row_boletin['dias_hab_momento2'].'</td>
+<td><b>Asistencias: </b>'.$row_boletin['asistencias_momento2'].'</td>
+<td><b>Inasistencias: </b>'.$row_boletin['inasistencias_momento2'].'</td>
+</tr>
+</table>
+<table width=100%>
+<tr>
+<td colspan="3"><b>Fecha: </b>'.$row_boletin['fecha_momento2'].'</td
+</tr>
+<tr>
+<td width=30% align="center">____________________________________</td>
+<td></td>
+<td width=30% align="center">____________________________________</td>
+</tr>
+<tr>
+<td width=30% align="center"><b>Docente: </b>'.$row_boletin['nombre_docente'].'</td>
+<td></td>
+<td width=30% align="center"><b>Representante: </b>'.$row_boletin['nombre_representante'].'</td>
+</tr>
+</table>
+
+</div>
+<!-- Fin Pagina 6 del PDF-->
+
+<!-- Pagina 7 del PDF-->
+<div class="page">
+
+<table width=100%>
+<tr>
+<td align="center"><b>III Momento Evaluativo</b><td>
+</tr>
+<tr>
+<td align="center"><b>Diagn&oacute;stico</b><td>
+</tr>
+<tr>
+<td align="center"><b>Desde: </b>'.$row_boletin['fecha_desde_momento3'].'<b> Hasta: </b>'.$row_boletin['fecha_hasta_momento3'].'<td>
+</tr>
+<tr>
+<td align="center"><td>
+</tr>
+<tr>
+<td align="left"><b>Observaciones Generales de la Actuaci&oacute;n del Estudiante: </b><td>
+</tr>
+<tr>
+<td><p align="justify"><u>'.$row_boletin['observaciones_gen_momento3'].'</u></p><td>
+</tr>
+</table>
+
+</div>
+<!-- Fin Pagina 7 del PDF-->
+
+<!-- Pagina 8 del PDF-->
+<div class="page">
+
+<table width=100%>
+<tr>
+<td align="left" colspan="3"><b>Recomendaciones del Docente: </b><td>
+</tr>
+<tr>
+<td colspan="3" height=25%><p align="justify"><u>'.$row_boletin['recomendaciones_doc_momento3'].'</u></p><td>
+</tr>
+<tr>
+<td align="left" colspan="3"><b>Observaciones del Estudiante: </b><td>
+</tr>
+<tr>
+<td colspan="3" height=25%><p align="justify"><u>'.$row_boletin['observaciones_alumno_momento3'].'</u></p><td>
+</tr>
+<tr>
+<td align="left" colspan="3"><b>Observaciones del Representante: </b><td>
+</tr>
+<tr>
+<td colspan="3" height=25%><p align="justify"><u>'.$row_boletin['observaciones_rep_momento3'].'</u></p><td>
+</tr>
+</table>
+<table width=100%>
+<tr>
+<td><b>D&iacute;as H&aacute;biles: </b>'.$row_boletin['dias_hab_momento3'].'</td>
+<td><b>Asistencias: </b>'.$row_boletin['asistencias_momento3'].'</td>
+<td><b>Inasistencias: </b>'.$row_boletin['inasistencias_momento3'].'</td>
+</tr>
+</table>
+<table width=100%>
+<tr>
+<td colspan="3"><b>Fecha: </b>'.$row_boletin['fecha_momento3'].'</td
+</tr>
+<tr>
+<td width=30% align="center">____________________________________</td>
+<td></td>
+<td width=30% align="center">____________________________________</td>
+</tr>
+<tr>
+<td width=30% align="center"><b>Docente: </b>'.$row_boletin['nombre_docente'].'</td>
+<td></td>
+<td width=30% align="center"><b>Representante: </b>'.$row_boletin['nombre_representante'].'</td>
+</tr>
+</table>
+
+</div>
+<!-- Fin Pagina 8 del PDF-->
+
+<!-- Pagina 9 del PDF-->
+<div class="page">
+
+<table width=100%>
+<tr>
+<td align="center"><b>IV Momento Evaluativo</b><td>
+</tr>
+<tr>
+<td align="center"><b>Diagn&oacute;stico</b><td>
+</tr>
+<tr>
+<td align="center"><b>Desde: </b>'.$row_boletin['fecha_desde_momento4'].'<b> Hasta: </b>'.$row_boletin['fecha_hasta_momento4'].'<td>
+</tr>
+<tr>
+<td align="center"><td>
+</tr>
+<tr>
+<td align="left"><b>Observaciones Generales de la Actuaci&oacute;n del Estudiante: </b><td>
+</tr>
+<tr>
+<td><p align="justify"><u>'.$row_boletin['observaciones_gen_momento4'].'</u></p><td>
+</tr>
+</table>
+
+</div>
+<!-- Fin Pagina 9 del PDF-->
+
+<!-- Pagina 10 del PDF-->
+<div class="page">
+
+<table width=100%>
+<tr>
+<td align="left" colspan="3"><b>Recomendaciones del Docente: </b><td>
+</tr>
+<tr>
+<td colspan="3" height=25%><p align="justify"><u>'.$row_boletin['recomendaciones_doc_momento4'].'</u></p><td>
+</tr>
+<tr>
+<td align="left" colspan="3"><b>Observaciones del Estudiante: </b><td>
+</tr>
+<tr>
+<td colspan="3" height=25%><p align="justify"><u>'.$row_boletin['observaciones_alumno_momento4'].'</u></p><td>
+</tr>
+<tr>
+<td align="left" colspan="3"><b>Observaciones del Representante: </b><td>
+</tr>
+<tr>
+<td colspan="3" height=25%><p align="justify"><u>'.$row_boletin['observaciones_rep_momento4'].'</u></p><td>
+</tr>
+</table>
+<table width=100%>
+<tr>
+<td><b>D&iacute;as H&aacute;biles: </b>'.$row_boletin['dias_hab_momento4'].'</td>
+<td><b>Asistencias: </b>'.$row_boletin['asistencias_momento4'].'</td>
+<td><b>Inasistencias: </b>'.$row_boletin['inasistencias_momento4'].'</td>
+</tr>
+</table>
+<table width=100%>
+<tr>
+<td colspan="3"><b>Fecha: </b>'.$row_boletin['fecha_momento4'].'</td
+</tr>
+<tr>
+<td width=30% align="center">____________________________________</td>
+<td></td>
+<td width=30% align="center">____________________________________</td>
+</tr>
+<tr>
+<td width=30% align="center"><b>Docente: </b>'.$row_boletin['nombre_docente'].'</td>
+<td></td>
+<td width=30% align="center"><b>Representante: </b>'.$row_boletin['nombre_representante'].'</td>
+</tr>
+</table>
+
+</div>
+<!-- Fin Pagina 10 del PDF-->
 </body>
 </html>';
 # Instanciamos un objeto de la clase DOMPDF.
