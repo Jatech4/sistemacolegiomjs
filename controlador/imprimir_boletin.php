@@ -4,7 +4,7 @@ include_once "../modelo/conexion.php";
 require_once '../dompdf/dompdf_config.inc.php';
 $id=$_GET['boletin'];
 
-if(isset($_GET['boletin'])) 
+if(isset($_GET['boletin']))
 {
 $result_boletin_select=mysql_query("SELECT * FROM boletines a, alumnos b, ano_escolar c, docentes d, representantes e WHERE a.id_alumno=b.id_alumno AND a.id_representante=e.id_representante AND a.id_docente=d.id_docente AND a.ano_escolar=c.id_ano_escolar AND a.id_boletin=".$id."");
 $row_boletin=mysql_fetch_array($result_boletin_select);
@@ -100,13 +100,38 @@ A&ntilde;o Escolar '.$row_boletin['ano_escolar'].'
 
 <table width=100%>
 <tr>
-<td align="center">Rese&ntilde;a Historica</td>
+<td align="center"><b>Rese&ntilde;a Historica</b></td>
 </tr>
 <tr>
-<td align="center">Misi&oacute;n</td>
+<td align="center"><p align="justify">
+
+     &nbsp; &nbsp; &nbsp; &nbsp;La Escuela "MART&Iacute;N JOS&Eacute; SANABRIA" fue inaugurada el 7 de enero de 1930 con el nombre de "ARTURO MICHELENA" en una peque&ntilde;a casa situada en Monte Piedad.
+<br><br>
+	&nbsp; &nbsp; &nbsp; &nbsp;En 1932 se logra la construcci&oacuten de un peque&ntilde;o local en la calle Colombia y para la inauguraci&oacte;n el Ministerio de Educaci&oacute;n cambia el nombre de la escuela por el que actualmente tiene de acuerdo con la solicitud efectuada por la directora tomando en cuenta la importancia que tuvo este personaje bajo la presencia de Guzm&aacute;n Blanco en la instrucci&oacute;n del pueblo venezolano.
+<br><br>
+	&nbsp; &nbsp; &nbsp; &nbsp;Nuestra insigne instituci&oacute;n lleva el nombre del Doctor "Mart&iacute;n Jos&eacute; Sanabria" quien naci&oacute; en Caracas el 15 de agosto de 1831 y falleci&oacute; en la misma ciudad lleno de m&eacute;ritos y grandezas en el a&ntilde;o 1904. Por su actuaci&oacute;n relevante dentro del campo de la ense&ntilde;anza, el Doctor Mart&iacute;n Jos&eacute; Sanabria ha merecido el nombre del Ap&oacute;stol de la Educaci&oacute;n Venezolana, a el se debe la elaboraci&oacute;n del decreto sobre la ense&ntilde;anza gratuita y obligatoria, promulgado por el General Antonio Guzm&aacute;n Blanco el 27 de junio de 1870.
+<br><br>
+	&nbsp; &nbsp; &nbsp; &nbsp;A comienzos de 1965 por a&ntilde;o y medio es transferida a los m&oacute;dulos ubicados entre los bloques 5 y 6 del 23 de enero, donde actualmente funciona la escuela "Diego de Lozada" mientras era construido por el Ministerio de Obras P&uacute;blicas (M.O.P) el nuevo local de tres niveles que ahora existe.
+<br><br>
+	&nbsp; &nbsp; &nbsp; &nbsp;La escuela fue reinaugurada el 21 de junio de 1966 contando con la presencia de la Directora Fundadora Lola Caruja. M&aacute;s reciente en 2001 el plantel fue incorporado al proyecto de Escuelas Bolivarianas, se imparte Educaci&oacute;n Inicial y Primaria, especialidades como Folklore, M&uacute;sica y Psicopedagog&iacute;a. A partir del a&ntilde;o 2009 cuenta con el Centro de Inform&aacute;tica y Telem&aacute;tica (CBIT) donde los estudiantes mediante el uso de las Tecnolog&iacute;as de Informaci&oacute;n, y Comunicaci&oacute;n (Las TIC) refuerzan los contenidos impartidos en clase.
+<br><br>
+	&nbsp; &nbsp; &nbsp; &nbsp;Actualmente con sus 82 a&ntilde;os de fundada la escuela atiende a una poblaci&oacute;n de mas de 526 alumnos teniendo un horario integral de 7:30am a 3:30pm.
+ </p></td>
 </tr>
 <tr>
-<td align="center">Visi&oacute;n</td>
+<td align="center"><b>Misi&oacute;n</b></td>
+</tr>
+<tr>
+<td align="center"><p align="justify">
+ &nbsp; &nbsp; &nbsp; &nbsp;La U.E.N.I.B. Mart&iacute;n Jos&eacute; Sanabria tiene como misi&oacute;n ofrecer una educaci&oacute;n de calidad que contribuya a la formaci&oacute;n integral de nuestros estudiantes, promoviendo, orientando y generando en forma continua a un conjunto de acciones, experiencias y actividades pedag&oacute;gicas dirigidas a la integraci&oacute;n de todos los actores del hecho educativo, permitiendo as&iacute; el desarrollo pluridimensional de todas las potencialidades del educando y el logro en la adquisici&oacute;n de nuevos conocimientos, el desarrollo de valores humanos para un aprendizaje significativo y productivo al servicio de su comunidad y la sociedad.</p></td>
+</tr>
+<tr>
+<td align="center"><b>Visi&oacute;n</b></td>
+</tr>
+<tr>
+<td align="center"><p align="justify">
+&nbsp; &nbsp; &nbsp; &nbsp;La U.E.N.I.B. Mart&iacute;n Jos&eacute; Sanabria tiene como visi&oacute;n ser una Instituci&oacute;n Educativa, que busque permanentemente la excelencia en la formaci&oacute;n integral del ser humano con base en los principios Bolivarianos y comprometidos con los valores de la justicia, equidad, respeto, responsabilidad, solidaridad y libertad como bases fundamentales en el desarrollo del estudiante como ser social.
+</p></td>
 </tr>
 </table>
 
@@ -420,17 +445,17 @@ A&ntilde;o Escolar '.$row_boletin['ano_escolar'].'
 </html>';
 # Instanciamos un objeto de la clase DOMPDF.
 $mipdf = new DOMPDF();
- 
+
 # Definimos el tamaño y orientación del papel que queremos.
 # O por defecto cogerá el que está en el fichero de configuración.
 $mipdf ->set_paper("letter", "portrait");
- 
+
 # Cargamos el contenido HTML.
 $mipdf ->load_html(utf8_decode($html));
- 
+
 # Renderizamos el documento PDF.
 $mipdf ->render();
- 
+
 # Enviamos el fichero PDF al navegador.
-$mipdf ->stream('FicheroEjemplo.pdf');
+$mipdf ->stream('Boletin.pdf');
 ?>
