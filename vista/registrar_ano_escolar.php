@@ -28,7 +28,7 @@ include_once "menu.php"
 						<div class="col-md-12">
 							<div class="box box-danger">
 								<div class="box-header">
-									<a class="btn btn-success" href="generar_ano_escolar.php" role="button"><span class="icon-plus"></span>  Agregar</a>
+									<a class="btn btn-success" href="generar_ano_escolar.php" role="button" data-toggle="tooltip" data-placement="top" title="Registrar"><span class="icon-plus"></span></a>
 								</div>
 								<div class="box-body">
 									<table class="table">
@@ -45,7 +45,7 @@ include_once "menu.php"
 									<tr>
 									<td><?php echo $row['id_ano_escolar'] ?></td>
 									<td><?php echo $row['ano_escolar'] ?></td>
-									<td><a data-confirm-link="¿Eliminar Año?" class="btn btn-danger" href="../controlador/eliminar_ano_escolar.php?ano=<?php echo $row['id_ano_escolar']?>" role="button" style="border-radius: 0;"><span class="icon-cross"></span> Eliminar</a></td>
+									<td><a data-confirm-link="¿Eliminar Año?" class="btn btn-danger" href="../controlador/eliminar_ano_escolar.php?ano=<?php echo $row['id_ano_escolar']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Eliminar"><span class="icon-cross"></span></a></td>
 									</tr>
 									<?php } ?>
 									</tbody>

@@ -4362,10 +4362,11 @@ fieldset[disabled] .btn-vk.active {
 
 .pad{
   padding: 8 0 8 0 !important;
+  width: 4%;
 }
 
 .pad2{
-  width: 1px;
+  width: 4%;
   padding: 8 0 8 0 !important;
 }
 

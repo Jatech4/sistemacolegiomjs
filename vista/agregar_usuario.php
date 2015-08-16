@@ -29,7 +29,7 @@ include_once "menu.php"
 						<div class="col-md-12">
 							<div class="box box-danger">
 								<div class="box-header">
-									<a class="btn btn-success" href="registrar_usuario.php" role="button"><span class="icon-plus"></span>  Agregar</a>
+									<a class="btn btn-success" href="registrar_usuario.php" role="button" data-toggle="tooltip" data-placement="top" title="Registrar Usuario"><span class="icon-plus"></span></a>
 								</div>
 								<div class="box-body">
 									<table class="table">
@@ -56,8 +56,8 @@ include_once "menu.php"
 									<td><?php echo $row['nombre_usuario'] ?></td>
 									<td><?php echo $row['descripcion_perfil'] ?></td>
 									<td><?php echo $row['descripcion_status'] ?></td>
-									<td><a class="btn btn-warning" href="editar_usuario.php?usuario=<?php echo $row['id_usuario']?>" role="button" style="border-radius: 0;"><span class="icon-wrench"></span> Editar</a></td>
-									<td><a data-confirm-link="¿Eliminar Usuario?" class="btn btn-danger" href="../controlador/eliminar_usuario.php?usuario=<?php echo $row['id_usuario']?>" role="button" style="border-radius: 0;"><span class="icon-cross"></span> Eliminar</a></td>
+									<td class="pad"><a class="btn btn-warning" href="editar_usuario.php?usuario=<?php echo $row['id_usuario']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Editar"><span class="icon-wrench"></span></a></td>
+									<td class="pad"><a data-confirm-link="¿Eliminar Usuario?" class="btn btn-danger" href="../controlador/eliminar_usuario.php?usuario=<?php echo $row['id_usuario']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Eliminar"><span class="icon-cross"></span></a></td>
 									</tr>
 									<?php } ?>
 									</tbody>

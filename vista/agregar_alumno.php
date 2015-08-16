@@ -28,7 +28,7 @@ include_once "menu.php"
 						<div class="col-md-12">
 							<div class="box box-danger">
 								<div class="box-header">
-									<a class="btn btn-success" href="registrar_alumno.php" role="button"><span class="icon-plus"></span>  Agregar</a>
+									<a class="btn btn-success" href="registrar_alumno.php" role="button" data-toggle="tooltip" data-placement="top" title="Registrar Alumno"><span class="icon-plus"></span></a>
 								</div>
 								<div class="box-body">
 									<table class="table">
@@ -51,11 +51,12 @@ include_once "menu.php"
 									<td><?php echo $row['apellidos_alumno'] ?></td>
 									<td><?php echo $row['cedula_alumno'] ?></td>
 									<td><?php echo mysql_num_rows(mysql_query("SELECT id_representante FROM representantes WHERE id_alumno=".$row['id_alumno'].""));?></td>
-									<td class="pad"><a class="btn btn-primary" href="ver_representante.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;"><span class="icon-eye"></span> Ver Representante</a></td>
-									<td class="pad"><a class="btn btn-info" href="agregar_representante.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;"><span class="icon-plus"></span> Agregar Representante</a></td>
-									<td class="pad"><a class="btn btn-primary" href="ver_alumno.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;"><span class="icon-eye"></span> Ver Registro</a></td>
-									<td class="pad"><a class="btn btn-warning" href="editar_alumno.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;"><span class="icon-wrench"></span> Editar</a></td>
-									<td class="pad"><a data-confirm-link="¿Eliminar Alumno?" class="btn btn-danger" href="controlador/eliminar_alumno.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;"><span class="icon-cross"></span> Eliminar</a></td>
+									<td class="pad"><a class="btn btn-primary" href="ver_representante.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Ver Representantes"><span class="icon-eye"></span></a></td>
+									<td class="pad"><a class="btn btn-info" href="agregar_representante.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Agregar Representantes"><span class="icon-plus"></span></a></td>
+									<td class="pad"><a class="btn btn-primary" href="ver_alumno.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Ver Alumno"><span class="icon-eye"></span></a></td>
+									<td class="pad"><a class="btn btn-warning" href="editar_alumno.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Editar Alumno"><span class="icon-wrench"></span></a></td>
+									<td class="pad"><a data-confirm-link="¿Eliminar Alumno?" class="btn btn-danger" href="controlador/eliminar_alumno.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Eliminar Alumno"><span class="icon-cross"></span></a></td>
+									<td class="pad"><a data-confirm-link="¿Imprimir Boletín?" class="btn btn-success" href="#" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Imprimir Boletin"><span class="icon-printer"></span></a></td>
 									</tr>
 									<?php } ?>
 									</tbody>

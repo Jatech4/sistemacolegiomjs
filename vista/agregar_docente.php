@@ -28,7 +28,7 @@ include_once "menu.php"
 						<div class="col-md-12">
 							<div class="box box-danger">
 								<div class="box-header">
-									<a class="btn btn-success" href="registrar_docente.php" role="button"><span class="icon-plus"></span>  Agregar</a>
+									<a class="btn btn-success" href="registrar_docente.php" role="button" data-toggle="tooltip" data-placement="top" title="Agregar Docente"><span class="icon-plus"></span></a>
 								</div>
 								<div class="box-body">
 									<table class="table">
@@ -47,9 +47,9 @@ include_once "menu.php"
 									<td><?php echo $row['id_docente'] ?></td>
 									<td><?php echo $row['nombre_docente'] ?></td>
 									<td><?php echo $row['ci_docente'] ?></td>
-									<td class="pad2"><a class="btn btn-primary" href="ver_docentes.php?docente=<?php echo $row['id_docente']?>" role="button" style="border-radius: 0;"><span class="icon-eye"></span> Ver Registro</a></td>
-									<td class="pad2"><a class="btn btn-warning" href="editar_docente.php?docente=<?php echo $row['id_docente']?>" role="button" style="border-radius: 0;"><span class="icon-wrench"></span> Editar</a></td>
-									<td class="pad2"><a data-confirm-link="¿Eliminar Docente?" class="btn btn-danger" href="../controlador/eliminar_docente.php?docente=<?php echo $row['id_docente']?>" role="button" style="border-radius: 0;"><span class="icon-cross"></span> Eliminar</a></td>
+									<td class="pad2"><a class="btn btn-primary" href="ver_docentes.php?docente=<?php echo $row['id_docente']?>" role="button" style="border-radius: 0;"><span class="icon-eye" data-toggle="tooltip" data-placement="top" title="Ver Registro"></span></a></td>
+									<td class="pad2"><a class="btn btn-warning" href="editar_docente.php?docente=<?php echo $row['id_docente']?>" role="button" style="border-radius: 0;"><span class="icon-wrench" data-toggle="tooltip" data-placement="top" title="Editar"></span></a></td>
+									<td class="pad2"><a data-confirm-link="¿Eliminar Docente?" class="btn btn-danger" href="../controlador/eliminar_docente.php?docente=<?php echo $row['id_docente']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Eliminar"><span class="icon-cross"></span></a></td>
 									</tr>
 									<?php } ?>
 									</tbody>
