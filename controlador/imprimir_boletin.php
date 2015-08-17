@@ -17,7 +17,7 @@ $html='
 <style>
 .page { page-break-before:always; }
 </style>
-<title>Ejemplo de Documento en PDF.</title>
+<title>Boletin Alumno</title>
 </head>
 <body>
 
