@@ -5,12 +5,12 @@ include_once "menu.php"
 ?>
 
 			<!--  Contenido -->
-			<script language="JavaScript"> 
-				function enviar(){ 
-    			if (confirm('¿Registrar Alumno?')){ 
-       			document.form.submit() 
-    			} 
-			} 	
+			<script language="JavaScript">
+				function enviar(){
+    			if (confirm('¿Registrar Alumno?')){
+       			document.form.submit()
+    			}
+			}
 			</script>
 			<div class="content-wrapper">
 				<section class="content-header">
@@ -257,15 +257,15 @@ include_once "menu.php"
 									<div class="col-md-3">
 										<label for="">Vacunas que posee</label>
 										<div class="checkbox" style="margin-left: 9%;">
-										<input type="checkbox" name="vacuna_triple" value="Triple">Triple
+										<input type="checkbox" name="vacuna_triple" value="Si">Triple
 										<br>
-										<input type="checkbox" name="vacuna_bcg" value="Bcg">Bcg
+										<input type="checkbox" name="vacuna_bcg" value="Si">Bcg
 										<br>
-										<input type="checkbox" name="vacuna_polio" value="Polio">Polio
+										<input type="checkbox" name="vacuna_polio" value="Si">Polio
 										<br>
-										<input type="checkbox" name="vacuna_hepab" value="HepatitisB">Hepatitis B
+										<input type="checkbox" name="vacuna_hepab" value="Si">Hepatitis B
 										<br>
-										<input type="checkbox" name="vacuna_meningitis" value="Meningitis">Meningitis
+										<input type="checkbox" name="vacuna_meningitis" value="Si">Meningitis
 										</div>
 									</div>
 									<div class="col-md-3">

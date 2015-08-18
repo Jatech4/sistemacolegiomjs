@@ -305,15 +305,15 @@ include_once "menu.php"
 									<div class="col-md-3">
 										<label for="">Vacunas que posee</label>
 										<div class="checkbox" style="margin-left: 9%;">
-										<input type="checkbox" name="vacuna_triple" value="Tr" <?php if($row['vacuna_triple']=='Tr') {echo "checked='checked'";}?>>Triple
+										<input type="checkbox" name="vacuna_triple" value="Si" <?php if($row['vacuna_triple']=='Si') {echo "checked='checked'";}?>>Triple
 										<br>
-										<input type="checkbox" name="vacuna_bcg" value="Bc" <?php if($row['vacuna_bcg']=='Bc') {echo "checked='checked'";}?>>Bcg
+										<input type="checkbox" name="vacuna_bcg" value="Si" <?php if($row['vacuna_bcg']=='Si') {echo "checked='checked'";}?>>Bcg
 										<br>
-										<input type="checkbox" name="vacuna_polio" value="Po" <?php if($row['vacuna_polio']=='Po') {echo "checked='checked'";}?>>Polio
+										<input type="checkbox" name="vacuna_polio" value="Si" <?php if($row['vacuna_polio']=='Si') {echo "checked='checked'";}?>>Polio
 										<br>
-										<input type="checkbox" name="vacuna_hepab" value="He" <?php if($row['vacuna_hepab']=='He') {echo "checked='checked'";}?>>Hepatitis B
+										<input type="checkbox" name="vacuna_hepab" value="Si" <?php if($row['vacuna_hepab']=='Si') {echo "checked='checked'";}?>>Hepatitis B
 										<br>
-										<input type="checkbox" name="vacuna_meningitis" value="Me" <?php if($row['vacuna_meningitis']=='Me') {echo "checked='checked'";}?>>Meningitis
+										<input type="checkbox" name="vacuna_meningitis" value="Si" <?php if($row['vacuna_meningitis']=='Si') {echo "checked='checked'";}?>>Meningitis
 										</div>
 									</div>
 									<div class="col-md-3">
