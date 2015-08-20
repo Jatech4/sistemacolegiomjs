@@ -22,7 +22,7 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
     			} 
 			} 	
 			</script>
-<div class="content-wrapper">
+<div class="content-wrapper"> <!-- Maricater es aqui iojdfgjiosdfijogsd -->
 	<section class="content">
 		<div class="row">
 			<div class="col-md-12">
@@ -452,6 +452,43 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 							<input type="date" class="form-control" name="fecha_momento4" id="exampleInputPassword1">
 							</div>
 						</div>
+					</div>
+					<hr class="divisoor">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<h3>V MOMENTO EVALUATIVO</h3>
+							<h4>INFORME FINAL DE RENDIMIENTO</h4>
+						</div>
+					</div>
+					<div class="row">
+					    <div class="col-md-offset-3 col-md-6">
+					        El Estudiante: <input type="text" name="#" class="form-control" placeholder="SE TRAE NOMBRE DEL ALUMNOOO"> Durante el anho escolar <select class="form-control" name="ano_escolar">
+							<option value="000">...</option>
+							<?php while ($row_ano_escolar = mysql_fetch_array($result_ano_escolar)){?>
+							<option value="<?php echo $row_ano_escolar['id_ano_escolar']?>"><?php echo $row_ano_escolar['ano_escolar']?></option>
+							<?php } ?>
+							</select> ha objetenido el Literal <input type="text" name="#" class="form-control" placeholder="Nosequesto"> lo cual expresa: <input type="text" name="#" class="form-control" placeholder="Nosequesto"> segun lo estipulado en el Articulo 15 y 16 de la Gaceta Oficial de la REpublica Bolivariana de VEnezuela del 5 de Enero de 2000 N.5428.
+					    </div>
+					</div>
+					<div class="row">
+					    <div class="col-md-6">
+					        <h4 class="text-left">
+					            Por lo que el estudiante fue:
+					        </h4>
+					        <div class="radio" style="margin-left: 20px;">
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"> Promovido
+                                <br>
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"> No Promovido
+                            </div>
+					    </div>
+					</div>
+					<div class="row">
+					    <div class="col-md-3">
+					        <h4 class="text-left">
+					            Al Grado Inmediato superior:
+					        </h4>
+					        <input type="text" class="form-control" name="#">
+					    </div>
 					</div>
 				
 				<hr class="divisoor">

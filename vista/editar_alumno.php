@@ -183,6 +183,13 @@ include_once "menu.php"
 										<br>
 										<input type="radio" name="ci_representante" id="optionsRadios1" value="No" <?php if($row['ci_representante']=='No') {echo "checked='checked'";}?>>No
 										</div>
+										<div class="col-md-3">
+										<label>Copia Partida de Nacimiento</label>
+										<br>
+										<input type="radio" name="#" id="optionsRadios1" value="Si">Si
+										<br>
+										<input type="radio" name="#" id="optionsRadios1" value="No">No
+										</div>
 									</div>
 								</div>
 								<hr class="divisor">
