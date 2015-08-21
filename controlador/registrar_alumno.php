@@ -55,8 +55,9 @@ $boleta_promocion=$_POST['boleta_promocion'];
 $fotos_alumno=$_POST['fotos_alumno'];
 $fotos_representante=$_POST['fotos_representante'];
 $ci_representante=$_POST['ci_representante'];
+$partida_nacimiento=$_POST['partida_nacimiento'];
 
-$sql="INSERT INTO documentos_presentados(id_alumno, boleta_promocion, carta_conducta, fotos_alumno, fotos_representante, ci_representante) VALUES ($id_alumno,'$boleta_promocion','$carta_conducta','$fotos_alumno','$fotos_representante','$ci_representante')";
+$sql="INSERT INTO documentos_presentados(id_alumno, boleta_promocion, carta_conducta, fotos_alumno, fotos_representante, ci_representante,partida_nacimiento) VALUES ($id_alumno,'$boleta_promocion','$carta_conducta','$fotos_alumno','$fotos_representante','$ci_representante','$partida_nacimiento')";
 $result = mysql_query($sql);
 echo mysql_error();
 

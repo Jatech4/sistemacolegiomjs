@@ -35,8 +35,9 @@ $boleta_promocion=$_POST['boleta_promocion'];
 $fotos_alumno=$_POST['fotos_alumno'];
 $fotos_representante=$_POST['fotos_representante'];
 $ci_representante=$_POST['ci_representante'];
+$partida_nacimiento=$_POST['partida_nacimiento'];
 
-$sql="UPDATE documentos_presentados SET boleta_promocion='$boleta_promocion',carta_conducta='$carta_conducta',fotos_alumno='$fotos_alumno',fotos_representante='$fotos_representante',ci_representante='$ci_representante' WHERE id_alumno=$id";
+$sql="UPDATE documentos_presentados SET boleta_promocion='$boleta_promocion',carta_conducta='$carta_conducta',fotos_alumno='$fotos_alumno',fotos_representante='$fotos_representante',ci_representante='$ci_representante',partida_nacimiento='$partida_nacimiento' WHERE id_alumno=$id";
 $result = mysql_query($sql);
 echo mysql_error();
 

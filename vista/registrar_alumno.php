@@ -173,9 +173,9 @@ include_once "menu.php"
 										<div class="col-md-3">
 										<label>Copia Partida de Nacimiento</label>
 										<br>
-										<input type="radio" name="#" id="optionsRadios1" value="Si">Si
+										<input type="radio" name="partida_nacimiento" id="optionsRadios1" value="Si">Si
 										<br>
-										<input type="radio" name="#" id="optionsRadios1" value="No">No
+										<input type="radio" name="partida_nacimiento" id="optionsRadios1" value="No">No
 										</div>
 									</div>
 								</div>

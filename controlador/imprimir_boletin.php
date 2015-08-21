@@ -10,6 +10,13 @@ $result_boletin_select=mysql_query("SELECT * FROM boletines a, alumnos b, ano_es
 $row_boletin=mysql_fetch_array($result_boletin_select);
 //$fec_nac_alumno=date_format($row_boletin['fecha_nac_alumno'], 'd-m-Y');
 }
+$promo1='<input type="checkbox" value="input type checkbox"/>';
+$promo2='<input type="checkbox" value="input type checkbox"/>';
+if($row_boletin['promovido']=='Si'){
+$promo1='<input type="checkbox" checked="" value="input type checkbox">';
+}else{
+	$promo2='<input type="checkbox" checked="" value="input type checkbox">';
+}
 $html='
 <html>
 <head>
@@ -441,8 +448,65 @@ A&ntilde;o Escolar '.$row_boletin['ano_escolar'].'
 
 </div>
 <!-- Fin Pagina 10 del PDF-->
+
+<!-- Pagina 11 del PDF-->
+<div class="page">
+
+<table width="100%">
+<tr>
+<td align="center" colspan="2"><p align="center">
+Rep&uacute;blica Bolivariana de Venezuela<br>
+Ministerio del Poder Popular para la Educaci&oacute;n<br>
+Unidad Educativa Integral Bolivariana<br>
+"Mart&iacute;n Jos&eacute; Sanabria"<br>
+Parroquia 23 de Enero<br>
+</p></td>
+</tr>
+<tr>
+<td align="center" colspan="2"><b>V Momento Evaluativo</b></td>
+</tr>
+<tr>
+<td align="center" colspan="2"><b>Informe Final de Rendimiento</b></td>
+</tr>
+<tr>
+<td colspan="2"><p align="justify">El Estudiante: '.$row_boletin['nombres_alumno'].' '.$row_boletin['apellidos_alumno'].' durante el A&ntilde;o Escolar: '.$row_boletin['ano_escolar'].' ha obtenido el Literal '.$row_boletin['literal'].' lo cual expresa: '.$row_boletin['expresa'].' seg&uacute;n lo estipulado en el Art&iacute;culo 15 y 16 de la Gaceta Oficial de la Rep&uacute;blica Bolivariana de Venezuela del 5 de Enero de 2000 N&deg; 5428</p></td>
+</tr>
+<tr>
+<td align="left" colspan="2">Por lo que el Estudiante fue:</td>
+</tr>
+<tr>
+<td align="left" width="20">'.$promo1.'</td>
+<td>Promovido</td>
+</tr>
+<tr>
+<td align="left" width="20">'.$promo2.'</td>
+<td>No Promovido</td>
+</tr>
+<tr>
+<td colspan="2">Al Grado Superior: '.$row_boletin['grado_superior'].'</td>
+</tr>
+</table>
+
+<table width=100%>
+<tr>
+<td><br style="line-height:150px" />&nbsp;</td>
+</tr>
+<tr>
+<td width=30% align="center">____________________________________</td>
+<td></td>
+<td width=30% align="center">____________________________________</td>
+</tr>
+<tr>
+<td width=30% align="center"><b>Docente: </b>'.$row_boletin['nombre_docente'].'</td>
+<td></td>
+<td width=30% align="center"><b>Representante: </b>'.$row_boletin['nombre_representante'].'</td>
+</tr>
+</table>
+</div>
+<!-- Fin Pagina 11 del PDF-->
 </body>
 </html>';
+$html = mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8');
 # Instanciamos un objeto de la clase DOMPDF.
 $mipdf = new DOMPDF();
 
