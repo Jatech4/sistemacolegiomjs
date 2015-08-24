@@ -6,7 +6,7 @@ include_once "menu.php";
 $result_alumnos = mysql_query("SELECT * FROM alumnos");
 $result_docentes = mysql_query("SELECT * FROM docentes");
 $result_ano_escolar = mysql_query("SELECT * FROM ano_escolar");
-if(isset($_GET['alumno'])) 
+if(isset($_GET['alumno']))
 {
 $result_alumno_select = mysql_query("SELECT * FROM alumnos a, representantes b where a.id_alumno=".$_GET['alumno']." and b.id_alumno=".$_GET['alumno']."");
 $result_repre_select = mysql_query("SELECT * FROM representantes where id_alumno=".$_GET['alumno']."");
@@ -15,12 +15,12 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 
 ?>
 			<!--  Contenido -->
-			<script language="JavaScript"> 
-				function enviar(){ 
-    			if (confirm('¿Registrar Boletin?')){ 
-       			document.form.submit() 
-    			} 
-			} 	
+			<script language="JavaScript">
+				function enviar(){
+    			if (confirm('¿Registrar Boletin?')){
+       			document.form.submit()
+    			}
+			}
 			</script>
 <div class="content-wrapper"> <!-- Maricater es aqui iojdfgjiosdfijogsd -->
 	<section class="content">
@@ -77,7 +77,7 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 								<option value="3ro">3ro</option>
 								<option value="4to">4to</option>
 								<option value="5to">5to</option>
-								<option value="6to">6to</option>								
+								<option value="6to">6to</option>
 							</select>
 						</div>
 						<div class="col-md-3">
@@ -89,7 +89,7 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 								<option value="C">C</option>
 								<option value="D">D</option>
 								<option value="E">E</option>
-								<option value="F">F</option>								
+								<option value="F">F</option>
 							</select>
 						</div>
 					</div>
@@ -462,12 +462,8 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 					</div>
 					<div class="row">
 					    <div class="col-md-offset-3 col-md-6">
-					        El Estudiante: <input type="text" name="#" class="form-control" placeholder="SE TRAE NOMBRE DEL ALUMNOOO"> Durante el anho escolar <select class="form-control" name="ano_escolar">
-							<option value="000">...</option>
-							<?php while ($row_ano_escolar = mysql_fetch_array($result_ano_escolar)){?>
-							<option value="<?php echo $row_ano_escolar['id_ano_escolar']?>"><?php echo $row_ano_escolar['ano_escolar']?></option>
-							<?php } ?>
-							</select> ha objetenido el Literal <input type="text" name="#" class="form-control" placeholder="Nosequesto"> lo cual expresa: <input type="text" name="#" class="form-control" placeholder="Nosequesto"> segun lo estipulado en el Articulo 15 y 16 de la Gaceta Oficial de la REpublica Bolivariana de VEnezuela del 5 de Enero de 2000 N.5428.
+
+							 Literal Obtenido <input type="text" name="literal" class="form-control" placeholder="Literal"> Expresa: <input type="text" name="expresa" class="form-control" placeholder="Expresa">
 					    </div>
 					</div>
 					<div class="row">
@@ -476,9 +472,9 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 					            Por lo que el estudiante fue:
 					        </h4>
 					        <div class="radio" style="margin-left: 20px;">
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"> Promovido
+                                <input type="radio" name="promovido" id="optionsRadios1" value="Si"> Promovido
                                 <br>
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"> No Promovido
+                                <input type="radio" name="promovido" id="optionsRadios1" value="No"> No Promovido
                             </div>
 					    </div>
 					</div>
@@ -487,10 +483,10 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 					        <h4 class="text-left">
 					            Al Grado Inmediato superior:
 					        </h4>
-					        <input type="text" class="form-control" name="#">
+					        <input type="text" class="form-control" name="grado_superior">
 					    </div>
 					</div>
-				
+
 				<hr class="divisoor">
 				<button type="button" class="btn btn-success" onClick="enviar()"><span class="icon-user-plus"></span> Agregar</button>
 				<a class="btn btn-info pull-right" href="crear_boletin.php" role="button"><span class="icon-undo2"></span>  Regresar</a>

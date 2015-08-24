@@ -186,9 +186,9 @@ include_once "menu.php"
 										<div class="col-md-3">
 										<label>Copia Partida de Nacimiento</label>
 										<br>
-										<input type="radio" name="#" id="optionsRadios1" value="Si">Si
+										<input type="radio" name="partida_nacimiento" id="optionsRadios1" value="Si" <?php if($row['partida_nacimiento']=='Si') {echo "checked='checked'";}?>>Si
 										<br>
-										<input type="radio" name="#" id="optionsRadios1" value="No">No
+										<input type="radio" name="partida_nacimiento" id="optionsRadios1" value="No" <?php if($row['partida_nacimiento']=='No') {echo "checked='checked'";}?>>No
 										</div>
 									</div>
 								</div>
