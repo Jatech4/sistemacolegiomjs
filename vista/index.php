@@ -18,7 +18,7 @@ include_once "menu.php"
 							<div class="box box-danger">
 								<div class="box-body">
 									<h1 class="text-center">RESEÑA HISTORICA</h1>
-									<p class="text-justify">UNIDAD EDUCATIVA NACIONAL INTEGRAL BOLIVARIANA  MARTIN JOSE SANABRIA.</p>
+									<p class="text-center">UNIDAD EDUCATIVA NACIONAL INTEGRAL BOLIVARIANA  MARTIN JOSE SANABRIA.</p>
 									<p class="text-justify">La Escuela “MARTÍN JOSÉ SANABRIA” fue inaugurada el 7 de enero de 1930 con el nombre de “ARTURO MICHELENA” en una pequeña casa situada en Monte Piedad.</p>
 									<p class="text-justify">En 1932 se logra la construcción de un pequeño local en la calle Colombia y para la inauguración el Ministerio de Educación cambia el nombre de la escuela por el que actualmente tiene de acuerdo con la solicitud efectuada por la directora tomando en cuenta la importancia que tuvo este personaje bajo la presencia de Guzmán Blanco en la instrucción del pueblo venezolano.</p>
 									<p class="text-justify">
