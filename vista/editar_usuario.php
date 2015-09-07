@@ -67,7 +67,11 @@ include_once "menu.php"
 							</select>
 							</div>
 							<button type="button" class="btn btn-warning" onClick="enviar()"><span class="icon-scissors"></span> Editar</button>
+							<?php if($_SESSION['perfilusuario']==1){ ?>
 							<a class="btn btn-info pull-right" href="agregar_usuario.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
+							<?php }elseif($_SESSION['perfilusuario']!=1){?>
+							<a class="btn btn-info pull-right" href="index.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
+							<?php }?>
 							</form>
 						</div>
 					</div>
