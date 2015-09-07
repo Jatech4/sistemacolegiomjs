@@ -79,8 +79,7 @@ include_once "menu.php"
 									</tbody>
 									</table>
 									<div class="text-left">
-										<a class="btn btn-danger" href="#" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Descargar"><span class="icon-download2">
-										</span></a>
+										<button class="btn btn-danger" href="#" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Descargar"><span class="icon-download2"></span></button>
 									</div>
 								</div>
 							</div>
