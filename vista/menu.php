@@ -89,7 +89,12 @@
 						<li>
 							<a href="#">
 								<span class="icon-drawer"></span> <span>Reportes</span>
+								<i class="icon-circle-down pull-right"></i>
 							</a>
+							<ul class="treeview-menu">
+								<li><a href="consultar_alumno.php"><i class="icon-radio-unchecked"></i> Generar Reporte Alumno </i></a></li>
+								<li><a href="consultar_profesor.php"><i class="icon-radio-unchecked"></i> Generar Reporte Docente</a></li>
+							</ul>
 						</li>
 						<?php if($_SESSION['perfilusuario']==1){ ?>
 						<li class="treeview">
