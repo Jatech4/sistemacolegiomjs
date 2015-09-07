@@ -1,3 +1,34 @@
+<!-- index.html -->
+<?php
+include_once "../controlador/validasesion.php";
+include_once "../modelo/conexion.php";
+$buscar="nombre_docente<>''";
+if(isset($_POST['buscar'])){
+	if(isset($_POST['nombre']) && $_POST['nombre']!=''){
+		$buscar.=" AND nombre_docente like '%".$_POST['nombre']."%'";
+	}
+	if(isset($_POST['cedula']) && $_POST['cedula']!=''){
+		$buscar.=" AND ci_docente = '".$_POST['cedula']."'";
+	}
+	$sql="SELECT * FROM docentes WHERE ".$buscar."";
+}else{
+	$sql="SELECT * FROM docentes ";
+}
+$result = mysql_query($sql);
+mysql_set_charset('utf8');
+include_once "menu.php"
+?>
+			<!--  Contenido -->
+			<script type="text/javascript" src="js/confirm-link.js"></script>
+			<script type="text/javascript">
+    			$(document).ready(function () {
+    			$('a[data-confirm-link]').click(function () {
+    			if (confirm($(this).data('confirm-link')))
+    			window.location = $(this).attr('href');
+    			return false;
+    			});
+    		});
+</script>
 <div class="content-wrapper">
 				<section class="content-header">
 					<h1>
@@ -9,19 +40,21 @@
 						<div class="col-md-12">
 							<div class="box box-danger">
 								<div class="box-header">
+								<form name="form1" id="form1" method="POST" >
 									<div class="col-lg-6">
 									<div class="col-md-5">
-										<input type="text" class="form-control" placeholder="Nombre..">
+										<input type="text" class="form-control" placeholder="Nombre.." name="nombre">
 									</div>
 									<div class="col-md-5">
-										<input type="text" class="form-control" placeholder="Cedula..">
+										<input type="text" class="form-control" placeholder="Cedula.." name="cedula">
 									</div>
 										<div class="input-group">
 											<span class="input-group-btn">
-												<button class="btn btn-default" type="button"><span class="icon-search"></span></button>
+												<button class="btn btn-default" type="submit" value="buscar" name="buscar"><span class="icon-search"></span></button>
 											</span>
 										</div><!-- /input-group -->
 									</div><!-- /.col-lg-6 -->
+								</form>
 								</div>
 								<div class="box-body">
 									<table class="table">
@@ -29,17 +62,20 @@
 									<tr>
 									<th>ID</th>
 									<th>Nombres</th>
-									<th>Apellidos</th>
 									<th>Cedula</th>
 									</tr>
 									</thead>
 									<tbody>
+									<?php if($result){
+									 while ($row = mysql_fetch_array($result)){?>
 									<tr>
-									<td><?php echo $row['id_alumno'] ?></td>
-									<td><?php echo $row['nombres_alumno'] ?></td>
-									<td><?php echo $row['apellidos_alumno'] ?></td>
-									<td><?php echo $row['cedula_alumno'] ?></td>
+									<td><?php echo $row['id_docente'] ?></td>
+									<td><?php echo $row['nombre_docente'] ?></td>
+									<td><?php echo $row['ci_docente'] ?></td>
 									</tr>
+									<?php }}else{ ?>
+									<tr><td>Sin Resultados...</td></tr>
+									<?php }?>
 									</tbody>
 									</table>
 									<div class="text-left">
