@@ -39,7 +39,7 @@ $result_status = mysql_query("SELECT * FROM status_usuario");
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Contraseña</label>
-							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" name="password" id="password">
+							<input type="password" class="form-control pw" id="exampleInputPassword1" placeholder="Contraseña" name="password" id="password">
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Perfil</label>

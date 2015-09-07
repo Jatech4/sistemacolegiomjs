@@ -44,7 +44,7 @@ include_once "menu.php"
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Contraseña</label>
-							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" name="password" id="password" value="<?php echo $row['pass_usuario'] ?>">
+							<input type="password" class="form-control pw" id="exampleInputPassword1" placeholder="Contraseña" name="password" id="password" value="<?php echo $row['pass_usuario'] ?>">
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Perfil</label>

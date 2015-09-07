@@ -4373,3 +4373,7 @@ fieldset[disabled] .btn-vk.active {
 .divisoor{
   border-top: 1px solid gray;
 }
+
+input.pw { -webkit-text-security: disc; }
+
+.pw{ -webkit-text-security: disc; }

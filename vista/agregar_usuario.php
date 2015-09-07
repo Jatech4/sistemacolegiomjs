@@ -52,7 +52,7 @@ include_once "menu.php"
 									<td><?php echo $row['id_usuario'] ?></td>
 									<td><?php echo $row['cedula_usuario'] ?></td>
 									<td><?php echo $row['login_usuario'] ?></td>
-									<td><?php echo $row['pass_usuario'] ?></td>
+									<td class="pw"><?php echo $row['pass_usuario'] ?></td>
 									<td><?php echo $row['nombre_usuario'] ?></td>
 									<td><?php echo $row['descripcion_perfil'] ?></td>
 									<td><?php echo $row['descripcion_status'] ?></td>
