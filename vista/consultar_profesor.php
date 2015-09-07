@@ -43,10 +43,10 @@ include_once "menu.php"
 								<form name="form1" id="form1" method="POST" >
 									<div class="col-lg-6">
 									<div class="col-md-5">
-										<input type="text" class="form-control" placeholder="Nombre.." name="nombre">
+										<input type="text" class="form-control" placeholder="Nombre.." name="nombre" value="<?php echo $_POST['nombre']?>">
 									</div>
 									<div class="col-md-5">
-										<input type="text" class="form-control" placeholder="Cedula.." name="cedula">
+										<input type="text" class="form-control" placeholder="Cedula.." name="cedula" value="<?php echo $_POST['cedula']?>">
 									</div>
 										<div class="input-group">
 											<span class="input-group-btn">
@@ -79,7 +79,10 @@ include_once "menu.php"
 									</tbody>
 									</table>
 									<div class="text-left">
-										<button class="btn btn-danger" href="#" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Descargar"><span class="icon-download2"></span></button>
+									<form name="form1" id="form1" method="POST" action="../controlador/reporte_docente.php">
+									<input type="text" name="consulta" value="<?php echo $sql;?>" hidden="hidden">
+										<button class="btn btn-danger" href="#" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Descargar" type="submit"><span class="icon-download2"></span></button>
+									</form>
 									</div>
 								</div>
 							</div>

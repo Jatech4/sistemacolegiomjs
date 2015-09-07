@@ -20,17 +20,18 @@ if($row = mysql_fetch_array($result))
  }
  elseif($row["pass_usuario"] == $password)
  {
-  session_start();  
+  session_start();
   $_SESSION['login'] = $usuario;
   $_SESSION['usuario']=$row["nombre_usuario"];
   $_SESSION['perfilusuario']=$row["perfil_usuario"];
+  $_SESSION['id_usuario']=$row["id_usuario"];
   ?>
   <script languaje="javascript">
    location.href = "../vista/index.php";
    alert("\u00A1Bienvenido\u0021");
   </script>
   <?php
-  
+
  }
  else
  {
@@ -41,7 +42,7 @@ if($row = mysql_fetch_array($result))
     location.href = "../vista/login.php";
    </script>
   <?php
-             
+
  }
 }
 else
@@ -52,8 +53,8 @@ else
   alert("\u00A1El nombre de usuario es incorrecto\u0021 \n Int\u00E9ntalo de nuevo.");
   location.href = "../vista/login.php";
  </script>
-<?php 
-         
+<?php
+
 }
 mysql_free_result($result);
 mysql_close();

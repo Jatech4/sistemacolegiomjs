@@ -12,14 +12,14 @@ $result_status = mysql_query("SELECT * FROM status_usuario");
 include_once "menu.php"
 ?>
 			<!--  Contenido -->
-			<script language="JavaScript"> 
-				function enviar(){ 
-    			if (confirm('¿Modificar Datos?')){ 
-       			document.form.submit() 
-    			} 
-			} 	
+			<script language="JavaScript">
+				function enviar(){
+    			if (confirm('¿Modificar Datos?')){
+       			document.form.submit()
+    			}
+			}
 			</script>
-			<div class="content-wrapper">					
+			<div class="content-wrapper">
 				<section class="content-header">
 					<h1>
 					Editar Usuario
@@ -46,6 +46,7 @@ include_once "menu.php"
 							<label for="exampleInputPassword1">Contraseña</label>
 							<input type="password" class="form-control pw" id="exampleInputPassword1" placeholder="Contraseña" name="password" id="password" value="<?php echo $row['pass_usuario'] ?>">
 							</div>
+							<?php if($_SESSION['perfilusuario']==1){ ?>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Perfil</label>
 							<br>
@@ -55,6 +56,7 @@ include_once "menu.php"
 								<?php } ?>
 							</select>
 							</div>
+							<?php }?>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Status</label>
 							<br>

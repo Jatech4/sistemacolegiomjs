@@ -12,7 +12,7 @@
 	<body class="skin-blue sidebar-mini">
 		<!-- Site wrapper -->
 		<div class="wrapper">
-			
+
 			<header class="main-header">
 				<!-- Logo -->
 				<a href="index.php" class="logo">
@@ -46,7 +46,7 @@
 									<!-- Menu Footer-->
 									<li class="user-footer">
 										<div class="pull-left">
-											<a href="#" class="btn btn-default btn-flat"><span class="icon-user"></span> Perfil</a>
+											<a href="editar_usuario.php?usuario=<?php echo $_SESSION['id_usuario']?>" class="btn btn-default btn-flat"><span class="icon-user"></span> Perfil</a>
 										</div>
 										<div class="pull-right">
 											<a href="../controlador/cierresesion.php" class="btn btn-default btn-flat"><span class="icon-exit"></span> Salir</a>
