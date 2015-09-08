@@ -8,6 +8,8 @@
 		<link rel="stylesheet" href="font.css">
 		<link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
 		<link href="css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+		<script src="js/sololetras.js"></script>
+		<script src="js/solonumeros.js"></script>
 	</head>
 	<body class="skin-blue sidebar-mini">
 		<!-- Site wrapper -->
@@ -83,7 +85,6 @@
 							<ul class="treeview-menu">
 								<li><a href="agregar_alumno.php"><i class="icon-radio-unchecked"></i> Registrar Alumno </i></a></li>
 								<li><a href="agregar_docente.php"><i class="icon-radio-unchecked"></i> Registrar Docente</a></li>
-								<li><a href="crear_boletin.php"><i class="icon-radio-unchecked"></i> Generar Boletin</a></li>
 							</ul>
 						</li>
 						<li>
@@ -94,6 +95,7 @@
 							<ul class="treeview-menu">
 								<li><a href="consultar_alumno.php"><i class="icon-radio-unchecked"></i> Generar Reporte Alumno </i></a></li>
 								<li><a href="consultar_profesor.php"><i class="icon-radio-unchecked"></i> Generar Reporte Docente</a></li>
+								<li><a href="crear_boletin.php"><i class="icon-radio-unchecked"></i> Generar Boletin</a></li>
 							</ul>
 						</li>
 						<?php if($_SESSION['perfilusuario']==1){ ?>

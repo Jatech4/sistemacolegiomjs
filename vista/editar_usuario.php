@@ -32,19 +32,19 @@ include_once "menu.php"
 							<input type="hidden" class="form-control" id="exampleInputPassword1" name="id" id="id" value="<?php echo $_GET['usuario'] ?>">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Nombre y Apellido</label>
-							<input type="nombre" class="form-control" id="exampleInputPassword1" placeholder="Nombre y Apellido" name="nombre" id="nombre" value="<?php echo $row['nombre_usuario'] ?>">
+							<input type="nombre" class="form-control" onkeypress="return soloLetras(event)" maxlength="20" id="exampleInputPassword1" placeholder="Nombre y Apellido" name="nombre" id="nombre" value="<?php echo $row['nombre_usuario'] ?>">
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Cedula</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Cedula" name="cedula" id="cedula" value="<?php echo $row['cedula_usuario'] ?>">
+							<input type="text" class="form-control" onkeypress="return solonumeros2(event)" maxlength="11" id="exampleInputPassword1" placeholder="Cedula" name="cedula" id="cedula" value="<?php echo $row['cedula_usuario'] ?>">
 							</div>
 							<div class="form-group">
 							<label for="usuario">Usuario</label>
-							<input type="usuario" class="form-control" id="exampleInputEmail1" placeholder="Usuario" name="login" id="login" value="<?php echo $row['login_usuario'] ?>">
+							<input type="usuario" class="form-control" id="exampleInputEmail1" autocomplete="off" placeholder="Usuario" name="login" id="login" value="<?php echo $row['login_usuario'] ?>">
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Contraseña</label>
-							<input type="password" class="form-control pw" id="exampleInputPassword1" placeholder="Contraseña" name="password" id="password" value="<?php echo $row['pass_usuario'] ?>">
+							<input type="password" class="form-control pw" id="exampleInputPassword1" autocomplete="off" placeholder="Contraseña" name="password" id="password" value="<?php echo $row['pass_usuario'] ?>">
 							</div>
 							<?php if($_SESSION['perfilusuario']==1){ ?>
 							<div class="form-group">

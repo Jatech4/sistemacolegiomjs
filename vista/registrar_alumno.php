@@ -29,25 +29,34 @@ include_once "menu.php"
 									<div class="col-md-3">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Nombres</label>
-								<input type="text" class="form-control" name="nombres_alumno" id="exampleInputPassword1" placeholder="Nombres">
+								<input type="text" class="form-control" name="nombres_alumno"
+								onkeypress="return soloLetras(event)" maxlength="15"
+								id="exampleInputPassword1"
+								placeholder="Nombres">
 							</div>
 									</div>
 									<div class="col-md-3">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Apellidos</label>
-								<input type="text" class="form-control" name="apellidos_alumno" id="exampleInputPassword1" placeholder="Apellidos">
+								<input type="text" class="form-control" onkeypress="return soloLetras
+								(event)" maxlength="15" name="apellidos_alumno"
+								id="exampleInputPassword1" placeholder="Apellidos" required>
 							</div>
 									</div>
 									<div class="col-md-3">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Cedula</label>
-								<input type="text" class="form-control" name="cedula_alumno" id="exampleInputPassword1" placeholder="Cedula">
+								<input type="text" class="form-control" name="cedula_alumno"
+								onkeypress="return solonumeros2(event)" maxlength="10"
+								id="exampleInputPassword1" placeholder="Cedula" required>
 							</div>
 									</div>
 									<div class="col-md-3">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Edad</label>
-								<input type="text" class="form-control" name="edad_alumno" id="exampleInputPassword1" placeholder="Edad">
+								<input type="number" onkeypress="return solonumeros(event)"
+								maxlength="2" class="form-control" name="edad_alumno"
+								id="exampleInputPassword1" placeholder="Edad" required>
 							</div>
 									</div>
 								</div>
@@ -64,19 +73,23 @@ include_once "menu.php"
 									<div class="col-md-3">
 										<div class="form-group">
 							<label for="exampleInputPassword1">Lugar de Nacimiento</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" name="lugar_nac_alumno" placeholder="Lugar de Nacimiento">
+							<input type="text" class="form-control" onkeypress="return soloLetras
+							(event)" maxlength="20" id="exampleInputPassword1"
+							name="lugar_nac_alumno"
+								placeholder="Lugar de Nacimiento" required>
 							</div>
 									</div>
 									<div class="col-md-3">
 										<div class="form-group">
 							<label for="exampleInputPassword1">Fecha nacimiento alumno</label>
-							<input type="date" class="form-control" id="exampleInputPassword1" name="fecha_nac_alumno" placeholder="Fecha">
+							<input type="date" class="form-control" id="exampleInputPassword1" name="fecha_nac_alumno" placeholder="Fecha" required>
 							</div>
 									</div>
 									<div class="col-md-3">
 										<div class="form-group">
 							<label for="exampleInputPassword1">Dirección</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" name="direccion_alumno" placeholder="Dirección del Alumno">
+							<input type="text" class="form-control" maxlength="50"
+							id="exampleInputPassword1" name="direccion_alumno" placeholder="Dirección del Alumno" required>
 							</div>
 									</div>
 								</div>
@@ -84,19 +97,23 @@ include_once "menu.php"
 									<div class="col-md-4">
 										<div class="form-group">
 							<label for="exampleInputPassword1">Telefono 1</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" name="tlf1_alumno" placeholder="Telefono">
+							<input type="text" onkeypress="return solonumeros(event)"
+								maxlength="11" class="form-control" id="exampleInputPassword1"
+								name="tlf1_alumno" placeholder="Telefono" required>
 							</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
 							<label for="exampleInputPassword1">Telefono 2</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" name="tlf2_alumno" placeholder="Telefono">
+							<input type="text" onkeypress="return solonumeros(event)"
+								maxlength="11" class="form-control" id="exampleInputPassword1" name="tlf2_alumno" placeholder="Telefono" required>
 							</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
 							<label for="exampleInputPassword1">Telefono 3</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" name="tlf3_alumno" placeholder="Telefono">
+							<input type="text" onkeypress="return solonumeros(event)"
+								maxlength="11" class="form-control" id="exampleInputPassword1" name="tlf3_alumno" placeholder="Telefono" required>
 							</div>
 									</div>
 								</div>
@@ -107,22 +124,22 @@ include_once "menu.php"
 										<div class="col-md-4">
 											<div class="form-group">
 												<label>Plantel Procedencia</label>
-												<input type="text" class="form-control" name="plantel_procedencia" placeholder="U.E.D. Nombre Plantel">
+												<input type="text" class="form-control" name="plantel_procedencia" placeholder="U.E.D. Nombre Plantel" required>
 											</div>
 										</div>
 										<div class="col-md-4">
 											<div class="form-group">
 												<label>Ultimo grado cursado</label>
-												<input type="text" class="form-control" name="ultimo_grado">
+												<input type="text" class="form-control" name="ultimo_grado" required>
 											</div>
 										</div>
 										<div class="col-md-4">
 											<div class="form-group">
 												<label>Estatus</label>
 												<br>
-												<input type="radio" name="status_ult_plantel" id="optionsRadios1" value="Si">Aprobado
+												<input type="radio" name="status_ult_plantel" id="optionsRadios1" value="Si" required>Aprobado
 												<br>
-												<input type="radio" name="status_ult_plantel" id="optionsRadios1" value="No">Aplazado
+												<input type="radio" name="status_ult_plantel" id="optionsRadios1" value="No" required>Aplazado
 												<br>
 											</div>
 										</div>
@@ -206,7 +223,8 @@ include_once "menu.php"
 									<div class="col-md-3">
 										<div class="form-group">
 											<label for="">Personas que viven con el alumno</label>
-											<input type="number" class="form-control" name="personas_vivienda">
+											<input type="number" class="form-control" onkeypress="return solonumeros(event)"
+								maxlength="1" name="personas_vivienda"  required>
 										</div>
 									</div>
 									<div class="col-md-3">
@@ -225,15 +243,18 @@ include_once "menu.php"
 								<div class="row">
 									<div class="col-md-3">
 										<label for="">Cantidad de ingreso en la vivienda</label>
-										<input type="number" name="ingreso_vivienda" class="form-control" placeholder="20.000,00">
+										<input type="number" onkeypress="return solonumeros2(event)"
+								maxlength="11" name="ingreso_vivienda" class="form-control" placeholder="20.000,00" required>
 									</div>
 									<div class="col-md-3">
 										<label for="">Cantidad de Hermanas (Hembra)</label>
-										<input type="number" name="cantidad_hermanas" class="form-control">
+										<input type="number" onkeypress="return solonumeros(event)"
+								maxlength="1" name="cantidad_hermanas" class="form-control" required>
 									</div>
 									<div class="col-md-3">
 										<label for="">Cantidad de Hermanos (Varon)</label>
-										<input type="number" name="cantidad_hermanos" class="form-control">
+										<input type="number" onkeypress="return solonumeros(event)"
+								maxlength="1" name="cantidad_hermanos" class="form-control" required>
 									</div>
 									<div class="col-md-3">
 										<label for="">Lugar que ocupa entre ellos</label>
@@ -361,7 +382,8 @@ include_once "menu.php"
 										<input type="radio" name="impedimento_fisico" id="optionsRadios1" value="No">No
 										<br>
 										<label>Razones</label>
-										<input type="text" class="form-control" name="observacion_impedimento" placeholder="Esto puede ir vacio">
+										<input type="text" onkeypress="return soloLetras(event)"
+								maxlength="1" class="form-control" name="observacion_impedimento" placeholder="Esto puede ir vacio">
 									</div>
 								</div>
 							</div>

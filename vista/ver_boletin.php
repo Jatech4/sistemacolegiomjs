@@ -32,14 +32,14 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 						<div class="col-md-3 pull-left">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Estudiante:</label>
-							<input type="text" class="form-control" value="<?php echo $row_boletin['nombres_alumno']." ".$row_boletin['apellidos_alumno'] ?>">
+							<input type="text" class="form-control" value="<?php echo $row_boletin['nombres_alumno']." ".$row_boletin['apellidos_alumno'] ?>" disabled>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Desde - Hasta:</label>
-									<select name="ano_escolar" id="ano_escolar" class="form-control">
+									<select name="ano_escolar" id="ano_escolar" class="form-control" disabled>
 									<?php while ($row_ano_escolar = mysql_fetch_array($result_ano_escolar)){?>
 									<option value="<?php echo $row_ano_escolar['id_ano_escolar']?>" <?php if($row_boletin['ano_escolar']==$row_ano_escolar['id_ano_escolar']) {echo "selected='selected'";}?>><?php echo $row_ano_escolar['ano_escolar']?></option>
 									<?php } ?>
@@ -50,15 +50,15 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					<div class="row">
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Nombres:</label>
-								<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="{SE TRAE NOMBRE DEL ALUMNO}" value="<?php echo $row_boletin['nombres_alumno'] ?>">
+								<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="{SE TRAE NOMBRE DEL ALUMNO}" value="<?php echo $row_boletin['nombres_alumno'] ?>" disabled>
 						</div>
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Apellidos:</label>
-							<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="{SE TRAE APELLIDO DEL ALUMNO}" value="<?php echo $row_boletin['apellidos_alumno'] ?>">
+							<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="{SE TRAE APELLIDO DEL ALUMNO}" value="<?php echo $row_boletin['apellidos_alumno'] ?>" disabled>
 						</div>
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Grado:</label>
-							<select class="form-control" name="grado" id="grado">
+							<select class="form-control" name="grado" id="grado" disabled>
 								<option value="000">...</option>
 								<option value="1ro" <?php if($row_boletin['grado']=='1ro') {echo "selected='selected'";}?>>1ro</option>
 								<option value="2do" <?php if($row_boletin['grado']=='2do') {echo "selected='selected'";}?>>2do</option>
@@ -70,7 +70,7 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 						</div>
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Sección:</label>
-							<select class="form-control" name="seccion" id="seccion">
+							<select class="form-control" name="seccion" id="seccion" disabled>
 								<option value="000">...</option>
 								<option value="A" <?php if($row_boletin['seccion']=='A') {echo "selected='selected'";}?>>A</option>
 								<option value="B" <?php if($row_boletin['seccion']=='B') {echo "selected='selected'";}?>>B</option>
@@ -84,32 +84,32 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					<div class="row">
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Edad:</label>
-								<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="{SE TRAE EDAD DEL ALUMNO}" value="<?php echo $row_boletin['edad_alumno'] ?>">
+								<input type="text" class="form-control" name="###" disabled id="exampleInputPassword1" placeholder="{SE TRAE EDAD DEL ALUMNO}" value="<?php echo $row_boletin['edad_alumno'] ?>">
 						</div>
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Sexo:</label>
-								<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="{SE TRAE SEXO DEL ALUMNO}" value="<?php if($row_boletin['sexo_alumno']=='M') {echo 'Masculino';}elseif($row_alumno_select['sexo_alumno']=='F'){echo 'Femenino';} ?>">
+								<input type="text" class="form-control" name="###" disabled id="exampleInputPassword1" placeholder="{SE TRAE SEXO DEL ALUMNO}" value="<?php if($row_boletin['sexo_alumno']=='M') {echo 'Masculino';}elseif($row_alumno_select['sexo_alumno']=='F'){echo 'Femenino';} ?>">
 						</div>
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Lugar de Nacimiento:</label>
-								<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="{SE TRAE LUGAR DEL ALUMNO}" value="<?php echo $row_boletin['lugar_nac_alumno'] ?>">
+								<input type="text" class="form-control" name="###" disabled id="exampleInputPassword1" placeholder="{SE TRAE LUGAR DEL ALUMNO}" value="<?php echo $row_boletin['lugar_nac_alumno'] ?>">
 						</div>
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Fecha Nacimiento:</label>
-								<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="{SE TRAE FECHA DEL ALUMNO}" value="<?php echo $row_boletin['fecha_nac_alumno'] ?>">
+								<input type="text" class="form-control" name="###" disabled id="exampleInputPassword1" placeholder="{SE TRAE FECHA DEL ALUMNO}" value="<?php echo $row_boletin['fecha_nac_alumno'] ?>">
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">CE/CI Alumno:</label>
-								<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="{SE TRAE CEDULA DEL ALUMNO}" value="<?php echo $row_boletin['cedula_alumno'] ?>">
+								<input type="text" class="form-control" name="###" disabled id="exampleInputPassword1" placeholder="{SE TRAE CEDULA DEL ALUMNO}" value="<?php echo $row_boletin['cedula_alumno'] ?>">
 						</div>
 					</div>
 					<hr class="divisoor">
 					<div class="row">
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Docente:</label>
-							<select class="form-control" name="id_docente" id="#">
+							<select class="form-control" name="id_docente" id="#" disabled>
 								<option value="000">...</option>
 								<?php while ($row_docente = mysql_fetch_array($result_docentes)){?>
 								<option value="<?php echo $row_docente['id_docente']?>" <?php if($row_boletin['id_docente']==$row_docente['id_docente']) {echo "selected='selected'";}?>><?php echo $row_docente['nombre_docente']?></option>
@@ -121,7 +121,7 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					<div class="row">
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Representante:</label>
-							<select class="form-control" name="id_representante" id="#">
+							<select class="form-control" name="id_representante" id="#" disabled>
 							<?php while ($row_representantes = mysql_fetch_array($result_repre_select)){?>
 								<option value="<?php echo $row_representantes['id_representante']?>" <?php if($row_boletin['id_representante']==$row_representantes['id_representante']) {echo "selected='selected'";}?>><?php echo $row_representantes['nombre_representante']?></option>
 							<?php } ?>
@@ -139,57 +139,57 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 						<div class="col-md-6">
 							<div class="form-group pull-right">
 							<label for="exampleInputPassword1">Desde:</label>
-							<input type="date" class="form-control" name="fecha_desde_momento1" id="exampleInputPassword1" value="<?php echo $row_boletin['fecha_desde_momento1'] ?>">
+							<input type="date" class="form-control" disabled name="fecha_desde_momento1" id="exampleInputPassword1" value="<?php echo $row_boletin['fecha_desde_momento1'] ?>">
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group pull-left">
 								<label for="#">Hasta:</label>
-								<input type="date" class="form-control" name="fecha_hasta_momento1" id="exampleInputPassword1" value="<?php echo $row_boletin['fecha_hasta_momento1'] ?>">
+								<input type="date" class="form-control" disabled name="fecha_hasta_momento1" id="exampleInputPassword1" value="<?php echo $row_boletin['fecha_hasta_momento1'] ?>">
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Observaciones Generales de la Actuación del Estudiante:</label>
-							<textarea class="form-control" rows="3" name="observaciones_gen_momento1"><?php echo $row_boletin['observaciones_gen_momento1'] ?></textarea>
+							<textarea class="form-control" disabled rows="3" name="observaciones_gen_momento1"><?php echo $row_boletin['observaciones_gen_momento1'] ?></textarea>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Recomendaciones del Docente:</label>
-							<textarea class="form-control" rows="3" name="recomendaciones_doc_momento1"><?php echo $row_boletin['recomendaciones_doc_momento1'] ?></textarea>
+							<textarea class="form-control" rows="3" disabled name="recomendaciones_doc_momento1"><?php echo $row_boletin['recomendaciones_doc_momento1'] ?></textarea>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Observaciones del estudiante:</label>
-							<textarea class="form-control" rows="3" name="observaciones_alumno_momento1"><?php echo $row_boletin['observaciones_alumno_momento1'] ?></textarea>
+							<textarea class="form-control" rows="3" disabled name="observaciones_alumno_momento1"><?php echo $row_boletin['observaciones_alumno_momento1'] ?></textarea>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Observaciones del Representante:</label>
-							<textarea class="form-control" rows="3" name="observaciones_rep_momento1"><?php echo $row_boletin['observaciones_rep_momento1'] ?></textarea>
+							<textarea class="form-control" rows="3" disabled name="observaciones_rep_momento1"><?php echo $row_boletin['observaciones_rep_momento1'] ?></textarea>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-4">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Dias hábiles:</label>
-							<input type="text" class="form-control" name="dias_hab_momento1" id="exampleInputPassword1" value="<?php echo $row_boletin['dias_hab_momento1'] ?>">
+							<input type="text" class="form-control" disabled name="dias_hab_momento1" id="exampleInputPassword1" value="<?php echo $row_boletin['dias_hab_momento1'] ?>">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Asistencias:</label>
-							<input type="text" class="form-control" name="asistencias_momento1" id="exampleInputPassword1" value="<?php echo $row_boletin['asistencias_momento1'] ?>">
+							<input type="text" class="form-control" disabled name="asistencias_momento1" id="exampleInputPassword1" value="<?php echo $row_boletin['asistencias_momento1'] ?>">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Inasistencias:</label>
-							<input type="text" class="form-control" name="inasistencias_momento1" id="exampleInputPassword1" value="<?php echo $row_boletin['inasistencias_momento1'] ?>">
+							<input type="text" class="form-control" disabled name="inasistencias_momento1" id="exampleInputPassword1" value="<?php echo $row_boletin['inasistencias_momento1'] ?>">
 							</div>
 						</div>
 					</div>
@@ -197,7 +197,7 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 						<div class="col-md-3">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Fecha:</label>
-							<input type="date" class="form-control" name="fecha_momento1" id="exampleInputPassword1" value="<?php echo $row_boletin['fecha_momento1'] ?>">
+							<input type="date" class="form-control" disabled name="fecha_momento1" id="exampleInputPassword1" value="<?php echo $row_boletin['fecha_momento1'] ?>">
 							</div>
 						</div>
 					</div>
@@ -211,13 +211,13 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 						<div class="col-md-6">
 							<div class="form-group pull-right">
 							<label for="exampleInputPassword1">Desde:</label>
-							<input type="date" class="form-control" name="fecha_desde_momento2" id="exampleInputPassword1" value="<?php echo $row_boletin['fecha_desde_momento2'] ?>">
+							<input type="date" class="form-control" disabled name="fecha_desde_momento2" id="exampleInputPassword1" value="<?php echo $row_boletin['fecha_desde_momento2'] ?>">
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group pull-left">
 								<label for="#">Hasta:</label>
-								<input type="date" class="form-control" name="fecha_hasta_momento2" id="exampleInputPassword1" value="<?php echo $row_boletin['fecha_hasta_momento2'] ?>">
+								<input type="date" class="form-control" disabled name="fecha_hasta_momento2" id="exampleInputPassword1" value="<?php echo $row_boletin['fecha_hasta_momento2'] ?>">
 							</div>
 						</div>
 					</div>
@@ -225,51 +225,51 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 						<div class="col-md-8">
 							<div class="form-group">
 							<label for="exampleInputPassword1">PROYECTO:</label>
-							<input type="text" class="form-control" name="proyecto_momento2" id="exampleInputPassword1" value="<?php echo $row_boletin['proyecto_momento2'] ?>">
+							<input type="text" class="form-control" disabled name="proyecto_momento2" id="exampleInputPassword1" value="<?php echo $row_boletin['proyecto_momento2'] ?>">
 						</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Informe Descriptivo Globalizado:</label>
-							<textarea class="form-control" rows="3" name="informe_glob_momento2"><?php echo $row_boletin['informe_glob_momento2'] ?></textarea>
+							<textarea class="form-control" rows="3" disabled name="informe_glob_momento2"><?php echo $row_boletin['informe_glob_momento2'] ?></textarea>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Recomendaciones del Docente:</label>
-							<textarea class="form-control" rows="3" name="recomendaciones_doc_momento2"><?php echo $row_boletin['recomendaciones_doc_momento2'] ?></textarea>
+							<textarea class="form-control" rows="3" disabled name="recomendaciones_doc_momento2"><?php echo $row_boletin['recomendaciones_doc_momento2'] ?></textarea>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Observaciones del estudiante:</label>
-							<textarea class="form-control" rows="3" name="observaciones_alumno_momento2"><?php echo $row_boletin['observaciones_alumno_momento2'] ?></textarea>
+							<textarea class="form-control" rows="3" disabled name="observaciones_alumno_momento2"><?php echo $row_boletin['observaciones_alumno_momento2'] ?></textarea>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Observaciones del Representante:</label>
-							<textarea class="form-control" rows="3" name="observaciones_rep_momento2"><?php echo $row_boletin['observaciones_rep_momento2'] ?></textarea>
+							<textarea class="form-control" rows="3" disabled name="observaciones_rep_momento2"><?php echo $row_boletin['observaciones_rep_momento2'] ?></textarea>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-4">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Dias hábiles:</label>
-							<input type="text" class="form-control" name="dias_hab_momento2" id="exampleInputPassword1" value="<?php echo $row_boletin['dias_hab_momento2'] ?>">
+							<input type="text" class="form-control" disabled name="dias_hab_momento2" id="exampleInputPassword1" value="<?php echo $row_boletin['dias_hab_momento2'] ?>">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Asistencias:</label>
-							<input type="text" class="form-control" name="asistencias_momento2" id="exampleInputPassword1" value="<?php echo $row_boletin['asistencias_momento2'] ?>">
+							<input type="text" class="form-control" disabled name="asistencias_momento2" id="exampleInputPassword1" value="<?php echo $row_boletin['asistencias_momento2'] ?>">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Inasistencias:</label>
-							<input type="text" class="form-control" name="inasistencias_momento2" id="exampleInputPassword1" value="<?php echo $row_boletin['inasistencias_momento2'] ?>">
+							<input type="text" class="form-control" disabled name="inasistencias_momento2" id="exampleInputPassword1" value="<?php echo $row_boletin['inasistencias_momento2'] ?>">
 							</div>
 						</div>
 					</div>
@@ -277,7 +277,7 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 						<div class="col-md-3">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Fecha:</label>
-							<input type="date" class="form-control" name="fecha_momento2" id="exampleInputPassword1" value="<?php echo $row_boletin['fecha_momento2'] ?>">
+							<input type="date" class="form-control" disabled name="fecha_momento2" id="exampleInputPassword1" value="<?php echo $row_boletin['fecha_momento2'] ?>">
 							</div>
 						</div>
 					</div>
@@ -291,13 +291,13 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 						<div class="col-md-6">
 							<div class="form-group pull-right">
 							<label for="exampleInputPassword1">Desde:</label>
-							<input type="date" class="form-control" name="fecha_desde_momento3" id="exampleInputPassword1" value="<?php echo $row_boletin['fecha_desde_momento3'] ?>">
+							<input type="date" class="form-control" disabled name="fecha_desde_momento3" id="exampleInputPassword1" value="<?php echo $row_boletin['fecha_desde_momento3'] ?>">
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group pull-left">
 								<label for="#">Hasta:</label>
-								<input type="date" class="form-control" name="fecha_hasta_momento3" id="exampleInputPassword1" value="<?php echo $row_boletin['fecha_hasta_momento3'] ?>">
+								<input type="date" class="form-control" disabled name="fecha_hasta_momento3" id="exampleInputPassword1" value="<?php echo $row_boletin['fecha_hasta_momento3'] ?>">
 							</div>
 						</div>
 					</div>
@@ -305,51 +305,51 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 						<div class="col-md-8">
 							<div class="form-group">
 							<label for="exampleInputPassword1">PROYECTO:</label>
-							<input type="text" class="form-control" name="proyecto_momento3" id="exampleInputPassword1" value="<?php echo $row_boletin['proyecto_momento3'] ?>">
+							<input type="text" class="form-control" disabled name="proyecto_momento3" id="exampleInputPassword1" value="<?php echo $row_boletin['proyecto_momento3'] ?>">
 						</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Informe Descriptivo Globalizado:</label>
-							<textarea class="form-control" rows="3" name="informe_glob_momento3"><?php echo $row_boletin['informe_glob_momento3'] ?></textarea>
+							<textarea class="form-control" rows="3" disabled name="informe_glob_momento3"><?php echo $row_boletin['informe_glob_momento3'] ?></textarea>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Recomendaciones del Docente:</label>
-							<textarea class="form-control" rows="3" name="recomendaciones_doc_momento3"><?php echo $row_boletin['recomendaciones_doc_momento3'] ?></textarea>
+							<textarea class="form-control" rows="3" disabled name="recomendaciones_doc_momento3"><?php echo $row_boletin['recomendaciones_doc_momento3'] ?></textarea>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Observaciones del estudiante:</label>
-							<textarea class="form-control" rows="3" name="observaciones_alumno_momento3"><?php echo $row_boletin['observaciones_alumno_momento3'] ?></textarea>
+							<textarea class="form-control" rows="3" disabled name="observaciones_alumno_momento3"><?php echo $row_boletin['observaciones_alumno_momento3'] ?></textarea>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Observaciones del Representante:</label>
-							<textarea class="form-control" rows="3" name="observaciones_rep_momento3"><?php echo $row_boletin['observaciones_rep_momento3'] ?></textarea>
+							<textarea class="form-control" rows="3" disabled name="observaciones_rep_momento3"><?php echo $row_boletin['observaciones_rep_momento3'] ?></textarea>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-4">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Dias hábiles:</label>
-							<input type="text" class="form-control" name="dias_hab_momento3" id="exampleInputPassword1" value="<?php echo $row_boletin['dias_hab_momento3'] ?>">
+							<input type="text" class="form-control" disabled name="dias_hab_momento3" id="exampleInputPassword1" value="<?php echo $row_boletin['dias_hab_momento3'] ?>">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Asistencias:</label>
-							<input type="text" class="form-control" name="asistencias_momento3" id="exampleInputPassword1" value="<?php echo $row_boletin['asistencias_momento3'] ?>">
+							<input type="text" class="form-control" disabled name="asistencias_momento3" id="exampleInputPassword1" value="<?php echo $row_boletin['asistencias_momento3'] ?>">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Inasistencias:</label>
-							<input type="text" class="form-control" name="inasistencias_momento3" id="exampleInputPassword1" value="<?php echo $row_boletin['inasistencias_momento3'] ?>">
+							<input type="text" class="form-control" disabled name="inasistencias_momento3" id="exampleInputPassword1" value="<?php echo $row_boletin['inasistencias_momento3'] ?>">
 							</div>
 						</div>
 					</div>
@@ -357,7 +357,7 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 						<div class="col-md-3">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Fecha:</label>
-							<input type="date" class="form-control" name="fecha_momento3" id="exampleInputPassword1" value="<?php echo $row_boletin['fecha_momento3'] ?>">
+							<input type="date" class="form-control" disabled name="fecha_momento3" id="exampleInputPassword1" value="<?php echo $row_boletin['fecha_momento3'] ?>">
 							</div>
 						</div>
 					</div>
@@ -371,13 +371,13 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 						<div class="col-md-6">
 							<div class="form-group pull-right">
 							<label for="exampleInputPassword1">Desde:</label>
-							<input type="date" class="form-control" name="fecha_desde_momento4" id="exampleInputPassword1" value="<?php echo $row_boletin['fecha_desde_momento4'] ?>">
+							<input type="date" class="form-control" disabled name="fecha_desde_momento4" id="exampleInputPassword1" value="<?php echo $row_boletin['fecha_desde_momento4'] ?>">
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group pull-left">
 								<label for="#">Hasta:</label>
-								<input type="date" class="form-control" name="fecha_hasta_momento4" id="exampleInputPassword1" value="<?php echo $row_boletin['fecha_hasta_momento4'] ?>">
+								<input type="date" class="form-control" disabled name="fecha_hasta_momento4" id="exampleInputPassword1" value="<?php echo $row_boletin['fecha_hasta_momento4'] ?>">
 							</div>
 						</div>
 					</div>
@@ -385,51 +385,51 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 						<div class="col-md-8">
 							<div class="form-group">
 							<label for="exampleInputPassword1">PROYECTO:</label>
-							<input type="text" class="form-control" name="proyecto_momento4" id="exampleInputPassword1" value="<?php echo $row_boletin['proyecto_momento4'] ?>">
+							<input type="text" class="form-control" disabled name="proyecto_momento4" id="exampleInputPassword1" value="<?php echo $row_boletin['proyecto_momento4'] ?>">
 						</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Informe Descriptivo Globalizado:</label>
-							<textarea class="form-control" rows="3" name="informe_glob_momento4"><?php echo $row_boletin['informe_glob_momento4'] ?></textarea>
+							<textarea class="form-control" rows="3" disabled name="informe_glob_momento4"><?php echo $row_boletin['informe_glob_momento4'] ?></textarea>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Recomendaciones del Docente:</label>
-							<textarea class="form-control" rows="3" name="recomendaciones_doc_momento4"><?php echo $row_boletin['recomendaciones_doc_momento4'] ?></textarea>
+							<textarea class="form-control" rows="3" disabled name="recomendaciones_doc_momento4"><?php echo $row_boletin['recomendaciones_doc_momento4'] ?></textarea>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Observaciones del estudiante:</label>
-							<textarea class="form-control" rows="3" name="observaciones_alumno_momento4"><?php echo $row_boletin['observaciones_alumno_momento4'] ?></textarea>
+							<textarea class="form-control" rows="3" disabled name="observaciones_alumno_momento4"><?php echo $row_boletin['observaciones_alumno_momento4'] ?></textarea>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Observaciones del Representante:</label>
-							<textarea class="form-control" rows="3" name="observaciones_rep_momento4"><?php echo $row_boletin['observaciones_rep_momento4'] ?></textarea>
+							<textarea class="form-control" rows="3" disabled name="observaciones_rep_momento4"><?php echo $row_boletin['observaciones_rep_momento4'] ?></textarea>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-4">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Dias hábiles:</label>
-							<input type="text" class="form-control" name="dias_hab_momento4" id="exampleInputPassword1" value="<?php echo $row_boletin['dias_hab_momento4'] ?>">
+							<input type="text" class="form-control" disabled name="dias_hab_momento4" id="exampleInputPassword1" value="<?php echo $row_boletin['dias_hab_momento4'] ?>">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Asistencias:</label>
-							<input type="text" class="form-control" name="asistencias_momento4" id="exampleInputPassword1" value="<?php echo $row_boletin['asistencias_momento4'] ?>">
+							<input type="text" class="form-control" disabled name="asistencias_momento4" id="exampleInputPassword1" value="<?php echo $row_boletin['asistencias_momento4'] ?>">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Inasistencias:</label>
-							<input type="text" class="form-control" name="inasistencias_momento4" id="exampleInputPassword1" value="<?php echo $row_boletin['inasistencias_momento4'] ?>">
+							<input type="text" class="form-control" disabled name="inasistencias_momento4" id="exampleInputPassword1" value="<?php echo $row_boletin['inasistencias_momento4'] ?>">
 							</div>
 						</div>
 					</div>
@@ -437,7 +437,7 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 						<div class="col-md-3">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Fecha:</label>
-							<input type="date" class="form-control" name="fecha_momento4" id="exampleInputPassword1" value="<?php echo $row_boletin['fecha_momento4'] ?>">
+							<input type="date" class="form-control" disabled name="fecha_momento4" id="exampleInputPassword1" value="<?php echo $row_boletin['fecha_momento4'] ?>">
 							</div>
 						</div>
 					</div>
@@ -450,12 +450,12 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					</div>
 					<div class="row">
 					    <div class="col-md-offset-3 col-md-6">
-					        El Estudiante: <input type="text" name="#" class="form-control" placeholder="SE TRAE NOMBRE DEL ALUMNOOO"> Durante el anho escolar <select class="form-control" name="ano_escolar">
-							<option value="000">...</option>
+					        El Estudiante: <input type="text" name="#" disabled class="form-control"> Durante el anho escolar <select class="form-control" name="ano_escolar" disabled>
+							<option value="#" selected disabled>Seleccione</option>
 							<?php while ($row_ano_escolar = mysql_fetch_array($result_ano_escolar)){?>
 							<option value="<?php echo $row_ano_escolar['id_ano_escolar']?>"><?php echo $row_ano_escolar['ano_escolar']?></option>
 							<?php } ?>
-							</select> ha objetenido el Literal <input type="text" name="#" class="form-control" placeholder="Nosequesto"> lo cual expresa: <input type="text" name="#" class="form-control" placeholder="Nosequesto"> segun lo estipulado en el Articulo 15 y 16 de la Gaceta Oficial de la REpublica Bolivariana de VEnezuela del 5 de Enero de 2000 N.5428.
+							</select> ha objetenido el Literal <input disabled type="text" name="#" class="form-control" placeholder=""> lo cual expresa: <input disabled type="text" name="#" class="form-control" placeholder=""> segun lo estipulado en el Articulo 15 y 16 de la Gaceta Oficial de la REpublica Bolivariana de VEnezuela del 5 de Enero de 2000 N.5428.
 					    </div>
 					</div>
 					<div class="row">
@@ -464,9 +464,9 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					            Por lo que el estudiante fue:
 					        </h4>
 					        <div class="radio" style="margin-left: 20px;">
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"> Promovido
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" disabled> Promovido
                                 <br>
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"> No Promovido
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" disabled> No Promovido
                             </div>
 					    </div>
 					</div>
@@ -475,7 +475,7 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					        <h4 class="text-left">
 					            Al Grado Inmediato superior:
 					        </h4>
-					        <input type="text" class="form-control" name="#">
+					        <input type="text" class="form-control" name="#" disabled>
 					    </div>
 					</div>
 				

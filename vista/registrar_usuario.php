@@ -27,19 +27,19 @@ $result_status = mysql_query("SELECT * FROM status_usuario");
 							<form name="form" id="form" method="POST" action="../controlador/registrar_usuario.php">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Nombre y Apellido</label>
-							<input type="nombre" class="form-control" id="exampleInputPassword1" placeholder="Nombre y Apellido" name="nombre" id="nombre">
+							<input type="nombre" class="form-control" onkeypress="return soloLetras(event)" maxlength="20" id="exampleInputPassword1" placeholder="Nombre y Apellido" name="nombre" id="nombre">
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Cedula</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Cedula" name="cedula" id="cedula">
+							<input type="text" class="form-control" onkeypress="return solonumeros2(event)" maxlength="11" id="exampleInputPassword1" placeholder="Cedula" name="cedula" id="cedula">
 							</div>
 							<div class="form-group">
 							<label for="usuario">Usuario</label>
-							<input type="usuario" class="form-control" id="exampleInputEmail1" placeholder="Usuario" name="login" id="login">
+							<input type="usuario" class="form-control" id="exampleInputEmail1" autocomplete="off" placeholder="Usuario" name="login" id="login">
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Contraseña</label>
-							<input type="password" class="form-control pw" id="exampleInputPassword1" placeholder="Contraseña" name="password" id="password">
+							<input type="password" class="form-control pw" id="exampleInputPassword1" autocomplete="off" placeholder="Contraseña" name="password" id="password">
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Perfil</label>

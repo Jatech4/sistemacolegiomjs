@@ -63,6 +63,8 @@ include_once "menu.php"
 									<th>ID</th>
 									<th>Nombres</th>
 									<th>Cedula</th>
+									<th>Correo</th>
+									<th>Telefono</th>
 									</tr>
 									</thead>
 									<tbody>
@@ -72,6 +74,8 @@ include_once "menu.php"
 									<td><?php echo $row['id_docente'] ?></td>
 									<td><?php echo $row['nombre_docente'] ?></td>
 									<td><?php echo $row['ci_docente'] ?></td>
+									<td>#</td>
+									<td>#</td>
 									</tr>
 									<?php }}else{ ?>
 									<tr><td>Sin Resultados...</td></tr>

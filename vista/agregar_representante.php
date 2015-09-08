@@ -43,13 +43,13 @@ include_once "menu.php"
 									<div class="col-md-3">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Nombre y Apellido del Representante</label>
-								<input type="text" class="form-control" name="nombre_representante" id="exampleInputPassword1" placeholder="Nombre">
+								<input type="text" class="form-control" name="nombre_representante" onkeypress="return soloLetras(event)" maxlength="15" id="exampleInputPassword1" placeholder="Nombre" required>
 							</div>
 									</div>
 									<div class="col-md-3">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Cedula (C.I)</label>
-								<input type="text" class="form-control" name="cedula_representante" id="exampleInputPassword1" placeholder="Cedula">
+								<input type="text" class="form-control" name="cedula_representante" onkeypress="return solonumeros2(event)" maxlength="12" id="exampleInputPassword1" placeholder="Cedula" required>
 							</div>
 									</div>
 									<div class="col-md-3">
@@ -66,25 +66,25 @@ include_once "menu.php"
 										<div class="col-md-3">
 										<div class="form-group">
 										<label>Edad Representante</label>
-										<input type="text" class="form-control" name="edad_representante" id="exampleInputPassword1" placeholder="Edad">
+										<input type="number" class="form-control" name="edad_representante" onkeypress="return solonumeros(event)" maxlength="12" id="exampleInputPassword1" placeholder="Edad" requiered>
 										</div>
 										</div>
 										<div class="col-md-3">
 										<div class="form-group">
 										<label for="exampleInputPassword1">Telefono 1</label>
-										<input type="text" class="form-control" id="exampleInputPassword1" name="tlfn1_representante" placeholder="Telefono">
+										<input type="text" class="form-control" id="exampleInputPassword1" name="tlfn1_representante" onkeypress="return solonumeros2(event)" maxlength="12" placeholder="Telefono" required>
 										</div>
 										</div>
 										<div class="col-md-3">
 										<div class="form-group">
 										<label for="exampleInputPassword1">Telefono 1</label>
-										<input type="text" class="form-control" id="exampleInputPassword1" name="tlfn2_representante" placeholder="Telefono">
+										<input type="text" class="form-control" id="exampleInputPassword1" name="tlfn2_representante" onkeypress="return solonumeros2(event)" maxlength="12" placeholder="Telefono" required>
 										</div>
 										</div>
 										<div class="col-md-3">
 										<div class="form-group">
 										<label for="exampleInputPassword1">Nombre Representante Legal</label>
-										<input type="text" class="form-control" id="exampleInputPassword1" name="representante_legal">
+										<input type="text" class="form-control" id="exampleInputPassword1" onkeypress="return solonLetras(event)" maxlength="12" name="representante_legal" required>
 										</div>
 										</div>
 								</div>
@@ -92,19 +92,19 @@ include_once "menu.php"
 									<div class="col-md-3">
 										<div class="form-group">
 										<label for="exampleInputPassword1">Ocupacion Representante</label>
-										<input type="text" class="form-control" id="exampleInputPassword1" name="ocupacion_representante">
+										<input type="text" class="form-control" id="exampleInputPassword1" onkeypress="return solonLetras(event)" maxlength="20" name="ocupacion_representante"  required>
 										</div>
 									</div>
 									<div class="col-md-3">
 										<div class="form-group">
 										<label for="exampleInputPassword1">Lugar de trabajo</label>
-										<input type="text" class="form-control" id="exampleInputPassword1" name="lugar_trabajo_representante">
+										<input type="text" class="form-control" id="exampleInputPassword1" onkeypress="return solonLetras(event)" maxlength="20" name="lugar_trabajo_representante" required>
 										</div>
 									</div>
 									<div class="col-md-3">
 										<div class="form-group">
 										<label for="exampleInputPassword1">Telefono del lugar</label>
-										<input type="text" class="form-control" id="exampleInputPassword1" name="tlfn_lugar_trabajo_representante" placeholder="Telefono">
+										<input type="text" class="form-control" id="exampleInputPassword1" name="tlfn_lugar_trabajo_representante" onkeypress="return solonumeros2(event)" maxlength="12" placeholder="Telefono" required>
 										</div>
 									</div>
 									<div class="col-md-3">
@@ -122,7 +122,7 @@ include_once "menu.php"
 									<div class="col-md-3">
 										<div class="form-group">
 											<label for="exampleInputPassword1">Sueldo mensual</label>
-										<input type="text" class="form-control" id="exampleInputPassword1" name="sueldo_representante">
+										<input type="text" class="form-control" id="exampleInputPassword1" name="sueldo_representante" onkeypress="return solonumeros2(event)" maxlength="12" required>
 										</div>
 									</div>
 								</div>

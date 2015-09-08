@@ -28,11 +28,19 @@ include_once "menu.php";
 							<input type="hidden" class="form-control" id="exampleInputPassword1" name="id" id="id" value="<?php echo $_GET['docente'] ?>">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Nombre y Apellido</label>
-							<input type="nombre" class="form-control" id="exampleInputPassword1" placeholder="Nombre y Apellido" name="nombre_docente" id="nombre" value="<?php echo $row['nombre_docente'] ?>">
+							<input type="nombre" class="form-control" id="exampleInputPassword1" onkeypress="return soloLetras(event)" maxlength="20" placeholder="Nombre y Apellido" name="nombre_docente" id="nombre" value="<?php echo $row['nombre_docente'] ?>">
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Cedula</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Cedula" name="ci_docente" id="cedula" value="<?php echo $row['ci_docente'] ?>">
+							<input type="text" class="form-control" id="exampleInputPassword1" onkeypress="return solonumeros2(event)" maxlength="11" placeholder="Cedula" name="ci_docente" id="cedula" value="<?php echo $row['ci_docente'] ?>">
+							</div>
+							<div class="form-group">
+							<label for="exampleInputPassword1">Correo</label>
+							<input type="email" class="form-control" id="exampleInputPassword1" maxlength="30" placeholder="Correo Electronico" name="correo_docente" id="email">
+							</div>
+							<div class="form-group">
+							<label for="exampleInputPassword1">Telefono</label>
+							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Telefono" onkeypress="return solonumeros2(event)" maxlength="12" name="tlf_docente" id="#">
 							</div>
 							<button type="button" class="btn btn-warning" onClick="enviar()"><span class="icon-user-plus"></span> Editar</button>
 							<a class="btn btn-info pull-right" href="agregar_docente.php" role="button"><span class="icon-undo2"></span>  Regresar</a>

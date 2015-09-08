@@ -50,16 +50,16 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					<div class="row">
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Nombres:</label>
-								<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="{SE TRAE NOMBRE DEL ALUMNO}" value="<?php echo $row_boletin['nombres_alumno'] ?>">
+								<input type="text" onkeypress="return soloLetras(event)" maxlength="20" class="form-control" name="###" id="exampleInputPassword1" placeholder="" value="<?php echo $row_boletin['nombres_alumno'] ?>" required>
 						</div>
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Apellidos:</label>
-							<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="{SE TRAE APELLIDO DEL ALUMNO}" value="<?php echo $row_boletin['apellidos_alumno'] ?>">
+							<input type="text" class="form-control" onkeypress="return soloLetras(event)" maxlength="20" name="###" id="exampleInputPassword1" placeholder="" value="<?php echo $row_boletin['apellidos_alumno'] ?>" required>
 						</div>
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Grado:</label>
 							<select class="form-control" name="grado" id="grado">
-								<option value="000">...</option>
+								<option value="#" selected disabled>Seleccione</option>
 								<option value="1ro" <?php if($row_boletin['grado']=='1ro') {echo "selected='selected'";}?>>1ro</option>
 								<option value="2do" <?php if($row_boletin['grado']=='2do') {echo "selected='selected'";}?>>2do</option>
 								<option value="3ro" <?php if($row_boletin['grado']=='3ro') {echo "selected='selected'";}?>>3ro</option>
@@ -71,7 +71,7 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Sección:</label>
 							<select class="form-control" name="seccion" id="seccion">
-								<option value="000">...</option>
+								<option value="#" selected disabled>Seleccione</option>
 								<option value="A" <?php if($row_boletin['seccion']=='A') {echo "selected='selected'";}?>>A</option>
 								<option value="B" <?php if($row_boletin['seccion']=='B') {echo "selected='selected'";}?>>B</option>
 								<option value="C" <?php if($row_boletin['seccion']=='C') {echo "selected='selected'";}?>>C</option>
@@ -84,25 +84,25 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					<div class="row">
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Edad:</label>
-								<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="{SE TRAE EDAD DEL ALUMNO}" value="<?php echo $row_boletin['edad_alumno'] ?>">
+								<input type="text" onkeypress="return solonumeros(event)" maxlength="2" class="form-control" name="###" id="exampleInputPassword1" placeholder="{SE TRAE EDAD DEL ALUMNO}" value="<?php echo $row_boletin['edad_alumno'] ?>">
 						</div>
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Sexo:</label>
-								<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="{SE TRAE SEXO DEL ALUMNO}" value="<?php if($row_boletin['sexo_alumno']=='M') {echo 'Masculino';}elseif($row_alumno_select['sexo_alumno']=='F'){echo 'Femenino';} ?>">
+								<input type="text" class="form-control" onkeypress="return soloLetras(event)" maxlength="9" name="###" id="exampleInputPassword1" placeholder="{SE TRAE SEXO DEL ALUMNO}" value="<?php if($row_boletin['sexo_alumno']=='M') {echo 'Masculino';}elseif($row_alumno_select['sexo_alumno']=='F'){echo 'Femenino';} ?>">
 						</div>
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Lugar de Nacimiento:</label>
-								<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="{SE TRAE LUGAR DEL ALUMNO}" value="<?php echo $row_boletin['lugar_nac_alumno'] ?>">
+								<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="" value="<?php echo $row_boletin['lugar_nac_alumno'] ?>">
 						</div>
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Fecha Nacimiento:</label>
-								<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="{SE TRAE FECHA DEL ALUMNO}" value="<?php echo $row_boletin['fecha_nac_alumno'] ?>">
+								<input type="text" class="form-control" name="###" onkeypress="return soloLetras(event)" maxlength="20" id="exampleInputPassword1" placeholder="" value="<?php echo $row_boletin['fecha_nac_alumno'] ?>">
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">CE/CI Alumno:</label>
-								<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="{SE TRAE CEDULA DEL ALUMNO}" value="<?php echo $row_boletin['cedula_alumno'] ?>">
+								<input type="text" class="form-control" name="###" onkeypress="return solonumeros2(event)" maxlength="11" id="exampleInputPassword1" placeholder="" value="<?php echo $row_boletin['cedula_alumno'] ?>">
 						</div>
 					</div>
 					<hr class="divisoor">
@@ -110,7 +110,7 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Docente:</label>
 							<select class="form-control" name="id_docente" id="#">
-								<option value="000">...</option>
+								<option value="#" selected disabled>Seleccione</option>
 								<?php while ($row_docente = mysql_fetch_array($result_docentes)){?>
 								<option value="<?php echo $row_docente['id_docente']?>" <?php if($row_boletin['id_docente']==$row_docente['id_docente']) {echo "selected='selected'";}?>><?php echo $row_docente['nombre_docente']?></option>
 								<?php } ?>
@@ -450,12 +450,12 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					</div>
 					<div class="row">
 					    <div class="col-md-offset-3 col-md-6">
-					        El Estudiante: <input type="text" name="#" class="form-control" placeholder="SE TRAE NOMBRE DEL ALUMNOOO"> Durante el anho escolar <select class="form-control" name="ano_escolar">
-							<option value="000">...</option>
+					        El Estudiante: <input type="text" name="#" class="form-control" placeholder=""> Durante el anho escolar <select class="form-control" name="ano_escolar">
+							<option value="#" selected disabled>Seleccione</option>
 							<?php while ($row_ano_escolar = mysql_fetch_array($result_ano_escolar)){?>
 							<option value="<?php echo $row_ano_escolar['id_ano_escolar']?>"><?php echo $row_ano_escolar['ano_escolar']?></option>
 							<?php } ?>
-							</select> ha objetenido el Literal <input type="text" name="#" class="form-control" placeholder="Nosequesto"> lo cual expresa: <input type="text" name="#" class="form-control" placeholder="Nosequesto"> segun lo estipulado en el Articulo 15 y 16 de la Gaceta Oficial de la REpublica Bolivariana de VEnezuela del 5 de Enero de 2000 N.5428.
+							</select> ha objetenido el Literal <input type="text" name="#" class="form-control" placeholder=""> lo cual expresa: <input type="text" name="#" class="form-control" placeholder=""> segun lo estipulado en el Articulo 15 y 16 de la Gaceta Oficial de la Republica Bolivariana de VEnezuela del 5 de Enero de 2000 N.5428.
 					    </div>
 					</div>
 					<div class="row">
@@ -464,9 +464,9 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					            Por lo que el estudiante fue:
 					        </h4>
 					        <div class="radio" style="margin-left: 20px;">
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"> Promovido
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" required> Promovido
                                 <br>
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"> No Promovido
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" required> No Promovido
                             </div>
 					    </div>
 					</div>
@@ -475,7 +475,7 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					        <h4 class="text-left">
 					            Al Grado Inmediato superior:
 					        </h4>
-					        <input type="text" class="form-control" name="#">
+					        <input type="text" class="form-control" name="#" required>
 					    </div>
 					</div>
 				

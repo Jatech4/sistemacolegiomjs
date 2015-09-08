@@ -43,10 +43,10 @@ include_once "menu.php"
 								<form name="form1" id="form1" method="POST" >
 									<div class="col-lg-6">
 									<div class="col-md-5">
-										<input type="text" class="form-control" placeholder="Nombre.." name="nombre" value="<?php echo $_POST['nombre']?>">
+										<input type="text" class="form-control" placeholder="Nombre.." onkeypress="return soloLetras(event)" maxlength="20" name="nombre" value="<?php echo $_POST['nombre']?>">
 									</div>
 									<div class="col-md-5">
-										<input type="text" class="form-control" placeholder="Cedula.." name="cedula" value="<?php echo $_POST['cedula']?>">
+										<input type="text" class="form-control" placeholder="Cedula.." name="cedula" onkeypress="return solonumero2(event)" maxlength="11" value="<?php echo $_POST['cedula']?>">
 									</div>
 										<div class="input-group">
 											<span class="input-group-btn">

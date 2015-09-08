@@ -42,25 +42,25 @@ include_once "menu.php"
 									<div class="col-md-3">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Nombres</label>
-								<input type="text" class="form-control" name="nombres_alumno" id="exampleInputPassword1" placeholder="Nombres" value="<?php echo $row['nombres_alumno'] ?>">
+								<input type="text" class="form-control" name="nombres_alumno" id="exampleInputPassword1" onkeypress="return soloLetras(event)" maxlength="15" placeholder="Nombres" value="<?php echo $row['nombres_alumno'] ?>">
 							</div>
 									</div>
 									<div class="col-md-3">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Apellidos</label>
-								<input type="text" class="form-control" name="apellidos_alumno" id="exampleInputPassword1" placeholder="Apellidos" value="<?php echo $row['apellidos_alumno'] ?>">
+								<input type="text" class="form-control" name="apellidos_alumno" id="exampleInputPassword1" onkeypress="return soloLetras(event)" maxlength="15" placeholder="Apellidos" value="<?php echo $row['apellidos_alumno'] ?>">
 							</div>
 									</div>
 									<div class="col-md-3">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Cedula</label>
-								<input type="text" class="form-control" name="cedula_alumno" id="exampleInputPassword1" placeholder="Cedula" value="<?php echo $row['cedula_alumno'] ?>">
+								<input type="text" class="form-control" name="cedula_alumno" id="exampleInputPassword1" onkeypress="return solonumeros2(event)" maxlength="12" placeholder="Cedula" value="<?php echo $row['cedula_alumno'] ?>">
 							</div>
 									</div>
 									<div class="col-md-3">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Edad</label>
-								<input type="text" class="form-control" name="edad_alumno" id="exampleInputPassword1" placeholder="Edad" value="<?php echo $row['edad_alumno'] ?>">
+								<input type="number" class="form-control" onkeypress="return solonumeros(event)" maxlength="1" name="edad_alumno" id="exampleInputPassword1" placeholder="Edad" value="<?php echo $row['edad_alumno'] ?>">
 							</div>
 									</div>
 								</div>
@@ -77,7 +77,7 @@ include_once "menu.php"
 									<div class="col-md-3">
 										<div class="form-group">
 							<label for="exampleInputPassword1">Lugar de Nacimiento</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" name="lugar_nac_alumno" placeholder="Lugar de Nacimiento" value="<?php echo $row['lugar_nac_alumno'] ?>">
+							<input type="text" class="form-control" onkeypress="return soloLetras(event)" maxlength="25" id="exampleInputPassword1" name="lugar_nac_alumno" placeholder="Lugar de Nacimiento" value="<?php echo $row['lugar_nac_alumno'] ?>">
 							</div>
 									</div>
 									<div class="col-md-3">
@@ -89,7 +89,7 @@ include_once "menu.php"
 									<div class="col-md-3">
 										<div class="form-group">
 							<label for="exampleInputPassword1">Dirección</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" name="direccion_alumno" placeholder="Dirección del Alumno" value="<?php echo $row['direccion_alumno'] ?>">
+							<input type="text" class="form-control" onkeypress="return soloLetras(event)" maxlength="50" id="exampleInputPassword1" name="direccion_alumno" placeholder="Dirección del Alumno" value="<?php echo $row['direccion_alumno'] ?>">
 							</div>
 									</div>
 								</div>
@@ -97,19 +97,19 @@ include_once "menu.php"
 									<div class="col-md-4">
 										<div class="form-group">
 							<label for="exampleInputPassword1">Telefono 1</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" name="tlf1_alumno" placeholder="Telefono" value="<?php echo $row['tlf1_alumno'] ?>">
+							<input type="text" class="form-control" id="exampleInputPassword1" onkeypress="return solonumeros2(event)" maxlength="11" name="tlf1_alumno" placeholder="Telefono" value="<?php echo $row['tlf1_alumno'] ?>">
 							</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
 							<label for="exampleInputPassword1">Telefono 2</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" name="tlf2_alumno" placeholder="Telefono" value="<?php echo $row['tlf2_alumno'] ?>">
+							<input type="text" class="form-control" id="exampleInputPassword1" name="tlf2_alumno" onkeypress="return solonumeros2(event)" maxlength="11" placeholder="Telefono" value="<?php echo $row['tlf2_alumno'] ?>">
 							</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
 							<label for="exampleInputPassword1">Telefono 3</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" name="tlf3_alumno" placeholder="Telefono" value="<?php echo $row['tlf3_alumno'] ?>">
+							<input type="text" class="form-control" id="exampleInputPassword1" name="tlf3_alumno" onkeypress="return solonumeros2(event)" maxlength="11" placeholder="Telefono" value="<?php echo $row['tlf3_alumno'] ?>">
 							</div>
 									</div>
 								</div>
@@ -254,7 +254,7 @@ include_once "menu.php"
 									<div class="col-md-3">
 										<div class="form-group">
 											<label for="">Personas que viven con el alumno</label>
-											<input type="number" class="form-control" name="personas_vivienda" value="<?php echo $row['personas_vivienda'] ?>">
+											<input type="number" class="form-control" name="personas_vivienda" onkeypress="return solonumeros2(event)" maxlength="11" value="<?php echo $row['personas_vivienda'] ?>">
 										</div>
 									</div>
 									<div class="col-md-3">
@@ -273,15 +273,15 @@ include_once "menu.php"
 								<div class="row">
 									<div class="col-md-3">
 										<label for="">Cantidad de ingreso en la vivienda</label>
-										<input type="number" name="ingreso_vivienda" class="form-control" placeholder="20.000,00" value="<?php echo $row['ingreso_vivienda'] ?>">
+										<input type="number" onkeypress="return solonumeros2(event)" maxlength="15" name="ingreso_vivienda" class="form-control" placeholder="20.000,00" value="<?php echo $row['ingreso_vivienda'] ?>">
 									</div>
 									<div class="col-md-3">
 										<label for="">Cantidad de Hermanas (Hembra)</label>
-										<input type="number" name="cantidad_hermanas" class="form-control" value="<?php echo $row['cantidad_hermanas'] ?>">
+										<input type="number" onkeypress="return solonumeros2(event)" maxlength="11" name="cantidad_hermanas" class="form-control" value="<?php echo $row['cantidad_hermanas'] ?>">
 									</div>
 									<div class="col-md-3">
 										<label for="">Cantidad de Hermanos (Varon)</label>
-										<input type="number" name="cantidad_hermanos" class="form-control" value="<?php echo $row['cantidad_hermanos'] ?>">
+										<input type="number" onkeypress="return solonumeros2(event)" maxlength="11" name="cantidad_hermanos" class="form-control" value="<?php echo $row['cantidad_hermanos'] ?>">
 									</div>
 									<div class="col-md-3">
 										<label for="">Lugar que ocupa entre ellos</label>
@@ -408,7 +408,7 @@ include_once "menu.php"
 										<input type="radio" name="impedimento_fisico" id="optionsRadios1" value="No" <?php if($row['impedimento_fisico']=='No') {echo "checked='checked'";}?>>No
 										<br>
 										<label>Razones</label>
-										<input type="text" class="form-control" name="observacion_impedimento" placeholder="Esto puede ir vacio" value="<?php echo $row['observacion_impedimento'] ?>">
+										<input type="text" onkeypress="return soloLetras(event)" maxlength="50" class="form-control" name="observacion_impedimento" placeholder="Esto puede ir vacio" value="<?php echo $row['observacion_impedimento'] ?>">
 									</div>
 								</div>
 							</div>

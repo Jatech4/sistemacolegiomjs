@@ -24,11 +24,19 @@ include_once "menu.php";
 							<form name="form" id="form" method="POST" action="../controlador/registrar_docente.php">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Nombre y Apellido</label>
-							<input type="nombre" class="form-control" id="exampleInputPassword1" placeholder="Nombre y Apellido" name="nombre_docente" id="nombre">
+							<input type="nombre" class="form-control" id="exampleInputPassword1" onkeypress="return soloLetras(event)" maxlength="20" placeholder="Nombre y Apellido" name="nombre_docente" id="nombre">
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Cedula</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Cedula" name="ci_docente" id="cedula">
+							<input type="text" class="form-control" id="exampleInputPassword1" onkeypress="return solonumeros2(event)" maxlength="10" placeholder="Cedula" name="ci_docente" id="cedula">
+							</div>
+							<div class="form-group">
+							<label for="exampleInputPassword1">Correo</label>
+							<input type="email" class="form-control" id="exampleInputPassword1" maxlength="30" placeholder="Correo Electronico" name="correo_docente" id="email">
+							</div>
+							<div class="form-group">
+							<label for="exampleInputPassword1">Telefono</label>
+							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Telefono" onkeypress="return solonumeros2(event)" maxlength="12" name="tlf_docente" id="#">
 							</div>
 							<button type="button" class="btn btn-success" onClick="enviar()"><span class="icon-user-plus"></span> Registrar</button>
 							<a class="btn btn-info pull-right" href="agregar_docente.php" role="button"><span class="icon-undo2"></span>  Regresar</a>

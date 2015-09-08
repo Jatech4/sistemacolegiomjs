@@ -35,7 +35,7 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 							<label for="#">Estudiante:</label>
 							<select class="form-control" name="id_alumno" id="#" onchange="location.href='generar_boletin.php?alumno=' + this.value" >
 								<?php while ($row_alumno = mysql_fetch_array($result_alumnos)){?>
-								<option value="000">...</option>
+								<option value="#" selected disabled>Seleccione</option>
 								<option value="<?php echo $row_alumno['id_alumno']?>"
 								<?php
 								if(isset($_GET['alumno'])) {
@@ -51,7 +51,7 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 						<div class="col-md-3">
 							<label for="#">Año Escolar:</label>
 							<select class="form-control" name="ano_escolar">
-							<option value="000">...</option>
+							<option value="#" selected disabled>Seleccione</option>
 							<?php while ($row_ano_escolar = mysql_fetch_array($result_ano_escolar)){?>
 							<option value="<?php echo $row_ano_escolar['id_ano_escolar']?>"><?php echo $row_ano_escolar['ano_escolar']?></option>
 							<?php } ?>
@@ -62,16 +62,16 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 					<div class="row">
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Nombres:</label>
-								<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="{SE TRAE NOMBRE DEL ALUMNO}" value="<?php echo $row_alumno_select['nombres_alumno'] ?>">
+								<input type="text" class="form-control" onkeypress="return soloLetras(event)" maxlength="20" name="###" id="exampleInputPassword1" placeholder="Nombres" value="<?php echo $row_alumno_select['nombres_alumno'] ?>" disabled>
 						</div>
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Apellidos:</label>
-							<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="{SE TRAE APELLIDO DEL ALUMNO}" value="<?php echo $row_alumno_select['apellidos_alumno'] ?>">
+							<input type="text" class="form-control" onkeypress="return soloLetras(event)" maxlength="20" name="###" id="exampleInputPassword1" placeholder="Apellidos" value="<?php echo $row_alumno_select['apellidos_alumno'] ?>" disabled>
 						</div>
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Grado:</label>
-							<select class="form-control" name="grado" id="grado">
-								<option value="000">...</option>
+							<select class="form-control" name="grado" id="grado" required>
+								<option value="#" selected disabled>Seleccione</option>
 								<option value="1ro">1ro</option>
 								<option value="2do">2do</option>
 								<option value="3ro">3ro</option>
@@ -82,8 +82,8 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 						</div>
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Sección:</label>
-							<select class="form-control" name="seccion" id="seccion">
-								<option value="000">...</option>
+							<select class="form-control" name="seccion" id="seccion" required>
+								<option value="#" selected disabled>Seleccione</option>
 								<option value="A">A</option>
 								<option value="B">B</option>
 								<option value="C">C</option>
@@ -96,25 +96,25 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 					<div class="row">
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Edad:</label>
-								<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="{SE TRAE EDAD DEL ALUMNO}" value="<?php echo $row_alumno_select['edad_alumno'] ?>">
+								<input type="number" class="form-control" disabled onkeypress="return solonumeros2(event)" maxlength="20" name="###" id="exampleInputPassword1" placeholder="Edad" value="<?php echo $row_alumno_select['edad_alumno'] ?>">
 						</div>
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Sexo:</label>
-								<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="{SE TRAE SEXO DEL ALUMNO}" value="<?php if($row_alumno_select['sexo_alumno']=='M') {echo 'Masculino';}elseif($row_alumno_select['sexo_alumno']=='F'){echo 'Femenino';} ?>">
+								<input type="text" class="form-control" disabled name="###" id="exampleInputPassword1" placeholder="Sexo" value="<?php if($row_alumno_select['sexo_alumno']=='M') {echo 'Masculino';}elseif($row_alumno_select['sexo_alumno']=='F'){echo 'Femenino';} ?>">
 						</div>
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Lugar de Nacimiento:</label>
-								<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="{SE TRAE LUGAR DEL ALUMNO}" value="<?php echo $row_alumno_select['lugar_nac_alumno'] ?>">
+								<input type="text" class="form-control" disabled name="###" id="exampleInputPassword1" placeholder="{SE TRAE LUGAR DEL ALUMNO}" value="<?php echo $row_alumno_select['lugar_nac_alumno'] ?>">
 						</div>
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Fecha Nacimiento:</label>
-								<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="{SE TRAE FECHA DEL ALUMNO}" value="<?php echo $row_alumno_select['fecha_nac_alumno'] ?>">
+								<input type="text" class="form-control" disabled name="###" id="exampleInputPassword1" placeholder="{SE TRAE FECHA DEL ALUMNO}" value="<?php echo $row_alumno_select['fecha_nac_alumno'] ?>">
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">CE/CI Alumno:</label>
-								<input type="text" class="form-control" name="###" id="exampleInputPassword1" placeholder="{SE TRAE CEDULA DEL ALUMNO}" value="<?php echo $row_alumno_select['cedula_alumno'] ?>">
+								<input type="text" class="form-control" disabled name="###" id="exampleInputPassword1" placeholder="{SE TRAE CEDULA DEL ALUMNO}" value="<?php echo $row_alumno_select['cedula_alumno'] ?>">
 						</div>
 					</div>
 					<hr class="divisoor">
@@ -122,7 +122,7 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Docente:</label>
 							<select class="form-control" name="id_docente" id="#">
-								<option value="000">...</option>
+								<option value="#" selected disabled>Seleccione</option>
 								<?php while ($row_docente = mysql_fetch_array($result_docentes)){?>
 								<option value="<?php echo $row_docente['id_docente']?>"><?php echo $row_docente['nombre_docente']?></option>
 								<?php } ?>
@@ -189,19 +189,19 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 						<div class="col-md-4">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Dias hábiles:</label>
-							<input type="text" class="form-control" name="dias_hab_momento1" id="exampleInputPassword1">
+							<input type="text" class="form-control" onkeypress="return solonumeros(event)" maxlength="2" name="dias_hab_momento1" id="exampleInputPassword1">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Asistencias:</label>
-							<input type="text" class="form-control" name="asistencias_momento1" id="exampleInputPassword1">
+							<input type="text" class="form-control" onkeypress="return solonumeros(event)" maxlength="2" name="asistencias_momento1" id="exampleInputPassword1">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Inasistencias:</label>
-							<input type="text" class="form-control" name="inasistencias_momento1" id="exampleInputPassword1">
+							<input type="text" class="form-control" onkeypress="return solonumeros(event)" maxlength="2" name="inasistencias_momento1" id="exampleInputPassword1">
 							</div>
 						</div>
 					</div>
@@ -269,19 +269,19 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 						<div class="col-md-4">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Dias hábiles:</label>
-							<input type="text" class="form-control" name="dias_hab_momento2" id="exampleInputPassword1">
+							<input type="text" onkeypress="return solonumeros(event)" maxlength="2" class="form-control" name="dias_hab_momento2" id="exampleInputPassword1">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Asistencias:</label>
-							<input type="text" class="form-control" name="asistencias_momento2" id="exampleInputPassword1">
+							<input type="text" onkeypress="return solonumeros(event)" maxlength="2" class="form-control" name="asistencias_momento2" id="exampleInputPassword1">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Inasistencias:</label>
-							<input type="text" class="form-control" name="inasistencias_momento2" id="exampleInputPassword1">
+							<input type="text" onkeypress="return solonumeros(event)" maxlength="2" class="form-control" name="inasistencias_momento2" id="exampleInputPassword1">
 							</div>
 						</div>
 					</div>
@@ -349,19 +349,19 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 						<div class="col-md-4">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Dias hábiles:</label>
-							<input type="text" class="form-control" name="dias_hab_momento3" id="exampleInputPassword1">
+							<input type="text" class="form-control" onkeypress="return solonumeros(event)" maxlength="2" name="dias_hab_momento3" id="exampleInputPassword1">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Asistencias:</label>
-							<input type="text" class="form-control" name="asistencias_momento3" id="exampleInputPassword1">
+							<input type="text" class="form-control" onkeypress="return solonumeros(event)" maxlength="2" name="asistencias_momento3" id="exampleInputPassword1">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Inasistencias:</label>
-							<input type="text" class="form-control" name="inasistencias_momento3" id="exampleInputPassword1">
+							<input type="text" class="form-control" onkeypress="return solonumeros(event)" maxlength="2" name="inasistencias_momento3" id="exampleInputPassword1">
 							</div>
 						</div>
 					</div>
