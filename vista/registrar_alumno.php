@@ -22,7 +22,6 @@ include_once "menu.php"
 				<section class="content">
 					<div class="row">
 						<div class="col-md-12">
-							<h5>NUMERO DE SOCIO: {PHP ID_ALUMNO}</h5>
 							<form class="formulario" name="form" id="form" method="POST" action="../controlador/registrar_alumno.php">
 								<h4>A.-DATOS PERSONALES DEL ALUMNO</h4>
 								<div class="row">

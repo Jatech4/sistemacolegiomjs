@@ -11,6 +11,12 @@ if(isset($_GET['alumno']))
 $result_alumno_select = mysql_query("SELECT * FROM alumnos a, representantes b where a.id_alumno=".$_GET['alumno']." and b.id_alumno=".$_GET['alumno']."");
 $result_repre_select = mysql_query("SELECT * FROM representantes where id_alumno=".$_GET['alumno']."");
 $row_alumno_select = mysql_fetch_array($result_alumno_select);
+	if(!$row_alumno_select){ ?>
+	<script language='JavaScript'>
+				alert('ERROR: El Alumno debe poseer al menos 1 Representante registrado');
+	</script>";
+	<?php
+	}
 }
 
 ?>
@@ -34,8 +40,8 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 						<div class="col-md-3">
 							<label for="#">Estudiante:</label>
 							<select class="form-control" name="id_alumno" id="#" onchange="location.href='generar_boletin.php?alumno=' + this.value" >
-								<?php while ($row_alumno = mysql_fetch_array($result_alumnos)){?>
 								<option value="#" selected disabled>Seleccione</option>
+								<?php while ($row_alumno = mysql_fetch_array($result_alumnos)){?>
 								<option value="<?php echo $row_alumno['id_alumno']?>"
 								<?php
 								if(isset($_GET['alumno'])) {
@@ -104,17 +110,17 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 						</div>
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Lugar de Nacimiento:</label>
-								<input type="text" class="form-control" disabled name="###" id="exampleInputPassword1" placeholder="{SE TRAE LUGAR DEL ALUMNO}" value="<?php echo $row_alumno_select['lugar_nac_alumno'] ?>">
+								<input type="text" class="form-control" disabled name="###" id="exampleInputPassword1" placeholder="Lugar de Nacimiento" value="<?php echo $row_alumno_select['lugar_nac_alumno'] ?>">
 						</div>
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Fecha Nacimiento:</label>
-								<input type="text" class="form-control" disabled name="###" id="exampleInputPassword1" placeholder="{SE TRAE FECHA DEL ALUMNO}" value="<?php echo $row_alumno_select['fecha_nac_alumno'] ?>">
+								<input type="text" class="form-control" disabled name="###" id="exampleInputPassword1" placeholder="Fecha de Nacimiento" value="<?php echo $row_alumno_select['fecha_nac_alumno'] ?>">
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">CE/CI Alumno:</label>
-								<input type="text" class="form-control" disabled name="###" id="exampleInputPassword1" placeholder="{SE TRAE CEDULA DEL ALUMNO}" value="<?php echo $row_alumno_select['cedula_alumno'] ?>">
+								<input type="text" class="form-control" disabled name="###" id="exampleInputPassword1" placeholder="C.I" value="<?php echo $row_alumno_select['cedula_alumno'] ?>">
 						</div>
 					</div>
 					<hr class="divisoor">
