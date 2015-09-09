@@ -8,12 +8,12 @@ $row = mysql_fetch_array($result);
 include_once "menu.php";
 ?>
 			<!--  Contenido -->
-			<script language="JavaScript"> 
-				function enviar(){ 
-    			if (confirm('¿Registrar Docente?')){ 
-       			document.form.submit() 
-    			} 
-			} 	
+			<script language="JavaScript">
+				function enviar(){
+    			if (confirm('¿Editar Docente?')){
+       			document.form.submit()
+    			}
+			}
 			</script>
 			<div class="content-wrapper">
 				<section class="content-header">
@@ -36,11 +36,11 @@ include_once "menu.php";
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Correo</label>
-							<input type="email" class="form-control" id="exampleInputPassword1" maxlength="30" placeholder="Correo Electronico" name="correo_docente" id="email">
+							<input type="email" class="form-control" id="exampleInputPassword1" maxlength="30" placeholder="Correo Electronico" name="correo_docente" id="email" value="<?php echo $row['correo_docente'] ?>">
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Telefono</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Telefono" onkeypress="return solonumeros2(event)" maxlength="12" name="tlf_docente" id="#">
+							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Telefono" onkeypress="return solonumeros2(event)" maxlength="12" name="tlfn_docente" id="tlfn_docente" value="<?php echo $row['tlfn_docente'] ?>">
 							</div>
 							<button type="button" class="btn btn-warning" onClick="enviar()"><span class="icon-user-plus"></span> Editar</button>
 							<a class="btn btn-info pull-right" href="agregar_docente.php" role="button"><span class="icon-undo2"></span>  Regresar</a>

@@ -5,12 +5,12 @@ include_once "../modelo/conexion.php";
 include_once "menu.php";
 ?>
 			<!--  Contenido -->
-			<script language="JavaScript"> 
-				function enviar(){ 
-    			if (confirm('¿Registrar Docente?')){ 
-       			document.form.submit() 
-    			} 
-			} 	
+			<script language="JavaScript">
+				function enviar(){
+    			if (confirm('¿Registrar Docente?')){
+       			document.form.submit()
+    			}
+			}
 			</script>
 			<div class="content-wrapper">
 				<section class="content-header">
@@ -36,7 +36,7 @@ include_once "menu.php";
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Telefono</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Telefono" onkeypress="return solonumeros2(event)" maxlength="12" name="tlf_docente" id="#">
+							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Telefono" onkeypress="return solonumeros2(event)" maxlength="12" name="tlfn_docente" id="#">
 							</div>
 							<button type="button" class="btn btn-success" onClick="enviar()"><span class="icon-user-plus"></span> Registrar</button>
 							<a class="btn btn-info pull-right" href="agregar_docente.php" role="button"><span class="icon-undo2"></span>  Regresar</a>

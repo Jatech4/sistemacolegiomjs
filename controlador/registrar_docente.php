@@ -3,6 +3,8 @@ include_once "../controlador/validasesion.php";
 include_once "../modelo/conexion.php";
 $nombre_docente=$_POST['nombre_docente'];
 $ci_docente=$_POST['ci_docente'];
+$correo_docente=$_POST['correo_docente'];
+$tlfn_docente=$_POST['tlfn_docente'];
 
 $sql="SELECT id_docente FROM docentes WHERE ci_docente='$ci_docente'";
 $result = mysql_query($sql);
@@ -16,7 +18,7 @@ if($num>0){
  </script>
  <?php
 }else{
-$result = mysql_query("INSERT INTO docentes(ci_docente, nombre_docente) VALUES ('$ci_docente','$nombre_docente')");
+$result = mysql_query("INSERT INTO docentes(ci_docente, nombre_docente, correo_docente, tlfn_docente) VALUES ('$ci_docente','$nombre_docente', '$correo_docente', '$tlfn_docente')");
 echo mysql_error();
 mysql_close();
 ?>

@@ -21,7 +21,7 @@ include_once "menu.php"
 			<div class="content-wrapper">
 				<section class="content-header">
 					<h1>
-					Ver Registro de Docente {NOMBRE DEL DOCENTE}
+					Ver Registro de Docente: <?php echo $row['nombre_docente'] ?>
 					</h1>
 				</section>
 				<section class="content">
@@ -45,8 +45,8 @@ include_once "menu.php"
 									<td><?php echo $row['id_docente'] ?></td>
 									<td><?php echo $row['nombre_docente'] ?></td>
 									<td><?php echo $row['ci_docente'] ?></td>
-									<td></td>
-									<th></th>
+									<td><?php echo $row['correo_docente'] ?></td>
+									<td><?php echo $row['tlfn_docente'] ?></td>
 									</tr>
 									</tbody>
 									</table>
