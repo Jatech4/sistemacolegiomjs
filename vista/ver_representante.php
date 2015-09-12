@@ -8,24 +8,24 @@ include_once "menu.php";
 ?>
 
 			<!--  Contenido -->
-			<script language="JavaScript"> 
-				function enviar(){ 
-    			if (confirm('¿Modificar Datos?')){ 
-       			document.form.submit() 
-    			} 
-			} 	
+			<script language="JavaScript">
+				function enviar(){
+    			if (confirm('¿Modificar Datos?')){
+       			document.form.submit()
+    			}
+			}
 			</script>
 			<div class="content-wrapper">
 				<section class="content-header">
 					<h1>
-					Ver representante del alumno: <?php echo $row['nombres_alumno']." ".$row['apellidos_alumno'];?>
+					Ver representante del alumno: <?php echo $row['nombres_alumno']." ".$row['apellidos_alumno']?>
 					</h1>
 				</section>
 				<section class="content">
-				
+
 					<div class="row">
 						<div class="col-md-12">
-							<h5>NUMERO DE SOCIO: <?php echo $row['id_alumno'];?></h5>
+							<h5>NUMERO DE SOCIO: <?php echo $row['id_alumno']?></h5>
 							<?php while ($row = mysql_fetch_array($result)){?>
 							<form class="formulario" name="form" id="form" method="POST" action="../controlador/editar_representante.php">
 							<input type="hidden" class="form-control" id="exampleInputPassword1" name="id_representante" id="id_representante" value="<?php echo $_GET['representante'] ?>">
@@ -134,7 +134,7 @@ include_once "menu.php";
 							</form>
 						</div>
 					</div>
-					
+
 				</section>
 			</div>
 			<!-- Fin de Contenido -->

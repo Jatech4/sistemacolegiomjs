@@ -1,7 +1,11 @@
 <!-- index.html -->
 <?php
 include_once "../controlador/validasesion.php";
-include_once "menu.php"
+include_once "../modelo/conexion.php";
+include_once "menu.php";
+$result = mysql_query("SELECT * FROM usuarios a, bitacora b WHERE a.id_usuario=b.id_usuario");
+mysql_set_charset('utf8');
+
 ?>
 
 			<!--  Contenido -->
@@ -15,24 +19,22 @@ include_once "menu.php"
 							<div class="box box-danger">
 								<div class="box-body">
 									<table class="table">
-									<caption>Lista de Usuarios Registrados.</caption>
+									<caption>Lista de Usuarios Registrados y su Fecha de Conexión.</caption>
 									<thead>
 									<tr>
-									<th>ID</th>
-									<th>Nombre Usuario</th>
-									<th>Cedula</th>
-									<th>Hora</th>
+									<th align="center">ID</th>
+									<th align="center">Nombre Usuario</th>
+									<th align="center">Login</th>
+									<th align="center">Fecha de Conexión</th>
 									</tr>
 									</thead>
 									<tbody>
 									<?php while ($row = mysql_fetch_array($result)){?>
 									<tr>
-									<td><?php echo $row['id_usuario'] ?></td>
-									<td><?php echo $row['cedula_usuario'] ?></td>
+									<td><?php echo $row['id_bitacora'] ?></td>
+									<td><?php echo $row['nombre_usuario'] ?></td>
 									<td><?php echo $row['login_usuario'] ?></td>
-									<td class="pw"><?php echo $row['pass_usuario'] ?></td>
-									<td class="pad"><a class="btn btn-warning" href="editar_usuario.php?usuario=<?php echo $row['id_usuario']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Editar"><span class="icon-wrench"></span></a></td>
-									<td class="pad"><a data-confirm-link="¿Eliminar Usuario?" class="btn btn-danger" href="../controlador/eliminar_usuario.php?usuario=<?php echo $row['id_usuario']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Eliminar"><span class="icon-cross"></span></a></td>
+									<td><?php echo $row['fecha'] ?></td>
 									</tr>
 									<?php } ?>
 									</tbody>
