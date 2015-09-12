@@ -8,12 +8,12 @@ $result_perfil = mysql_query("SELECT * FROM perfil_usuario");
 $result_status = mysql_query("SELECT * FROM status_usuario");
 ?>
 			<!--  Contenido -->
-			<script language="JavaScript"> 
-				function enviar(){ 
-    			if (confirm('¿Registrar Usuario?')){ 
-       			document.form.submit() 
-    			} 
-			} 	
+			<script language="JavaScript">
+				function enviar(){
+    			if (confirm('¿Registrar Usuario?')){
+       			document.form.submit()
+    			}
+			}
 			</script>
 			<div class="content-wrapper">
 				<section class="content-header">
@@ -43,7 +43,7 @@ $result_status = mysql_query("SELECT * FROM status_usuario");
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Correo Electronico</label>
-							<input type="email" class="form-control pw" id="exampleInputPassword1" autocomplete="off" placeholder="usuario@dominio.com" name="password" id="password">
+							<input type="email" class="form-control" id="exampleInputPassword1" autocomplete="off" placeholder="usuario@dominio.com" name="email_usuario" id="email_usuario">
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Perfil</label>

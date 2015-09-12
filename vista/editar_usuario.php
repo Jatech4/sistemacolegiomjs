@@ -48,7 +48,7 @@ include_once "menu.php"
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Correo Electronico</label>
-							<input type="email" class="form-control pw" id="exampleInputPassword1" autocomplete="off" placeholder="usuario@dominio.com" name="password" id="password">
+							<input type="email" class="form-control" id="exampleInputPassword1" autocomplete="off" placeholder="usuario@dominio.com" name="email_usuario" id="email_usuario" value="<?php echo $row['email_usuario'] ?>">
 							</div>
 							<?php if($_SESSION['perfilusuario']==1){ ?>
 							<div class="form-group">

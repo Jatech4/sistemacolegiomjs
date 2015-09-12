@@ -16,9 +16,9 @@
       </div>
       <div class="login-box-body">
         <p class="login-box-msg">Ingrese su Cedula para recuperar contraseña</p>
-        <form autocomplete="off" id="myform" action="###" method="post">
+        <form autocomplete="off" id="myform" action="../controlador/olvido.php" method="post">
           <div class="form-group has-feedback">
-            <input type="text" class="form-control" placeholder="Cedula" name="usuario_id" id="usuario_id" autocomplete="off"/>
+            <input type="text" class="form-control" placeholder="Cedula" name="cedula" id="cedula" autocomplete="off"/>
             <span class="glyphicon glyphicon-question-sign form-control-feedback"></span>
           </div>
           <div class="alert alert-danger" role="alert">La recuperacion se la contraseña sera enviada a su correo.</div>
