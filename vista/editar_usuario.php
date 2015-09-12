@@ -46,6 +46,10 @@ include_once "menu.php"
 							<label for="exampleInputPassword1">Contraseña</label>
 							<input type="password" class="form-control pw" id="exampleInputPassword1" autocomplete="off" placeholder="Contraseña" name="password" id="password" value="<?php echo $row['pass_usuario'] ?>">
 							</div>
+							<div class="form-group">
+							<label for="exampleInputPassword1">Correo Electronico</label>
+							<input type="email" class="form-control pw" id="exampleInputPassword1" autocomplete="off" placeholder="usuario@dominio.com" name="password" id="password">
+							</div>
 							<?php if($_SESSION['perfilusuario']==1){ ?>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Perfil</label>

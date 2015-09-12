@@ -42,6 +42,10 @@ $result_status = mysql_query("SELECT * FROM status_usuario");
 							<input type="password" class="form-control pw" id="exampleInputPassword1" autocomplete="off" placeholder="Contraseña" name="password" id="password">
 							</div>
 							<div class="form-group">
+							<label for="exampleInputPassword1">Correo Electronico</label>
+							<input type="email" class="form-control pw" id="exampleInputPassword1" autocomplete="off" placeholder="usuario@dominio.com" name="password" id="password">
+							</div>
+							<div class="form-group">
 							<label for="exampleInputPassword1">Perfil</label>
 							<br>
 							<select class="form-control" name="perfil" id="perfil">

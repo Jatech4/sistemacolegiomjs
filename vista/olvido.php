@@ -15,22 +15,19 @@
         </ul>
       </div>
       <div class="login-box-body">
-        <p class="login-box-msg">Inicia sesión para acceder</p>
-        <form autocomplete="off" id="myform" action="../controlador/iniciosesion.php" method="post">
+        <p class="login-box-msg">Ingrese su Cedula para recuperar contraseña</p>
+        <form autocomplete="off" id="myform" action="###" method="post">
           <div class="form-group has-feedback">
-            <input type="text" class="form-control" placeholder="Usuario" name="usuario_id" id="usuario_id" autocomplete="off"/>
-            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            <input type="text" class="form-control" placeholder="Cedula" name="usuario_id" id="usuario_id" autocomplete="off"/>
+            <span class="glyphicon glyphicon-question-sign form-control-feedback"></span>
           </div>
-          <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="Contraseña" name="password" id="password" autocomplete="off"/>
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-          </div>
+          <div class="alert alert-danger" role="alert">La recuperacion se la contraseña sera enviada a su correo.</div>
           <div class="row">
             <div class="col-xs-4">
-              <button type="submit" class="btn btn-primary btn-block btn-flat">Acceder</button>
+              <a href="login.php" class="btn btn-default">Regresar</a>
             </div>
             <div class="col-xs-8 text-right">
-              <a href="olvido.php">¿Olvidó su contraseña?</a>
+              <button type="submit" class="btn btn-primary btn-block btn-flat">Enviar</button>
             </div>
           </div>
         </form>
