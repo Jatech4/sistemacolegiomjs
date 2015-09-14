@@ -86,6 +86,6 @@ $result_status = mysql_query("SELECT * FROM status_usuario");
 	</body>
 </html>
 <?php
-mysql_free_result($result);
+//mysql_free_result($result);
 mysql_close();
 ?>
