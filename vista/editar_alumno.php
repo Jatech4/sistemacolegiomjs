@@ -212,6 +212,11 @@ include_once "menu.php"
 									</tr>
 									</thead>
 									<tbody>
+									<?php if(mysql_num_rows($result2)==0){ ?>
+									<tr>
+										<td>Sin Resultados...</td>
+									</tr>
+									<?php } ?>
 									<?php while ($row2 = mysql_fetch_array($result2)){?>
 									<tr>
 									<td><?php echo $row2['id_representante'] ?></td>

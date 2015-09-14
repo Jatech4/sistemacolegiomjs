@@ -48,6 +48,11 @@ include_once "menu.php"
 									</tr>
 									</thead>
 									<tbody>
+									<?php if(mysql_num_rows($result)==0){ ?>
+									<tr>
+										<td>Sin Resultados...</td>
+									</tr>
+									<?php } ?>
 									<?php while ($row = mysql_fetch_array($result)){?>
 									<tr>
 									<td><?php echo $row['id_usuario'] ?></td>

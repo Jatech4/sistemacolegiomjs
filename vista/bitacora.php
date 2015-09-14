@@ -3,7 +3,20 @@
 include_once "../controlador/validasesion.php";
 include_once "../modelo/conexion.php";
 include_once "menu.php";
-$result = mysql_query("SELECT * FROM usuarios a, bitacora b WHERE a.id_usuario=b.id_usuario");
+$buscar='';
+if(isset($_POST['buscar'])){
+	$desde=$_POST['desde'];
+	$hasta=$_POST['hasta'];
+	if(isset($_POST['usuario'])){
+		$buscar="AND b.id_usuario=".$_POST['usuario']."";
+	}
+}else{
+	$desde=date('Y-m-d');
+	$hasta=date('Y-m-d');
+}
+echo $sql="SELECT * FROM usuarios a, bitacora b WHERE a.id_usuario=b.id_usuario AND b.fecha BETWEEN '".$desde." 00:00:00' AND '".$hasta." 23:59:59' ".$buscar." ORDER BY id_bitacora";
+$result = mysql_query($sql);
+$result_usuarios = mysql_query("SELECT * FROM usuarios ORDER BY nombre_usuario");
 mysql_set_charset('utf8');
 ?>
 <!--  Contenido -->
@@ -17,24 +30,27 @@ mysql_set_charset('utf8');
 				<div class="box box-danger">
 					<div class="box-body">
 						<div class="row">
-							<form action="#">
+							<form action="bitacora.php" method="POST">
 								<div class="col-md-3">
 									<div class="form-group">
 										<label for="exampleInputPassword1">Desde:</label>
-										<input type="date" class="form-control" name="fecha_desde_momento1" id="exampleInputPassword1">
+										<input type="date" class="form-control" name="desde" id="exampleInputPassword1" value="<?php echo $desde;?>">
 									</div>
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
 										<label for="#">Hasta:</label>
-										<input type="date" class="form-control" name="fecha_hasta_momento1" id="exampleInputPassword1">
+										<input type="date" class="form-control" name="hasta" id="exampleInputPassword1" value="<?php echo $hasta;?>">
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="#">Lista de Usuarios</label>
-										<select class="form-control">
-											<option value="#" selected disabled>Seleccione</option>
+										<select class="form-control" name="usuario">
+										<option value="#" selected disabled>Seleccione</option>
+										<?php while ($row_usuarios = mysql_fetch_array($result_usuarios)){?>
+											<option value="<?php echo $row_usuarios['id_usuario']?>" <?php if($row_usuarios['id_usuario']==$_POST['usuario']) {echo "selected='selected'";}?>><?php echo $row_usuarios['nombre_usuario'] ?></option>
+										<?php } ?>
 										</select>
 									</div>
 								</div>
@@ -47,7 +63,7 @@ mysql_set_charset('utf8');
 										</span>
 										</div><!-- /input-group -->
 									</div>
-									
+
 								</form>
 							</div>
 							<table class="table">
@@ -61,6 +77,11 @@ mysql_set_charset('utf8');
 									</tr>
 								</thead>
 								<tbody>
+									<?php if(mysql_num_rows($result)==0){ ?>
+									<tr>
+										<td>Sin Resultados...</td>
+									</tr>
+									<?php } ?>
 									<?php while ($row = mysql_fetch_array($result)){?>
 									<tr>
 										<td><?php echo $row['id_bitacora'] ?></td>

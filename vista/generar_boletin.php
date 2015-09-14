@@ -5,7 +5,7 @@ include_once "../modelo/conexion.php";
 include_once "menu.php";
 $result_alumnos = mysql_query("SELECT * FROM alumnos");
 $result_docentes = mysql_query("SELECT * FROM docentes");
-$result_ano_escolar = mysql_query("SELECT * FROM ano_escolar");
+$result_ano_escolar = mysql_query("SELECT * FROM ano_escolar ORDER BY id_ano_escolar DESC");
 if(isset($_GET['alumno']))
 {
 $result_alumno_select = mysql_query("SELECT * FROM alumnos a, representantes b where a.id_alumno=".$_GET['alumno']." and b.id_alumno=".$_GET['alumno']."");

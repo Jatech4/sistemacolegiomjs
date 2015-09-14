@@ -67,17 +67,19 @@ include_once "menu.php"
 									</tr>
 									</thead>
 									<tbody>
-									<?php if($result){
-									 while ($row = mysql_fetch_array($result)){?>
+									<?php if(mysql_num_rows($result)==0){ ?>
+									<tr>
+										<td>Sin Resultados...</td>
+									</tr>
+									<?php } ?>
+									<?php  while ($row = mysql_fetch_array($result)){?>
 									<tr>
 									<td><?php echo $row['id_alumno'] ?></td>
 									<td><?php echo $row['nombres_alumno'] ?></td>
 									<td><?php echo $row['apellidos_alumno'] ?></td>
 									<td><?php echo $row['cedula_alumno'] ?></td>
 									</tr>
-									<?php }}else{ ?>
-									<tr><td>Sin Resultados...</td></tr>
-									<?php }?>
+									<?php } ?>
 									</tbody>
 									</table>
 									<div class="text-left">
