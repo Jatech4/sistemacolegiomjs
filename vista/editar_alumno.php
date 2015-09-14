@@ -219,7 +219,7 @@ include_once "menu.php"
 									<td><?php echo $row2['nombre_representante'] ?></td>
 									<td><?php echo $row2['ci_representante'] ?></td>
 									<td class="pad"><a class="btn btn-warning" href="editar_representante.php?alumno=<?php echo $row['id_alumno']?>&representante=<?php echo $row2['id_representante']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Editar Representante"><span class="icon-wrench"></span></a></td>
-									<td class="pad"><a data-confirm-link="¿Eliminar Representante?" class="btn btn-danger" href="../controlador/eliminar_representante.php?alumno=<?php echo $row['id_alumno']?>&representante=<?php echo $row2['id_representante']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Eliminar Representate"><span class="icon-cross"></span></a></td>
+									<!--<td class="pad"><a data-confirm-link="¿Eliminar Representante?" class="btn btn-danger" href="../controlador/eliminar_representante.php?alumno=<?php echo $row['id_alumno']?>&representante=<?php echo $row2['id_representante']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Eliminar Representate"><span class="icon-cross"></span></a></td>-->
 									</tr>
 									<?php }?>
 									</tbody>

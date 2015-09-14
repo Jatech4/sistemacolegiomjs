@@ -59,7 +59,7 @@ include_once "menu.php"
 									<td><?php echo $row['email_usuario'] ?></td>
 									<td><?php echo $row['descripcion_status'] ?></td>
 									<td class="pad"><a class="btn btn-warning" href="editar_usuario.php?usuario=<?php echo $row['id_usuario']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Editar"><span class="icon-wrench"></span></a></td>
-									<td class="pad"><a data-confirm-link="¿Eliminar Usuario?" class="btn btn-danger" href="../controlador/eliminar_usuario.php?usuario=<?php echo $row['id_usuario']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Eliminar"><span class="icon-cross"></span></a></td>
+									<!--<td class="pad"><a data-confirm-link="¿Eliminar Usuario?" class="btn btn-danger" href="../controlador/eliminar_usuario.php?usuario=<?php echo $row['id_usuario']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Eliminar"><span class="icon-cross"></span></a></td>-->
 									</tr>
 									<?php } ?>
 									</tbody>

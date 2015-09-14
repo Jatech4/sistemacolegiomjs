@@ -53,7 +53,7 @@ include_once "menu.php"
 									<td><?php echo $row['tlfn_docente'] ?></td>
 									<td class="pad2"><a class="btn btn-primary" href="ver_docentes.php?docente=<?php echo $row['id_docente']?>" role="button" style="border-radius: 0;"><span class="icon-eye" data-toggle="tooltip" data-placement="top" title="Ver Registro"></span></a></td>
 									<td class="pad2"><a class="btn btn-warning" href="editar_docente.php?docente=<?php echo $row['id_docente']?>" role="button" style="border-radius: 0;"><span class="icon-wrench" data-toggle="tooltip" data-placement="top" title="Editar"></span></a></td>
-									<td class="pad2"><a data-confirm-link="¿Eliminar Docente?" class="btn btn-danger" href="../controlador/eliminar_docente.php?docente=<?php echo $row['id_docente']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Eliminar"><span class="icon-cross"></span></a></td>
+									<!--<td class="pad2"><a data-confirm-link="¿Eliminar Docente?" class="btn btn-danger" href="../controlador/eliminar_docente.php?docente=<?php echo $row['id_docente']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Eliminar"><span class="icon-cross"></span></a></td>-->
 									</tr>
 									<?php } ?>
 									</tbody>

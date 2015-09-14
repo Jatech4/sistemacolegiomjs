@@ -30,6 +30,25 @@ include_once "menu.php"
 								<div class="box-header">
 									<a class="btn btn-success" href="generar_boletin.php" role="button" data-toggle="tooltip" data-placement="top" title="Crear Boletin"><span class="icon-plus"></span></a>
 								</div>
+								<form action="#">
+									<div class="col-md-4">
+									<div class="form-group">
+										<label for="#">Años Escolares</label>
+										<select class="form-control">
+											<option value="#" selected disabled>Seleccione</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="input-group" style="
+										margin-top: 18%;
+										">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="submit" value="buscar" name="buscar"><span class="icon-search"></span></button>
+										</span>
+										</div><!-- /input-group -->
+									</div>
+								</form>
 								<div class="box-body">
 									<table class="table">
 									<caption>Lista de Boletines Registrados en el sistema.</caption>
@@ -39,6 +58,7 @@ include_once "menu.php"
 									<th>Nombre Alumno</th>
 									<th>Representante del Alumno</th>
 									<th>Docente del Alumno</th>
+									<th>Año Escolar</th>
 									<th colspan="2">Acciones</th>
 									</tr>
 									</thead>
@@ -49,9 +69,10 @@ include_once "menu.php"
 									<td><?php echo $row['nombres_alumno']." ".$row['apellidos_alumno'] ?></td>
 									<td><?php echo $row['nombre_representante'] ?></td>
 									<td><?php echo $row['nombre_docente'] ?></td>
+									<td>2015-2020</td>
 									<td class="pad"><a class="btn btn-primary" href="ver_boletin.php?boletin=<?php echo $row['id_boletin']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Ver Registro"><span class="icon-eye"></span></a></td>
 									<td class="pad"><a class="btn btn-warning" href="editar_boletin.php?boletin=<?php echo $row['id_boletin']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Editar"><span class="icon-wrench"></span></a></td>
-									<td class="pad"><a data-confirm-link="¿Eliminar Boletín?" class="btn btn-danger" href="../controlador/eliminar_boletin.php?boletin=<?php echo $row['id_boletin']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Eliminar"><span class="icon-cross"></span></a></td>
+									<!--<td class="pad"><a data-confirm-link="¿Eliminar Boletín?" class="btn btn-danger" href="../controlador/eliminar_boletin.php?boletin=<?php echo $row['id_boletin']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Eliminar"><span class="icon-cross"></span></a></td>-->
 									<td class="pad"><a data-confirm-link="¿Imprimir Boletín?" class="btn btn-success" href="../controlador/imprimir_boletin.php?boletin=<?php echo $row['id_boletin']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Imprimir Boletin"><span class="icon-printer"></span></a></td>
 									<?php } ?>
 									</tbody>
