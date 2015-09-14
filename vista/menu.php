@@ -97,6 +97,7 @@
 								<li><a href="consultar_profesor.php"><i class="icon-radio-unchecked"></i> Generar Reporte Docente</a></li>
 								<li><a href="crear_boletin.php"><i class="icon-radio-unchecked"></i> Generar Boletin</a></li>
 								<li><a href="bitacora.php"><i class="icon-radio-unchecked"></i> Bitacora</a></li>
+								<li><a href="lista_alumnos.php"><i class="icon-radio-unchecked"></i> Lista de Alumnos</a></li>
 							</ul>
 						</li>
 						<?php if($_SESSION['perfilusuario']==1){ ?>
