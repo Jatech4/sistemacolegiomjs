@@ -3,6 +3,25 @@
 include_once "../controlador/validasesion.php";
 include_once "../modelo/conexion.php";
 include_once "menu.php";
+$buscar="";
+$ultimo_ano_escolar = mysql_query("SELECT * FROM ano_escolar ORDER BY id_ano_escolar DESC limit 1");
+$row_ultimo_ano_escolar = mysql_fetch_array($ultimo_ano_escolar);
+$ano_escolar_select=$row_ultimo_ano_escolar['id_ano_escolar'];
+
+if(isset($_POST['buscar'])){
+	if(isset($_POST['docente']) && $_POST['docente']!=''){
+		$buscar.=" AND d.id_docente =".$_POST['docente']."";
+	}
+	if(isset($_POST['ano_escolar']) && $_POST['ano_escolar']!=''){
+	$ano_escolar_select=$_POST['ano_escolar'];
+	}
+}
+echo $sql="SELECT * FROM alumnos a, boletines b, ano_escolar c, docentes d WHERE b.id_alumno=a.id_alumno AND b.id_docente=d.id_docente AND b.ano_escolar=c.id_ano_escolar AND c.id_ano_escolar=$ano_escolar_select ".$buscar."";
+
+$result = mysql_query($sql);
+$result_docentes = mysql_query("SELECT * FROM docentes");
+$result_ano_escolar = mysql_query("SELECT * FROM ano_escolar ORDER BY id_ano_escolar DESC");
+mysql_set_charset('utf8');
 ?>
 <!--  Contenido -->
 <div class="content-wrapper">
@@ -19,16 +38,22 @@ include_once "menu.php";
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="#">Docente</label>
-										<select class="form-control" name="usuario">
-										<option value="#" selected disabled>Seleccione</option>
+										<select class="form-control" name="docente" id="docente">
+											<option value="" selected >Seleccione</option>
+											<?php while ($row_docente = mysql_fetch_array($result_docentes)){?>
+											<option value="<?php echo $row_docente['id_docente']?>" <?php if($row_docente['id_docente']==$_POST['docente']) {echo "selected='selected'";}?>><?php echo $row_docente['nombre_docente']?></option>
+											<?php } ?>
 										</select>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="#">Año Escolar</label>
-										<select class="form-control" name="usuario">
-										<option value="#" selected disabled>Seleccione</option>
+										<select class="form-control" name="ano_escolar">
+											<option value="" selected >Seleccione</option>
+											<?php while ($row_ano_escolar = mysql_fetch_array($result_ano_escolar)){?>
+											<option value="<?php echo $row_ano_escolar['id_ano_escolar']?>" <?php if($row_ano_escolar['id_ano_escolar']==$ano_escolar_select) {echo "selected='selected'";}?>><?php echo $row_ano_escolar['ano_escolar']?></option>
+											<?php } ?>
 										</select>
 									</div>
 								</div>
@@ -63,12 +88,12 @@ include_once "menu.php";
 									<?php } ?>
 									<?php while ($row = mysql_fetch_array($result)){?>
 									<tr>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
+										<td><?php echo $row['id_boletin'] ?></td>
+										<td><?php echo $row['nombres_alumno']." ".$row['apellidos_alumno'] ?></td>
+										<td><?php echo $row['nombre_docente'] ?></td>
+										<td><?php echo $row['ano_escolar'] ?></td>
+										<td><?php echo $row['grado'] ?></td>
+										<td><?php echo $row['seccion'] ?></td>
 									</tr>
 									<?php } ?>
 								</tbody>

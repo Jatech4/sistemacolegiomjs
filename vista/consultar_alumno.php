@@ -2,6 +2,7 @@
 <?php
 include_once "../controlador/validasesion.php";
 include_once "../modelo/conexion.php";
+include_once "menu.php";
 $buscar="nombres_alumno<>''";
 if(isset($_POST['buscar'])){
 	if(isset($_POST['nombre']) && $_POST['nombre']!=''){
@@ -16,7 +17,6 @@ if(isset($_POST['buscar'])){
 }
 $result = mysql_query($sql);
 mysql_set_charset('utf8');
-include_once "menu.php"
 ?>
 			<!--  Contenido -->
 			<script type="text/javascript" src="js/confirm-link.js"></script>
