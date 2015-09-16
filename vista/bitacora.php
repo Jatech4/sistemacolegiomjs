@@ -47,10 +47,10 @@ mysql_set_charset('utf8');
 									<div class="form-group">
 										<label for="#">Lista de Usuarios</label>
 										<select class="form-control" name="usuario">
-										<option value="#" selected disabled>Seleccione</option>
-										<?php while ($row_usuarios = mysql_fetch_array($result_usuarios)){?>
+											<option value="#" selected disabled>Seleccione</option>
+											<?php while ($row_usuarios = mysql_fetch_array($result_usuarios)){?>
 											<option value="<?php echo $row_usuarios['id_usuario']?>" <?php if($row_usuarios['id_usuario']==$_POST['usuario']) {echo "selected='selected'";}?>><?php echo $row_usuarios['nombre_usuario'] ?></option>
-										<?php } ?>
+											<?php } ?>
 										</select>
 									</div>
 								</div>
@@ -62,8 +62,16 @@ mysql_set_charset('utf8');
 											<button class="btn btn-default" type="submit" value="buscar" name="buscar"><span class="icon-search"></span></button>
 										</span>
 										</div><!-- /input-group -->
+										<div class="input-group" style="
+											margin-top: -19%;
+											margin-left: 33%;
+											">
+											<span class="input-group-btn">
+												<a href="#" class="btn btn-default">Mostrar todos</a>
+											</span>
+											</div><!-- /input-group -->
+										</div>
 									</div>
-
 								</form>
 							</div>
 							<table class="table">
@@ -72,7 +80,6 @@ mysql_set_charset('utf8');
 									<tr>
 										<th align="center">ID</th>
 										<th align="center">Nombre Usuario</th>
-										<th align="center">Login</th>
 										<th align="center">Fecha de Conexión</th>
 									</tr>
 								</thead>
@@ -86,12 +93,19 @@ mysql_set_charset('utf8');
 									<tr>
 										<td><?php echo $row['id_bitacora'] ?></td>
 										<td><?php echo $row['nombre_usuario'] ?></td>
-										<td><?php echo $row['login_usuario'] ?></td>
 										<td><?php echo $row['fecha'] ?></td>
 									</tr>
 									<?php } ?>
 								</tbody>
 							</table>
+							<hr>
+							<div class="text-left" style="    margin-left: 1%;
+								padding-bottom: 1%;">
+								<form name="form1" id="form1" method="POST" action="../controlador/reporte_docente.php">
+									<input type="text" name="consulta" value="<?php echo $sql;?>" hidden="hidden">
+									<button class="btn btn-danger" href="#" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Descargar" type="submit"><span class="icon-download2"></span></button>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
