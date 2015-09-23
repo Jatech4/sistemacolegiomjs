@@ -25,7 +25,9 @@ if($row = mysql_fetch_array($result))
   $_SESSION['usuario']=$row["nombre_usuario"];
   $_SESSION['perfilusuario']=$row["perfil_usuario"];
   $_SESSION['id_usuario']=$row["id_usuario"];
-  $result = mysql_query("INSERT INTO bitacora (id_usuario) VALUES (".$row['id_usuario'].")");
+  $hora_inicio=date("d-m-Y H:i:s");
+  $sql="INSERT INTO bitacora (id_usuario, fecha) VALUES (".$row['id_usuario'].",'".$hora_inicio."')";
+  $result = mysql_query($sql);
   ?>
   <script languaje="javascript">
    location.href = "../vista/index.php";
