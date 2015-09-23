@@ -11,8 +11,8 @@ if(isset($_POST['buscar'])){
 		$buscar="AND b.id_usuario=".$_POST['usuario']."";
 	}
 }else{
-	$desde=date('Y-m-d');
-	$hasta=date('Y-m-d');
+	$desde=date('d-m-Y');
+	$hasta=date('d-m-Y');
 }
 $sql="SELECT * FROM usuarios a, bitacora b WHERE a.id_usuario=b.id_usuario AND b.fecha BETWEEN '".$desde." 00:00:00' AND '".$hasta." 23:59:59' ".$buscar." ORDER BY id_bitacora";
 $result = mysql_query($sql);
