@@ -111,6 +111,11 @@
 								<li><a href="registrar_ano_escolar.php"><i class="icon-radio-unchecked"></i> Registrar Año Escolar</a></li>
 							</ul>
 						</li>
+						<li class="treeview">
+							<a href="#########">
+								<span class="icon-folder-download"></span> <span>Descargar Respaldo</span>
+							</a>
+						</li>
 						<?php }?>
 						<li>
 							<a href="#">
