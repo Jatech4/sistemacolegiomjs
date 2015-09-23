@@ -5,8 +5,8 @@ include_once "../modelo/conexion.php";
 include_once "menu.php";
 $buscar='';
 if(isset($_POST['buscar'])){
-	$desde=$_POST['desde'];
-	$hasta=$_POST['hasta'];
+	$desde=date("d-m-Y", strtotime($_POST['desde']));
+	$hasta=date("d-m-Y", strtotime($_POST['hasta']));
 	if(isset($_POST['usuario'])){
 		$buscar="AND b.id_usuario=".$_POST['usuario']."";
 	}
@@ -34,13 +34,13 @@ mysql_set_charset('utf8');
 								<div class="col-md-3">
 									<div class="form-group">
 										<label for="exampleInputPassword1">Desde:</label>
-										<input type="date" class="form-control" name="desde" id="exampleInputPassword1" value="<?php echo $desde;?>">
+										<input type="date" class="form-control" name="desde" id="exampleInputPassword1" value="<?php echo date('Y-m-d', strtotime($desde));?>">
 									</div>
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
 										<label for="#">Hasta:</label>
-										<input type="date" class="form-control" name="hasta" id="exampleInputPassword1" value="<?php echo $hasta;?>">
+										<input type="date" class="form-control" name="hasta" id="exampleInputPassword1" value="<?php echo date('Y-m-d', strtotime($hasta));?>">
 									</div>
 								</div>
 								<div class="col-md-4">
