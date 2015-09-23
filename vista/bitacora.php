@@ -14,7 +14,7 @@ if(isset($_POST['buscar'])){
 	$desde=date('Y-m-d');
 	$hasta=date('Y-m-d');
 }
-echo $sql="SELECT * FROM usuarios a, bitacora b WHERE a.id_usuario=b.id_usuario AND b.fecha BETWEEN '".$desde." 00:00:00' AND '".$hasta." 23:59:59' ".$buscar." ORDER BY id_bitacora";
+$sql="SELECT * FROM usuarios a, bitacora b WHERE a.id_usuario=b.id_usuario AND b.fecha BETWEEN '".$desde." 00:00:00' AND '".$hasta." 23:59:59' ".$buscar." ORDER BY id_bitacora";
 $result = mysql_query($sql);
 $result_usuarios = mysql_query("SELECT * FROM usuarios ORDER BY nombre_usuario");
 mysql_set_charset('utf8');
@@ -67,7 +67,7 @@ mysql_set_charset('utf8');
 											margin-left: 33%;
 											">
 											<span class="input-group-btn">
-												<a href="#" class="btn btn-default">Mostrar todos</a>
+												<a href="bitacora.php" class="btn btn-default">Mostrar todos</a>
 											</span>
 											</div><!-- /input-group -->
 										</div>
@@ -101,7 +101,7 @@ mysql_set_charset('utf8');
 							<hr>
 							<div class="text-left" style="    margin-left: 1%;
 								padding-bottom: 1%;">
-								<form name="form1" id="form1" method="POST" action="../controlador/reporte_docente.php">
+								<form name="form1" id="form1" method="POST" action="../controlador/reporte_bitacora.php">
 									<input type="text" name="consulta" value="<?php echo $sql;?>" hidden="hidden">
 									<button class="btn btn-danger" href="#" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Descargar" type="submit"><span class="icon-download2"></span></button>
 								</form>

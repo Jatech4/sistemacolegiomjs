@@ -1,9 +1,8 @@
 <?php
-include_once "validasesion.php";
+//include_once "validasesion.php";
 include_once "../modelo/conexion.php";
-require_once '../dompdf/dompdf_config.inc.php';
+require_once "../dompdf/dompdf_config.inc.php";
 $sql=$_POST['consulta'];
-
 $result=mysql_query($sql);
 
 $html='
@@ -40,6 +39,7 @@ $html.='
 </body>
 </html>';
 $html = mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8');
+
 # Instanciamos un objeto de la clase DOMPDF.
 $mipdf = new DOMPDF();
 

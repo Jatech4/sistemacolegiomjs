@@ -11,11 +11,17 @@ if(isset($_POST['buscar'])){
 	if(isset($_POST['docente']) && $_POST['docente']!=''){
 		$buscar.=" AND d.id_docente =".$_POST['docente']."";
 	}
+	if(isset($_POST['grado']) && $_POST['grado']!=''){
+		$buscar.=" AND b.grado ='".$_POST['grado']."'";
+	}
+	if(isset($_POST['seccion']) && $_POST['seccion']!=''){
+		$buscar.=" AND b.seccion ='".$_POST['seccion']."'";
+	}
 	if(isset($_POST['ano_escolar']) && $_POST['ano_escolar']!=''){
 	$ano_escolar_select=$_POST['ano_escolar'];
 	}
 }
-echo $sql="SELECT * FROM alumnos a, boletines b, ano_escolar c, docentes d WHERE b.id_alumno=a.id_alumno AND b.id_docente=d.id_docente AND b.ano_escolar=c.id_ano_escolar AND c.id_ano_escolar=$ano_escolar_select ".$buscar."";
+$sql="SELECT * FROM alumnos a, boletines b, ano_escolar c, docentes d WHERE b.id_alumno=a.id_alumno AND b.id_docente=d.id_docente AND b.ano_escolar=c.id_ano_escolar AND c.id_ano_escolar=$ano_escolar_select ".$buscar."";
 $result = mysql_query($sql);
 $result_docentes = mysql_query("SELECT * FROM docentes");
 $result_ano_escolar = mysql_query("SELECT * FROM ano_escolar ORDER BY id_ano_escolar DESC");
@@ -45,8 +51,14 @@ mysql_set_charset('utf8');
 									</div>
 									<div class="form-group">
 										<label for="#">Grado</label>
-										<select class="form-control" name="#" id="#">
+										<select class="form-control" name="grado" id="grado">
 											<option value="" selected >Seleccione</option>
+											<option value="1ro">1ro</option>
+											<option value="2do">2do</option>
+											<option value="3ro">3ro</option>
+											<option value="4to">4to</option>
+											<option value="5to">5to</option>
+											<option value="6to">6to</option>
 										</select>
 									</div>
 								</div>
@@ -62,8 +74,14 @@ mysql_set_charset('utf8');
 									</div>
 									<div class="form-group">
 										<label for="#">Seccion</label>
-										<select class="form-control" name="#" id="#">
+										<select class="form-control" name="seccion" id="seccion">
 											<option value="" selected >Seleccione</option>
+											<option value="A">A</option>
+											<option value="B">B</option>
+											<option value="C">C</option>
+											<option value="D">D</option>
+											<option value="E">E</option>
+											<option value="F">F</option>
 										</select>
 									</div>
 								</div>
@@ -80,7 +98,7 @@ mysql_set_charset('utf8');
 											margin-left: 37%;
 											">
 											<span class="input-group-btn">
-												<a href="#" class="btn btn-default">Mostrar todos</a>
+												<a href="lista_alumnos.php" class="btn btn-default">Mostrar todos</a>
 											</span>
 											</div><!-- /input-group -->
 										</div>
@@ -94,7 +112,7 @@ mysql_set_charset('utf8');
 											<th align="center">Nombre de Docente</th>
 											<th align="center">Año Escolar</th>
 											<th align="center">Grado</th>
-											<th align="center">Seccion</th>
+											<th align="center">Sección</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -117,7 +135,7 @@ mysql_set_charset('utf8');
 								</table>
 								<hr>
 								<div class="text-left">
-									<form name="form1" id="form1" method="POST" action="../controlador/reporte_docente.php">
+									<form name="form1" id="form1" method="POST" action="../controlador/lista_alumnos.php">
 										<input type="text" name="consulta" value="<?php echo $sql;?>" hidden="hidden">
 										<button class="btn btn-danger" href="#" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Descargar" type="submit"><span class="icon-download2"></span></button>
 									</form>

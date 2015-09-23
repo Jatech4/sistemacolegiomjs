@@ -1,5 +1,5 @@
 <?php
-include_once "validasesion.php";
+//include_once "validasesion.php";
 include_once "../modelo/conexion.php";
 require_once '../dompdf/dompdf_config.inc.php';
 $id=$_GET['alumno'];

@@ -59,12 +59,12 @@ return false;
 											margin-left: 90%;
 											">
 											<span class="input-group-btn">
-												<a href="#" class="btn btn-default">Mostrar todos</a>
+												<a href="consultar_alumno.php" class="btn btn-default">Mostrar todos</a>
 											</span>
 											</div><!-- /input-group -->
 										</div>
 									</div>
-									
+
 									</div><!-- /.col-lg-6 -->
 								</form>
 							</div>
@@ -95,7 +95,7 @@ return false;
 									</tbody>
 								</table>
 								<div class="text-left">
-									<form name="form1" id="form1" method="POST" action="../controlador/reporte_alumnos.php">
+									<form name="form2" id="form2" method="POST" action="../controlador/reporte_alumnos.php">
 										<input type="text" name="consulta" value="<?php echo $sql;?>" hidden="hidden">
 										<button class="btn btn-danger" href="#" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Descargar" type="submit"><span class="icon-download2"></span></button>
 									</form>

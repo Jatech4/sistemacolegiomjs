@@ -1,9 +1,7 @@
 <?php
-//include_once "validasesion.php";
 include_once "../modelo/conexion.php";
-require_once '../dompdf/dompdf_config.inc.php';
+require_once "../dompdf/dompdf_config.inc.php";
 $sql=$_POST['consulta'];
-
 $result=mysql_query($sql);
 
 $html='
@@ -17,27 +15,29 @@ $html='
 </head>
 <body>
 <p align="center" style="font-size:24px">
-Reporte de Docentes<br>
+Reporte de Bitacora<br>
 </p>
 <table width=100%>
 <tr>
 <th>ID</th>
-<th>Nombres</th>
-<th>Cedula</th>
+<th>Nombre Usuario</th>
+<th>Fecha de Conexión</th>
 </tr>';
 while ($row = mysql_fetch_array($result)){
 $html.='
 <tr>
-<td align="center">'.$row['id_docente'].'</td>
-<td align="center">'.$row['nombre_docente'].'</td>
-<td align="center">'.$row['ci_docente'].'</td>
+<td align="center">'.$row['id_bitacora'].'</td>
+<td align="center">'.$row['nombre_usuario'].'</td>
+<td align="center">'.$row['fecha'].'</td>
 </tr>
 ';}
 $html.='
 </table>
 </body>
 </html>';
+
 $html = mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8');
+
 # Instanciamos un objeto de la clase DOMPDF.
 $mipdf = new DOMPDF();
 
@@ -52,5 +52,5 @@ $mipdf ->load_html(utf8_decode($html));
 $mipdf ->render();
 
 # Enviamos el fichero PDF al navegador.
-$mipdf ->stream('Reporte Docentes.pdf');
+$mipdf ->stream('Reporte Bitacora.pdf');
 ?>

@@ -94,12 +94,6 @@ return false;
 									</tbody>
 								</table>
 								<hr>
-								<div class="text-left">
-									<form name="form1" id="form1" method="POST" action="../controlador/reporte_docente.php">
-										<input type="text" name="consulta" value="<?php echo $sql;?>" hidden="hidden">
-										<button class="btn btn-danger" href="#" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Descargar" type="submit"><span class="icon-download2"></span></button>
-									</form>
-								</div>
 							</div>
 						</div>
 					</div>

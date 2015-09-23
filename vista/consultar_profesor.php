@@ -59,12 +59,12 @@ return false;
 											margin-left: 90%;
 											">
 											<span class="input-group-btn">
-												<a href="#" class="btn btn-default">Mostrar todos</a>
+												<a href="consultar_profesor.php" class="btn btn-default">Mostrar todos</a>
 											</span>
 											</div><!-- /input-group -->
 										</div>
 									</div>
-									
+
 									</div><!-- /.col-lg-6 -->
 								</form>
 							</div>
