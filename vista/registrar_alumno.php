@@ -11,32 +11,57 @@ include_once "menu.php"
        			document.form.submit()
     			}
 			}
+
+			function calcAge(birthday) {
+		    var year, month, day, age, year_diff, month_diff, day_diff;
+		    var myBirthday = new Date();
+		    var today = new Date();
+		    var array = birthday.split("-");
+
+		    year = array[0];
+		    month = array[1];
+		    day = array[2];
+
+		    year_diff = today.getFullYear() - year;
+		    month_diff = (today.getMonth() + 1) - month;
+		    day_diff = today.getDate() - day;
+
+		    if (month_diff < 0) {
+		        year_diff--;
+		    } else if ((month_diff === 0) && (day_diff < 0)) {
+		        year_diff--;
+		    }
+		    document.getElementById('edad_alumno').value =  year_diff;
+		    return year_diff;
+
+		}
 			</script>
 			<div class="content-wrapper">
 				<section class="content-header">
 					<h1>
 					Registrar Alumno
 					</h1>
-					<small><i>Registrar Alumnos en el sistema, para luego inscribir y generar boletín.</i></small>
+					<br>
+					<small><i>(*) Campos Obligatorios</i></small>
 				</section>
 				<section class="content">
 					<div class="row">
 						<div class="col-md-12">
-							<form class="formulario" name="form" id="form" method="POST" action="../controlador/registrar_alumno.php">
+							<form class="formulario" name="form" id="form" method="POST" action="../controlador/registrar_alumno.php" onsubmit="enviar()">
 								<h4>A.-DATOS PERSONALES DEL ALUMNO</h4>
 								<div class="row">
 									<div class="col-md-3">
 							<div class="form-group">
-								<label for="exampleInputPassword1">Nombres</label>
+								<label for="exampleInputPassword1">Nombres (*)</label>
 								<input type="text" class="form-control" name="nombres_alumno"
 								onkeypress="return soloLetras(event)" maxlength="15"
 								id="exampleInputPassword1"
-								placeholder="Nombres">
+								placeholder="Nombres" required>
 							</div>
 									</div>
 									<div class="col-md-3">
 							<div class="form-group">
-								<label for="exampleInputPassword1">Apellidos</label>
+								<label for="exampleInputPassword1">Apellidos (*)</label>
 								<input type="text" class="form-control" onkeypress="return soloLetras
 								(event)" maxlength="15" name="apellidos_alumno"
 								id="exampleInputPassword1" placeholder="Apellidos" required>
@@ -44,7 +69,7 @@ include_once "menu.php"
 									</div>
 									<div class="col-md-3">
 							<div class="form-group">
-								<label for="exampleInputPassword1">Cedula</label>
+								<label for="exampleInputPassword1">Cedula (*)</label>
 								<input type="text" class="form-control" name="cedula_alumno"
 								onkeypress="return solonumeros2(event)" maxlength="10"
 								id="exampleInputPassword1" placeholder="Cedula" required>
@@ -52,17 +77,17 @@ include_once "menu.php"
 									</div>
 									<div class="col-md-3">
 							<div class="form-group">
-								<label for="exampleInputPassword1">Edad</label>
+								<label for="exampleInputPassword1">Edad (*)</label>
 								<input type="number" onkeypress="return solonumeros(event)"
 								maxlength="2" class="form-control" name="edad_alumno"
-								id="exampleInputPassword1" placeholder="Edad" required>
+								id="edad_alumno" placeholder="Edad" required disabled="disabled">
 							</div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-3">
 										<div class="form-group">
-							<label for="exampleInputPassword1">Sexo</label>
+							<label for="exampleInputPassword1">Sexo (*)</label>
 							<select class="form-control" name="sexo_alumno" id="#">
 								<option value="M">Masculino</option>
 								<option value="F">Femenino</option>
@@ -71,7 +96,7 @@ include_once "menu.php"
 									</div>
 									<div class="col-md-3">
 										<div class="form-group">
-							<label for="exampleInputPassword1">Lugar de Nacimiento</label>
+							<label for="exampleInputPassword1">Lugar de Nacimiento (*)</label>
 							<input type="text" class="form-control" onkeypress="return soloLetras
 							(event)" maxlength="20" id="exampleInputPassword1"
 							name="lugar_nac_alumno"
@@ -80,8 +105,8 @@ include_once "menu.php"
 									</div>
 									<div class="col-md-3">
 										<div class="form-group">
-							<label for="exampleInputPassword1">Fecha nacimiento alumno</label>
-							<input type="date" class="form-control" id="exampleInputPassword1" name="fecha_nac_alumno" placeholder="Fecha" required>
+							<label for="exampleInputPassword1">Fecha nacimiento alumno (*)</label>
+							<input type="date" class="form-control" id="exampleInputPassword1" name="fecha_nac_alumno" placeholder="Fecha" required onblur="calcAge(this.value)">
 							</div>
 									</div>
 									<div class="col-md-3">
@@ -95,7 +120,7 @@ include_once "menu.php"
 								<div class="row">
 									<div class="col-md-4">
 										<div class="form-group">
-							<label for="exampleInputPassword1">Telefono 1</label>
+							<label for="exampleInputPassword1">Telefono 1 (*)</label>
 							<input type="text" onkeypress="return solonumeros(event)"
 								maxlength="11" class="form-control" id="exampleInputPassword1"
 								name="tlf1_alumno" placeholder="Telefono" required>
@@ -105,14 +130,14 @@ include_once "menu.php"
 										<div class="form-group">
 							<label for="exampleInputPassword1">Telefono 2</label>
 							<input type="text" onkeypress="return solonumeros(event)"
-								maxlength="11" class="form-control" id="exampleInputPassword1" name="tlf2_alumno" placeholder="Telefono" required>
+								maxlength="11" class="form-control" id="exampleInputPassword1" name="tlf2_alumno" placeholder="Telefono">
 							</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
 							<label for="exampleInputPassword1">Telefono 3</label>
 							<input type="text" onkeypress="return solonumeros(event)"
-								maxlength="11" class="form-control" id="exampleInputPassword1" name="tlf3_alumno" placeholder="Telefono" required>
+								maxlength="11" class="form-control" id="exampleInputPassword1" name="tlf3_alumno" placeholder="Telefono">
 							</div>
 									</div>
 								</div>
@@ -123,22 +148,22 @@ include_once "menu.php"
 										<div class="col-md-4">
 											<div class="form-group">
 												<label>Plantel Procedencia</label>
-												<input type="text" class="form-control" name="plantel_procedencia" placeholder="U.E.D. Nombre Plantel" required>
+												<input type="text" class="form-control" name="plantel_procedencia" placeholder="U.E.D. Nombre Plantel">
 											</div>
 										</div>
 										<div class="col-md-4">
 											<div class="form-group">
 												<label>Ultimo grado cursado</label>
-												<input type="text" class="form-control" name="ultimo_grado" required>
+												<input type="text" class="form-control" name="ultimo_grado" >
 											</div>
 										</div>
 										<div class="col-md-4">
 											<div class="form-group">
 												<label>Estatus</label>
 												<br>
-												<input type="radio" name="status_ult_plantel" id="optionsRadios1" value="Si" required>Aprobado
+												<input type="radio" name="status_ult_plantel" id="optionsRadios1" value="Si" >Aprobado
 												<br>
-												<input type="radio" name="status_ult_plantel" id="optionsRadios1" value="No" required>Aplazado
+												<input type="radio" name="status_ult_plantel" id="optionsRadios1" value="No" >Aplazado
 												<br>
 											</div>
 										</div>
@@ -387,7 +412,7 @@ include_once "menu.php"
 								</div>
 							</div>
 							<hr class="divisor">
-							<button type="button" class="btn btn-success" onClick="enviar()"><span class="icon-user-plus"></span> Registrar</button>
+							<button type="submit" class="btn btn-success"><span class="icon-user-plus"></span> Registrar</button>
 							<a class="btn btn-info pull-right" href="agregar_alumno.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
 							</form>
 						</div>

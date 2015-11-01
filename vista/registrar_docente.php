@@ -17,28 +17,30 @@ include_once "menu.php";
 					<h1>
 					Registrar Docente
 					</h1>
+					<br>
+					<small><i>(*) Campos Obligatorios</i></small>
 				</section>
 				<section class="content">
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3">
-							<form name="form" id="form" method="POST" action="../controlador/registrar_docente.php">
+							<form name="form" id="form" method="POST" action="../controlador/registrar_docente.php" onsubmit="enviar()">
 							<div class="form-group">
-							<label for="exampleInputPassword1">Nombre y Apellido</label>
-							<input type="nombre" class="form-control" id="exampleInputPassword1" onkeypress="return soloLetras(event)" maxlength="20" placeholder="Nombre y Apellido" name="nombre_docente" id="nombre">
+							<label for="exampleInputPassword1">Nombre y Apellido (*)</label>
+							<input type="nombre" class="form-control" id="exampleInputPassword1" onkeypress="return soloLetras(event)" maxlength="20" placeholder="Nombre y Apellido" name="nombre_docente" id="nombre" required>
 							</div>
 							<div class="form-group">
-							<label for="exampleInputPassword1">Cedula</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" onkeypress="return solonumeros2(event)" maxlength="10" placeholder="Cedula" name="ci_docente" id="cedula">
+							<label for="exampleInputPassword1">Cedula (*)</label>
+							<input type="text" class="form-control" id="exampleInputPassword1" onkeypress="return solonumeros2(event)" maxlength="10" placeholder="Cedula" name="ci_docente" id="cedula" required>
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Correo</label>
 							<input type="email" class="form-control" id="exampleInputPassword1" maxlength="30" placeholder="Correo Electronico" name="correo_docente" id="email">
 							</div>
 							<div class="form-group">
-							<label for="exampleInputPassword1">Telefono</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Telefono" onkeypress="return solonumeros2(event)" maxlength="12" name="tlfn_docente" id="#">
+							<label for="exampleInputPassword1">Telefono (*)</label>
+							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Telefono" onkeypress="return solonumeros2(event)" maxlength="12" name="tlfn_docente" id="tlfn_docente" required>
 							</div>
-							<button type="button" class="btn btn-success" onClick="enviar()"><span class="icon-user-plus"></span> Registrar</button>
+							<button type="submit" class="btn btn-success"><span class="icon-user-plus"></span> Registrar</button>
 							<a class="btn btn-info pull-right" href="agregar_docente.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
 							</form>
 						</div>

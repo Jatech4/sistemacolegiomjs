@@ -28,7 +28,7 @@ include_once "menu.php"
 				<section class="content">
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3">
-							<form name="form" id="form" method="POST" action="../controlador/editar_usuario.php">
+							<form name="form" id="form" method="POST" action="../controlador/editar_usuario.php" onsubmit="enviar()">
 							<input type="hidden" class="form-control" id="exampleInputPassword1" name="id" id="id" value="<?php echo $_GET['usuario'] ?>">
 							<div class="form-group">
 							<label for="exampleInputPassword1">Nombre y Apellido</label>
@@ -36,7 +36,7 @@ include_once "menu.php"
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Cedula</label>
-							<input type="text" class="form-control" onkeypress="return solonumeros2(event)" maxlength="11" id="exampleInputPassword1" placeholder="Cedula" name="cedula" id="cedula" value="<?php echo $row['cedula_usuario'] ?>">
+							<input type="text" class="form-control" onkeypress="return solonumeros2(event)" maxlength="11" id="exampleInputPassword1" placeholder="Cedula" name="cedula" id="cedula" value="<?php echo $row['cedula_usuario'] ?>" required>
 							</div>
 							<div class="form-group">
 							<label for="usuario">Usuario</label>
@@ -70,9 +70,9 @@ include_once "menu.php"
 								<?php } ?>
 							</select>
 							</div>
-							<button type="button" class="btn btn-warning" onClick="enviar()"><span class="icon-scissors"></span> Editar</button>
+							<button type="submit" class="btn btn-warning"><span class="icon-scissors"></span> Editar</button>
 							<?php if($_SESSION['perfilusuario']==1){ ?>
-							<a class="btn btn-info pull-right" href="agregar_usuario.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
+							<a class="btn btn-info pull-right" href="agregar_usuario.php" role="button"><span class="icon-undo2"></span> Agregar</a>
 							<?php }elseif($_SESSION['perfilusuario']!=1){?>
 							<a class="btn btn-info pull-right" href="index.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
 							<?php }?>

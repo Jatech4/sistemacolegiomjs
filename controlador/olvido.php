@@ -94,7 +94,7 @@ if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
     echo'<script type="text/javascript">
-            alert("Contraseña enviada, Verifique su correo");
+            alert("Contrase\u00f1a enviada, Verifique su correo");
             window.location="../vista/login.php"
          </script>';
 }

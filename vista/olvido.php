@@ -18,10 +18,10 @@
         <p class="login-box-msg">Ingrese su Cedula para recuperar contraseña</p>
         <form autocomplete="off" id="myform" action="../controlador/olvido.php" method="post">
           <div class="form-group has-feedback">
-            <input type="text" class="form-control" placeholder="Cedula" name="cedula" id="cedula" autocomplete="off"/>
+            <input type="text" class="form-control" placeholder="Cedula" name="cedula" id="cedula" autocomplete="off" required/>
             <span class="glyphicon glyphicon-question-sign form-control-feedback"></span>
           </div>
-          <div class="alert alert-danger" role="alert">La recuperacion se la contraseña sera enviada a su correo.</div>
+          <div class="alert alert-danger" role="alert">La recuperacion se la contrase&ntilde;a sera enviada a su correo.</div>
           <div class="row">
             <div class="col-xs-4">
               <a href="login.php" class="btn btn-default">Regresar</a>

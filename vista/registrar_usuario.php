@@ -20,42 +20,44 @@ $result_status = mysql_query("SELECT * FROM status_usuario");
 					<h1>
 					Registrar Usuario
 					</h1>
+					<br>
+					<small><i>(*) Campos Obligatorios</i></small>
 				</section>
 				<section class="content">
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3">
-							<form name="form" id="form" method="POST" action="../controlador/registrar_usuario.php">
+							<form name="form" id="form" method="POST" action="../controlador/registrar_usuario.php" onsubmit="enviar()">
 							<div class="form-group">
-							<label for="exampleInputPassword1">Nombre y Apellido</label>
-							<input type="nombre" class="form-control" onkeypress="return soloLetras(event)" maxlength="20" id="exampleInputPassword1" placeholder="Nombre y Apellido" name="nombre" id="nombre">
+							<label for="exampleInputPassword1">Nombre y Apellido (*)</label>
+							<input type="nombre" class="form-control" onkeypress="return soloLetras(event)" maxlength="20" id="exampleInputPassword1" placeholder="Nombre y Apellido" name="nombre" id="nombre" required>
 							</div>
 							<div class="form-group">
-							<label for="exampleInputPassword1">Cedula</label>
-							<input type="text" class="form-control" onkeypress="return solonumeros2(event)" maxlength="11" id="exampleInputPassword1" placeholder="Cedula" name="cedula" id="cedula">
+							<label for="exampleInputPassword1">Cedula (*)</label>
+							<input type="text" class="form-control" onkeypress="return solonumeros2(event)" maxlength="11" id="exampleInputPassword1" placeholder="Cedula" name="cedula" id="cedula" required>
 							</div>
 							<div class="form-group">
-							<label for="usuario">Usuario</label>
-							<input type="usuario" class="form-control" id="exampleInputEmail1" autocomplete="off" placeholder="Usuario" name="login" id="login">
+							<label for="usuario">Usuario (*)</label>
+							<input type="usuario" class="form-control" id="exampleInputEmail1" autocomplete="off" placeholder="Usuario" name="login" id="login" required>
 							</div>
 							<div class="form-group">
-							<label for="exampleInputPassword1">Contraseña</label>
-							<input type="password" class="form-control pw" id="exampleInputPassword1" autocomplete="off" placeholder="Contraseña" name="password" id="password">
+							<label for="exampleInputPassword1">Contraseña (*)</label>
+							<input type="password" class="form-control pw" id="exampleInputPassword1" autocomplete="off" placeholder="Contraseña" name="password" id="password" required>
 							</div>
 							<div class="form-group">
-							<label for="exampleInputPassword1">Correo Electronico</label>
-							<input type="email" class="form-control" id="exampleInputPassword1" autocomplete="off" placeholder="usuario@dominio.com" name="email_usuario" id="email_usuario">
+							<label for="exampleInputPassword1">Correo Electronico (*)</label>
+							<input type="email" class="form-control" id="exampleInputPassword1" autocomplete="off" placeholder="usuario@dominio.com" name="email_usuario" id="email_usuario" required>
 							</div>
 							<div class="form-group">
-							<label for="exampleInputPassword1">Perfil</label>
+							<label for="exampleInputPassword1">Perfil (*)</label>
 							<br>
-							<select class="form-control" name="perfil" id="perfil">
+							<select class="form-control" name="perfil" id="perfil" required>
 								<?php while ($row_perfil = mysql_fetch_array($result_perfil)){?>
 								<option value="<?php echo $row_perfil['id_perfil']?>"><?php echo $row_perfil['descripcion_perfil'] ?></option>
 								<?php } ?>
 							</select>
 							</div>
 							<div class="form-group">
-							<label for="exampleInputPassword1">Status</label>
+							<label for="exampleInputPassword1">Status (*)</label>
 							<br>
 							<select class="form-control" name="status" id="status">
 								<?php while ($row_status = mysql_fetch_array($result_status)){?>
@@ -63,7 +65,7 @@ $result_status = mysql_query("SELECT * FROM status_usuario");
 								<?php } ?>
 							</select>
 							</div>
-							<button type="button" class="btn btn-success" onClick="enviar()"><span class="icon-user-plus"></span> Registrar</button>
+							<button type="submit" class="btn btn-success"><span class="icon-user-plus"></span> Registrar</button>
 							<a class="btn btn-info pull-right" href="agregar_usuario.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
 							</form>
 						</div>

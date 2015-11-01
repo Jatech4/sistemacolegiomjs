@@ -35,7 +35,7 @@ include_once "menu.php"
 					<div class="row">
 						<div class="col-md-12">
 							<h5>NUMERO DE SOCIO: <?php echo $row['id_alumno'];?></h5>
-							<form class="formulario" name="form" id="form" method="POST" action="../controlador/editar_alumno.php">
+							<form class="formulario" name="form" id="form" method="POST" action="../controlador/editar_alumno.php" onsubmit="enviar()">
 							<input type="hidden" class="form-control" id="exampleInputPassword1" name="id" id="id" value="<?php echo $_GET['alumno'] ?>">
 								<h4>A.-DATOS PERSONALES DEL ALUMNO</h4>
 								<div class="row">
@@ -418,7 +418,7 @@ include_once "menu.php"
 								</div>
 							</div>
 							<hr class="divisor">
-							<button type="button" class="btn btn-warning" onClick="enviar()"><span class="icon-scissors"></span> Editar</button>
+							<button type="submit" class="btn btn-warning"><span class="icon-scissors"></span> Editar</button>
 							<a class="btn btn-info pull-right" href="agregar_alumno.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
 							</form>
 						</div>

@@ -5,12 +5,12 @@ include_once "../modelo/conexion.php";
 include_once "menu.php";
 ?>
 			<!--  Contenido -->
-			<script language="JavaScript"> 
-				function enviar(){ 
-    			if (confirm('¿Registrar Año Escolar?')){ 
-       			document.form.submit() 
-    			} 
-			} 	
+			<script language="JavaScript">
+				function enviar(){
+    			if (confirm('¿Registrar Año Escolar?')){
+       			document.form.submit()
+    			}
+			}
 			</script>
 			<script language="JavaScript">
 			function solonumeros(evt){
@@ -30,23 +30,25 @@ include_once "menu.php";
 	<section class="content">
 		<div class="row">
 			<div class="col-md-12">
-				<form class="formulario" name="form" id="form" method="POST" action="../controlador/registrar_ano_escolar.php">
+				<form class="formulario" name="form" id="form" method="POST" action="../controlador/registrar_ano_escolar.php" onsubmit="enviar()">
 					<input type="hidden" class="form-control" id="exampleInputPassword1" name="id" id="id" value="#">
 					<h4>Registrar Año Escolar</h4>
+					<br>
+					<small><i>(*) Campos Obligatorios</i></small>
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
-								<label for="exampleInputPassword1">Desde: </label>
-								<input type="text" maxlength="4" onkeypress="return solonumeros(event)" class="form-control" name="ano_escolar1" id="exampleInputPassword1" placeholder="Ejem: 2016">
+								<label for="exampleInputPassword1">Desde: (*)</label>
+								<input type="text" maxlength="4" onkeypress="return solonumeros(event)" class="form-control" name="ano_escolar1" id="exampleInputPassword1" placeholder="Ejem: 2016" required>
 							</div>
 						</div>
 						<div class="col-md-6">
-								<label for="#">Hasta:</label>
-								<input type="text" maxlength="4" onkeypress="return solonumeros(event)" class="form-control" name="ano_escolar2" id="exampleInputPassword1" placeholder="Ejem: 2017">
+								<label for="#">Hasta: (*)</label>
+								<input type="text" maxlength="4" onkeypress="return solonumeros(event)" class="form-control" name="ano_escolar2" id="exampleInputPassword1" placeholder="Ejem: 2017" required>
 						</div>
 					</div>
 				<hr class="divisoor">
-				<button type="button" class="btn btn-success" onClick="enviar()"><span class="icon-user-plus"></span> Registrar</button>
+				<button type="submit" class="btn btn-success"><span class="icon-user-plus"></span> Registrar</button>
 				<a class="btn btn-info pull-right" href="registrar_ano_escolar.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
 			</form>
 			</div>

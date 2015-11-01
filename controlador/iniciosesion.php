@@ -1,6 +1,6 @@
 <?php
 include_once "../modelo/conexion.php";
-
+error_reporting(0);
 $usuario = $_POST["usuario_id"];
 $password = $_POST["password"];
 

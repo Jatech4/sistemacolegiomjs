@@ -9,12 +9,12 @@ include_once "menu.php";
 ?>
 
 			<!--  Contenido -->
-			<script language="JavaScript"> 
-				function enviar(){ 
-    			if (confirm('¿Modificar Datos?')){ 
-       			document.form.submit() 
-    			} 
-			} 	
+			<script language="JavaScript">
+				function enviar(){
+    			if (confirm('¿Modificar Datos?')){
+       			document.form.submit()
+    			}
+			}
 			</script>
 			<div class="content-wrapper">
 				<section class="content-header">
@@ -26,7 +26,7 @@ include_once "menu.php";
 					<div class="row">
 						<div class="col-md-12">
 							<h5>NUMERO DE SOCIO: <?php echo $row['id_alumno'];?></h5>
-							<form class="formulario" name="form" id="form" method="POST" action="../controlador/editar_representante.php">
+							<form class="formulario" name="form" id="form" method="POST" action="../controlador/editar_representante.php" onsubmit="enviar()">
 							<input type="hidden" class="form-control" id="exampleInputPassword1" name="id_representante" id="id_representante" value="<?php echo $_GET['representante'] ?>">
 							<input type="hidden" class="form-control" id="exampleInputPassword1" name="id_alumno" id="id_alumno" value="<?php echo $_GET['alumno'] ?>">
 								<h4>A.-AGREGAR REPRESENTANTE</h4>
@@ -128,7 +128,7 @@ include_once "menu.php";
 									</div>
 								</div>
 								<hr class="divisor">
-							<button type="button" class="btn btn-warning" onClick="enviar()"><span class="icon-scissors"></span> Editar</button>
+							<button type="submit" class="btn btn-warning"><span class="icon-scissors"></span> Editar</button>
 							<a class="btn btn-info pull-right" href="editar_alumno.php?alumno=<?php echo $row['id_alumno']?>" role="button"><span class="icon-undo2"></span>  Regresar</a>
 							</form>
 						</div>

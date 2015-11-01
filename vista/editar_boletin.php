@@ -5,7 +5,7 @@ include_once "../modelo/conexion.php";
 include_once "menu.php";
 $result_docentes = mysql_query("SELECT * FROM docentes");
 $result_ano_escolar = mysql_query("SELECT * FROM ano_escolar");
-if(isset($_GET['boletin'])) 
+if(isset($_GET['boletin']))
 {
 $result_repre_select = mysql_query("SELECT * FROM representantes a, boletines b where a.id_alumno=b.id_alumno and b.id_boletin=".$_GET['boletin']."");
 $result_boletin_select=mysql_query("SELECT * FROM boletines a, alumnos b WHERE a.id_alumno=b.id_alumno and a.id_boletin=".$_GET['boletin']."");
@@ -13,19 +13,19 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 }
 ?>
 			<!--  Contenido -->
-			<script language="JavaScript"> 
-				function enviar(){ 
-    			if (confirm('¿Modificar Boletin?')){ 
-       			document.form.submit() 
-    			} 
-			} 	
+			<script language="JavaScript">
+				function enviar(){
+    			if (confirm('¿Modificar Boletin?')){
+       			document.form.submit()
+    			}
+			}
 			</script>
 <div class="content-wrapper">
 	<section class="content">
 		<div class="row">
 			<div class="col-md-12">
 				<!--<h5>Generar Boletin N°: {NUMERO ID_ROW DEL BOLETIN}</h5>-->
-				<form class="formulario" name="form" id="form" method="POST" action="../controlador/editar_boletin.php">
+				<form class="formulario" name="form" id="form" method="POST" action="../controlador/editar_boletin.php" onsubmit="enviar()">
 					<input type="hidden" class="form-control" id="exampleInputPassword1" name="id" id="id" value="<?php echo $_GET['boletin'] ?>">
 					<h4>Generar Boletín Informativo</h4>
 					<div class="row">
@@ -65,7 +65,7 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 								<option value="3ro" <?php if($row_boletin['grado']=='3ro') {echo "selected='selected'";}?>>3ro</option>
 								<option value="4to" <?php if($row_boletin['grado']=='4to') {echo "selected='selected'";}?>>4to</option>
 								<option value="5to" <?php if($row_boletin['grado']=='5to') {echo "selected='selected'";}?>>5to</option>
-								<option value="6to" <?php if($row_boletin['grado']=='6to') {echo "selected='selected'";}?>>6to</option>								
+								<option value="6to" <?php if($row_boletin['grado']=='6to') {echo "selected='selected'";}?>>6to</option>
 							</select>
 						</div>
 						<div class="col-md-3">
@@ -77,7 +77,7 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 								<option value="C" <?php if($row_boletin['seccion']=='C') {echo "selected='selected'";}?>>C</option>
 								<option value="D" <?php if($row_boletin['seccion']=='D') {echo "selected='selected'";}?>>D</option>
 								<option value="E" <?php if($row_boletin['seccion']=='E') {echo "selected='selected'";}?>>E</option>
-								<option value="F" <?php if($row_boletin['seccion']=='F') {echo "selected='selected'";}?>>F</option>								
+								<option value="F" <?php if($row_boletin['seccion']=='F') {echo "selected='selected'";}?>>F</option>
 							</select>
 						</div>
 					</div>
@@ -478,9 +478,9 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					        <input type="text" class="form-control" name="#" required>
 					    </div>
 					</div>
-				
+
 				<hr class="divisoor">
-				<button type="button" class="btn btn-warning" onClick="enviar()"><span class="icon-scissors"></span> Editar</button>
+				<button type="submit" class="btn btn-warning"><span class="icon-scissors"></span> Editar</button>
 				<a class="btn btn-info pull-right" href="crear_boletin.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
 			</form>
 			</div>

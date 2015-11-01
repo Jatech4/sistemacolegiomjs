@@ -1,6 +1,6 @@
 <?php
 //error_reporting(E_ALL);
-error_reporting(E_ALL & ~E_NOTICE);
+error_reporting(0);
 @session_start();
 if ($_SESSION['usuario']==""){
 echo "<script language='javascript'>

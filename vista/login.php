@@ -18,11 +18,11 @@
         <p class="login-box-msg">Inicia sesión para acceder</p>
         <form autocomplete="off" id="myform" action="../controlador/iniciosesion.php" method="post">
           <div class="form-group has-feedback">
-            <input type="text" class="form-control" placeholder="Usuario" name="usuario_id" id="usuario_id" autocomplete="off"/>
+            <input type="text" class="form-control" placeholder="Usuario" name="usuario_id" id="usuario_id" autocomplete="off" required/>
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="Contraseña" name="password" id="password" autocomplete="off"/>
+            <input type="password" class="form-control" placeholder="Contraseña" name="password" id="password" autocomplete="off" required/>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="row">
