@@ -95,6 +95,7 @@
 							<ul class="treeview-menu">
 								<li><a href="consultar_alumno.php"><i class="icon-radio-unchecked"></i> Generar Reporte Alumno </i></a></li>
 								<li><a href="consultar_profesor.php"><i class="icon-radio-unchecked"></i> Generar Reporte Docente</a></li>
+								<li><a href="asistencia_alumno.php"><i class="icon-radio-unchecked"></i> Generar Reporte Asistencia </i></a></li>
 								<li><a href="crear_boletin.php"><i class="icon-radio-unchecked"></i> Generar Boletin</a></li>
 								<li><a href="bitacora.php"><i class="icon-radio-unchecked"></i> Bitacora</a></li>
 								<li><a href="lista_alumnos.php"><i class="icon-radio-unchecked"></i> Lista de Alumnos</a></li>
