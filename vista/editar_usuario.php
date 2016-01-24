@@ -50,8 +50,8 @@ include_once "menu.php"
 							<label for="exampleInputPassword1">Correo Electronico</label>
 							<input type="email" class="form-control" id="exampleInputPassword1" autocomplete="off" placeholder="usuario@dominio.com" name="email_usuario" id="email_usuario" value="<?php echo $row['email_usuario'] ?>">
 							</div>
-							<?php if($_SESSION['perfilusuario']==1){ ?>
-							<div class="form-group">
+							<?php  ?>
+							<div class="form-group" <?php if($_SESSION['perfilusuario']!=1){ echo "style='visibility:hidden'"; }?>>
 							<label for="exampleInputPassword1">Perfil</label>
 							<br>
 							<select class="form-control" name="perfil" id="perfil">
@@ -60,7 +60,6 @@ include_once "menu.php"
 								<?php } ?>
 							</select>
 							</div>
-							<?php }?>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Status</label>
 							<br>
@@ -68,6 +67,14 @@ include_once "menu.php"
 								<?php while ($row_status = mysql_fetch_array($result_status)){?>
 								<option value="<?php echo $row_status['id_status']?>" <?php if($row_status['id_status']==$row['id_status']) {echo "selected='selected'";}?>><?php echo $row_status['descripcion_status'] ?></option>
 								<?php } ?>
+							</select>
+							</div>
+							<div class="form-group">
+							<label for="exampleInputPassword1">Sexo: (*)</label>
+							<select class="form-control" name="sexo_usuario" id="sexo_usuario" required>
+								<option value="" selected disabled>Seleccione</option>
+								<option value="M">Masculino</option>
+								<option value="F">Femenino</option>
 							</select>
 							</div>
 							<button type="submit" class="btn btn-warning"><span class="icon-scissors"></span> Editar</button>

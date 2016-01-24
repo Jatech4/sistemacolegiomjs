@@ -40,7 +40,12 @@
 								<ul class="dropdown-menu">
 									<!-- User image -->
 									<li class="user-header">
+										<?php if($_SESSION['sexo_usuario']=='M'){?>
 										<img src="img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+										<?php } ?>
+										<?php if($_SESSION['sexo_usuario']=='F'){?>
+										<img src="img/user1-160x160.jpg" class="img-circle" alt="User Image" />
+										<?php } ?>
 										<p>
 											<?php echo $_SESSION['usuario'];?>
 										</p>

@@ -85,8 +85,8 @@ include_once "menu.php";
 										</div>
 										<div class="col-md-3">
 										<div class="form-group">
-										<label for="exampleInputPassword1">Nombre Representante Legal</label>
-										<input type="text" class="form-control" id="exampleInputPassword1" name="representante_legal" disabled>
+										<label for="exampleInputPassword1">Fecha nacimiento Representante (*)</label>
+										<input type="date" class="form-control" id="fecha_nac_representante" name="fecha_nac_representante" placeholder="Fecha" value="<?php echo $row['fecha_nac_representante'] ?>" onblur="calcAge(this.value)" disabled>
 										</div>
 										</div>
 								</div>

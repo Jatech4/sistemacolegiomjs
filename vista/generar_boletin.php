@@ -223,6 +223,22 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 							</div>
 						</div>
 					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="form-group">
+							<label for="exampleInputPassword1">Nota:</label>
+							<select name="nota_momento1" id="nota_momento1" class="form-control">
+							<option value="">...</option>
+							  <option value="A">A</option>
+							  <option value="B">B</option>
+							  <option value="C">C</option>
+							  <option value="D">D</option>
+							  <option value="E">E</option>
+							  <option value="F">F</option>
+							</select>
+							</div>
+						</div>
+					</div>
 					<hr class="divisoor">
 					<div class="row">
 						<div class="col-md-12 text-center">
@@ -300,6 +316,22 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 							<div class="form-group">
 							<label for="exampleInputPassword1">Fecha:</label>
 							<input type="date" class="form-control" name="fecha_momento2" id="exampleInputPassword1">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="form-group">
+							<label for="exampleInputPassword1">Nota:</label>
+							<select name="nota_momento2" id="nota_momento2" class="form-control">
+							<option value="">...</option>
+							  <option value="A">A</option>
+							  <option value="B">B</option>
+							  <option value="C">C</option>
+							  <option value="D">D</option>
+							  <option value="E">E</option>
+							  <option value="F">F</option>
+							</select>
 							</div>
 						</div>
 					</div>
@@ -383,6 +415,22 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 							</div>
 						</div>
 					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="form-group">
+							<label for="exampleInputPassword1">Nota:</label>
+							<select name="nota_momento3" id="nota_momento3" class="form-control">
+							<option value="">...</option>
+							  <option value="A">A</option>
+							  <option value="B">B</option>
+							  <option value="C">C</option>
+							  <option value="D">D</option>
+							  <option value="E">E</option>
+							  <option value="F">F</option>
+							</select>
+							</div>
+						</div>
+					</div>
 					<hr class="divisoor">
 					<div class="row">
 						<div class="col-md-12 text-center">
@@ -460,6 +508,22 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 							<div class="form-group">
 							<label for="exampleInputPassword1">Fecha:</label>
 							<input type="date" class="form-control" name="fecha_momento4" id="exampleInputPassword1">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="form-group">
+							<label for="exampleInputPassword1">Nota:</label>
+							<select name="nota_momento4" id="nota_momento4" class="form-control">
+							<option value="">...</option>
+							  <option value="A">A</option>
+							  <option value="B">B</option>
+							  <option value="C">C</option>
+							  <option value="D">D</option>
+							  <option value="E">E</option>
+							  <option value="F">F</option>
+							</select>
 							</div>
 						</div>
 					</div>
