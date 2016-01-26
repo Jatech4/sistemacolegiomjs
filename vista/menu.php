@@ -110,6 +110,7 @@
 							<ul class="treeview-menu">
 								<li><a href="agregar_usuario.php"><i class="icon-radio-unchecked"></i> Agregar Usuario</a></li>
 								<li><a href="registrar_ano_escolar.php"><i class="icon-radio-unchecked"></i> Registrar Año Escolar</a></li>
+								<li><a href="registrar_mod_canaima.php"><i class="icon-radio-unchecked"></i> Registrar Modelo Canaima</a></li>
 							</ul>
 						</li>
 						<li class="treeview">
