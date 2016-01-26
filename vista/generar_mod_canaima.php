@@ -7,7 +7,7 @@ include_once "menu.php";
 			<!--  Contenido -->
 			<script language="JavaScript">
 				function enviar(){
-    			if (confirm('¿Registrar Año Escolar?')){
+    			if (confirm('¿Registrar Modelo de Canaima?')){
        			document.form.submit()
     			}
 			}
@@ -36,15 +36,14 @@ include_once "menu.php";
 					<br>
 					<small><i>(*) Campos Obligatorios</i></small>
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-4 col-md-offset-3" style="margin-left: 30%;">
 							<div class="form-group">
-								<label for="exampleInputPassword1">Desde: (*)</label>
-								<input type="text" maxlength="4" onkeypress="return solonumeros(event)" class="form-control" name="ano_escolar1" id="exampleInputPassword1" placeholder="Ejem: 2016" required>
+								<label for="exampleInputPassword1">Nombre: (*)</label>
+								<input type="text" maxlength="4" class="form-control" name="#" id="exampleInputPassword1" required>
+								<br>
+								<label for="exampleInputPassword1">Modelo: (*)</label>
+								<input type="text" maxlength="4" class="form-control" name="#" id="exampleInputPassword1" required>
 							</div>
-						</div>
-						<div class="col-md-6">
-								<label for="#">Hasta: (*)</label>
-								<input type="text" maxlength="4" onkeypress="return solonumeros(event)" class="form-control" name="ano_escolar2" id="exampleInputPassword1" placeholder="Ejem: 2017" required>
 						</div>
 					</div>
 				<hr class="divisoor">

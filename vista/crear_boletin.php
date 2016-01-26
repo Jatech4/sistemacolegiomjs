@@ -28,7 +28,7 @@ return false;
 <div class="content-wrapper">
 	<section class="content-header">
 		<h1>
-		Administración del Boletín
+		Inscripción del Alumno
 		</h1>
 	</section>
 	<section class="content">
