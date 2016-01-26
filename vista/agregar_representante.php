@@ -15,6 +15,38 @@ include_once "menu.php"
        			document.form.submit()
     			}
 			}
+
+			function calcAge(birthday)
+			{
+			    var year, month, day, age, year_diff, month_diff, day_diff;
+			    var myBirthday = new Date();
+			    var today = new Date();
+			    var array = birthday.split("-");
+
+			    year = array[0];
+			    month = array[1];
+			    day = array[2];
+
+			    year_diff = today.getFullYear() - year;
+			    month_diff = (today.getMonth() + 1) - month;
+			    day_diff = today.getDate() - day;
+
+			    if (month_diff < 0) {
+			        year_diff--;
+			    } else if ((month_diff === 0) && (day_diff < 0)) {
+			        year_diff--;
+			    }
+
+			    if(year_diff<1){
+			    alert('Seleccionar un año menor al Actual')
+			    document.getElementById('edad_representante').value =  '';
+			    document.getElementById('fecha_nac_representante').value =  '';
+			    exit;
+			    }
+			    document.getElementById('edad_representante').value =  year_diff;
+			    return year_diff;
+
+			}
 			</script>
 			<div class="content-wrapper">
 				<section class="content-header">
@@ -65,8 +97,8 @@ include_once "menu.php"
 								<div class="row">
 										<div class="col-md-3">
 										<div class="form-group">
-										<label>Edad Representante</label>
-										<input type="number" class="form-control" name="edad_representante" onkeypress="return solonumeros(event)" maxlength="12" id="exampleInputPassword1" placeholder="Edad" requiered>
+										<label for="exampleInputPassword1">Fecha nacimiento Representante (*)</label>
+										<input type="date" class="form-control" id="fecha_nac_representante" name="fecha_nac_representante" placeholder="Fecha" required onblur="calcAge(this.value)">
 										</div>
 										</div>
 										<div class="col-md-3">
@@ -77,14 +109,14 @@ include_once "menu.php"
 										</div>
 										<div class="col-md-3">
 										<div class="form-group">
-										<label for="exampleInputPassword1">Telefono 1</label>
+										<label for="exampleInputPassword1">Telefono 2</label>
 										<input type="text" class="form-control" id="exampleInputPassword1" name="tlfn2_representante" onkeypress="return solonumeros2(event)" maxlength="12" placeholder="Telefono" required>
 										</div>
 										</div>
 										<div class="col-md-3">
 										<div class="form-group">
-										<label for="exampleInputPassword1">Nombre Representante Legal</label>
-										<input type="text" class="form-control" id="exampleInputPassword1" onkeypress="return solonLetras(event)" maxlength="12" name="representante_legal" required>
+										<label>Edad Representante</label>
+										<input type="number" class="form-control" name="edad_representante" onkeypress="return solonumeros(event)" maxlength="12" id="edad_representante" placeholder="Edad" requiered>
 										</div>
 										</div>
 								</div>

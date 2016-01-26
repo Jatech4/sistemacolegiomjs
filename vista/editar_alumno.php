@@ -14,6 +14,38 @@ include_once "menu.php"
        			document.form.submit()
     			}
 			}
+
+			function calcAge(birthday)
+			{
+			    var year, month, day, age, year_diff, month_diff, day_diff;
+			    var myBirthday = new Date();
+			    var today = new Date();
+			    var array = birthday.split("-");
+
+			    year = array[0];
+			    month = array[1];
+			    day = array[2];
+
+			    year_diff = today.getFullYear() - year;
+			    month_diff = (today.getMonth() + 1) - month;
+			    day_diff = today.getDate() - day;
+
+			    if (month_diff < 0) {
+			        year_diff--;
+			    } else if ((month_diff === 0) && (day_diff < 0)) {
+			        year_diff--;
+			    }
+
+			    if(year_diff<1){
+			    alert('Seleccionar un año menor al Actual')
+			    document.getElementById('edad_alumno').value =  '';
+			    document.getElementById('fecha_nac_alumno').value =  '';
+			    exit;
+			    }
+			    document.getElementById('edad_alumno').value =  year_diff;
+			    return year_diff;
+
+			}
 			</script>
 			<script type="text/javascript" src="js/confirm-link.js"></script>
 			<script type="text/javascript">
@@ -60,7 +92,7 @@ include_once "menu.php"
 									<div class="col-md-3">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Edad</label>
-								<input type="number" class="form-control" onkeypress="return solonumeros(event)" maxlength="1" name="edad_alumno" id="exampleInputPassword1" placeholder="Edad" value="<?php echo $row['edad_alumno'] ?>">
+								<input type="number" class="form-control" onkeypress="return solonumeros(event)" maxlength="1" name="edad_alumno" id="edad_alumno" placeholder="Edad" value="<?php echo $row['edad_alumno'] ?>" disabled="disabled">
 							</div>
 									</div>
 								</div>
@@ -83,7 +115,7 @@ include_once "menu.php"
 									<div class="col-md-3">
 										<div class="form-group">
 							<label for="exampleInputPassword1">Fecha nacimiento alumno</label>
-							<input type="date" class="form-control" id="exampleInputPassword1" name="fecha_nac_alumno" placeholder="Fecha" value="<?php echo $row['fecha_nac_alumno'] ?>">
+							<input type="date" class="form-control" id="fecha_nac_alumno" name="fecha_nac_alumno" placeholder="Fecha" value="<?php echo $row['fecha_nac_alumno'] ?>" onblur="calcAge(this.value)">
 							</div>
 									</div>
 									<div class="col-md-3">

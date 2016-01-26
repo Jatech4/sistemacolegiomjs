@@ -65,6 +65,14 @@ $result_status = mysql_query("SELECT * FROM status_usuario");
 								<?php } ?>
 							</select>
 							</div>
+							<div class="form-group">
+							<label for="exampleInputPassword1">Sexo: (*)</label>
+							<select class="form-control" name="sexo_usuario" id="sexo_usuario" required>
+								<option value="" selected disabled>Seleccione</option>
+								<option value="M">Masculino</option>
+								<option value="F">Femenino</option>
+							</select>
+							</div>
 							<button type="submit" class="btn btn-success"><span class="icon-user-plus"></span> Registrar</button>
 							<a class="btn btn-info pull-right" href="agregar_usuario.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
 							</form>

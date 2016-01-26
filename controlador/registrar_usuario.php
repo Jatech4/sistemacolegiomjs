@@ -8,6 +8,7 @@ $password=$_POST['password'];
 $perfil=$_POST['perfil'];
 $status=$_POST['status'];
 $email_usuario=$_POST['email_usuario'];
+$sexo_usuario=$_POST['sexo_usuario'];
 
 $sql="SELECT id_usuario FROM usuarios WHERE cedula_usuario='$cedula'";
 $result = mysql_query($sql);
@@ -32,7 +33,7 @@ if($num>0){
  </script>
  <?php
 }else{
-$result = mysql_query("INSERT INTO usuarios(cedula_usuario, nombre_usuario, login_usuario, pass_usuario, status_usuario, perfil_usuario, email_usuario) VALUES ('$cedula','$nombre','$login','$password',$status,$perfil, '$email_usuario')");
+$result = mysql_query("INSERT INTO usuarios(cedula_usuario, nombre_usuario, login_usuario, pass_usuario, status_usuario, perfil_usuario, email_usuario, sexo_usuario) VALUES ('$cedula','$nombre','$login','$password',$status,$perfil, '$email_usuario', '$sexo_usuario')");
 echo mysql_error();
 mysql_close();
 ?>

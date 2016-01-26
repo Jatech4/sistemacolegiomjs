@@ -19,7 +19,7 @@ $html='
 <td width=20%><img src="../vista/img/logo_escuela.png" alt="Mart&iacute;n Jos&eacute; Sanabria" height="125" width="125"></td>
 <td width=50% align="center">
 <p align="center" style="font-size:24px">
-Reporte Bitacora<br>
+Reporte Asistencias / Inasistencias<br>
 </p>
 </td>
 <td width=30%>Fecha del Reporte: '.$fecha.'</td>
@@ -27,16 +27,35 @@ Reporte Bitacora<br>
 </table>
 <table width=100%>
 <tr>
-<th>ID</th>
-<th>Nombre Usuario</th>
-<th>Fecha de Conexión</th>
+<th>Nombre</th>
+<th>Año Escolar</th>
+<th>Momento</th>
+<th>Asistencias</th>
+<th>Inasistencias</th>
 </tr>';
 while ($row = mysql_fetch_array($result)){
 $html.='
 <tr>
-<td align="center">'.$row['id_bitacora'].'</td>
-<td align="center">'.$row['nombre_usuario'].'</td>
-<td align="center">'.$row['fecha'].'</td>
+<td rowspan="4" style="vertical-align:middle" align="center">'.$row["nombres_alumno"].' '.$row["apellidos_alumno"].'</td>
+<td rowspan="4" style="vertical-align:middle" align="center">'.$row['ano_escolar'].'</td>
+<td align="center">I</td>
+<td align="center">'.$row["asistencias_momento1"].'</td>
+<td align="center">'.$row["inasistencias_momento1"].'</td>
+</tr>
+<tr>
+<td align="center">II</td>
+<td align="center">'.$row["asistencias_momento2"].'</td>
+<td align="center">'.$row["inasistencias_momento2"].'</td>
+</tr>
+<tr>
+<td align="center">III</td>
+<td align="center">'.$row["asistencias_momento3"].'</td>
+<td align="center">'.$row["inasistencias_momento3"].'</td>
+</tr>
+<tr>
+<td align="center">IV</td>
+<td align="center">'.$row["asistencias_momento4"].'</td>
+<td align="center">'.$row["inasistencias_momento4"].'</td>
 </tr>
 ';}
 $html.='
@@ -60,5 +79,5 @@ $mipdf ->load_html(utf8_decode($html));
 $mipdf ->render();
 
 # Enviamos el fichero PDF al navegador.
-$mipdf ->stream('Reporte Bitacora.pdf');
+$mipdf ->stream('Reporte Asistencia Alumnos.pdf');
 ?>

@@ -7,6 +7,7 @@ $nombre_representante=$_POST['nombre_representante'];
 $ci_representante=$_POST['cedula_representante'];
 $nacionalidad_representante=$_POST['nacionalidad_representante'];
 $edad_representante=$_POST['edad_representante'];
+$fecha_nac_representante=$_POST['fecha_nac_representante'];
 $tlfn1_representante=$_POST['tlfn1_representante'];
 $tlfn2_representante=$_POST['tlfn2_representante'];
 $representante_legal=$_POST['representante_legal'];
@@ -29,7 +30,9 @@ if($num>0){
  </script>
  <?php
 }else{
-$result = mysql_query("INSERT INTO representantes(id_alumno, tipo_representante, nombre_representante, ci_representante, nacionalidad_representante, edad_representante, tlfn1_representante, tlfn2_representante, ocupacion_representante, lugar_trabajo_representante, tlfn_lugar_trabajo_representante, sueldo_representante, vive_con_alumno, observacion_vive_con_alumno) VALUES ($id,'$tipo_representante','$nombre_representante','$ci_representante','$nacionalidad_representante','$edad_representante','$tlfn1_representante','$tlfn2_representante','$ocupacion_representante','$lugar_trabajo_representante','$tlfn_lugar_trabajo_representante','$sueldo_representante','$vive_con_alumno','$observacion_vive_con_alumno')");
+
+$sql="INSERT INTO representantes(id_alumno, tipo_representante, nombre_representante, ci_representante, nacionalidad_representante, edad_representante, fecha_nac_representante, tlfn1_representante, tlfn2_representante, ocupacion_representante, lugar_trabajo_representante, tlfn_lugar_trabajo_representante, sueldo_representante, vive_con_alumno, observacion_vive_con_alumno) VALUES ($id,'$tipo_representante','$nombre_representante','$ci_representante','$nacionalidad_representante','$edad_representante', '$fecha_nac_representante', '$tlfn1_representante','$tlfn2_representante','$ocupacion_representante','$lugar_trabajo_representante','$tlfn_lugar_trabajo_representante','$sueldo_representante','$vive_con_alumno','$observacion_vive_con_alumno')";
+$result = mysql_query($sql);
 echo mysql_error();
 mysql_close();
 ?>

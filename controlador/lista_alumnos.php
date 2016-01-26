@@ -3,7 +3,7 @@ include_once "../modelo/conexion.php";
 require_once "../dompdf/dompdf_config.inc.php";
 $sql=$_POST['consulta'];
 $result=mysql_query($sql);
-
+$fecha=date("d-m-Y");
 $html='
 <html>
 <head>
@@ -14,9 +14,17 @@ $html='
 <title>Reporte</title>
 </head>
 <body>
+<table width=100%>
+<tr>
+<td width=20%><img src="../vista/img/logo_escuela.png" alt="Mart&iacute;n Jos&eacute; Sanabria" height="125" width="125"></td>
+<td width=50% align="center">
 <p align="center" style="font-size:24px">
 Lista de Alumnos<br>
 </p>
+</td>
+<td width=30%>Fecha del Reporte: '.$fecha.'</td>
+</tr>
+</table>
 <table width=100%>
 <tr>
 <th>ID</th>

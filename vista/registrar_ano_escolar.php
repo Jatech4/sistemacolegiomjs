@@ -20,7 +20,7 @@ include_once "menu.php"
 			<div class="content-wrapper">
 				<section class="content-header">
 					<h1>
-					Administración del Boletín
+					Administración Año Escolar
 					</h1>
 				</section>
 				<section class="content">
