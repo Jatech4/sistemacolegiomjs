@@ -30,7 +30,7 @@ include_once "menu.php";
 	<section class="content">
 		<div class="row">
 			<div class="col-md-12">
-				<form class="formulario" name="form" id="form" method="POST" action="../controlador/registrar_ano_escolar.php" onsubmit="enviar()">
+				<form class="formulario" name="form" id="form" method="POST" action="../controlador/registrar_mod_canaima.php" onsubmit="enviar()">
 					<input type="hidden" class="form-control" id="exampleInputPassword1" name="id" id="id" value="#">
 					<h4>Registrar Modelo de Canaima</h4>
 					<br>
@@ -39,10 +39,10 @@ include_once "menu.php";
 						<div class="col-md-4 col-md-offset-3" style="margin-left: 30%;">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Nombre: (*)</label>
-								<input type="text" maxlength="4" class="form-control" name="#" id="exampleInputPassword1" required>
+								<input type="text"  class="form-control" name="nombre_modelo" id="exampleInputPassword1" required>
 								<br>
 								<label for="exampleInputPassword1">Modelo: (*)</label>
-								<input type="text" maxlength="4" class="form-control" name="#" id="exampleInputPassword1" required>
+								<input type="text"  class="form-control" name="serial_modelo" id="exampleInputPassword1" required>
 							</div>
 						</div>
 					</div>

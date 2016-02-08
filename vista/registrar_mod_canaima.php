@@ -2,7 +2,7 @@
 <?php
 include_once "../controlador/validasesion.php";
 include_once "../modelo/conexion.php";
-$result = mysql_query("SELECT * FROM ano_escolar");
+$result = mysql_query("SELECT * FROM modelos_canaimas");
 mysql_set_charset('utf8');
 include_once "menu.php"
 ?>
@@ -20,7 +20,7 @@ include_once "menu.php"
 			<div class="content-wrapper">
 				<section class="content-header">
 					<h1>
-					Administración para agregar modelo de Canaima
+					Modelos Canaimas
 					</h1>
 				</section>
 				<section class="content">
@@ -36,6 +36,7 @@ include_once "menu.php"
 									<thead>
 									<tr>
 									<th>ID</th>
+									<th>Nombre</th>
 									<th>Modelo</th>
 									<!--<th colspan="2">Acciones</th>-->
 									</tr>
@@ -48,8 +49,9 @@ include_once "menu.php"
 									<?php } ?>
 									<?php while ($row = mysql_fetch_array($result)){?>
 									<tr>
-									<td><?php echo $row['#'] ?></td>
-									<td><?php echo $row['#'] ?></td>
+									<td><?php echo $row['id_modelo'] ?></td>
+									<td><?php echo $row['nombre_modelo'] ?></td>
+									<td><?php echo $row['serial_modelo'] ?></td>
 									<!--<td><a data-confirm-link="¿Eliminar Año?" class="btn btn-danger" href="../controlador/eliminar_ano_escolar.php?ano=<?php echo $row['id_ano_escolar']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Eliminar"><span class="icon-cross"></span></a></td>-->
 									</tr>
 									<?php } ?>
