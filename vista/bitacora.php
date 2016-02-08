@@ -93,7 +93,28 @@ mysql_set_charset('utf8');
 									<tr>
 										<td><?php echo $row['id_bitacora'] ?></td>
 										<td><?php echo $row['nombre_usuario'] ?></td>
-										<td><?php echo $row['fecha'] ?></td>
+										<td>
+											<?php 
+											$fecha = $row['fecha'];
+											$arr = array(
+											'January' => 'Enero',
+											'February' => 'Febrero',
+											'March' => 'Marzo',
+											'April' => 'Abril',
+											'May' => 'Mayo',
+											'June' => 'Junio',
+											'July' => 'Julio',
+											'August' => 'Agosto',
+											'September' => 'Septiembre',
+											'October' => 'Octubre',
+											'November' => 'Noviembre',
+											'December' => 'Diciembre'
+											);
+											$mes = $arr[date('F', strtotime($fecha))];
+											setlocale(LC_ALL,"es_ES");
+											echo date('d' , strtotime($fecha))." de ".$mes." del ".date('Y').", A la hora: ".date('G:ia');
+											?>
+										</td>
 									</tr>
 									<?php } ?>
 								</tbody>
