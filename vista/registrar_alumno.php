@@ -1,7 +1,9 @@
 <!-- index.html -->
 <?php
 include_once "../controlador/validasesion.php";
-include_once "menu.php"
+include_once "../modelo/conexion.php";
+include_once "menu.php";
+$result_grados = mysql_query("SELECT * FROM grados");
 ?>
 
 			<!--  Contenido -->
@@ -162,8 +164,13 @@ include_once "menu.php"
 										</div>
 										<div class="col-md-4">
 											<div class="form-group">
-												<label>Ultimo grado cursado</label>
-												<input type="text" class="form-control" name="ultimo_grado" >
+												<label for="exampleInputPassword1">Grado: (*)</label>
+												<select class="form-control" name="grado" id="grado" required>
+													<option value="" selected disabled>Seleccione</option>
+													<?php while ($row_grados = mysql_fetch_array($result_grados)){?>
+													<option value="<?php echo $row_grados['id_grado']?>"><?php echo $row_grados['grado']?></option>
+													<?php } ?>
+												</select>
 											</div>
 										</div>
 										<div class="col-md-4">

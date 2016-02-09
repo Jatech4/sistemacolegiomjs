@@ -107,7 +107,7 @@ mysql_set_charset('utf8');
 								<table class="table">
 									<thead>
 										<tr>
-											<th align="center">ID</th>
+											<th align="center">N°</th>
 											<th align="center">Nombre Alumno</th>
 											<th align="center">Nombre de Docente</th>
 											<th align="center">Año Escolar</th>

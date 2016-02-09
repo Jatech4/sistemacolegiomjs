@@ -61,7 +61,7 @@ include_once "menu.php"
 									<td class="pad"><a class="btn btn-primary" href="ver_alumno.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Ver Alumno"><span class="icon-eye"></span></a></td>
 									<td class="pad"><a class="btn btn-warning" href="editar_alumno.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Editar Alumno"><span class="icon-wrench"></span></a></td>
 									<td class="pad"><a class="btn btn-warning" href="agregar_canaima.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Agregar Canaima"><span class="icon-plus"></span></a></td>
-									<td class="pad"><a data-confirm-link="¿Imprimir Inscripción?" class="btn btn-success" href="../controlador/imprimir_inscripcion.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Imprimir Inscripción"><span class="icon-printer"></span></a></td>
+									<td class="pad"><a data-confirm-link="¿Imprimir Registro?" class="btn btn-success" href="../controlador/imprimir_inscripcion.php?alumno=<?php echo $row['id_alumno']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Imprimir Registro"><span class="icon-printer"></span></a></td>
 									</tr>
 									<?php } ?>
 									</tbody>

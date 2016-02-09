@@ -7,6 +7,7 @@ $id=$_POST['id'];
 $nombres_alumno=$_POST['nombres_alumno'];
 $apellidos_alumno=$_POST['apellidos_alumno'];
 $cedula_alumno=$_POST['cedula_alumno'];
+$cedula_propia=$_POST['cedula_propia'];
 $edad_alumno=$_POST['edad_alumno'];
 $sexo_alumno=$_POST['sexo_alumno'];
 $lugar_nac_alumno=$_POST['lugar_nac_alumno'];
@@ -16,7 +17,7 @@ $tlf1_alumno=$_POST['tlf1_alumno'];
 $tlf2_alumno=$_POST['tlf2_alumno'];
 $tlf3_alumno=$_POST['tlf3_alumno'];
 
-$sql="UPDATE alumnos SET cedula_alumno='$cedula_alumno',nombres_alumno='$nombres_alumno',apellidos_alumno='$apellidos_alumno',edad_alumno='$edad_alumno',sexo_alumno='$sexo_alumno',lugar_nac_alumno='$lugar_nac_alumno',fecha_nac_alumno='$fecha_nac_alumno',direccion_alumno='$direccion_alumno',tlf1_alumno='$tlf1_alumno',tlf2_alumno='$tlf2_alumno',tlf3_alumno='$tlf3_alumno' WHERE id_alumno=$id";
+$sql="UPDATE alumnos SET cedula_alumno='$cedula_alumno',cedula_propia='$cedula_propia',nombres_alumno='$nombres_alumno',apellidos_alumno='$apellidos_alumno',edad_alumno='$edad_alumno',sexo_alumno='$sexo_alumno',lugar_nac_alumno='$lugar_nac_alumno',fecha_nac_alumno='$fecha_nac_alumno',direccion_alumno='$direccion_alumno',tlf1_alumno='$tlf1_alumno',tlf2_alumno='$tlf2_alumno',tlf3_alumno='$tlf3_alumno' WHERE id_alumno=$id";
 $result = mysql_query($sql);
 echo mysql_error();
 

@@ -3,14 +3,21 @@
 include_once "../controlador/validasesion.php";
 include_once "../modelo/conexion.php";
 include_once "menu.php";
+$result_grados = mysql_query("SELECT * FROM grados");
 $result_alumnos = mysql_query("SELECT * FROM alumnos");
 $result_docentes = mysql_query("SELECT * FROM docentes");
 $result_ano_escolar = mysql_query("SELECT * FROM ano_escolar ORDER BY id_ano_escolar DESC");
 if(isset($_GET['alumno']))
 {
-$result_alumno_select = mysql_query("SELECT * FROM alumnos a, representantes b where a.id_alumno=".$_GET['alumno']." and b.id_alumno=".$_GET['alumno']."");
+$sql="SELECT * FROM alumnos a, representantes b, procedencia_alumno c where a.id_alumno=".$_GET['alumno']." and b.id_alumno=".$_GET['alumno']." and c.id_alumno=".$_GET['alumno']."";
+$result_alumno_select = mysql_query($sql);
 $result_repre_select = mysql_query("SELECT * FROM representantes where id_alumno=".$_GET['alumno']."");
 $row_alumno_select = mysql_fetch_array($result_alumno_select);
+if($row_alumno_select['aprobado']=='Si'){
+	$sig_grado=$row_alumno_select['ultimo_grado']+1;
+}else{
+$sig_grado=$row_alumno_select['ultimo_grado'];
+}
 	if(!$row_alumno_select){ ?>
 	<script language='JavaScript'>
 				alert('ERROR: El Alumno debe poseer al menos 1 Representante registrado');
@@ -81,13 +88,12 @@ $row_alumno_select = mysql_fetch_array($result_alumno_select);
 						<div class="col-md-3">
 							<label for="exampleInputPassword1">Grado: (*)</label>
 							<select class="form-control" name="grado" id="grado" required>
-								<option value="" selected disabled>Seleccione</option>
-								<option value="1ro">1ro</option>
-								<option value="2do">2do</option>
-								<option value="3ro">3ro</option>
-								<option value="4to">4to</option>
-								<option value="5to">5to</option>
-								<option value="6to">6to</option>
+							<option value="" selected disabled>Seleccione</option>
+							<?php while ($row_grados = mysql_fetch_array($result_grados)){?>
+							<option value="<?php echo $row_grados['id_grado'];?>"
+							<?php if($row_grados['id_grado']==$sig_grado) {echo "selected='selected'";}?>
+							><?php echo $row_grados['grado']?></option>
+							<?php } ?>
 							</select>
 						</div>
 						<div class="col-md-3">

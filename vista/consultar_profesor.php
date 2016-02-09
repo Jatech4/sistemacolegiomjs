@@ -72,7 +72,7 @@ return false;
 								<table class="table">
 									<thead>
 										<tr>
-											<th>ID</th>
+											<th>N°</th>
 											<th>Nombres</th>
 											<th>Cedula</th>
 											<th>Correo</th>
