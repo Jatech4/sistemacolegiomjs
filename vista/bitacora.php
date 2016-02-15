@@ -78,7 +78,7 @@ mysql_set_charset('utf8');
 								<caption>Lista de Usuarios Registrados y su Fecha de Conexión.</caption>
 								<thead>
 									<tr>
-										<th align="center">ID</th>
+										<th align="center">N°</th>
 										<th align="center">Nombre Usuario</th>
 										<th align="center">Fecha de Conexión</th>
 									</tr>
@@ -94,7 +94,7 @@ mysql_set_charset('utf8');
 										<td><?php echo $row['id_bitacora'] ?></td>
 										<td><?php echo $row['nombre_usuario'] ?></td>
 										<td>
-											<?php 
+											<?php
 											$fecha = $row['fecha'];
 											$arr = array(
 											'January' => 'Enero',

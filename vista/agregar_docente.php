@@ -35,7 +35,7 @@ include_once "menu.php"
 									<caption>Lista de Docentes Registrados en el sistema.</caption>
 									<thead>
 									<tr>
-									<th>ID</th>
+									<th>N°</th>
 									<th>Nombre</th>
 									<th>Cedula</th>
 									<th>Correo</th>

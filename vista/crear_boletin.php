@@ -65,7 +65,7 @@ return false;
 								<caption>Lista de Boletines Registrados en el sistema.</caption>
 								<thead>
 									<tr>
-										<th>ID</th>
+										<th>N°</th>
 										<th>Nombre Alumno</th>
 										<th>Representante del Alumno</th>
 										<th>Docente del Alumno</th>

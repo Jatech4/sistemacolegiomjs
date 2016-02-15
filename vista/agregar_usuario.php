@@ -36,7 +36,7 @@ include_once "menu.php"
 									<caption>Lista de Usuarios Registrados.</caption>
 									<thead>
 									<tr>
-									<th>ID</th>
+									<th>N°</th>
 									<th>Cedula</th>
 									<th>Usuario</th>
 									<th>Contraseña</th>

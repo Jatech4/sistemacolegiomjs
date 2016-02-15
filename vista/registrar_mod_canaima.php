@@ -35,7 +35,7 @@ include_once "menu.php"
 									<caption>Modelo de Canaimas Registradas.</caption>
 									<thead>
 									<tr>
-									<th>ID</th>
+									<th>N°</th>
 									<th>Nombre</th>
 									<th>Modelo</th>
 									<!--<th colspan="2">Acciones</th>-->

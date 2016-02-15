@@ -35,7 +35,7 @@ include_once "menu.php"
 									<caption>Años escolares registrados.</caption>
 									<thead>
 									<tr>
-									<th>ID</th>
+									<th>N°</th>
 									<th>Desde - Hasta</th>
 									<!--<th colspan="2">Acciones</th>-->
 									</tr>
@@ -50,7 +50,7 @@ include_once "menu.php"
 									<tr>
 									<td><?php echo $row['id_ano_escolar'] ?></td>
 									<td><?php echo $row['ano_escolar'] ?></td>
-									<td class="pad"><a class="btn btn-info" href="fecha_momento.php" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Agregar Momentos"><span class="icon-plus"></span></a></td>
+									<td class="pad"><a class="btn btn-info" href="fecha_momento.php?id=<?php echo $row['id_ano_escolar']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Agregar Momentos"><span class="icon-plus"></span></a></td>
 									<!--<td><a data-confirm-link="¿Eliminar Año?" class="btn btn-danger" href="../controlador/eliminar_ano_escolar.php?ano=<?php echo $row['id_ano_escolar']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Eliminar"><span class="icon-cross"></span></a></td>-->
 									</tr>
 									<?php } ?>

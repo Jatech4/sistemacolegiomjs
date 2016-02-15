@@ -3,11 +3,14 @@
 include_once "../controlador/validasesion.php";
 include_once "../modelo/conexion.php";
 include_once "menu.php";
+$result = mysql_query("SELECT * FROM ano_escolar WHERE id_ano_escolar=".$_GET['id']."");
+mysql_set_charset('utf8');
+$row = mysql_fetch_array($result);
 ?>
 			<!--  Contenido -->
 			<script language="JavaScript">
 				function enviar(){
-    			if (confirm('¿Registrar Año Escolar?')){
+    			if (confirm('¿Registrar Fechas de Momentos?')){
        			document.form.submit()
     			}
 			}
@@ -30,9 +33,9 @@ include_once "menu.php";
 	<section class="content">
 		<div class="row">
 			<div class="col-md-12">
-				<form class="formulario" name="form" id="form" method="POST" action="#" onsubmit="enviar()">
+				<form class="formulario" name="form" id="form" method="POST" action="../controlador/registrar_fecha_ano.php" onsubmit="enviar()">
 					<input type="hidden" class="form-control" id="exampleInputPassword1" name="id" id="id" value="#">
-					<h4>Registro de Fecha de Momentos</h4>
+					<h4>Registro de Fecha de Momentos para el Año Escolar: <?php echo $row['ano_escolar']?></h4>
 					<br>
 					<small><i>(*) Campos Obligatorios</i></small>
 					<div class="row form-group">
