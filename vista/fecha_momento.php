@@ -35,61 +35,68 @@ include_once "menu.php";
 					<h4>Registro de Fecha de Momentos</h4>
 					<br>
 					<small><i>(*) Campos Obligatorios</i></small>
-					<div class="row">
+					<div class="row form-group">
 						<h4>Momento 1</h4>
 						<div class="col-md-6">
-							<div class="form-group">
 								<label for="exampleInputPassword1">Desde: (*)</label>
-								<input type="text" maxlength="4" onkeypress="return solonumeros(event)" class="form-control" name="#" id="exampleInputPassword1" placeholder="" required>
-							</div>
+								<select class="form-control gay1" name="">
+										<option value="Enero">Enero</option>
+										<option value="Febrero">Febrero</option>
+										<option value="Marzo">Marzo</option>
+										<option value="Abril">Abril</option>
+										<option value="Mayo">Mayo</option>
+										<option value="Junio">Junio</option>
+										<option value="Julio">Julio</option>
+										<option value="Agosto">Agosto</option>
+										<option value="Septiembre">Septiembre</option>
+										<option value="Octubre">Octubre</option>
+										<option value="Noviembre">Noviembre</option>
+								</select>
 						</div>
 						<div class="col-md-6">
-								<label for="#">Hasta: (*)</label>
-								<input type="text" maxlength="4" onkeypress="return solonumeros(event)" class="form-control" name="#" id="exampleInputPassword1" placeholder="" required>
+									<label for="#">Hasta: (*)</label>
+									<select class="form-control gay2" name="">
+											
+									</select>
 						</div>
-					</div>
-					<hr class="divisor">
-					<div class="row">
+					</div> <!-- Fin Primer Select -->
+					<div class="row form-group">
 						<h4>Momento 2</h4>
 						<div class="col-md-6">
-							<div class="form-group">
 								<label for="exampleInputPassword1">Desde: (*)</label>
-								<input type="text" maxlength="4" onkeypress="return solonumeros(event)" class="form-control" name="#" id="exampleInputPassword1" placeholder="" required>
-							</div>
+								<select class="form-control gay1" name="">
+										<option value="Enero">Enero</option>
+										<option value="Febrero">Febrero</option>
+										<option value="Marzo">Marzo</option>
+										<option value="Abril">Abril</option>
+										<option value="Mayo">Mayo</option>
+										<option value="Junio">Junio</option>
+										<option value="Julio">Julio</option>
+										<option value="Agosto">Agosto</option>
+										<option value="Septiembre">Septiembre</option>
+										<option value="Octubre">Octubre</option>
+										<option value="Noviembre">Noviembre</option>
+								</select>
 						</div>
 						<div class="col-md-6">
-								<label for="#">Hasta: (*)</label>
-								<input type="text" maxlength="4" onkeypress="return solonumeros(event)" class="form-control" name="#" id="exampleInputPassword1" placeholder="" required>
+									<label for="#">Hasta: (*)</label>
+									<select class="form-control gay2" name="">
+											<option value="Enero">Enero</option>
+											<option value="Febrero">Febrero</option>
+											<option value="Marzo">Marzo</option>
+											<option value="Abril">Abril</option>
+											<option value="Mayo">Mayo</option>
+											<option value="Junio">Junio</option>
+											<option value="Julio">Julio</option>
+											<option value="Agosto">Agosto</option>
+											<option value="Septiembre">Septiembre</option>
+											<option value="Octubre">Octubre</option>
+											<option value="Noviembre">Noviembre</option>
+											<option value="Diciembre">Diciembre</option>
+									</select>
 						</div>
-					</div>
-					<hr class="divisor">
-					<div class="row">
-						<h4>Momento 3</h4>
-						<div class="col-md-6">
-							<div class="form-group">
-								<label for="exampleInputPassword1">Desde: (*)</label>
-								<input type="text" maxlength="4" onkeypress="return solonumeros(event)" class="form-control" name="#" id="exampleInputPassword1" placeholder="" required>
-							</div>
-						</div>
-						<div class="col-md-6">
-								<label for="#">Hasta: (*)</label>
-								<input type="text" maxlength="4" onkeypress="return solonumeros(event)" class="form-control" name="#" id="exampleInputPassword1" placeholder="" required>
-						</div>
-					</div>
-					<hr class="divisor">
-					<div class="row">
-						<h4>Momento 4</h4>
-						<div class="col-md-6">
-							<div class="form-group">
-								<label for="exampleInputPassword1">Desde: (*)</label>
-								<input type="text" maxlength="4" onkeypress="return solonumeros(event)" class="form-control" name="#" id="exampleInputPassword1" placeholder="" required>
-							</div>
-						</div>
-						<div class="col-md-6">
-								<label for="#">Hasta: (*)</label>
-								<input type="text" maxlength="4" onkeypress="return solonumeros(event)" class="form-control" name="#" id="exampleInputPassword1" placeholder="" required>
-						</div>
-					</div>
+					</div> <!-- Fin Segundo Select -->
+					<br>
 					<hr class="divisoor">
 					<button type="submit" class="btn btn-success"><span class="icon-user-plus"></span> Registrar</button>
 					<a class="btn btn-info pull-right" href="registrar_ano_escolar.php" role="button"><span class="icon-undo2"></span>  Regresar</a>
@@ -112,5 +119,6 @@ include_once "menu.php";
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 <script src="js/app.min.js" type="text/javascript"></script>
 <script src="js/demo.js" type="text/javascript"></script>
+<script src="js/custom.js" type="text/javascript"></script>
 </body>
 </html>
