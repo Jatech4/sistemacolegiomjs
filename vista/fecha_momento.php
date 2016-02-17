@@ -43,23 +43,24 @@ $row = mysql_fetch_array($result);
 						<div class="col-md-6">
 								<label for="exampleInputPassword1">Desde: (*)</label>
 								<select class="form-control gay1" name="">
-										<option value="Enero">Enero</option>
-										<option value="Febrero">Febrero</option>
-										<option value="Marzo">Marzo</option>
-										<option value="Abril">Abril</option>
-										<option value="Mayo">Mayo</option>
-										<option value="Junio">Junio</option>
-										<option value="Julio">Julio</option>
-										<option value="Agosto">Agosto</option>
-										<option value="Septiembre">Septiembre</option>
-										<option value="Octubre">Octubre</option>
-										<option value="Noviembre">Noviembre</option>
+										<option disabled selected>Seleccione</option>
+										<option value="Enero" required>Enero</option>
+										<option value="Febrero" required>Febrero</option>
+										<option value="Marzo" required>Marzo</option>
+										<option value="Abril" required>Abril</option>
+										<option value="Mayo" required>Mayo</option>
+										<option value="Junio" required>Junio</option>
+										<option value="Julio" required>Julio</option>
+										<option value="Agosto" required>Agosto</option>
+										<option value="Septiembre" required>Septiembre</option>
+										<option value="Octubre" required>Octubre</option>
+										<option value="Noviembre" required>Noviembre</option>
 								</select>
 						</div>
 						<div class="col-md-6">
 									<label for="#">Hasta: (*)</label>
 									<select class="form-control gay2" name="">
-											
+
 									</select>
 						</div>
 					</div> <!-- Fin Primer Select -->
@@ -67,35 +68,103 @@ $row = mysql_fetch_array($result);
 						<h4>Momento 2</h4>
 						<div class="col-md-6">
 								<label for="exampleInputPassword1">Desde: (*)</label>
-								<select class="form-control gay1" name="">
-										<option value="Enero">Enero</option>
-										<option value="Febrero">Febrero</option>
-										<option value="Marzo">Marzo</option>
-										<option value="Abril">Abril</option>
-										<option value="Mayo">Mayo</option>
-										<option value="Junio">Junio</option>
-										<option value="Julio">Julio</option>
-										<option value="Agosto">Agosto</option>
-										<option value="Septiembre">Septiembre</option>
-										<option value="Octubre">Octubre</option>
-										<option value="Noviembre">Noviembre</option>
+								<select class="form-control gay3" name="">
+										<option disabled selected>Seleccione</option>
+										<option value="Enero" required>Enero</option>
+										<option value="Febrero" required>Febrero</option>
+										<option value="Marzo" required>Marzo</option>
+										<option value="Abril" required>Abril</option>
+										<option value="Mayo" required>Mayo</option>
+										<option value="Junio" required>Junio</option>
+										<option value="Julio" required>Julio</option>
+										<option value="Agosto" required>Agosto</option>
+										<option value="Septiembre" required>Septiembre</option>
+										<option value="Octubre" required>Octubre</option>
+										<option value="Noviembre" required>Noviembre</option>
 								</select>
 						</div>
 						<div class="col-md-6">
 									<label for="#">Hasta: (*)</label>
-									<select class="form-control gay2" name="">
-											<option value="Enero">Enero</option>
-											<option value="Febrero">Febrero</option>
-											<option value="Marzo">Marzo</option>
-											<option value="Abril">Abril</option>
-											<option value="Mayo">Mayo</option>
-											<option value="Junio">Junio</option>
-											<option value="Julio">Julio</option>
-											<option value="Agosto">Agosto</option>
-											<option value="Septiembre">Septiembre</option>
-											<option value="Octubre">Octubre</option>
-											<option value="Noviembre">Noviembre</option>
-											<option value="Diciembre">Diciembre</option>
+									<select class="form-control gay4" name="">
+
+									</select>
+						</div>
+					</div> <!-- Fin Segundo Select -->
+					<div class="row form-group">
+						<h4>Momento 3</h4>
+						<div class="col-md-6">
+								<label for="exampleInputPassword1">Desde: (*)</label>
+								<select class="form-control gay5" name="">
+										<option disabled selected>Seleccione</option>
+										<option value="Enero" required>Enero</option>
+										<option value="Febrero" required>Febrero</option>
+										<option value="Marzo" required>Marzo</option>
+										<option value="Abril" required>Abril</option>
+										<option value="Mayo" required>Mayo</option>
+										<option value="Junio" required>Junio</option>
+										<option value="Julio" required>Julio</option>
+										<option value="Agosto" required>Agosto</option>
+										<option value="Septiembre" required>Septiembre</option>
+										<option value="Octubre" required>Octubre</option>
+										<option value="Noviembre" required>Noviembre</option>
+								</select>
+						</div>
+						<div class="col-md-6">
+									<label for="#">Hasta: (*)</label>
+									<select class="form-control gay6" name="">
+
+									</select>
+						</div>
+					</div> <!-- Fin tercero Select -->
+					<div class="row form-group">
+						<h4>Momento 4</h4>
+						<div class="col-md-6">
+								<label for="exampleInputPassword1">Desde: (*)</label>
+								<select class="form-control gay7" name="">
+										<option disabled selected>Seleccione</option>
+										<option value="Enero" required>Enero</option>
+										<option value="Febrero" required>Febrero</option>
+										<option value="Marzo" required>Marzo</option>
+										<option value="Abril" required>Abril</option>
+										<option value="Mayo" required>Mayo</option>
+										<option value="Junio" required>Junio</option>
+										<option value="Julio" required>Julio</option>
+										<option value="Agosto" required>Agosto</option>
+										<option value="Septiembre" required>Septiembre</option>
+										<option value="Octubre" required>Octubre</option>
+										<option value="Noviembre" required>Noviembre</option>
+								</select>
+						</div>
+						<div class="col-md-6">
+									<label for="#">Hasta: (*)</label>
+									<select class="form-control gay8" name="">
+
+									</select>
+						</div>
+					</div> <!-- Fin cuarto Select -->
+					<div class="row form-group">
+						<h4>Momento 5</h4>
+						<div class="col-md-6">
+								<label for="exampleInputPassword1">Desde: (*)</label>
+								<select class="form-control gay9" name="">
+										<option disabled selected>Seleccione</option>
+										<option value="Enero" required>Enero</option>
+										<option value="Febrero" required>Febrero</option>
+										<option value="Marzo" required>Marzo</option>
+										<option value="Abril" required>Abril</option>
+										<option value="Mayo" required>Mayo</option>
+										<option value="Junio" required>Junio</option>
+										<option value="Julio" required>Julio</option>
+										<option value="Agosto" required>Agosto</option>
+										<option value="Septiembre" required>Septiembre</option>
+										<option value="Octubre" required>Octubre</option>
+										<option value="Noviembre" required>Noviembre</option>
+								</select>
+						</div>
+						<div class="col-md-6">
+									<label for="#">Hasta: (*)</label>
+									<select class="form-control gay10" name="">
+
 									</select>
 						</div>
 					</div> <!-- Fin Segundo Select -->

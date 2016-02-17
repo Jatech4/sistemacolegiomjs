@@ -20,4 +20,8 @@ function generar_meses(mes){
 
 $(document).ready(function(){
     agregar_evt('.gay1', '.gay2');
+    agregar_evt('.gay3', '.gay4');
+    agregar_evt('.gay5', '.gay6');
+    agregar_evt('.gay7', '.gay8');
+    agregar_evt('.gay9', '.gay10');
 });
