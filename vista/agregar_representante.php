@@ -57,7 +57,7 @@ include_once "menu.php"
 				<section class="content">
 					<div class="row">
 						<div class="col-md-12">
-							<h5>NUMERO DE SOCIO: <?php echo $row['id_alumno'];?></h5>
+							<h5>(*) Datos Obligatorios</h5>
 							<form class="formulario" name="form" id="form" method="POST" action="../controlador/registrar_representante.php" onsubmit="enviar()">
 							<input type="hidden" class="form-control" id="exampleInputPassword1" name="id" id="id" value="<?php echo $_GET['alumno'] ?>">
 								<h4>A.-AGREGAR REPRESENTANTE</h4>
@@ -191,7 +191,7 @@ include_once "menu.php"
 				<div class="pull-right hidden-xs">
 					<b>Version</b> 1.0
 				</div>
-				{Nombre Sistema}
+				Sistema de Inscripci&oacute;n Martin J Sanabria
 			</footer>
 			<div class='control-sidebar-bg'></div>
 		</div>

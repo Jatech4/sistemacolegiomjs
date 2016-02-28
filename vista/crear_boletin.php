@@ -11,6 +11,8 @@ if(isset($_POST['buscar'])){
 }
 $result = mysql_query("SELECT id_boletin, nombres_alumno, apellidos_alumno, nombre_representante, nombre_docente, e.ano_escolar FROM boletines a, alumnos b, representantes c, docentes d, ano_escolar e where a.id_alumno=b.id_alumno and a.id_representante=c.id_representante and a.id_docente=d.id_docente and a.ano_escolar=e.id_ano_escolar and e.id_ano_escolar=$ano_escolar_select");
 $result_ano_escolar = mysql_query("SELECT * FROM ano_escolar ORDER BY id_ano_escolar DESC");
+$result_ano_escolar2 = mysql_query("SELECT * FROM ano_escolar ORDER BY id_ano_escolar DESC");
+$row_ano_escolar2 = mysql_fetch_array($result_ano_escolar2);
 mysql_set_charset('utf8');
 include_once "menu.php";
 ?>
@@ -24,6 +26,8 @@ window.location = $(this).attr('href');
 return false;
 });
 });
+
+
 </script>
 <div class="content-wrapper">
 	<section class="content-header">
@@ -36,7 +40,7 @@ return false;
 			<div class="col-md-12">
 				<div class="box box-danger">
 					<div class="box-header">
-						<a class="btn btn-success" href="generar_boletin.php" role="button" data-toggle="tooltip" data-placement="top" title="Crear Boletin"><span class="icon-plus"></span></a>
+						<a class="btn btn-success" href="generar_boletin.php?id_ano=<?php echo $row_ano_escolar2['id_ano_escolar']?>" role="button" data-toggle="tooltip" data-placement="top" title="Crear Boletin"><span class="icon-plus"></span></a>
 					</div>
 					<form action="crear_boletin.php" method="POST">
 						<div class="col-md-4">
@@ -105,7 +109,7 @@ return false;
 			<div class="pull-right hidden-xs">
 				<b>Version</b> 1.0
 			</div>
-			{Nombre Sistema}
+			Sistema de Inscripci&oacute;n Martin J Sanabria
 		</footer>
 		<div class='control-sidebar-bg'></div>
 	</div>

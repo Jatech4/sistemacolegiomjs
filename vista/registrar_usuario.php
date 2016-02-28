@@ -95,7 +95,7 @@ $result_status = mysql_query("SELECT * FROM status_usuario");
 				<div class="pull-right hidden-xs">
 					<b>Version</b> 1.0
 				</div>
-				{Nombre Sistema}
+				Sistema de Inscripci&oacute;n Martin J Sanabria
 			</footer>
 			<div class='control-sidebar-bg'></div>
 		</div>

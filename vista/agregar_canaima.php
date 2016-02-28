@@ -3,10 +3,10 @@
 include_once "../controlador/validasesion.php";
 include_once "../modelo/conexion.php";
 include_once "menu.php";
-$sql="SELECT * FROM alumnos LEFT JOIN canaimas ON alumnos.id_alumno=canaimas.id_alumno WHERE alumnos.id_alumno=".$_GET['alumno'].""; 
+$sql="SELECT * FROM alumnos LEFT JOIN canaimas ON alumnos.id_alumno=canaimas.id_alumno WHERE alumnos.id_alumno=".$_GET['alumno']."";
 $result_alumno = mysql_query($sql);
 
-$sql="SELECT * FROM modelos_canaimas"; 
+$sql="SELECT * FROM modelos_canaimas";
 $result_modelos = mysql_query($sql);
 
 $row = mysql_fetch_array($result_alumno);
@@ -58,7 +58,7 @@ $row = mysql_fetch_array($result_alumno);
 				<div class="pull-right hidden-xs">
 					<b>Version</b> 1.0
 				</div>
-				{Nombre Sistema}
+				Sistema de Inscripci&oacute;n Martin J Sanabria
 			</footer>
 			<div class='control-sidebar-bg'></div>
 		</div>
