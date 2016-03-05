@@ -57,6 +57,34 @@ include_once "menu.php"
     			});
     		});
 			</script>
+			<script type="text/javascript">
+			function minmax(value, min, max) 
+			{
+			if(parseInt(value) < min || isNaN(value)) 
+			return 1; 
+			else if(parseInt(value) > max) 
+			return 30000000; 
+			else return value;
+			}
+
+			function hermana(value, min, max) 
+										{
+										if(parseInt(value) < min || isNaN(value)) 
+											return 1; 
+										else if(parseInt(value) > max) 
+											return 10; 
+										else return value;
+										}
+
+										function hermana2(value, min, max) 
+										{
+										if(parseInt(value) < min || isNaN(value)) 
+											return 0; 
+										else if(parseInt(value) > max) 
+											return 10; 
+										else return value;
+										}
+			</script>
 			<div class="content-wrapper">
 				<section class="content-header">
 					<h1>
@@ -86,7 +114,7 @@ include_once "menu.php"
 									<div class="col-md-3">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Cedula</label>
-								<input type="text" class="form-control" name="cedula_alumno" id="exampleInputPassword1" onkeypress="return solonumeros2(event)" maxlength="12" placeholder="Cedula" value="<?php echo $row['cedula_alumno'] ?>">
+								<input type="text" class="form-control" name="cedula_alumno" onkeyup="this.value = minmax(this.value, 1, 30000000)" id="exampleInputPassword1" onkeypress="return solonumeros2(event)" maxlength="12" placeholder="Cedula" value="<?php echo $row['cedula_alumno'] ?>">
 							</div>
 									</div>
 									<div class="col-md-3">
@@ -291,7 +319,7 @@ include_once "menu.php"
 									<div class="col-md-3">
 										<div class="form-group">
 											<label for="">Personas que viven con el alumno</label>
-											<input type="number" class="form-control" name="personas_vivienda" onkeypress="return solonumeros2(event)" maxlength="11" value="<?php echo $row['personas_vivienda'] ?>">
+											<input type="text" onkeyup="this.value = hermana(this.value, 1, 10)" class="form-control" name="personas_vivienda" onkeypress="return solonumeros2(event)" maxlength="11" value="<?php echo $row['personas_vivienda'] ?>">
 										</div>
 									</div>
 									<div class="col-md-3">
@@ -314,11 +342,11 @@ include_once "menu.php"
 									</div>
 									<div class="col-md-3">
 										<label for="">Cantidad de Hermanas (Hembra)</label>
-										<input type="number" onkeypress="return solonumeros2(event)" maxlength="11" name="cantidad_hermanas" class="form-control" value="<?php echo $row['cantidad_hermanas'] ?>">
+										<input type="text" onkeyup="this.value = hermana2(this.value, 0, 10)" onkeypress="return solonumeros2(event)" maxlength="11" name="cantidad_hermanas" class="form-control" value="<?php echo $row['cantidad_hermanas'] ?>">
 									</div>
 									<div class="col-md-3">
 										<label for="">Cantidad de Hermanos (Varon)</label>
-										<input type="number" onkeypress="return solonumeros2(event)" maxlength="11" name="cantidad_hermanos" class="form-control" value="<?php echo $row['cantidad_hermanos'] ?>">
+										<input type="text" onkeyup="this.value = hermana2(this.value, 0, 10)" onkeypress="return solonumeros2(event)" maxlength="11" name="cantidad_hermanos" class="form-control" value="<?php echo $row['cantidad_hermanos'] ?>">
 									</div>
 									<div class="col-md-3">
 										<label for="">Lugar que ocupa entre ellos</label>

@@ -81,8 +81,27 @@ include_once "menu.php"
 									<div class="col-md-3">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Cedula (C.I)</label>
-								<input type="text" class="form-control" name="cedula_representante" onkeypress="return solonumeros2(event)" maxlength="12" id="exampleInputPassword1" placeholder="Cedula" required>
+								<input type="text" class="form-control" name="cedula_representante" onkeypress="return solonumeros2(event)" onkeyup="this.value = minmax(this.value, 1, 30000000)" maxlength="12" id="exampleInputPassword1" placeholder="Cedula" required>
 							</div>
+							<script type="text/javascript">
+							function minmax(value, min, max) 
+							{
+							if(parseInt(value) < min || isNaN(value)) 
+							return 1; 
+							else if(parseInt(value) > max) 
+							return 30000000; 
+							else return value;
+							}
+
+							function edad(value, min, max) 
+							{
+							if(parseInt(value) < min || isNaN(value)) 
+							return 1; 
+							else if(parseInt(value) > max) 
+							return 99; 
+							else return value;
+							}
+							</script>
 									</div>
 									<div class="col-md-3">
 							<div class="form-group">
@@ -116,7 +135,8 @@ include_once "menu.php"
 										<div class="col-md-3">
 										<div class="form-group">
 										<label>Edad Representante</label>
-										<input type="number" class="form-control" name="edad_representante" onkeypress="return solonumeros(event)" maxlength="12" id="edad_representante" placeholder="Edad" requiered>
+										<input type="text" class="form-control" name="edad_representante" onkeypress="return solonumeros(event)" maxlength="3" id="edad_representante" placeholder="Edad" onkeyup="this.value = edad(this.value, 1, 99)"  requiered>
+										
 										</div>
 										</div>
 								</div>
@@ -124,13 +144,13 @@ include_once "menu.php"
 									<div class="col-md-3">
 										<div class="form-group">
 										<label for="exampleInputPassword1">Ocupacion Representante</label>
-										<input type="text" class="form-control" id="exampleInputPassword1" onkeypress="return solonLetras(event)" maxlength="20" name="ocupacion_representante"  required>
+										<input type="text" class="form-control" id="exampleInputPassword1" onkeypress="return soloLetras(event)" maxlength="20" name="ocupacion_representante"  required>
 										</div>
 									</div>
 									<div class="col-md-3">
 										<div class="form-group">
 										<label for="exampleInputPassword1">Lugar de trabajo</label>
-										<input type="text" class="form-control" id="exampleInputPassword1" onkeypress="return solonLetras(event)" maxlength="20" name="lugar_trabajo_representante" required>
+										<input type="text" class="form-control" id="exampleInputPassword1" onkeypress="return soloLetras(event)" maxlength="20" name="lugar_trabajo_representante" required>
 										</div>
 									</div>
 									<div class="col-md-3">

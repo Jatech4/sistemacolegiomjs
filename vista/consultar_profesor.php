@@ -29,6 +29,16 @@ return false;
 });
 });
 </script>
+<script type="text/javascript">
+			function minmax(value, min, max) 
+			{
+			if(parseInt(value) < min || isNaN(value)) 
+			return 1; 
+			else if(parseInt(value) > max) 
+			return 30000000; 
+			else return value;
+			}
+			</script>
 <div class="content-wrapper">
 	<section class="content-header">
 		<h1>
@@ -46,7 +56,7 @@ return false;
 									<input type="text" class="form-control" placeholder="Nombre.." name="nombre" value="<?php echo $_POST['nombre']?>">
 								</div>
 								<div class="col-md-5">
-									<input type="text" class="form-control" placeholder="Cedula.." name="cedula" value="<?php echo $_POST['cedula']?>">
+									<input type="text" class="form-control" placeholder="Cedula.." onkeyup="this.value = minmax(this.value, 1, 30000000)" name="cedula" value="<?php echo $_POST['cedula']?>">
 								</div>
 								<div class="col-md-2">
 									<div class="input-group">

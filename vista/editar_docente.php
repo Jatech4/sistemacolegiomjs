@@ -15,6 +15,16 @@ include_once "menu.php";
     			}
 			}
 			</script>
+			<script type="text/javascript">
+			function minmax(value, min, max) 
+			{
+			if(parseInt(value) < min || isNaN(value)) 
+			return 1; 
+			else if(parseInt(value) > max) 
+			return 30000000; 
+			else return value;
+			}
+			</script>
 			<div class="content-wrapper">
 				<section class="content-header">
 					<h1>
@@ -32,7 +42,7 @@ include_once "menu.php";
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Cedula</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" onkeypress="return solonumeros2(event)" maxlength="11" placeholder="Cedula" name="ci_docente" id="cedula" value="<?php echo $row['ci_docente'] ?>">
+							<input type="text" class="form-control" id="exampleInputPassword1" onkeyup="this.value = minmax(this.value, 1, 30000000)" onkeypress="return solonumeros2(event)" maxlength="11" placeholder="Cedula" name="ci_docente" id="cedula" value="<?php echo $row['ci_docente'] ?>">
 							</div>
 							<div class="form-group">
 							<label for="exampleInputPassword1">Correo</label>
