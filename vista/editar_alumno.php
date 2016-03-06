@@ -371,111 +371,123 @@ include_once "menu.php"
 								</div>
 							</div>
 							<hr class="divisor">
-							<div class="section">
-								<h4>F.-ASPECTOS DE SALUD DEL ALUMNO</h4>
-								<div class="row">
-									<div class="col-md-3">
-										<label for="">Vacunas que posee</label>
-										<div class="checkbox" style="margin-left: 9%;">
-										<input type="checkbox" name="vacuna_triple" value="Si" <?php if($row['vacuna_triple']=='Si') {echo "checked='checked'";}?>>Triple
-										<br>
-										<input type="checkbox" name="vacuna_bcg" value="Si" <?php if($row['vacuna_bcg']=='Si') {echo "checked='checked'";}?>>Bcg
-										<br>
-										<input type="checkbox" name="vacuna_polio" value="Si" <?php if($row['vacuna_polio']=='Si') {echo "checked='checked'";}?>>Polio
-										<br>
-										<input type="checkbox" name="vacuna_hepab" value="Si" <?php if($row['vacuna_hepab']=='Si') {echo "checked='checked'";}?>>Hepatitis B
-										<br>
-										<input type="checkbox" name="vacuna_meningitis" value="Si" <?php if($row['vacuna_meningitis']=='Si') {echo "checked='checked'";}?>>Meningitis
-										</div>
-									</div>
-									<div class="col-md-3">
-										<label>¿Es asmatico?</label>
-										<br>
-										<input type="radio" name="asmatico" id="optionsRadios1" value="Si" <?php if($row['asmatico']=='Si') {echo "checked='checked'";}?>>Si
-										<br>
-										<input type="radio" name="asmatico" id="optionsRadios1" value="No" <?php if($row['asmatico']=='No') {echo "checked='checked'";}?>>No
-									</div>
-									<div class="col-md-3">
-										<label>¿Es Diabetico?</label>
-										<br>
-										<input type="radio" name="diabetico" id="optionsRadios1" value="Si" <?php if($row['diabetico']=='Si') {echo "checked='checked'";}?>>Si
-										<br>
-										<input type="radio" name="diabetico" id="optionsRadios1" value="No" <?php if($row['diabetico']=='No') {echo "checked='checked'";}?>>No
-									</div>
-									<div class="col-md-3">
-										<label>¿Es Alergico?</label>
-										<br>
-										<input type="radio" name="alergico" id="optionsRadios1" value="Si" <?php if($row['alergico']=='Si') {echo "checked='checked'";}?>>Si
-										<br>
-										<input type="radio" name="alergico" id="optionsRadios1" value="No" <?php if($row['alergico']=='No') {echo "checked='checked'";}?>>No
-										<br>
-										<label>¿A que?</label>
-										<input type="text" class="form-control" name="observacion_alergia" placeholder="Esto puede ir vacio" value="<?php echo $row['observacion_alergia'] ?>">
+							<div class="row">
+									<div class="col-md-12">
+										<h4>E. Posee registro médico?</h4>
 									</div>
 								</div>
-								<div class="row">
-									<div class="col-md-3">
-										<label>¿Tiene control medico periódico?</label>
-										<br>
-										<input type="radio" name="control_medico" id="optionsRadios1" value="Si" <?php if($row['control_medico']=='Si') {echo "checked='checked'";}?>>Si
-										<br>
-										<input type="radio" name="control_medico" id="optionsRadios1" value="No" <?php if($row['control_medico']=='No') {echo "checked='checked'";}?>>No
-										<br>
-										<label>¿Donde?</label>
-										<input type="text" class="form-control" name="observacion_control" placeholder="Esto puede ir vacio" value="<?php echo $row['observacion_control'] ?>">
-									</div>
-									<div class="col-md-3">
-										<label>Medicamento que le suministra en caso de fiebre</label>
-										<input type="text" name="suministro_fiebre" class="form-control" value="<?php echo $row['suministro_fiebre'] ?>">
-									</div>
-									<div class="col-md-3">
-										<label for="">Posee alguna dificultad</label>
-										<select name="tipo_dificultad" id="" class="form-control">
-											<option value="Auditiva" <?php if($row['tipo_dificultad']=='Auditiva') {echo "selected='selected'";}?>>Auditiva</option>
-											<option value="Lenguaje" <?php if($row['tipo_dificultad']=='Lenguaje') {echo "selected='selected'";}?>>Lenguaje</option>
-											<option value="Motora" <?php if($row['tipo_dificultad']=='Motora') {echo "selected='selected'";}?>>Motora</option>
-										</select>
-									</div>
-									<div class="col-md-3">
-										<label for="">¿Ha sido intervenido quirúrgicamente?</label>
-										<br>
-										<input type="radio" name="operacion" id="optionsRadios1" value="Si" <?php if($row['operacion']=='Si') {echo "checked='checked'";}?>>Si
-										<br>
-										<input type="radio" name="operacion" id="optionsRadios1" value="No" <?php if($row['operacion']=='No') {echo "checked='checked'";}?>>No
-										<br>
-									</div>
-								</div>
-								<br>
-								<div class="row">
-									<div class="col-md-3">
-										<label for="">¿Alguna vez ha sido referido al psicólogo?</label>
-										<br>
-										<input type="radio" name="psicologo" id="optionsRadios1" value="Si" <?php if($row['psicologo']=='Si') {echo "checked='checked'";}?>>Si
-										<br>
-										<input type="radio" name="psicologo" id="optionsRadios1" value="No" <?php if($row['psicologo']=='No') {echo "checked='checked'";}?>>No
-										<br>
-									</div>
-									<div class="col-md-3">
-										<label>¿Alguna vez a sido referido al psicópedagogo?</label>
-										<br>
-										<input type="radio" name="psicopedagogo" id="optionsRadios1" value="Si" <?php if($row['psicopedagogo']=='Si') {echo "checked='checked'";}?>>Si
-										<br>
-										<input type="radio" name="psicopedagogo" id="optionsRadios1" value="No" <?php if($row['psicopedagogo']=='No') {echo "checked='checked'";}?>>No
-										<br>
-										<label>Razones - Referencias</label>
-										<input type="text" class="form-control" name="observaciones_psicopedagogo" placeholder="Esto puede ir vacio" value="<?php echo $row['observaciones_psicopedagogo'] ?>">
-									</div>
-									<div class="col-md-3">
-										<label for="">¿Tiene impedimento para realizar Educ. Fisica y Deportes?</label>
-										<br>
-										<input type="radio" name="impedimento_fisico" id="optionsRadios1" value="Si" <?php if($row['impedimento_fisico']=='Si') {echo "checked='checked'";}?>>Si
-										<br>
-										<input type="radio" name="impedimento_fisico" id="optionsRadios1" value="No" <?php if($row['impedimento_fisico']=='No') {echo "checked='checked'";}?>>No
-										<br>
-										<label>Razones</label>
-										<input type="text" onkeypress="return soloLetras(event)" maxlength="50" class="form-control" name="observacion_impedimento" placeholder="Esto puede ir vacio" value="<?php echo $row['observacion_impedimento'] ?>">
-									</div>
-								</div>
+								<select name="#" id="ecp" class="form-control">
+									<option disabled selected>Seleccione</option>
+									<option value="Si">Tiene Registro Medico</option>
+									<option value="No">No tiene Registro Medico</option>
+								</select>
+							<div id="medic" style="display: none;">
+								<div class="section">
+	<h4>F.-ASPECTOS DE SALUD DEL ALUMNO</h4>
+	<div class="row">
+		<div class="col-md-3">
+			<label for="">Vacunas que posee</label>
+			<div class="checkbox" style="margin-left: 9%;">
+				<input type="checkbox" name="vacuna_triple" value="Si" <?php if($row['vacuna_triple']=='Si') {echo "checked='checked'";}?>>Triple
+				<br>
+				<input type="checkbox" name="vacuna_bcg" value="Si" <?php if($row['vacuna_bcg']=='Si') {echo "checked='checked'";}?>>Bcg
+				<br>
+				<input type="checkbox" name="vacuna_polio" value="Si" <?php if($row['vacuna_polio']=='Si') {echo "checked='checked'";}?>>Polio
+				<br>
+				<input type="checkbox" name="vacuna_hepab" value="Si" <?php if($row['vacuna_hepab']=='Si') {echo "checked='checked'";}?>>Hepatitis B
+				<br>
+				<input type="checkbox" name="vacuna_meningitis" value="Si" <?php if($row['vacuna_meningitis']=='Si') {echo "checked='checked'";}?>>Meningitis
+			</div>
+		</div>
+		<div class="col-md-3">
+			<label>¿Es asmatico?</label>
+			<br>
+			<input type="radio" name="asmatico" id="optionsRadios1" value="Si" <?php if($row['asmatico']=='Si') {echo "checked='checked'";}?>>Si
+			<br>
+			<input type="radio" name="asmatico" id="optionsRadios1" value="No" <?php if($row['asmatico']=='No') {echo "checked='checked'";}?>>No
+		</div>
+		<div class="col-md-3">
+			<label>¿Es Diabetico?</label>
+			<br>
+			<input type="radio" name="diabetico" id="optionsRadios1" value="Si" <?php if($row['diabetico']=='Si') {echo "checked='checked'";}?>>Si
+			<br>
+			<input type="radio" name="diabetico" id="optionsRadios1" value="No" <?php if($row['diabetico']=='No') {echo "checked='checked'";}?>>No
+		</div>
+		<div class="col-md-3">
+			<label>¿Es Alergico?</label>
+			<br>
+			<input type="radio" name="alergico" id="optionsRadios1" value="Si" <?php if($row['alergico']=='Si') {echo "checked='checked'";}?>>Si
+			<br>
+			<input type="radio" name="alergico" id="optionsRadios1" value="No" <?php if($row['alergico']=='No') {echo "checked='checked'";}?>>No
+			<br>
+			<label>¿A que?</label>
+			<input type="text" class="form-control" name="observacion_alergia" placeholder="Esto puede ir vacio" value="<?php echo $row['observacion_alergia'] ?>">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<label>¿Tiene control medico periódico?</label>
+			<br>
+			<input type="radio" name="control_medico" id="optionsRadios1" value="Si" <?php if($row['control_medico']=='Si') {echo "checked='checked'";}?>>Si
+			<br>
+			<input type="radio" name="control_medico" id="optionsRadios1" value="No" <?php if($row['control_medico']=='No') {echo "checked='checked'";}?>>No
+			<br>
+			<label>¿Donde?</label>
+			<input type="text" class="form-control" name="observacion_control" placeholder="Esto puede ir vacio" value="<?php echo $row['observacion_control'] ?>">
+		</div>
+		<div class="col-md-3">
+			<label>Medicamento que le suministra en caso de fiebre</label>
+			<input type="text" name="suministro_fiebre" class="form-control" value="<?php echo $row['suministro_fiebre'] ?>">
+		</div>
+		<div class="col-md-3">
+			<label for="">Posee alguna dificultad</label>
+			<select name="tipo_dificultad" id="" class="form-control">
+				<option value="Auditiva" <?php if($row['tipo_dificultad']=='Auditiva') {echo "selected='selected'";}?>>Auditiva</option>
+				<option value="Lenguaje" <?php if($row['tipo_dificultad']=='Lenguaje') {echo "selected='selected'";}?>>Lenguaje</option>
+				<option value="Motora" <?php if($row['tipo_dificultad']=='Motora') {echo "selected='selected'";}?>>Motora</option>
+			</select>
+		</div>
+		<div class="col-md-3">
+			<label for="">¿Ha sido intervenido quirúrgicamente?</label>
+			<br>
+			<input type="radio" name="operacion" id="optionsRadios1" value="Si" <?php if($row['operacion']=='Si') {echo "checked='checked'";}?>>Si
+			<br>
+			<input type="radio" name="operacion" id="optionsRadios1" value="No" <?php if($row['operacion']=='No') {echo "checked='checked'";}?>>No
+			<br>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-3">
+			<label for="">¿Alguna vez ha sido referido al psicólogo?</label>
+			<br>
+			<input type="radio" name="psicologo" id="optionsRadios1" value="Si" <?php if($row['psicologo']=='Si') {echo "checked='checked'";}?>>Si
+			<br>
+			<input type="radio" name="psicologo" id="optionsRadios1" value="No" <?php if($row['psicologo']=='No') {echo "checked='checked'";}?>>No
+			<br>
+		</div>
+		<div class="col-md-3">
+			<label>¿Alguna vez a sido referido al psicópedagogo?</label>
+			<br>
+			<input type="radio" name="psicopedagogo" id="optionsRadios1" value="Si" <?php if($row['psicopedagogo']=='Si') {echo "checked='checked'";}?>>Si
+			<br>
+			<input type="radio" name="psicopedagogo" id="optionsRadios1" value="No" <?php if($row['psicopedagogo']=='No') {echo "checked='checked'";}?>>No
+			<br>
+			<label>Razones - Referencias</label>
+			<input type="text" class="form-control" name="observaciones_psicopedagogo" placeholder="Esto puede ir vacio" value="<?php echo $row['observaciones_psicopedagogo'] ?>">
+		</div>
+		<div class="col-md-3">
+			<label for="">¿Tiene impedimento para realizar Educ. Fisica y Deportes?</label>
+			<br>
+			<input type="radio" name="impedimento_fisico" id="optionsRadios1" value="Si" <?php if($row['impedimento_fisico']=='Si') {echo "checked='checked'";}?>>Si
+			<br>
+			<input type="radio" name="impedimento_fisico" id="optionsRadios1" value="No" <?php if($row['impedimento_fisico']=='No') {echo "checked='checked'";}?>>No
+			<br>
+			<label>Razones</label>
+			<input type="text" onkeypress="return soloLetras(event)" maxlength="50" class="form-control" name="observacion_impedimento" placeholder="Esto puede ir vacio" value="<?php echo $row['observacion_impedimento'] ?>">
+		</div>
+	</div>
+</div>
 							</div>
 							<hr class="divisor">
 							<button type="submit" class="btn btn-warning"><span class="icon-scissors"></span> Editar</button>
@@ -498,5 +510,6 @@ include_once "menu.php"
 		<script src="js/bootstrap.min.js" type="text/javascript"></script>
 		<script src="js/app.min.js" type="text/javascript"></script>
 		<script src="js/demo.js" type="text/javascript"></script>
+		<script src="js/custom2.js" type="text/javascript"></script>
 	</body>
 </html>

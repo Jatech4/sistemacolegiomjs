@@ -348,7 +348,18 @@ $result_grados = mysql_query("SELECT * FROM grados");
 								</div>
 							</div>
 							<hr class="divisor">
-							<div class="section">
+								<div class="row">
+									<div class="col-md-12">
+										<h4>E. Posee registro médico?</h4>
+									</div>
+								</div>
+								<select name="#" id="ecp" class="form-control">
+									<option disabled selected>Seleccione</option>
+									<option value="Si">Tiene Registro Medico</option>
+									<option value="No">No tiene Registro Medico</option>
+								</select>
+							<div id="medic" style="display: none;">
+								<div class="section"> <!-- situacion medica -->
 								<h4>E.-ASPECTOS DE SALUD DEL ALUMNO</h4>
 								<div class="row">
 									<div class="col-md-3">
@@ -455,6 +466,7 @@ $result_grados = mysql_query("SELECT * FROM grados");
 								maxlength="1" class="form-control" name="observacion_impedimento" placeholder="Esto puede ir vacio">
 									</div>
 								</div>
+							</div> <!-- ./situacionmedica -->
 							</div>
 							<hr class="divisor">
 							<button type="submit" class="btn btn-success"><span class="icon-user-plus"></span> Registrar</button>
@@ -476,6 +488,6 @@ $result_grados = mysql_query("SELECT * FROM grados");
 		<script src="js/jQuery/jQuery-2.1.4.min.js"></script>
 		<script src="js/bootstrap.min.js" type="text/javascript"></script>
 		<script src="js/app.min.js" type="text/javascript"></script>
-		<script src="js/custom2.js"></script>
+		<script src="js/custom2.js" type="text/javascript"></script>
 	</body> 
 </html>

@@ -1,6 +1,10 @@
-$(document).ready(function() {
-    $("#field").attr({
-       "max" : 10,        // substitute your own
-       "min" : 2          // values (or variables) here
-    });
+$(document).ready(function(){
+$('#ecp').on('change', function() {
+      if ( this.value == 'No'){
+        $("#medic").fadeIn('slow');
+      }
+      else{
+        $("#medic").fadeOut('slow');
+      }
+      });
 });
