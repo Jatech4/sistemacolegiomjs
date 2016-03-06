@@ -34,7 +34,7 @@ $row = mysql_fetch_array($result);
 		<div class="row">
 			<div class="col-md-12">
 				<form class="formulario" name="form" id="form" method="POST" action="../controlador/registrar_fecha_ano.php" onsubmit="enviar()">
-					<input type="hidden" class="form-control" id="exampleInputPassword1" name="id" id="id" value="#">
+					<input type="hidden" class="form-control" id="exampleInputPassword1" name="id" id="id" value="<?php echo $_GET['id'] ?>">
 					<h4>Registro de Fecha de Momentos para el Año Escolar: <?php echo $row['ano_escolar']?></h4>
 					<br>
 					<small><i>(*) Campos Obligatorios</i></small>
@@ -42,7 +42,7 @@ $row = mysql_fetch_array($result);
 						<h4>Momento 1</h4>
 						<div class="col-md-6">
 								<label for="exampleInputPassword1">Desde: (*)</label>
-								<select class="form-control gay1" name="">
+								<select class="form-control gay1" name="desde1">
 										<option disabled selected>Seleccione</option>
 										<option value="Enero" required>Enero</option>
 										<option value="Febrero" required>Febrero</option>
@@ -59,7 +59,7 @@ $row = mysql_fetch_array($result);
 						</div>
 						<div class="col-md-6">
 									<label for="#">Hasta: (*)</label>
-									<select class="form-control gay2" name="">
+									<select class="form-control gay2" name="hasta1">
 
 									</select>
 						</div>
@@ -68,7 +68,7 @@ $row = mysql_fetch_array($result);
 						<h4>Momento 2</h4>
 						<div class="col-md-6">
 								<label for="exampleInputPassword1">Desde: (*)</label>
-								<select class="form-control gay3" name="">
+								<select class="form-control gay3" name="desde2">
 										<option disabled selected>Seleccione</option>
 										<option value="Enero" required>Enero</option>
 										<option value="Febrero" required>Febrero</option>
@@ -85,7 +85,7 @@ $row = mysql_fetch_array($result);
 						</div>
 						<div class="col-md-6">
 									<label for="#">Hasta: (*)</label>
-									<select class="form-control gay4" name="">
+									<select class="form-control gay4" name="hasta2">
 
 									</select>
 						</div>
@@ -94,7 +94,7 @@ $row = mysql_fetch_array($result);
 						<h4>Momento 3</h4>
 						<div class="col-md-6">
 								<label for="exampleInputPassword1">Desde: (*)</label>
-								<select class="form-control gay5" name="">
+								<select class="form-control gay5" name="desde3">
 										<option disabled selected>Seleccione</option>
 										<option value="Enero" required>Enero</option>
 										<option value="Febrero" required>Febrero</option>
@@ -111,7 +111,7 @@ $row = mysql_fetch_array($result);
 						</div>
 						<div class="col-md-6">
 									<label for="#">Hasta: (*)</label>
-									<select class="form-control gay6" name="">
+									<select class="form-control gay6" name="hasta3">
 
 									</select>
 						</div>
@@ -120,7 +120,7 @@ $row = mysql_fetch_array($result);
 						<h4>Momento 4</h4>
 						<div class="col-md-6">
 								<label for="exampleInputPassword1">Desde: (*)</label>
-								<select class="form-control gay7" name="">
+								<select class="form-control gay7" name="desde4">
 										<option disabled selected>Seleccione</option>
 										<option value="Enero" required>Enero</option>
 										<option value="Febrero" required>Febrero</option>
@@ -137,7 +137,7 @@ $row = mysql_fetch_array($result);
 						</div>
 						<div class="col-md-6">
 									<label for="#">Hasta: (*)</label>
-									<select class="form-control gay8" name="">
+									<select class="form-control gay8" name="hasta4">
 
 									</select>
 						</div>
@@ -146,7 +146,7 @@ $row = mysql_fetch_array($result);
 						<h4>Momento 5</h4>
 						<div class="col-md-6">
 								<label for="exampleInputPassword1">Desde: (*)</label>
-								<select class="form-control gay9" name="">
+								<select class="form-control gay9" name="desde5">
 										<option disabled selected>Seleccione</option>
 										<option value="Enero" required>Enero</option>
 										<option value="Febrero" required>Febrero</option>
@@ -163,7 +163,7 @@ $row = mysql_fetch_array($result);
 						</div>
 						<div class="col-md-6">
 									<label for="#">Hasta: (*)</label>
-									<select class="form-control gay10" name="">
+									<select class="form-control gay10" name="hasta5">
 
 									</select>
 						</div>
@@ -183,7 +183,7 @@ $row = mysql_fetch_array($result);
 <div class="pull-right hidden-xs">
 	<b>Version</b> 1.0
 </div>
-{Nombre Sistema}
+Sistema de Inscripci&oacute;n Martin J Sanabria
 </footer>
 <div class='control-sidebar-bg'></div>
 </div>

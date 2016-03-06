@@ -7,6 +7,12 @@ $result_grados = mysql_query("SELECT * FROM grados");
 $result_alumnos = mysql_query("SELECT * FROM alumnos");
 $result_docentes = mysql_query("SELECT * FROM docentes");
 $result_ano_escolar = mysql_query("SELECT * FROM ano_escolar ORDER BY id_ano_escolar DESC");
+
+if(isset($_GET['id_ano'])){
+$sql_fecha_momentos="SELECT * FROM fecha_momentos WHERE id_ano_escolar=".$_GET['id_ano']."";
+$result_fecha_momentos = mysql_query($sql_fecha_momentos);
+$row_fecha_momentos = mysql_fetch_array($result_fecha_momentos);
+}
 if(isset($_GET['alumno']))
 {
 $sql="SELECT * FROM alumnos a, representantes b, procedencia_alumno c where a.id_alumno=".$_GET['alumno']." and b.id_alumno=".$_GET['alumno']." and c.id_alumno=".$_GET['alumno']."";
@@ -21,11 +27,11 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 	if(!$row_alumno_select){ ?>
 	<script language='JavaScript'>
 				alert('ERROR: El Alumno debe poseer al menos 1 Representante registrado');
+
 	</script>";
 	<?php
 	}
 }
-
 ?>
 			<!--  Contenido -->
 			<script language="JavaScript">
@@ -50,7 +56,7 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 					<div class="row">
 						<div class="col-md-3">
 							<label for="#">Estudiante: (*)</label>
-							<select class="form-control" name="id_alumno" id="#" onchange="location.href='generar_boletin.php?alumno=' + this.value" required>
+							<select class="form-control" name="id_alumno" id="#" onchange="location.href='generar_boletin.php?alumno=' + this.value+'&id_ano=<?php echo $_GET['id_ano']?>'" required>
 								<option value="" selected disabled>Seleccione</option>
 								<?php while ($row_alumno = mysql_fetch_array($result_alumnos)){?>
 								<option value="<?php echo $row_alumno['id_alumno']?>"
@@ -67,7 +73,7 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 					<div class="row">
 						<div class="col-md-3">
 							<label for="#">Año Escolar: (*)</label>
-							<select class="form-control" name="ano_escolar" required>
+							<select class="form-control" name="ano_escolar" id="ano_escolar" required onchange="buscar_momentos(this.value)">
 							<option value="" selected disabled>Seleccione</option>
 							<?php while ($row_ano_escolar = mysql_fetch_array($result_ano_escolar)){?>
 							<option value="<?php echo $row_ano_escolar['id_ano_escolar']?>"><?php echo $row_ano_escolar['ano_escolar']?></option>
@@ -164,16 +170,10 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group pull-right">
-							<label for="exampleInputPassword1">Desde:</label>
-							<input type="date" class="form-control" name="fecha_desde_momento1" id="exampleInputPassword1">
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="form-group pull-left">
-								<label for="#">Hasta:</label>
-								<input type="date" class="form-control" name="fecha_hasta_momento1" id="exampleInputPassword1">
+						<div class="col-md-12 text-center">
+							<div class="form-group">
+							<label for="exampleInputPassword1">Periodo:</label>
+							<input type="text" class="form-control" name="fecha_desde_momento1" id="exampleInputPassword1" value="<?php echo $row_fecha_momentos['fecha_momento1']?>" >
 							</div>
 						</div>
 					</div>
@@ -252,16 +252,10 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group pull-right">
-							<label for="exampleInputPassword1">Desde:</label>
-							<input type="date" class="form-control" name="fecha_desde_momento2" id="exampleInputPassword1">
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="form-group pull-left">
-								<label for="#">Hasta:</label>
-								<input type="date" class="form-control" name="fecha_hasta_momento2" id="exampleInputPassword1">
+						<div class="col-md-12 text-center">
+							<div class="form-group">
+							<label for="exampleInputPassword1">Periodo:</label>
+							<input type="text" class="form-control" name="fecha_desde_momento1" id="exampleInputPassword1" value="<?php echo $row_fecha_momentos['fecha_momento2']?>" >
 							</div>
 						</div>
 					</div>
@@ -348,16 +342,10 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group pull-right">
-							<label for="exampleInputPassword1">Desde:</label>
-							<input type="date" class="form-control" name="fecha_desde_momento3" id="exampleInputPassword1">
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="form-group pull-left">
-								<label for="#">Hasta:</label>
-								<input type="date" class="form-control" name="fecha_hasta_momento3" id="exampleInputPassword1">
+						<div class="col-md-12 text-center">
+							<div class="form-group">
+							<label for="exampleInputPassword1">Periodo:</label>
+							<input type="text" class="form-control" name="fecha_desde_momento1" id="exampleInputPassword1" value="<?php echo $row_fecha_momentos['fecha_momento3']?>" >
 							</div>
 						</div>
 					</div>
@@ -444,16 +432,10 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group pull-right">
-							<label for="exampleInputPassword1">Desde:</label>
-							<input type="date" class="form-control" name="fecha_desde_momento4" id="exampleInputPassword1">
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="form-group pull-left">
-								<label for="#">Hasta:</label>
-								<input type="date" class="form-control" name="fecha_hasta_momento4" id="exampleInputPassword1">
+						<div class="col-md-12 text-center">
+							<div class="form-group">
+							<label for="exampleInputPassword1">Periodo:</label>
+							<input type="text" class="form-control" name="fecha_desde_momento1" id="exampleInputPassword1" value="<?php echo $row_fecha_momentos['fecha_momento4']?>" >
 							</div>
 						</div>
 					</div>
@@ -581,7 +563,7 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 <div class="pull-right hidden-xs">
 	<b>Version</b> 1.0
 </div>
-{Nombre Sistema}
+Sistema de Inscripci&oacute;n Martin J Sanabria
 </footer>
 <div class='control-sidebar-bg'></div>
 </div>

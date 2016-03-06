@@ -31,7 +31,7 @@ include_once "menu.php"
 									    La escuela fue reinaugurada el 21 de junio de 1966 contando con la presencia de la Directora Fundadora Lola Caruja. Más reciente en 2001 el plantel fue incorporado al proyecto de Escuelas Bolivarianas, se imparte Educación Inicial y Primaria, especialidades como Folklore, Música y Psicopedagogía. A partir del año 2009 cuenta con el Centro de Informática y Telemática (CBIT) donde los estudiantes mediante el uso de las Tecnologías de Información, y Comunicación (Las TIC) refuerzan los contenidos impartidos en clase.
 									</p>
 									<p class="text-justify">
-									    Actualmente con sus 82 años de fundada la escuela atiende a una población de mas de 526 alumnos teniendo un horario integral de 7:30am a 3:30pm. 
+									    Actualmente con sus 82 años de fundada la escuela atiende a una población de mas de 526 alumnos teniendo un horario integral de 7:30am a 3:30pm.
 									</p>
 								</div>
 							</div>
@@ -46,13 +46,13 @@ include_once "menu.php"
 							<div class="box box-danger">
                             <div class="box-body">
                                 <h1 class="text-center">
-				                     VISIÓN 
+				                     VISIÓN
 				                </h1>
 				                <p class="text-justify">
-							   La U.E.N.I.B. Martín José Sanabria tiene como visión ser una Institución Educativa, que busque permanentemente la excelencia en la formación integral del ser humano con base en los principios Bolivarianos y comprometidos con los valores de la justicia, equidad, respeto, responsabilidad, solidaridad y libertad como bases fundamentales en el desarrollo del estudiante como ser social. 
+							   La U.E.N.I.B. Martín José Sanabria tiene como visión ser una Institución Educativa, que busque permanentemente la excelencia en la formación integral del ser humano con base en los principios Bolivarianos y comprometidos con los valores de la justicia, equidad, respeto, responsabilidad, solidaridad y libertad como bases fundamentales en el desarrollo del estudiante como ser social.
 							</p>
                             </div>
-				                
+
 							</div>
 						</div>
 					</div>
@@ -62,7 +62,7 @@ include_once "menu.php"
 				<div class="pull-right hidden-xs">
 					<b>Version</b> 1.0
 				</div>
-				{Nombre Sistema}
+				Sistema de Inscripci&oacute;n Martin J Sanabria
 			</footer>
 			<div class='control-sidebar-bg'></div>
 		</div>
