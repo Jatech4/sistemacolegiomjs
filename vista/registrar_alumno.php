@@ -36,12 +36,20 @@ $result_grados = mysql_query("SELECT * FROM grados");
 			        year_diff--;
 			    }
 
-			    if(year_diff<1){
+			    if(year_diff < 4){
 			    alert('Seleccionar un año menor al Actual')
 			    document.getElementById('edad_alumno').value =  '';
 			    document.getElementById('fecha_nac_alumno').value =  '';
 			    exit;
 			    }
+
+			    if(year_diff > 12){
+			    alert('Seleccionar un año mayor al Actual')
+			    document.getElementById('edad_alumno').value =  '';
+			    document.getElementById('fecha_nac_alumno').value =  '';
+			    exit;
+			    }
+
 			    document.getElementById('edad_alumno').value =  year_diff;
 			    return year_diff;
 
