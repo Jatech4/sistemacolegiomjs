@@ -117,10 +117,36 @@ $result_grados = mysql_query("SELECT * FROM grados");
 									<div class="col-md-3">
 										<div class="form-group">
 							<label for="exampleInputPassword1">Lugar de Nacimiento (*)</label>
-							<input type="text" class="form-control" onkeypress="return soloLetras
+							<!-- <input type="text" class="form-control" onkeypress="return soloLetras
 							(event)" maxlength="20" id="exampleInputPassword1"
 							name="lugar_nac_alumno"
-								placeholder="Lugar de Nacimiento" required>
+								placeholder="Lugar de Nacimiento" required> -->
+							<select class="form-control" name="#">
+							<option value="Anzoategui">Anzoategui</option>
+							<option value="Aragua">Aragua</option>
+							<option value="Amazona">Amazona</option>
+							<option value="Apure">Apure</option>
+							<option value="Bolivar">Bolivar</option>
+							<option value="Barinas">Barinas</option>
+							<option value="Cojedes">Cojedes</option>
+							<option value="Carabobo">Carabobo</option>
+							<option value="Distrito Capital">Distrito Capital</option>
+							<option value="Delta Amacuro">Delta Amacuro</option>
+							<option value="Miranda">Miranda</option>
+							<option value="Merida">Merida</option>
+							<option value="Monagas">Monagas</option>
+							<option value="Nueva Esparta">Nueva Esparta</option>
+							<option value="Portuguesa">Portuguesa</option>
+							<option value="Guarico">Guarico</option>
+							<option value="Falcon">Falcon</option>
+							<option value="Lara">Lara</option>
+							<option value="Tachira">Tachira</option>
+							<option value="Trujillo">Trujillo</option>
+							<option value="Sucre">Sucre</option>
+							<option value="Vargas">Vargas</option>
+							<option value="Yaracuy">Yaracuy</option>
+							<option value="Zulia">Zulia</option>
+							</select>
 							</div>
 									</div>
 									<div class="col-md-3">
