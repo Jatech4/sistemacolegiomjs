@@ -1,4 +1,3 @@
-<!-- index.html -->
 <?php
 include_once "../controlador/validasesion.php";
 include_once "../modelo/conexion.php";
@@ -65,30 +64,30 @@ include_once "menu.php"
     		});
 			</script>
 			<script type="text/javascript">
-			function minmax(value, min, max) 
+			function minmax(value, min, max)
 			{
-			if(parseInt(value) < min || isNaN(value)) 
-			return 1; 
-			else if(parseInt(value) > max) 
-			return 30000000; 
+			if(parseInt(value) < min || isNaN(value))
+			return 1;
+			else if(parseInt(value) > max)
+			return 30000000;
 			else return value;
 			}
 
-			function hermana(value, min, max) 
+			function hermana(value, min, max)
 										{
-										if(parseInt(value) < min || isNaN(value)) 
-											return 1; 
-										else if(parseInt(value) > max) 
-											return 10; 
+										if(parseInt(value) < min || isNaN(value))
+											return 1;
+										else if(parseInt(value) > max)
+											return 10;
 										else return value;
 										}
 
-										function hermana2(value, min, max) 
+										function hermana2(value, min, max)
 										{
-										if(parseInt(value) < min || isNaN(value)) 
-											return 0; 
-										else if(parseInt(value) > max) 
-											return 10; 
+										if(parseInt(value) < min || isNaN(value))
+											return 0;
+										else if(parseInt(value) > max)
+											return 10;
 										else return value;
 										}
 			</script>
@@ -146,30 +145,30 @@ include_once "menu.php"
 							<label for="exampleInputPassword1">Lugar de Nacimiento</label>
 							<!-- <input type="text" class="form-control" onkeypress="return soloLetras(event)" maxlength="25" id="exampleInputPassword1" name="lugar_nac_alumno" placeholder="Lugar de Nacimiento" value="<?php echo $row['lugar_nac_alumno'] ?>"> -->
 							<select class="form-control" name="#">
-							<option value="Anzoategui">Anzoategui</option>
-							<option value="Aragua">Aragua</option>
-							<option value="Amazona">Amazona</option>
-							<option value="Apure">Apure</option>
-							<option value="Bolivar">Bolivar</option>
-							<option value="Barinas">Barinas</option>
-							<option value="Cojedes">Cojedes</option>
-							<option value="Carabobo">Carabobo</option>
-							<option value="Distrito Capital">Distrito Capital</option>
-							<option value="Delta Amacuro">Delta Amacuro</option>
-							<option value="Miranda">Miranda</option>
-							<option value="Merida">Merida</option>
-							<option value="Monagas">Monagas</option>
-							<option value="Nueva Esparta">Nueva Esparta</option>
-							<option value="Portuguesa">Portuguesa</option>
-							<option value="Guarico">Guarico</option>
-							<option value="Falcon">Falcon</option>
-							<option value="Lara">Lara</option>
-							<option value="Tachira">Tachira</option>
-							<option value="Trujillo">Trujillo</option>
-							<option value="Sucre">Sucre</option>
-							<option value="Vargas">Vargas</option>
-							<option value="Yaracuy">Yaracuy</option>
-							<option value="Zulia">Zulia</option>
+							<option value="Anzoategui" <?php if($row['lugar_nac_alumno']=='Anzoategui') {echo "selected='selected'";}?>>Anzoategui</option>
+							<option value="Aragua" <?php if($row['lugar_nac_alumno']=='Aragua') {echo "selected='selected'";}?>>Aragua</option>
+							<option value="Amazonas" <?php if($row['lugar_nac_alumno']=='Amazonas') {echo "selected='selected'";}?>>Amazonas</option>
+							<option value="Apure" <?php if($row['lugar_nac_alumno']=='Apure') {echo "selected='selected'";}?>>Apure</option>
+							<option value="Bolivar" <?php if($row['lugar_nac_alumno']=='Bolivar') {echo "selected='selected'";}?>>Bolivar</option>
+							<option value="Barinas" <?php if($row['lugar_nac_alumno']=='Barinas') {echo "selected='selected'";}?>>Barinas</option>
+							<option value="Cojedes" <?php if($row['lugar_nac_alumno']=='Cojedes') {echo "selected='selected'";}?>>Cojedes</option>
+							<option value="Carabobo" <?php if($row['lugar_nac_alumno']=='Carabobo') {echo "selected='selected'";}?>>Carabobo</option>
+							<option value="Distrito Capital" <?php if($row['lugar_nac_alumno']=='Distrito Capital') {echo "selected='selected'";}?>>Distrito Capital</option>
+							<option value="Delta Amacuro" <?php if($row['lugar_nac_alumno']=='Delta Amacuro') {echo "selected='selected'";}?>>Delta Amacuro</option>
+							<option value="Miranda" <?php if($row['lugar_nac_alumno']=='Miranda') {echo "selected='selected'";}?>>Miranda</option>
+							<option value="Merida" <?php if($row['lugar_nac_alumno']=='Merida') {echo "selected='selected'";}?>>Merida</option>
+							<option value="Monagas" <?php if($row['lugar_nac_alumno']=='Monagas') {echo "selected='selected'";}?>>Monagas</option>
+							<option value="Nueva Esparta" <?php if($row['lugar_nac_alumno']=='Nueva Esparta') {echo "selected='selected'";}?>>Nueva Esparta</option>
+							<option value="Portuguesa" <?php if($row['lugar_nac_alumno']=='Portuguesa') {echo "selected='selected'";}?>>Portuguesa</option>
+							<option value="Guarico" <?php if($row['lugar_nac_alumno']=='Guarico') {echo "selected='selected'";}?>>Guarico</option>
+							<option value="Falcon" <?php if($row['lugar_nac_alumno']=='Falcon') {echo "selected='selected'";}?>>Falcon</option>
+							<option value="Lara" <?php if($row['lugar_nac_alumno']=='Lara') {echo "selected='selected'";}?>>Lara</option>
+							<option value="Tachira" <?php if($row['lugar_nac_alumno']=='Tachira') {echo "selected='selected'";}?>>Tachira</option>
+							<option value="Trujillo" <?php if($row['lugar_nac_alumno']=='Trujillo') {echo "selected='selected'";}?>>Trujillo</option>
+							<option value="Sucre" <?php if($row['lugar_nac_alumno']=='Sucre') {echo "selected='selected'";}?>>Sucre</option>
+							<option value="Vargas" <?php if($row['lugar_nac_alumno']=='Vargas') {echo "selected='selected'";}?>>Vargas</option>
+							<option value="Yaracuy" <?php if($row['lugar_nac_alumno']=='Yaracuy') {echo "selected='selected'";}?>>Yaracuy</option>
+							<option value="Zulia" <?php if($row['lugar_nac_alumno']=='Zulia') {echo "selected='selected'";}?>>Zulia</option>
 							</select>
 							</div>
 									</div>
@@ -409,12 +408,12 @@ include_once "menu.php"
 										<h4>E. Posee registro médico?</h4>
 									</div>
 								</div>
-								<select name="#" id="ecp" class="form-control">
+								<select name="rec_medico" id="rec_medico" class="form-control">
 									<option disabled selected>Seleccione</option>
-									<option value="Si">Tiene Registro Medico</option>
-									<option value="No">No tiene Registro Medico</option>
+									<option value="Si" <?php if($row['rec_medico']=='Si') {echo "selected='selected'";}?>>Tiene Registro Medico</option>
+									<option value="No" <?php if($row['rec_medico']=='No') {echo "selected='selected'";}?>>No tiene Registro Medico</option>
 								</select>
-							<div id="medic" style="display: none;">
+							<div id="medic" <?php if($row['rec_medico']=='Si') {echo "style='display: none;'";}?>>
 								<div class="section">
 	<h4>F.-ASPECTOS DE SALUD DEL ALUMNO</h4>
 	<div class="row">

@@ -1,5 +1,5 @@
 $(document).ready(function(){
-$('#ecp').on('change', function() {
+$('#rec_medico').on('change', function() {
       if ( this.value == 'No'){
         $("#medic").fadeIn('slow');
       }

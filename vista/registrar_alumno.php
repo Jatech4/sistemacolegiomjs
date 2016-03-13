@@ -56,12 +56,12 @@ $result_grados = mysql_query("SELECT * FROM grados");
 			}
 			</script>
 			<script type="text/javascript">
-			function minmax(value, min, max) 
+			function minmax(value, min, max)
 			{
-			if(parseInt(value) < min || isNaN(value)) 
-			return 1; 
-			else if(parseInt(value) > max) 
-			return 30000000; 
+			if(parseInt(value) < min || isNaN(value))
+			return 1;
+			else if(parseInt(value) > max)
+			return 30000000;
 			else return value;
 			}
 			</script>
@@ -335,21 +335,21 @@ $result_grados = mysql_query("SELECT * FROM grados");
 								 name="cantidad_hermanas" class="form-control" onkeyup="this.value = hermana2(this.value, 0, 10)" required>
 										<script type="text/javascript">
 
-										function hermana(value, min, max) 
+										function hermana(value, min, max)
 										{
-										if(parseInt(value) < min || isNaN(value)) 
-											return 1; 
-										else if(parseInt(value) > max) 
-											return 10; 
+										if(parseInt(value) < min || isNaN(value))
+											return 1;
+										else if(parseInt(value) > max)
+											return 10;
 										else return value;
 										}
 
-										function hermana2(value, min, max) 
+										function hermana2(value, min, max)
 										{
-										if(parseInt(value) < min || isNaN(value)) 
-											return 0; 
-										else if(parseInt(value) > max) 
-											return 10; 
+										if(parseInt(value) < min || isNaN(value))
+											return 0;
+										else if(parseInt(value) > max)
+											return 10;
 										else return value;
 										}
 										</script>
@@ -387,7 +387,7 @@ $result_grados = mysql_query("SELECT * FROM grados");
 										<h4>E. Posee registro médico?</h4>
 									</div>
 								</div>
-								<select name="#" id="ecp" class="form-control">
+								<select name="rec_medico" id="rec_medico" class="form-control">
 									<option disabled selected>Seleccione</option>
 									<option value="Si">Tiene Registro Medico</option>
 									<option value="No">No tiene Registro Medico</option>
@@ -523,5 +523,5 @@ $result_grados = mysql_query("SELECT * FROM grados");
 		<script src="js/bootstrap.min.js" type="text/javascript"></script>
 		<script src="js/app.min.js" type="text/javascript"></script>
 		<script src="js/custom2.js" type="text/javascript"></script>
-	</body> 
+	</body>
 </html>
