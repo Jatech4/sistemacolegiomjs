@@ -6,6 +6,11 @@ include_once "menu.php";
 $result_grados = mysql_query("SELECT * FROM grados");
 $result_alumnos = mysql_query("SELECT * FROM alumnos");
 $result_docentes = mysql_query("SELECT * FROM docentes");
+$result_obs_generales = mysql_query("SELECT * FROM observaciones_generales");
+$result_rec_estudiante = mysql_query("SELECT * FROM recomendaciones_estudiante");
+$result_rec_estudiante2 = mysql_query("SELECT * FROM recomendaciones_estudiante");
+$result_rec_estudiante3 = mysql_query("SELECT * FROM recomendaciones_estudiante");
+$result_rec_estudiante4 = mysql_query("SELECT * FROM recomendaciones_estudiante");
 $result_ano_escolar = mysql_query("SELECT * FROM ano_escolar ORDER BY id_ano_escolar DESC");
 
 if(isset($_GET['id_ano'])){
@@ -180,7 +185,14 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Observaciones Generales de la Actuación del Estudiante:</label>
-							<textarea class="form-control" rows="3" name="observaciones_gen_momento1"></textarea>
+							<!-- <textarea class="form-control" rows="3" name="observaciones_gen_momento1"></textarea> -->
+							<select class="form-control" name="observaciones_gen_momento1" id="observaciones_gen_momento1" required onchange="buscar_momentos(this.value)">
+							<option value="" selected disabled>Seleccione</option>
+							<?php while ($row_obs_generales = mysql_fetch_array($result_obs_generales)){?>
+							<option value="<?php echo $row_obs_generales['id_obs']?>"><?php echo $row_obs_generales['observacion']?></option>
+							<?php } ?>
+							</select>
+
 						</div>
 					</div>
 					<div class="row">
@@ -192,7 +204,13 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Observaciones del estudiante:</label>
-							<textarea class="form-control" rows="3" name="observaciones_alumno_momento1"></textarea>
+							<!-- <textarea class="form-control" rows="3" name="observaciones_alumno_momento1"></textarea> -->
+							<select class="form-control" name="observaciones_alumno_momento1" id="observaciones_alumno_momento1" required onchange="buscar_momentos(this.value)">
+							<option value="" selected disabled>Seleccione</option>
+							<?php while ($row_rec_estudiante = mysql_fetch_array($result_rec_estudiante)){?>
+							<option value="<?php echo $row_rec_estudiante['id_rec']?>"><?php echo $row_rec_estudiante['recomendacion']?></option>
+							<?php } ?>
+							</select>
 						</div>
 					</div>
 					<div class="row">
@@ -282,7 +300,13 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Observaciones del estudiante:</label>
-							<textarea class="form-control" rows="3" name="observaciones_alumno_momento2"></textarea>
+							<!-- <textarea class="form-control" rows="3" name="observaciones_alumno_momento2"></textarea> -->
+							<select class="form-control" name="observaciones_alumno_momento2" id="observaciones_alumno_momento2" required onchange="buscar_momentos(this.value)">
+							<option value="" selected disabled>Seleccione</option>
+							<?php while ($row_rec_estudiante = mysql_fetch_array($result_rec_estudiante2)){?>
+							<option value="<?php echo $row_rec_estudiante['id_rec']?>"><?php echo $row_rec_estudiante['recomendacion']?></option>
+							<?php } ?>
+							</select>
 						</div>
 					</div>
 					<div class="row">
@@ -372,7 +396,14 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Observaciones del estudiante:</label>
-							<textarea class="form-control" rows="3" name="observaciones_alumno_momento3"></textarea>
+							<!-- <textarea class="form-control" rows="3" name="observaciones_alumno_momento3"></textarea> -->
+
+							<select class="form-control" name="observaciones_alumno_momento3" id="observaciones_alumno_momento3" required onchange="buscar_momentos(this.value)">
+							<option value="" selected disabled>Seleccione</option>
+							<?php while ($row_rec_estudiante = mysql_fetch_array($result_rec_estudiante3)){?>
+							<option value="<?php echo $row_rec_estudiante['id_rec']?>"><?php echo $row_rec_estudiante['recomendacion']?></option>
+							<?php } ?>
+							</select>
 						</div>
 					</div>
 					<div class="row">
@@ -462,7 +493,13 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Observaciones del estudiante:</label>
-							<textarea class="form-control" rows="3" name="observaciones_alumno_momento4"></textarea>
+							<!-- <textarea class="form-control" rows="3" name="observaciones_alumno_momento4"></textarea> -->
+							<select class="form-control" name="observaciones_alumno_momento4" id="observaciones_alumno_momento4" required onchange="buscar_momentos(this.value)">
+							<option value="" selected disabled>Seleccione</option>
+							<?php while ($row_rec_estudiante = mysql_fetch_array($result_rec_estudiante4)){?>
+							<option value="<?php echo $row_rec_estudiante['id_rec']?>"><?php echo $row_rec_estudiante['recomendacion']?></option>
+							<?php } ?>
+							</select>
 						</div>
 					</div>
 					<div class="row">

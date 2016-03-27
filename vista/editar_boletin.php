@@ -5,6 +5,11 @@ include_once "../modelo/conexion.php";
 include_once "menu.php";
 $result_docentes = mysql_query("SELECT * FROM docentes");
 $result_ano_escolar = mysql_query("SELECT * FROM ano_escolar");
+$result_obs_generales = mysql_query("SELECT * FROM observaciones_generales");
+$result_rec_estudiante = mysql_query("SELECT * FROM recomendaciones_estudiante");
+$result_rec_estudiante2 = mysql_query("SELECT * FROM recomendaciones_estudiante");
+$result_rec_estudiante3 = mysql_query("SELECT * FROM recomendaciones_estudiante");
+$result_rec_estudiante4 = mysql_query("SELECT * FROM recomendaciones_estudiante");
 if(isset($_GET['boletin']))
 {
 $result_repre_select = mysql_query("SELECT * FROM representantes a, boletines b where a.id_alumno=b.id_alumno and b.id_boletin=".$_GET['boletin']."");
@@ -152,7 +157,15 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Observaciones Generales de la Actuación del Estudiante:</label>
-							<textarea class="form-control" rows="3" name="observaciones_gen_momento1"><?php echo $row_boletin['observaciones_gen_momento1'] ?></textarea>
+							<!-- <textarea class="form-control" rows="3" name="observaciones_gen_momento1"><?php echo $row_boletin['observaciones_gen_momento1'] ?></textarea> -->
+
+							<select class="form-control" name="observaciones_gen_momento1" id="#">
+							<option value="" selected disabled>Seleccione</option>
+							<?php while ($row_obs_generales = mysql_fetch_array($result_obs_generales)){?>
+								<option value="<?php echo $row_obs_generales['id_obs']?>" <?php if($row_boletin['observaciones_gen_momento1']==$row_obs_generales['id_obs']) {echo "selected='selected'";}?>><?php echo $row_obs_generales['observacion']?></option>
+							<?php } ?>
+							</select>
+
 						</div>
 					</div>
 					<div class="row">
@@ -164,7 +177,15 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Observaciones del estudiante:</label>
-							<textarea class="form-control" rows="3" name="observaciones_alumno_momento1"><?php echo $row_boletin['observaciones_alumno_momento1'] ?></textarea>
+							<!-- <textarea class="form-control" rows="3" name="observaciones_alumno_momento1"><?php echo $row_boletin['observaciones_alumno_momento1'] ?></textarea> -->
+
+							<select class="form-control" name="observaciones_alumno_momento1" id="#">
+							<option value="" selected disabled>Seleccione</option>
+							<?php while ($row_rec_estudiante = mysql_fetch_array($result_rec_estudiante)){?>
+								<option value="<?php echo $row_rec_estudiante['id_rec']?>" <?php if($row_boletin['observaciones_alumno_momento1']==$row_rec_estudiante['id_rec']) {echo "selected='selected'";}?>><?php echo $row_rec_estudiante['recomendacion']?></option>
+							<?php } ?>
+							</select>
+
 						</div>
 					</div>
 					<div class="row">
@@ -244,7 +265,14 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Observaciones del estudiante:</label>
-							<textarea class="form-control" rows="3" name="observaciones_alumno_momento2"><?php echo $row_boletin['observaciones_alumno_momento2'] ?></textarea>
+							<!-- <textarea class="form-control" rows="3" name="observaciones_alumno_momento2"><?php echo $row_boletin['observaciones_alumno_momento2'] ?></textarea> -->
+
+							<select class="form-control" name="observaciones_alumno_momento2" id="#">
+							<option value="" selected disabled>Seleccione</option>
+							<?php while ($row_rec_estudiante = mysql_fetch_array($result_rec_estudiante2)){?>
+								<option value="<?php echo $row_rec_estudiante['id_rec']?>" <?php if($row_boletin['observaciones_alumno_momento2']==$row_rec_estudiante['id_rec']) {echo "selected='selected'";}?>><?php echo $row_rec_estudiante['recomendacion']?></option>
+							<?php } ?>
+							</select>
 						</div>
 					</div>
 					<div class="row">
@@ -324,7 +352,15 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Observaciones del estudiante:</label>
-							<textarea class="form-control" rows="3" name="observaciones_alumno_momento3"><?php echo $row_boletin['observaciones_alumno_momento3'] ?></textarea>
+							<!-- <textarea class="form-control" rows="3" name="observaciones_alumno_momento3"><?php echo $row_boletin['observaciones_alumno_momento3'] ?></textarea> -->
+
+							<select class="form-control" name="observaciones_alumno_momento3" id="#">
+							<option value="" selected disabled>Seleccione</option>
+							<?php while ($row_rec_estudiante = mysql_fetch_array($result_rec_estudiante3)){?>
+								<option value="<?php echo $row_rec_estudiante['id_rec']?>" <?php if($row_boletin['observaciones_alumno_momento3']==$row_rec_estudiante['id_rec']) {echo "selected='selected'";}?>><?php echo $row_rec_estudiante['recomendacion']?></option>
+							<?php } ?>
+							</select>
+
 						</div>
 					</div>
 					<div class="row">
@@ -404,7 +440,14 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					<div class="row">
 						<div class="col-md-12">
 							<label for="exampleInputPassword1">Observaciones del estudiante:</label>
-							<textarea class="form-control" rows="3" name="observaciones_alumno_momento4"><?php echo $row_boletin['observaciones_alumno_momento4'] ?></textarea>
+							<!-- <textarea class="form-control" rows="3" name="observaciones_alumno_momento4"><?php echo $row_boletin['observaciones_alumno_momento4'] ?></textarea> -->
+
+							<select class="form-control" name="observaciones_alumno_momento4" id="#">
+							<option value="" selected disabled>Seleccione</option>
+							<?php while ($row_rec_estudiante = mysql_fetch_array($result_rec_estudiante4)){?>
+								<option value="<?php echo $row_rec_estudiante['id_rec']?>" <?php if($row_boletin['observaciones_alumno_momento4']==$row_rec_estudiante['id_rec']) {echo "selected='selected'";}?>><?php echo $row_rec_estudiante['recomendacion']?></option>
+							<?php } ?>
+							</select>
 						</div>
 					</div>
 					<div class="row">
@@ -450,12 +493,12 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					</div>
 					<div class="row">
 					    <div class="col-md-offset-3 col-md-6">
-					        El Estudiante: <input type="text" name="#" class="form-control" placeholder=""> Durante el anho escolar <select class="form-control" name="ano_escolar">
+					        El Estudiante: <input type="text" name="#" class="form-control" placeholder=""> Durante el año escolar <select class="form-control" name="ano_escolar">
 							<option value="#" selected disabled>Seleccione</option>
 							<?php while ($row_ano_escolar = mysql_fetch_array($result_ano_escolar)){?>
 							<option value="<?php echo $row_ano_escolar['id_ano_escolar']?>"><?php echo $row_ano_escolar['ano_escolar']?></option>
 							<?php } ?>
-							</select> ha objetenido el Literal <input type="text" name="#" class="form-control" placeholder=""> lo cual expresa: <input type="text" name="#" class="form-control" placeholder=""> segun lo estipulado en el Articulo 15 y 16 de la Gaceta Oficial de la Republica Bolivariana de VEnezuela del 5 de Enero de 2000 N.5428.
+							</select> Ha objetenido el Literal <input type="text" name="#" class="form-control" placeholder=""> lo cual expresa: <input type="text" name="#" class="form-control" placeholder=""> segun lo estipulado en el Articulo 15 y 16 de la Gaceta Oficial de la Republica Bolivariana de VEnezuela del 5 de Enero de 2000 N.5428.
 					    </div>
 					</div>
 					<div class="row">
