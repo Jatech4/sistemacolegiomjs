@@ -91,7 +91,7 @@ $result_grados = mysql_query("SELECT * FROM grados");
 									<div class="col-md-3">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Apellidos (*)</label>
-								<input type="number" class="form-control" onkeypress="return soloLetras
+								<input type="text" class="form-control" onkeypress="return soloLetras
 								(event)" maxlength="20" name="apellidos_alumno"
 								id="exampleInputPassword1" placeholder="Apellidos" required>
 							</div>
