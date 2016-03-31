@@ -3,7 +3,7 @@ include_once "../modelo/conexion.php";
 require_once "../dompdf/dompdf_config.inc.php";
 $sql=$_POST['consulta'];
 $result=mysql_query($sql);
-$fecha=date("d-m-Y");
+$fecha=date("d-m-Y H:i:s");
 $html='
 <html>
 <head>
@@ -22,22 +22,23 @@ $html='
 Reporte Asistencias / Inasistencias<br>
 </p>
 </td>
-<td width=30%>Fecha del Reporte: '.$fecha.'</td>
+<td width=30%>Fecha: '.$fecha.'</td>
 </tr>
 </table>
 <table width=100%>
 <tr>
-<th>Nombre</th>
-<th>Año Escolar</th>
+<th>N°</th>
+<th>Nombres y Apellidos</th>
 <th>Momento</th>
 <th>Asistencias</th>
 <th>Inasistencias</th>
 </tr>';
+$i=1;
 while ($row = mysql_fetch_array($result)){
 $html.='
 <tr>
+<td>'.$i.'</td>
 <td rowspan="4" style="vertical-align:middle" align="center">'.$row["nombres_alumno"].' '.$row["apellidos_alumno"].'</td>
-<td rowspan="4" style="vertical-align:middle" align="center">'.$row['ano_escolar'].'</td>
 <td align="center">I</td>
 <td align="center">'.$row["asistencias_momento1"].'</td>
 <td align="center">'.$row["inasistencias_momento1"].'</td>
@@ -57,7 +58,9 @@ $html.='
 <td align="center">'.$row["asistencias_momento4"].'</td>
 <td align="center">'.$row["inasistencias_momento4"].'</td>
 </tr>
-';}
+';
+$i++;
+}
 $html.='
 </table>
 </body>

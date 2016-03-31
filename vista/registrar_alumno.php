@@ -165,7 +165,7 @@ $result_grados = mysql_query("SELECT * FROM grados");
 									</div>
 									<div class="col-md-3">
 										<div class="form-group">
-							<label for="exampleInputPassword1">Dirección</label>
+							<label for="exampleInputPassword1">Dirección (*)</label>
 							<input type="text" class="form-control" maxlength="50"
 							id="exampleInputPassword1" name="direccion_alumno" placeholder="Dirección del Alumno" required>
 							</div>
@@ -210,6 +210,7 @@ $result_grados = mysql_query("SELECT * FROM grados");
 												<label for="exampleInputPassword1">Grado: (*)</label>
 												<select class="form-control" name="grado" id="grado" required>
 													<option value="" selected disabled>Seleccione</option>
+													<option value="0">Preescolar</option>
 													<?php while ($row_grados = mysql_fetch_array($result_grados)){?>
 													<option value="<?php echo $row_grados['id_grado']?>"><?php echo $row_grados['grado']?></option>
 													<?php } ?>
@@ -305,7 +306,7 @@ $result_grados = mysql_query("SELECT * FROM grados");
 									</div>
 									<div class="col-md-3">
 										<div class="form-group">
-											<label for="">Personas que viven con el alumno</label>
+											<label for="">N&uacute;mero de personas que viven con el alumno</label>
 											<input type="text" class="form-control" onkeypress="return solonumeros(event)"
 								maxlength="1" name="personas_vivienda" onkeyup="this.value = hermana(this.value, 1, 10)" required>
 										</div>
@@ -330,7 +331,7 @@ $result_grados = mysql_query("SELECT * FROM grados");
 								maxlength="11" name="ingreso_vivienda" class="form-control" placeholder="20.000,00" required>
 									</div>
 									<div class="col-md-3">
-										<label for="">Cantidad de Hermanas (Hembra)</label>
+										<label for="">N&uacute;mero de Hermanas</label>
 										<input type="text" onkeypress="return solonumeros(event)"
 								 name="cantidad_hermanas" class="form-control" onkeyup="this.value = hermana2(this.value, 0, 10)" required>
 										<script type="text/javascript">
@@ -355,7 +356,7 @@ $result_grados = mysql_query("SELECT * FROM grados");
 										</script>
 									</div>
 									<div class="col-md-3">
-										<label for="">Cantidad de Hermanos (Varon)</label>
+										<label for="">N&uacute;mero de Hermanos (Varon)</label>
 										<input type="text" onkeypress="return solonumeros(event)"
 								maxlength="1" name="cantidad_hermanos" class="form-control" onkeyup="this.value = hermana(this.value, 0, 10)" required>
 									</div>

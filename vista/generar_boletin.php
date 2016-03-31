@@ -4,6 +4,7 @@ include_once "../controlador/validasesion.php";
 include_once "../modelo/conexion.php";
 include_once "menu.php";
 $result_grados = mysql_query("SELECT * FROM grados");
+$result_grados2 = mysql_query("SELECT * FROM grados");
 $result_alumnos = mysql_query("SELECT * FROM alumnos");
 $result_docentes = mysql_query("SELECT * FROM docentes");
 $result_obs_generales = mysql_query("SELECT * FROM observaciones_generales");
@@ -203,7 +204,7 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<label for="exampleInputPassword1">Observaciones del estudiante:</label>
+							<label for="exampleInputPassword1">Observaciones sobre el Estudiante:</label>
 							<!-- <textarea class="form-control" rows="3" name="observaciones_alumno_momento1"></textarea> -->
 							<select class="form-control" name="observaciones_alumno_momento1" id="observaciones_alumno_momento1" required onchange="buscar_momentos(this.value)">
 							<option value="" selected disabled>Seleccione</option>
@@ -215,7 +216,7 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<label for="exampleInputPassword1">Observaciones del Representante:</label>
+							<label for="exampleInputPassword1">Observaciones para el Representante:</label>
 							<textarea class="form-control" rows="3" name="observaciones_rep_momento1"></textarea>
 						</div>
 					</div>
@@ -258,7 +259,6 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 							  <option value="C">C</option>
 							  <option value="D">D</option>
 							  <option value="E">E</option>
-							  <option value="F">F</option>
 							</select>
 							</div>
 						</div>
@@ -299,7 +299,7 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<label for="exampleInputPassword1">Observaciones del estudiante:</label>
+							<label for="exampleInputPassword1">Observaciones sobre el Estudiante:</label>
 							<!-- <textarea class="form-control" rows="3" name="observaciones_alumno_momento2"></textarea> -->
 							<select class="form-control" name="observaciones_alumno_momento2" id="observaciones_alumno_momento2" required onchange="buscar_momentos(this.value)">
 							<option value="" selected disabled>Seleccione</option>
@@ -311,7 +311,7 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<label for="exampleInputPassword1">Observaciones del Representante:</label>
+							<label for="exampleInputPassword1">Observaciones para el Representante:</label>
 							<textarea class="form-control" rows="3" name="observaciones_rep_momento2"></textarea>
 						</div>
 					</div>
@@ -354,7 +354,6 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 							  <option value="C">C</option>
 							  <option value="D">D</option>
 							  <option value="E">E</option>
-							  <option value="F">F</option>
 							</select>
 							</div>
 						</div>
@@ -395,7 +394,7 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<label for="exampleInputPassword1">Observaciones del estudiante:</label>
+							<label for="exampleInputPassword1">Observaciones sobre el Estudiante:</label>
 							<!-- <textarea class="form-control" rows="3" name="observaciones_alumno_momento3"></textarea> -->
 
 							<select class="form-control" name="observaciones_alumno_momento3" id="observaciones_alumno_momento3" required onchange="buscar_momentos(this.value)">
@@ -408,7 +407,7 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<label for="exampleInputPassword1">Observaciones del Representante:</label>
+							<label for="exampleInputPassword1">Observaciones para el Representante:</label>
 							<textarea class="form-control" rows="3" name="observaciones_rep_momento3"></textarea>
 						</div>
 					</div>
@@ -451,7 +450,6 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 							  <option value="C">C</option>
 							  <option value="D">D</option>
 							  <option value="E">E</option>
-							  <option value="F">F</option>
 							</select>
 							</div>
 						</div>
@@ -492,7 +490,7 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<label for="exampleInputPassword1">Observaciones del estudiante:</label>
+							<label for="exampleInputPassword1">Observaciones sobre el Estudiante:</label>
 							<!-- <textarea class="form-control" rows="3" name="observaciones_alumno_momento4"></textarea> -->
 							<select class="form-control" name="observaciones_alumno_momento4" id="observaciones_alumno_momento4" required onchange="buscar_momentos(this.value)">
 							<option value="" selected disabled>Seleccione</option>
@@ -504,7 +502,7 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<label for="exampleInputPassword1">Observaciones del Representante:</label>
+							<label for="exampleInputPassword1">Observaciones para el Representante:</label>
 							<textarea class="form-control" rows="3" name="observaciones_rep_momento4"></textarea>
 						</div>
 					</div>
@@ -547,7 +545,6 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 							  <option value="C">C</option>
 							  <option value="D">D</option>
 							  <option value="E">E</option>
-							  <option value="F">F</option>
 							</select>
 							</div>
 						</div>
@@ -562,7 +559,14 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 					<div class="row">
 					    <div class="col-md-offset-3 col-md-6">
 
-							 Literal Obtenido <input type="text" name="literal" class="form-control" placeholder="Literal"> Expresa: <input type="text" name="expresa" class="form-control" placeholder="Expresa">
+							 Literal Obtenido <select class="form-control" name="literal" id="literal">
+								<option value="" selected disabled>Seleccione</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+							</select> Expresa: <input type="text" name="expresa" class="form-control" placeholder="Expresa">
 					    </div>
 					</div>
 					<div class="row">
@@ -582,7 +586,14 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 					        <h4 class="text-left">
 					            Al Grado Inmediato superior:
 					        </h4>
-					        <input type="text" class="form-control" name="grado_superior">
+					        <select class="form-control" name="grado_superior" id="grado_superior">
+							<option value="" selected disabled>Seleccione</option>
+							<?php while ($row_grados = mysql_fetch_array($result_grados2)){?>
+							<option value="<?php echo $row_grados['id_grado'];?>"
+							<?php if($row_grados['id_grado']==$sig_grado) {echo "selected='selected'";}?>
+							><?php echo $row_grados['grado']?></option>
+							<?php } ?>
+							</select>
 					    </div>
 					</div>
 

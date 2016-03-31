@@ -12,6 +12,9 @@ $sql="SELECT id_boletin, nombres_alumno, apellidos_alumno,e.ano_escolar, asisten
 if($_POST['alumno']!=''){
 	$sql.=" and b.id_alumno=".$_POST['alumno']."";
 }
+if($_POST['grado']!=''){
+	$sql.=" and a.grado=".$_POST['grado']."";
+}
 $result = mysql_query($sql);
 }
 ?>

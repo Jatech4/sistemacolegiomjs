@@ -3,6 +3,7 @@
 include_once "../controlador/validasesion.php";
 include_once "../modelo/conexion.php";
 include_once "menu.php";
+$result_grados2 = mysql_query("SELECT * FROM grados");
 $result_docentes = mysql_query("SELECT * FROM docentes");
 $result_ano_escolar = mysql_query("SELECT * FROM ano_escolar");
 $result_obs_generales = mysql_query("SELECT * FROM observaciones_generales");
@@ -176,7 +177,7 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<label for="exampleInputPassword1">Observaciones del estudiante:</label>
+							<label for="exampleInputPassword1">Observaciones sobre el Estudiante:</label>
 							<!-- <textarea class="form-control" rows="3" name="observaciones_alumno_momento1"><?php echo $row_boletin['observaciones_alumno_momento1'] ?></textarea> -->
 
 							<select class="form-control" name="observaciones_alumno_momento1" id="#">
@@ -190,7 +191,7 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<label for="exampleInputPassword1">Observaciones del Representante:</label>
+							<label for="exampleInputPassword1">Observaciones para el Representante:</label>
 							<textarea class="form-control" rows="3" name="observaciones_rep_momento1"><?php echo $row_boletin['observaciones_rep_momento1'] ?></textarea>
 						</div>
 					</div>
@@ -264,7 +265,7 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<label for="exampleInputPassword1">Observaciones del estudiante:</label>
+							<label for="exampleInputPassword1">Observaciones sobre el Estudiante:</label>
 							<!-- <textarea class="form-control" rows="3" name="observaciones_alumno_momento2"><?php echo $row_boletin['observaciones_alumno_momento2'] ?></textarea> -->
 
 							<select class="form-control" name="observaciones_alumno_momento2" id="#">
@@ -277,7 +278,7 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<label for="exampleInputPassword1">Observaciones del Representante:</label>
+							<label for="exampleInputPassword1">Observaciones para el Representante:</label>
 							<textarea class="form-control" rows="3" name="observaciones_rep_momento2"><?php echo $row_boletin['observaciones_rep_momento2'] ?></textarea>
 						</div>
 					</div>
@@ -351,7 +352,7 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<label for="exampleInputPassword1">Observaciones del estudiante:</label>
+							<label for="exampleInputPassword1">Observaciones sobre el Estudiante:</label>
 							<!-- <textarea class="form-control" rows="3" name="observaciones_alumno_momento3"><?php echo $row_boletin['observaciones_alumno_momento3'] ?></textarea> -->
 
 							<select class="form-control" name="observaciones_alumno_momento3" id="#">
@@ -365,7 +366,7 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<label for="exampleInputPassword1">Observaciones del Representante:</label>
+							<label for="exampleInputPassword1">Observaciones para el Representante:</label>
 							<textarea class="form-control" rows="3" name="observaciones_rep_momento3"><?php echo $row_boletin['observaciones_rep_momento3'] ?></textarea>
 						</div>
 					</div>
@@ -439,7 +440,7 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<label for="exampleInputPassword1">Observaciones del estudiante:</label>
+							<label for="exampleInputPassword1">Observaciones sobre el Estudiante:</label>
 							<!-- <textarea class="form-control" rows="3" name="observaciones_alumno_momento4"><?php echo $row_boletin['observaciones_alumno_momento4'] ?></textarea> -->
 
 							<select class="form-control" name="observaciones_alumno_momento4" id="#">
@@ -452,7 +453,7 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<label for="exampleInputPassword1">Observaciones del Representante:</label>
+							<label for="exampleInputPassword1">Observaciones para el Representante:</label>
 							<textarea class="form-control" rows="3" name="observaciones_rep_momento4"><?php echo $row_boletin['observaciones_rep_momento4'] ?></textarea>
 						</div>
 					</div>
@@ -507,9 +508,9 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					            Por lo que el estudiante fue:
 					        </h4>
 					        <div class="radio" style="margin-left: 20px;">
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" required> Promovido
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"> Promovido
                                 <br>
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" required> No Promovido
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"> No Promovido
                             </div>
 					    </div>
 					</div>
@@ -518,7 +519,14 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					        <h4 class="text-left">
 					            Al Grado Inmediato superior:
 					        </h4>
-					        <input type="text" class="form-control" name="#" required>
+					     	<select class="form-control" name="grado_superior" id="grado_superior">
+							<option value="" selected disabled>Seleccione</option>
+							<?php while ($row_grados = mysql_fetch_array($result_grados2)){?>
+							<option value="<?php echo $row_grados['id_grado'];?>"
+							<?php if($row_grados['id_grado']==$sig_grado) {echo "selected='selected'";}?>
+							><?php echo $row_grados['grado']?></option>
+							<?php } ?>
+							</select>
 					    </div>
 					</div>
 

@@ -3,7 +3,7 @@ include_once "../modelo/conexion.php";
 require_once "../dompdf/dompdf_config.inc.php";
 $sql=$_POST['consulta'];
 $result=mysql_query($sql);
-$fecha=date("d-m-Y");
+$fecha=date("d-m-Y H:i:s");
 $html='
 <html>
 <head>
@@ -22,12 +22,12 @@ $html='
 Reporte Bitacora<br>
 </p>
 </td>
-<td width=30%>Fecha del Reporte: '.$fecha.'</td>
+<td width=30%>Fecha: '.$fecha.'</td>
 </tr>
 </table>
 <table width=100%>
 <tr>
-<th>ID</th>
+<th>N°</th>
 <th>Nombre Usuario</th>
 <th>Fecha de Conexión</th>
 </tr>';

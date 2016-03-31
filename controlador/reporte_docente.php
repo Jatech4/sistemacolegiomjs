@@ -3,7 +3,7 @@
 include_once "../modelo/conexion.php";
 require_once '../dompdf/dompdf_config.inc.php';
 $sql=$_POST['consulta'];
-$fecha=date("d-m-Y");
+$fecha=date("d-m-Y H:i:s");
 $result=mysql_query($sql);
 
 $html='
@@ -24,21 +24,21 @@ $html='
 Reporte Docentes<br>
 </p>
 </td>
-<td width=30%>Fecha del Reporte: '.$fecha.'</td>
+<td width=30%>Fecha: '.$fecha.'</td>
 </tr>
 </table>
 <table width=100%>
 <tr>
-<th>ID</th>
-<th>Nombres</th>
-<th>Cedula</th>
+<th>N°</th>
+<th>Cédula</th>
+<th>Nombres y Apellidos</th>
 </tr>';
 while ($row = mysql_fetch_array($result)){
 $html.='
 <tr>
 <td align="center">'.$row['id_docente'].'</td>
-<td align="center">'.$row['nombre_docente'].'</td>
 <td align="center">'.$row['ci_docente'].'</td>
+<td align="center">'.$row['nombre_docente'].'</td>
 </tr>
 ';}
 $html.='
