@@ -87,16 +87,16 @@ $result_grados = mysql_query("SELECT * FROM grados");
 								id="exampleInputPassword1"
 								placeholder="Nombres" required>
 							</div>
-									</div>
-									<div class="col-md-3">
+							</div>
+							<div class="col-md-3">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Apellidos (*)</label>
 								<input type="text" class="form-control" onkeypress="return soloLetras
 								(event)" maxlength="20" name="apellidos_alumno"
 								id="exampleInputPassword1" placeholder="Apellidos" required>
 							</div>
-									</div>
-									<div class="col-md-3">
+							</div>
+							<div class="col-md-1">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Cedula (*)</label>
 								<select class="form-control" name="nacionalidad">
@@ -104,11 +104,15 @@ $result_grados = mysql_query("SELECT * FROM grados");
 							<option value="E">E</option>
 							<option value="R">R</option>
 							</select>
-								<input type="text" class="form-control" name="cedula_alumno"
-								onkeypress="return solonumeros2(event)" id="txtWeight" maxlength="8" placeholder="Cedula" onkeyup="this.value = minmax(this.value, 1, 30000000)" required>
 							</div>
-									</div>
-									<div class="col-md-3">
+							</div>
+							<div class="col-md-2">
+							<div class="form-group">
+								<input type="text" class="form-control" name="cedula_alumno"
+								onkeypress="return solonumeros2(event)" id="txtWeight" maxlength="8" placeholder="Cedula" onkeyup="this.value = minmax(this.value, 1, 30000000)" style="margin-top: 26;" required>
+							</div>
+							</div>
+							<div class="col-md-3">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Edad (*)</label>
 								<input type="number" onkeypress="return solonumeros(event)"
