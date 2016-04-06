@@ -26,6 +26,31 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
     			}
 			}
 			</script>
+			<script type="text/javascript">
+			function colocar_nota(letra){
+    			if (letra=='A'){
+       			document.getElementById('expresa').value =  '20-17';
+    			}
+    			if (letra=='B'){
+       			document.getElementById('expresa').value =  '16-13';
+    			}
+    			if (letra=='C'){
+       			document.getElementById('expresa').value =  '12-09';
+    			}
+    			if (letra=='D'){
+       			document.getElementById('expresa').value =  '08-05';
+    			}
+    			if (letra=='E'){
+       			document.getElementById('expresa').value =  '04-01';
+    			}
+			}
+			function selec(){
+			document.getElementById('grado_superior').style.display = "block";
+			}
+			function selec1(){
+			document.getElementById('grado_superior').style.display = "none";
+			}
+			</script>
 <div class="content-wrapper">
 	<section class="content">
 		<div class="row">
@@ -494,12 +519,15 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					</div>
 					<div class="row">
 					    <div class="col-md-offset-3 col-md-6">
-					        El Estudiante: <input type="text" name="#" class="form-control" placeholder=""> Durante el año escolar <select class="form-control" name="ano_escolar">
-							<option value="#" selected disabled>Seleccione</option>
-							<?php while ($row_ano_escolar = mysql_fetch_array($result_ano_escolar)){?>
-							<option value="<?php echo $row_ano_escolar['id_ano_escolar']?>"><?php echo $row_ano_escolar['ano_escolar']?></option>
-							<?php } ?>
-							</select> Ha objetenido el Literal <input type="text" name="#" class="form-control" placeholder=""> lo cual expresa: <input type="text" name="#" class="form-control" placeholder=""> segun lo estipulado en el Articulo 15 y 16 de la Gaceta Oficial de la Republica Bolivariana de VEnezuela del 5 de Enero de 2000 N.5428.
+					         Literal Obtenido <select class="form-control" name="literal" id="literal" onchange="colocar_nota(this.value)">
+								<option value="" selected disabled>Seleccione</option>
+								<option value="A" <?php if($row_boletin['literal']=='A') {echo "selected='selected'";}?>>A</option>
+								<option value="B" <?php if($row_boletin['literal']=='B') {echo "selected='selected'";}?>>B</option>
+								<option value="C" <?php if($row_boletin['literal']=='C') {echo "selected='selected'";}?>>C</option>
+								<option value="D" <?php if($row_boletin['literal']=='D') {echo "selected='selected'";}?>>D</option>
+								<option value="E" <?php if($row_boletin['literal']=='E') {echo "selected='selected'";}?>>E</option>
+								</select>
+								Expresa: <input type="text" name="expresa" id="expresa" class="form-control" placeholder="Expresa" value="<?php echo $row_boletin['expresa'] ?>">
 					    </div>
 					</div>
 					<div class="row">
@@ -508,9 +536,9 @@ $row_boletin=mysql_fetch_array($result_boletin_select);
 					            Por lo que el estudiante fue:
 					        </h4>
 					        <div class="radio" style="margin-left: 20px;">
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"> Promovido
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" onclick=selec()> Promovido
                                 <br>
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"> No Promovido
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" onclick=selec1()> No Promovido
                             </div>
 					    </div>
 					</div>

@@ -120,6 +120,11 @@ include_once "menu.php"
 									<div class="col-md-3">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Cedula</label>
+								<select class="form-control" name="nacionalidad">
+							<option value="V" <?php if($row['nacionalidad']=='V') {echo "selected='selected'";}?>>V</option>
+							<option value="E" <?php if($row['nacionalidad']=='E') {echo "selected='selected'";}?>>E</option>
+							<option value="R" <?php if($row['nacionalidad']=='R') {echo "selected='selected'";}?>>R</option>
+							</select>
 								<input type="text" class="form-control" name="cedula_alumno" onkeyup="this.value = minmax(this.value, 1, 30000000)" id="exampleInputPassword1" onkeypress="return solonumeros2(event)" maxlength="12" placeholder="Cedula" value="<?php echo $row['cedula_alumno'] ?>">
 							</div>
 									</div>

@@ -99,6 +99,11 @@ $result_grados = mysql_query("SELECT * FROM grados");
 									<div class="col-md-3">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Cedula (*)</label>
+								<select class="form-control" name="nacionalidad">
+							<option value="V">V</option>
+							<option value="E">E</option>
+							<option value="R">R</option>
+							</select>
 								<input type="text" class="form-control" name="cedula_alumno"
 								onkeypress="return solonumeros2(event)" id="txtWeight" maxlength="8" placeholder="Cedula" onkeyup="this.value = minmax(this.value, 1, 30000000)" required>
 							</div>

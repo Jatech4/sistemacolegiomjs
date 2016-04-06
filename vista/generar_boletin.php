@@ -45,6 +45,30 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
     			if (confirm('¿Registrar Boletin?')){
        			document.form.submit()
     			}
+			</script>
+			<script type="text/javascript">
+			function colocar_nota(letra){
+    			if (letra=='A'){
+       			document.getElementById('expresa').value =  '20-17';
+    			}
+    			if (letra=='B'){
+       			document.getElementById('expresa').value =  '16-13';
+    			}
+    			if (letra=='C'){
+       			document.getElementById('expresa').value =  '12-09';
+    			}
+    			if (letra=='D'){
+       			document.getElementById('expresa').value =  '08-05';
+    			}
+    			if (letra=='E'){
+       			document.getElementById('expresa').value =  '04-01';
+    			}
+			}
+			function selec(){
+			document.getElementById('grado_superior').style.display = "block";
+			}
+			function selec1(){
+			document.getElementById('grado_superior').style.display = "none";
 			}
 			</script>
 <div class="content-wrapper"> <!-- Maricater es aqui iojdfgjiosdfijogsd -->
@@ -559,14 +583,14 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 					<div class="row">
 					    <div class="col-md-offset-3 col-md-6">
 
-							 Literal Obtenido <select class="form-control" name="literal" id="literal">
+							 Literal Obtenido <select class="form-control" name="literal" id="literal" onchange="colocar_nota(this.value)">
 								<option value="" selected disabled>Seleccione</option>
 								<option value="A">A</option>
 								<option value="B">B</option>
 								<option value="C">C</option>
 								<option value="D">D</option>
 								<option value="E">E</option>
-							</select> Expresa: <input type="text" name="expresa" class="form-control" placeholder="Expresa">
+							</select> Expresa: <input type="text" name="expresa" id="expresa" class="form-control" placeholder="Expresa">
 					    </div>
 					</div>
 					<div class="row">
@@ -575,9 +599,9 @@ $sig_grado=$row_alumno_select['ultimo_grado'];
 					            Por lo que el estudiante fue:
 					        </h4>
 					        <div class="radio" style="margin-left: 20px;">
-                                <input type="radio" name="promovido" id="optionsRadios1" value="Si"> Promovido
+                                <input type="radio" name="promovido" id="optionsRadios1" value="Si" onclick=selec()> Promovido
                                 <br>
-                                <input type="radio" name="promovido" id="optionsRadios1" value="No"> No Promovido
+                                <input type="radio" name="promovido" id="optionsRadios1" value="No" onclick=selec1()> No Promovido
                             </div>
 					    </div>
 					</div>

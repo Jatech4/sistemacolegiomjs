@@ -7,6 +7,7 @@ $sql="SELECT id_alumno FROM alumnos WHERE cedula_alumno='$cedula_alumno'";
 //Datos¨Personales del Alumno
 $nombres_alumno=$_POST['nombres_alumno'];
 $apellidos_alumno=$_POST['apellidos_alumno'];
+$nacionalidad=$_POST['nacionalidad'];
 $cedula_alumno=$_POST['cedula_alumno'];
 $cedula_propia=$_POST['cedula_propia'];
 $edad_alumno=$_POST['edad_alumno'];
@@ -32,7 +33,7 @@ if($num>0){
  </script>
  <?php
 }else{
-$sql="INSERT INTO alumnos(cedula_alumno, cedula_propia, nombres_alumno, apellidos_alumno, edad_alumno, sexo_alumno, lugar_nac_alumno, fecha_nac_alumno, direccion_alumno, tlf1_alumno, tlf2_alumno, tlf3_alumno, rec_medico) VALUES ('$cedula_alumno','$cedula_propia','$nombres_alumno','$apellidos_alumno','$edad_alumno','$sexo_alumno','$lugar_nac_alumno','$fecha_nac_alumno','$direccion_alumno','$tlf1_alumno','$tlf2_alumno','$tlf3_alumno', '$rec_medico')";
+$sql="INSERT INTO alumnos(nacionalidad, cedula_alumno, cedula_propia, nombres_alumno, apellidos_alumno, edad_alumno, sexo_alumno, lugar_nac_alumno, fecha_nac_alumno, direccion_alumno, tlf1_alumno, tlf2_alumno, tlf3_alumno, rec_medico) VALUES ('$nacionalidad', '$cedula_alumno','$cedula_propia','$nombres_alumno','$apellidos_alumno','$edad_alumno','$sexo_alumno','$lugar_nac_alumno','$fecha_nac_alumno','$direccion_alumno','$tlf1_alumno','$tlf2_alumno','$tlf3_alumno', '$rec_medico')";
 $result = mysql_query($sql);
 echo mysql_error();
 
