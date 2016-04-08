@@ -117,7 +117,7 @@ $result_grados = mysql_query("SELECT * FROM grados");
 								<label for="exampleInputPassword1">Edad (*)</label>
 								<input type="number" onkeypress="return solonumeros(event)"
 								maxlength="2" class="form-control" name="edad_alumno"
-								id="edad_alumno" placeholder="Edad" required disabled="disabled">
+								id="edad_alumno" placeholder="Edad" required readonly="readonly">
 							</div>
 									</div>
 								</div>
@@ -138,10 +138,10 @@ $result_grados = mysql_query("SELECT * FROM grados");
 							(event)" maxlength="20" id="exampleInputPassword1"
 							name="lugar_nac_alumno"
 								placeholder="Lugar de Nacimiento" required> -->
-							<select class="form-control" name="#">
+							<select class="form-control" name="lugar_nac_alumno">
 							<option value="Anzoategui">Anzoategui</option>
 							<option value="Aragua">Aragua</option>
-							<option value="Amazona">Amazona</option>
+							<option value="Amazona">Amazonas</option>
 							<option value="Apure">Apure</option>
 							<option value="Bolivar">Bolivar</option>
 							<option value="Barinas">Barinas</option>

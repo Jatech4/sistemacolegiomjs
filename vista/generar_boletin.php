@@ -15,7 +15,7 @@ $result_rec_estudiante4 = mysql_query("SELECT * FROM recomendaciones_estudiante"
 $result_ano_escolar = mysql_query("SELECT * FROM ano_escolar ORDER BY id_ano_escolar DESC");
 
 if(isset($_GET['id_ano'])){
-$sql_fecha_momentos="SELECT * FROM fecha_momentos WHERE id_ano_escolar=".$_GET['id_ano']."";
+echo $sql_fecha_momentos="SELECT * FROM fecha_momentos WHERE id_ano_escolar=".$_GET['id_ano']."";
 $result_fecha_momentos = mysql_query($sql_fecha_momentos);
 $row_fecha_momentos = mysql_fetch_array($result_fecha_momentos);
 }

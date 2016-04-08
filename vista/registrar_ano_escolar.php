@@ -2,7 +2,7 @@
 <?php
 include_once "../controlador/validasesion.php";
 include_once "../modelo/conexion.php";
-$result = mysql_query("SELECT * FROM ano_escolar");
+$result = mysql_query("SELECT *, a.id_ano_escolar as id FROM ano_escolar a LEFT JOIN fecha_momentos b ON a.id_ano_escolar=b.id_ano_escolar");
 mysql_set_charset('utf8');
 include_once "menu.php"
 ?>
@@ -36,8 +36,12 @@ include_once "menu.php"
 									<thead>
 									<tr>
 									<th>N°</th>
-									<th>Desde - Hasta</th>
-									<!--<th colspan="2">Acciones</th>-->
+									<td>Desde-Hasta</td>
+									<td>Momento I</td>
+									<td>Momento II</td>
+									<td>Momento III</td>
+									<td>Momento IV</td>
+									<td>Momento V</td>
 									</tr>
 									</thead>
 									<tbody>
@@ -48,10 +52,16 @@ include_once "menu.php"
 									<?php } ?>
 									<?php while ($row = mysql_fetch_array($result)){?>
 									<tr>
-									<td><?php echo $row['id_ano_escolar'] ?></td>
+									<td><?php echo $row['id'] ?></td>
 									<td><?php echo $row['ano_escolar'] ?></td>
-									<td class="pad"><a class="btn btn-info" href="fecha_momento.php?id=<?php echo $row['id_ano_escolar']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Agregar Momentos"><span class="icon-plus"></span></a></td>
+									<td><?php echo $row['fecha_momento1'] ?></td>
+									<td><?php echo $row['fecha_momento2'] ?></td>
+									<td><?php echo $row['fecha_momento3'] ?></td>
+									<td><?php echo $row['fecha_momento4'] ?></td>
+									<td><?php echo $row['fecha_momento5'] ?></td>
+									<td class="pad"><a class="btn btn-info" href="fecha_momento.php?id=<?php echo $row['id']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Agregar Momentos"><span class="icon-plus"></span></a></td>
 									<!--<td><a data-confirm-link="¿Eliminar Año?" class="btn btn-danger" href="../controlador/eliminar_ano_escolar.php?ano=<?php echo $row['id_ano_escolar']?>" role="button" style="border-radius: 0;" data-toggle="tooltip" data-placement="top" title="Eliminar"><span class="icon-cross"></span></a></td>-->
+
 									</tr>
 									<?php } ?>
 									</tbody>

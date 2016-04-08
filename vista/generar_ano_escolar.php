@@ -28,12 +28,20 @@ include_once "menu.php";
 			</script>
 
 			<script type="text/javascript">
-			function minmax(value, min, max) 
+			function minmax(value, min, max)
 			{
-			if(parseInt(value) < min || isNaN(value)) 
-			return 2016; 
-			else if(parseInt(value) > max) 
-			return 2060; 
+			if(parseInt(value) < min || isNaN(value))
+			return 2016;
+			else if(parseInt(value) > max)
+			return 2060;
+			else return value;
+			}
+			function minmax2(value, min, max)
+			{
+			if(parseInt(value) < min || isNaN(value))
+			return 2016;
+			else if(parseInt(value) > max)
+			return 2060;
 			else return value;
 			}
 			</script>
@@ -50,12 +58,12 @@ include_once "menu.php";
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Desde: (*)</label>
-								<input type="text" maxlength="4" onkeyup="this.value = minmax(this.value, 2016, 2060)" onkeypress="return solonumeros(event)" class="form-control" name="ano_escolar1" id="exampleInputPassword1" placeholder="Ejem: 2016" required>
+								<input type="text" maxlength="4" onkeypress="return solonumeros(event)" class="form-control" name="ano_escolar1" id="exampleInputPassword1" placeholder="Ejem: 2016" required>
 							</div>
 						</div>
 						<div class="col-md-6">
 								<label for="#">Hasta: (*)</label>
-								<input type="text" maxlength="4" onkeyup="this.value = minmax(this.value, 2016, 2060)" onkeypress="return solonumeros(event)" class="form-control" name="ano_escolar2" id="exampleInputPassword1" placeholder="Ejem: 2017" required>
+								<input type="text" maxlength="4" onkeypress="return solonumeros(event)" class="form-control" name="ano_escolar2" id="exampleInputPassword1" placeholder="Ejem: 2017" required>
 						</div>
 					</div>
 				<hr class="divisoor">

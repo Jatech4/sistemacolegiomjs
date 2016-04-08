@@ -9,10 +9,3 @@ parent.location.href = '../vista/login.php';
 </script>";
 }
 ?>
-<script>
-window.onload = function(){killerSession();}
-
-function killerSession(){
-setTimeout("window.open('../controlador/cierresesion.php','_top');",900000);
-}
-</script>

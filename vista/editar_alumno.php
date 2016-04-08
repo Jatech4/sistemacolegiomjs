@@ -135,7 +135,7 @@ include_once "menu.php"
 									<div class="col-md-3">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Edad</label>
-								<input type="number" class="form-control" onkeypress="return solonumeros(event)" maxlength="1" name="edad_alumno" id="edad_alumno" placeholder="Edad" value="<?php echo $row['edad_alumno'] ?>" disabled="disabled">
+								<input type="number" class="form-control" onkeypress="return solonumeros(event)" maxlength="1" name="edad_alumno" id="edad_alumno" placeholder="Edad" value="<?php echo $row['edad_alumno'] ?>" readonly="readonly">
 							</div>
 									</div>
 								</div>
@@ -153,7 +153,7 @@ include_once "menu.php"
 										<div class="form-group">
 							<label for="exampleInputPassword1">Lugar de Nacimiento</label>
 							<!-- <input type="text" class="form-control" onkeypress="return soloLetras(event)" maxlength="25" id="exampleInputPassword1" name="lugar_nac_alumno" placeholder="Lugar de Nacimiento" value="<?php echo $row['lugar_nac_alumno'] ?>"> -->
-							<select class="form-control" name="#">
+							<select class="form-control" name="lugar_nac_alumno">
 							<option value="Anzoategui" <?php if($row['lugar_nac_alumno']=='Anzoategui') {echo "selected='selected'";}?>>Anzoategui</option>
 							<option value="Aragua" <?php if($row['lugar_nac_alumno']=='Aragua') {echo "selected='selected'";}?>>Aragua</option>
 							<option value="Amazonas" <?php if($row['lugar_nac_alumno']=='Amazonas') {echo "selected='selected'";}?>>Amazonas</option>
